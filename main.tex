@@ -55,7 +55,7 @@ preprint,%
 \author{Antonino Ingargiola}%
  \email{ingargiola.antonino@gmail.com}
 \author{Maya Segal}
-\affiliation{ 
+\affiliation{
 Dept. Chemistry and Biochemistry, University of California Los Angeles, USA}
 \author{Angelo Gulinatti}
 \author{Ivan Rech}
@@ -66,7 +66,7 @@ DEIB, Politecnico di Milano, Italy
 \author{Shimon Weiss}%
 \author{Xavier Michalet}%
  \email{michalet@chem.ucla.edu}
-\affiliation{ 
+\affiliation{
 Dept. Chemistry and Biochemistry, University of California Los Angeles, USA}
 
 
@@ -76,7 +76,7 @@ Dept. Chemistry and Biochemistry, University of California Los Angeles, USA}
 \begin{abstract}
 An article usually includes an abstract, a concise summary of the work
 covered at length in the main body of the article. It is used for
-secondary publications and for information retrieval purposes. 
+secondary publications and for information retrieval purposes.
 %
 Valid PACS numbers may be entered using the \verb+\pacs{#1}+ command.
 \end{abstract}
@@ -86,6 +86,28 @@ Valid PACS numbers may be entered using the \verb+\pacs{#1}+ command.
 \keywords{Suggested keywords}%Use showkeys class option if keyword
                               %display desired
 \maketitle
+
+\section{Introduction} \label{sec:intro}
+
+Among the solution-based single-molecule FRET
+(smFRET) methods, \emph{microsecond alternated excitation}
+(\usalex is one of the most powerful methods.
+In \usalex two exciting lasers are alternated with a period of a
+few tens of \microsec and the fluorescent emission is detected in two
+spectral bands (donor and acceptor, or D and A) by two separate
+detectors. Using two alternating lasers for excitation, a family of
+techniques dubbed ALEX\cite{Kapanidis_2005}, allows separating singly- from
+doubly-labeled species, greatly extending the range of subpopulations
+that is possible to resolve in a given sample. As an example, dual-laser
+excitation allows separating D-only from zero or low FRET species that would
+be indistinguishable with only a single excitation laser.
+
+Single-molecule FRET Periodic Acceptor Excitation (smFRET-PAX)
+\cite{Doose_2007} is a technique closely related to \usalex,
+where the D laser is constantly ON and the A laser is alternated. This
+approach allows simplifying the optical setup while maintaining the same
+advantages of \usalex, namely the ability to resolve species based
+on the number of attached dyes.
 
 \section{Setup description}\label{setup-description}
 
@@ -101,8 +123,8 @@ for polarization and intensity control, as the polarization orientation
 needs to be aligned along the direction required by the LCOS-SLM. The
 628 nm laser is directed through an acousto-optical modulator (P/N 48058
 PCAOM, electronics: P/N 64048-80-.1-4CH-5M, Neos Technology, Melbourne,
-FL, USA) used for \textgreek{μ}s time-scale modulation, while the 532~nm 
-laser is unmodulated. 
+FL, USA) used for \textgreek{μ}s time-scale modulation, while the 532~nm
+laser is unmodulated.
 Each laser goes through a first beam expander (Keplerian
 telescope, doublet lenses: 50~mm and 250~mm focal lengths). Two periscopes
 bring the beams to a raised optical breadboard where a microscope body
@@ -179,7 +201,7 @@ workstation via 1~Gb Ethernet link. The second workstation automatically
 performs conversion to Photon-HDF5 and data analysis, leaving the host
 PC available for acquiring the next set of data.
 
-\section{Laser alignment}\label{sec:laseralign} 
+\section{Laser alignment}\label{sec:laseralign}
 
 Each for the two lasers need to be aligned in order
 to ensure (a) the maximum uniformity between spots intensities (b) the
@@ -266,7 +288,7 @@ the path before each LCOS. The slits are aligned to illuminate only the
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{{figures/2017-04-28_conf9_G_conf14_R_green_red_pattern_and_fit}}
-\caption{{\label{fig:patternfit} 
+\caption{{\label{fig:patternfit}
 The 12x4 multispot pattern for green (A) and red (B)
 excitation and Gaussian fit of the spots (C). The pattern is acquired by
 a camera on the microscope side port using a solution of ATTO550 and
@@ -444,7 +466,7 @@ reports spot number ($[\cdot]$) and number of bursts (\#B).%
 
 \begin{figure}
 \includegraphics[width=0.7\columnwidth]{{figures/2017-05-23_08_12d_FRET_vs_DO_fitted_E-Su_peak_position}}
-\caption{{\label{fig:fittedFRETscatter} Scatter plot of the fitted 
+\caption{{\label{fig:fittedFRETscatter} Scatter plot of the fitted
 $E_{PR}$, $S_u$ peak
 position in the different spots for the D-only (\emph{orange cross})
 and FRET population (\emph{blue plus}).}}
@@ -548,47 +570,30 @@ fine alignment is achieved by matching the center position of the D-SPAD
 the center of the green LCOS reference.
 
 \section{Appendix: ALEX and PAX}
-\label{sec:alex_pax} 
+\label{sec:alex_pax}
 
-Among the solution-based single-molecule FRET
-(smFRET) methods, \emph{microsecond alternated excitation}
-(\usalex is one of the most powerful methods.
-In \usalex two exciting lasers are alternated with a period of a
-few tens of \microsec and the fluorescent emission is detected in two
-spectral bands (donor and acceptor, or D and A) by two separate
-detectors. Using two alternating lasers for excitation, a family of
-techniques dubbed ALEX\cite{Kapanidis_2005}, allows separating singly- from
-doubly-labeled species, greatly extending the range of subpopulations
-that is possible to resolve in a given sample. As an example, dual-laser
-excitation allows separating D-only from zero or low FRET species that would
-be indistinguishable with only a single excitation laser.
-
-smFRET \emph{periodic acceptor excitation} (smFRET-PAX)
-\cite{Doose_2007} is a technique closely related to \usalex,
-where the D laser is constantly ON and the A laser is alternated. This
-approach allows simplifying the optical setup while maintaining the same
-advantages of \usalex, namely the ability to resolve species based
-on the number of attached dyes.
-
-In ALEX we have two alternation periods \(D_{ex}\) and
-\(A_{ex}\) (respectively D or A excitation) and two (D and A)
-detectors. This results in four basic photon streams named
-\(F_{DexDem}, F_{DexAem}, F_{AexDem}, F_{AexAem}\). The \(F_{AexDem}\) stream only contains
+In ALEX we have two alternation periods $D_{ex}$ and
+$A_{ex}$ (respectively D or A excitation) and two
+detectors (D and A). This results in four basic photon streams named
+${ex}D_{em}}, {D_{ex}A_{em}}, {A_{ex}D_{em}}, {A_{ex}A_{em}}$.
+The $A_{ex}D_{em}$ stream only contains
 background because there is no fluorescent emission in the D spectral
 band during A-laser excitation. For simplicity, we assume here and in
 the following that all the quantities are corrected for
 background\cite{Ingargiola_2016}.
 
-Similarly to ALEX, in PAX we have two (D and A) detectors and two laser
-alternation periods for D and D+A excitations, named \(D_{ex}\)
-and \({DA}_{ex}\) respectively. As in ALEX, combining the two
-excitation periods and the two detectors, we obtain four basic PAX
-photon streams named \(F_{DexDem}, F_{DexAem}, F_{DAexDem}, F_{DAexAem}\). Formally, the only difference
-with the ALEX photon stream is that \(A_{ex}\) in ALEX is
-replaced with \(DA_{ex}\) in PAX. Differently from ALEX, however,
+A PAX setup has two detectors (D and A) but only one alternating laser (A).
+We can still define two periods, one when only the D laser is on ($D_{ex}$)
+and one when both lasers are on (${DA}_{ex}$).
+As in ALEX, combining the two
+excitation periods and the two detectors leads to four basic PAX
+photon streams: $D_{ex}D_{em}, D_{ex}A_{em}, DA_{ex}D_{em}, A_{ex}A_{em}$.
+Formally, the only difference
+with the ALEX photon stream is that $A_{ex}$ in ALEX is
+replaced with $DA_{ex}$ in PAX. Differently from ALEX, however,
 all four photon streams in PAX contain useful fluorescent signal. In
-particular, \(F_{DAexDem}\) contains D fluorescence due to D laser
-excitation, while the corresponding term \(F_{AexDem}\) in ALEX
+particular, $DA_{ex}D_{em}$ contains D fluorescence due to D laser
+excitation, while the corresponding term $A_{ex}D_{em}$ in ALEX
 contains only background as noted before. With this notation, in both
 ALEX and PAX, we can define the total signal during D excitation
 (e.g.~burst size):
