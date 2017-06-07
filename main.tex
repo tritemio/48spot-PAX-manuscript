@@ -96,7 +96,7 @@ Among the solution-based single-molecule FRET
 (smFRET) methods, \emph{microsecond alternated excitation}
 ({\usalex}) is one of the most powerful.
 In {\usalex} two exciting lasers are alternated with a period of a
-few tens of \microsec and the fluorescent emission is detected in two
+few tens of {\microsec} and the fluorescent emission is detected in two
 spectral bands (donor and acceptor, or D and A) by two separate
 detectors. Using two alternating lasers for excitation, a family of
 techniques dubbed ALEX\cite{Kapanidis_2005}, allows separating singly- from
@@ -126,7 +126,7 @@ for polarization and intensity control, as the polarization orientation
 needs to be aligned along the direction required by the LCOS-SLM. The
 628 nm laser is directed through an acousto-optical modulator (P/N 48058
 PCAOM, electronics: P/N 64048-80-.1-4CH-5M, Neos Technology, Melbourne,
-FL, USA) used for \textgreek{μ}s time-scale modulation, while the 532~nm
+FL, USA) used for {\microsec} time-scale modulation, while the 532~nm
 laser is unmodulated.
 Each laser goes through a first beam expander (Keplerian
 telescope, doublet lenses: 50~mm and 250~mm focal lengths). Two periscopes
@@ -134,34 +134,34 @@ bring the beams to a raised optical breadboard where a microscope body
 (X71, Olympus Corporation, Japan) is fixed with its bottom port sitting
 over a circular aperture. Past the periscope, each beam goes through a
 second adjustable beam expander (3X, P/N 59-131, Edmund Optics Inc.).
-The red laser is reflected off mirrors \(M1_R\) and
-\(M2_R\) and phase-modulated by the ``red'' LCOS-SLM (P/N
+The red laser is reflected off mirrors $M1_R$ and
+$M2_R$ and phase-modulated by the ``red'' LCOS-SLM (P/N
 X10468-07, Hamamatzu, Japan), before passing through the dichroic mirror
-\(D_{MIX}\). The green laser is reflected off \(M3\),
+$D_{MIX}$. The green laser is reflected off $M3$,
 phase-modulated by the ``green'' LCOS-SLM (P/N X10468-01, Hamamatzu),
 and combines with the red excitation via the dichroic mirror
-\(D_{MIX}\) (T550LPXR, Chroma Technology Corp, VT, USA). Both
-beams are recollimated by the \(L3\) lens (f=250mm,
+$D_{MIX}$ (T550LPXR, Chroma Technology Corp, VT, USA). Both
+beams are recollimated by the $L3$ lens (f=250mm,
 AC508-250-A, Thorlabs) and focused into the sample by an high-NA
 objective lens (UAPOPlan 60x, NA 1.2, Olympus) after being reflected off
-the excitation dichroic mirror \(DM_{EX}\) (Brightline
+the excitation dichroic mirror $DM_{EX}$ (Brightline
 FF545/650-Di01, Semrock Inc., NY, USA). The excitation pattern forms a
 dual-color 12x4 array of spots into the sample matching the geometry of
 the two SPAD arrays. The fluorescence emission is collected by the same
 objective lens, passes through the excitation dichroic
-\(DM_{EX}\) and is focused by the microscope tube lens either on
+$DM_{EX}$ and is focused by the microscope tube lens either on
 the side or the bottom port of the microscope. The side port mounts an
 sCMOS camera (Grasshopper3 GS3-U3-23S6M-C, FLIR Integrated Imaging
 Solutions Inc., BC, Canada) used during alignment while the bottom port
 redirects the beams toward the emission path. Here, a relay lens
-\(L4\) (f=100mm, AC254-100-A, Thorlabs) recollimates the
-image and sends it to an emission dichroic mirror \(D_{EM}\)
+$L4$ (f=100mm, AC254-100-A, Thorlabs) recollimates the
+image and sends it to an emission dichroic mirror $D_{EM}$
 (Brightline Di02-R635, Semrock), which splits the signal into a donor
 (D) and acceptor (A) spectral bands. The D path goes through a band-pass
 filter (Brightline FF01-582/75, Semrock) which removes residual 628~nm
 laser leakage and helps suppressing any Raman scattering from the 532~nm
-laser. Both D and A paths are refocused by lenses \(L5_D\) /
-\(L5_A\) (f=150mm, AC254-150-A, Thorlabs) on two 48-pixels
+laser. Both D and A paths are refocused by lenses $L5_D$ /
+$L5_A$ (f=150~mm, AC254-150-A, Thorlabs) on two 48-pixels
 SPAD arrays\cite{Gulinatti_2013} (denoted as donor and acceptor SPAD in the
 following).
 
@@ -177,7 +177,7 @@ of the SPAD arrays.
 Each SPAD arrays is equipped with an USB 2.0 connection for time-binned
 counting and humidity control. In addition, a standard SCSI connector
 includes 48 independent outputs providing a pulse for every detected
-photon in each pixel \cite{Gulinatti_2013}. The two SCSI ports are fed
+photon in each pixel\cite{Gulinatti_2013}. The two SCSI ports are fed
 through a custom adapter to an FPGA-based acquisition board (FPGA board:
 PXI-7813R, rack: PXI-1000B, National Instruments, Austin, TX) which
 performs timestamping with 12.5~ns resolution in parallel on the 96
@@ -224,35 +224,35 @@ alignment}
 The 3x monolithic beam expanders have an adjustment ring used to adjust
 the beam collimation. A simple way to ensure beam collimation is sending
 the beam into the microscope through the excitation dichroic, removing
-the external recollimation lens \(L3\) and the objective
+the external recollimation lens $L3$ and the objective
 lens, while placing a mirror on the sample holder and using the LCSO-SLM
 as a mirror (i.e.~with a constant phase pattern). Using the camera on
 the microscope output port, we adjust the collimation until a tight spot
 is formed. After adjusting the collimation, each beam needs to be
 aligned so that the peak intensity is at the center of the optical axis.
-To this end, without the recollimating lens \(L3\), an iris
-\(I2\) is placed before the beam enters the microscope side
+To this end, without the recollimating lens $L3$, an iris
+$I2$ is placed before the beam enters the microscope side
 port. Using an aperture of 1-2 mm, only a narrow beamlet goes through
 the objective and generates a spot from the cover-glass reflection. Only
 when the input beam is parallel to the optical axis, the spot is in the
 center of the field of view, assumed to be on cross-hair center in the
 microscope's eyepiece. In order to make the input beams parallel to the
 optical axis, the last mirrors before the microscope is adjusted
-(\(M2_R\) for the red and \(DM_{MIX}\) for the green
+($M2_R$ for the red and $DM_{MIX}$ for the green
 laser). Defocusing the spot, we obtain symmetrical concentric patterns
 only if the input beamlet intersects with the optical axis at the back
 aperture of the objective lens. Since the direction is already fixed, we
-move the \(I2\) iris to obtain the most radially-symmetric
+move the $I2$ iris to obtain the most radially-symmetric
 defocused pattern. In this way the beamlet that goes through
-\(I2\) coincides with the microscope optical axis. The last
+$I2$ coincides with the microscope optical axis. The last
 steps is translating laterally the input beams (without changing the
 incidence angle) in order to place the intensity peak on the iris
 center. Alignment of beam direction and iris need to be repeated a until
 convergence. After that, both beams are (to a good approximation)
 parallel and concentric with the optical axis. When placing
-\(L3\) a spot is formed at a different focus position.
-\(L3\) can be aligned assuring that this new spot is a the
-same position of the spot obtained without \(L3\).
+$L3$ a spot is formed at a different focus position.
+$L3$ can be aligned assuring that this new spot is a the
+same position of the spot obtained without $L3$.
 
 \subsection{Coalignment of Green and Red
 patterns}
@@ -287,7 +287,7 @@ analysis notebook can be found in
 Finally, in order to reduce the background due to unmodulated light, two
 custom-made rectangular slits (aluminum with black finish) are added in
 the path before each LCOS. The slits are aligned to illuminate only the
-12x4 pattern (\(\pm\)1mm) on the LCOS-SLM.
+12x4 pattern (\(\pm\)1~mm) on the LCOS-SLM.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{{figures/2017-04-28_conf9_G_conf14_R_green_red_pattern_and_fit}}
@@ -295,7 +295,7 @@ the path before each LCOS. The slits are aligned to illuminate only the
 The 12x4 multispot pattern for green (A) and red (B)
 excitation and Gaussian fit of the spots (C). The pattern is acquired by
 a camera on the microscope side port using a solution of ATTO550 and
-ATTO647N at high concentration (\(\sim\)100nM). Emission due
+ATTO647N at high concentration (\(\sim\)100~nM). Emission due
 to 532~nm and 628~nm laser is acquired with two subsequent acquisition and
 reported in false-colors in panels (A) and (B). To assess the alignment,
 each spot in the two images is fitted with a 2D Gaussian function. Panel
@@ -322,7 +322,7 @@ and rotation of the excitation pattern to optimally match the detectors'
 geometry.
 
 For alignment we use an high concentration dye mixture (ATTO550,
-ATTO647N, \textasciitilde{}500~nM) that is excited by both lasers. With
+ATTO647N, $\sim$500~nM) that is excited by both lasers. With
 this sample the 532~nm laser yields fluorescence signal in both D and A
 channel, while the 628~nm laser only yields signal in the A channel. The
 center of the excitation pattern for both 532~nm and 628~nm laser is
