@@ -26,8 +26,8 @@
 %sd,%
 rsi,%
  amsmath,amssymb,
-%preprint,%
- reprint,%
+preprint,%
+% reprint,%
 %author-year,%
 %author-numerical,%
 ]{revtex4-1}
@@ -95,14 +95,15 @@ Valid PACS numbers may be entered using the \verb+\pacs{#1}+ command.
 \end{figure*}
 
 The setup (Fig. \ref{fig:setup}) comprises two excitation CW lasers at
-532nm and 628nm (2RU-VFL-Series, MPB Communications Inc., QC, Canada).
+532~nm and 628~nm (2RU-VFL-Series, MPB Communications Inc., QC, Canada).
 For each laser, a half-waveplate and polarizing beam splitter are used
 for polarization and intensity control, as the polarization orientation
 needs to be aligned along the direction required by the LCOS-SLM. The
 628 nm laser is directed through an acousto-optical modulator (P/N 48058
 PCAOM, electronics: P/N 64048-80-.1-4CH-5M, Neos Technology, Melbourne,
-FL, USA) used for \textgreek{μ}s time-scale modulation, while the 532nm laser is
-unmodulated. Each laser goes through a first beam expander (Keplerian
+FL, USA) used for \textgreek{μ}s time-scale modulation, while the 532~nm 
+laser is unmodulated. 
+Each laser goes through a first beam expander (Keplerian
 telescope, doublet lenses: 50~mm and 250~mm focal lengths). Two periscopes
 bring the beams to a raised optical breadboard where a microscope body
 (X71, Olympus Corporation, Japan) is fixed with its bottom port sitting
@@ -110,7 +111,7 @@ over a circular aperture. Past the periscope, each beam goes through a
 second adjustable beam expander (3X, P/N 59-131, Edmund Optics Inc.).
 The red laser is reflected off mirrors \(M1_R\) and
 \(M2_R\) and phase-modulated by the ``red'' LCOS-SLM (P/N
-X10468-07, Hamamatzu, Japan), before passign through the dichroic mirror
+X10468-07, Hamamatzu, Japan), before passing through the dichroic mirror
 \(D_{MIX}\). The green laser is reflected off \(M3\),
 phase-modulated by the ``green'' LCOS-SLM (P/N X10468-01, Hamamatzu),
 and combines with the red excitation via the dichroic mirror
@@ -131,16 +132,16 @@ redirects the beams toward the emission path. Here, a relay lens
 \(L4\) (f=100mm, AC254-100-A, Thorlabs) recollimates the
 image and sends it to an emission dichroic mirror \(D_{EM}\)
 (Brightline Di02-R635, Semrock), which splits the signal into a donor
-(D) and acceptor (A) spectral bands. The D path goes thorugh a band-pass
-filter (Brightline FF01-582/75, Semrock) which removes residual 628nm
-laser leakage and helps suppressing any Raman scattering from the 532nm
+(D) and acceptor (A) spectral bands. The D path goes through a band-pass
+filter (Brightline FF01-582/75, Semrock) which removes residual 628~nm
+laser leakage and helps suppressing any Raman scattering from the 532~nm
 laser. Both D and A paths are refocused by lenses \(L5_D\) /
 \(L5_A\) (f=150mm, AC254-150-A, Thorlabs) on two 48-pixels
 SPAD arrays\cite{Gulinatti_2013} (denoted as donor and acceptor SPAD in the
 following).
 
-Both SPAD arrays are place on 3-axis micropositioners. The directions
-orthogonal to the optical axis (X-Y) are controlled by piezo actuators\\
+Both SPAD arrays are place on 3-axis micro-positioners. The directions
+orthogonal to the optical axis (X-Y) are controlled by piezo actuators
 (actuators: Newport 8302; drivers: Newport 8752 \& 8753; Newport
 Corporation, Irvine, CA, USA). The third axis (Z) has manual actuators
 since the requirements on the Z directions are much less stringent than
@@ -189,7 +190,7 @@ the excitation pattern (which has a maximum extension of 5mm). To ensure
 optical axis.
 
 In addition, (c) the excitation pattern of the two laser need to be
-coaligned so that, for each spot, there is a maximum overlap between D
+aligned so that, for each spot, there is a maximum overlap between D
 and A excitation volumes.
 
 \subsection{Individual laser
@@ -204,10 +205,10 @@ as a mirror (i.e.~with a constant phase pattern). Using the camera on
 the microscope output port, we adjust the collimation until a tight spot
 is formed. After adjusting the collimation, each beam needs to be
 aligned so that the peak intensity is at the center of the optical axis.
-To this end, without the recollimating len \(L3\), an iris
+To this end, without the recollimating lens \(L3\), an iris
 \(I2\) is placed before the beam enters the microscope side
 port. Using an aperture of 1-2 mm, only a narrow beamlet goes through
-the objective and generates a spot from the coverglass reflection. Only
+the objective and generates a spot from the cover-glass reflection. Only
 when the input beam is parallel to the optical axis, the spot is in the
 center of the field of view, assumed to be on cross-hair center in the
 microscope's eyepiece. In order to make the input beams parallel to the
@@ -232,7 +233,7 @@ same position of the spot obtained without \(L3\).
 patterns}
 
 Starting with the green LCOS-SLM, we project a multispot pattern into a
-high concentration solution of dyes (100nM - 1\selectlanguage{greek}μ\selectlanguage{english}M) used for alignment.
+high concentration solution of dyes (100~nM - 1\textgreek{μ}M) used for alignment.
 Using a square grid of spots with an odd number of spot per side
 (i.e.~9x9) ensures that one spot is at the center of the pattern. The
 camera on the side-port detects an image of the pattern. The centering
@@ -249,7 +250,7 @@ changed anymore and its center becomes a reference for the optical axis
 position.
 
 Next, we activate the red LCOS-SLM and project a multispot pattern
-excited by the 628nm laser. Using the camera we align the red pattern to
+excited by the 628~nm laser. Using the camera we align the red pattern to
 the green one used as reference. A first rough adjustment of red
 LCOS-SLM pattern is manually performed by looking at the emission
 pattern on the live camera display. Then, the center position red
@@ -270,11 +271,11 @@ The 12x4 multispot pattern for green (A) and red (B)
 excitation and Gaussian fit of the spots (C). The pattern is acquired by
 a camera on the microscope side port using a solution of ATTO550 and
 ATTO647N at high concentration (\(\sim\)100nM). Emission due
-to 532nm and 628nm laser is acquired with two subsequent acquisition and
+to 532~nm and 628~nm laser is acquired with two subsequent acquisition and
 reported in false-colors in panels (A) and (B). To assess the alignment,
 each spot in the two images is fitted with a 2D Gaussian function. Panel
 (C) reports an overlays of the fitted peak positions peak positions and
-contour of the Gaussian waist for 532nm (\emph{green}) and 628nm
+contour of the Gaussian waist for 532~nm (\emph{green}) and 628~nm
 (\emph{red}) images. A zoom-in for 3 representative spots is reported on
 the right. The elliptical shape of the Gaussian and their rotation is
 due to geometrical aberrations.%
@@ -296,10 +297,10 @@ and rotation of the excitation pattern to optimally match the detectors'
 geometry.
 
 For alignment we use an high concentration dye mixture (ATTO550,
-ATTO647N, \textasciitilde{}500nM) that is excited by both lasers. With
-this sample the 532nm laser yields fluorescence signal in both D and A
-channel, while the 628nm laser only yields signal in the A channel. The
-center of the excitation pattern for both 532nm and 628nm laser is
+ATTO647N, \textasciitilde{}500~nM) that is excited by both lasers. With
+this sample the 532~nm laser yields fluorescence signal in both D and A
+channel, while the 628~nm laser only yields signal in the A channel. The
+center of the excitation pattern for both 532~nm and 628~nm laser is
 pre-determined from the need of minimizing geometrical aberrations as
 described in previous section \ref{sec:laseralign}. Therefore the
 excitation pattern position is used as reference to align the SPADs.
@@ -404,7 +405,7 @@ calibration. - \textbf{Figure}: 48-spot ALEX histograms showing only
 FRET populations for a mixture.
 
 \begin{figure*}
-\includegraphics[width=0.70\textwidth]{{figures/2017-05-23_08_12d_phrates_summary}}
+\includegraphics[width=0.9\textwidth]{{figures/2017-05-23_08_12d_phrates_summary}}
 \caption{{\label{fig:pharates48_comp} Peak photon rate in each of the 48 spots for the 12
 dsDNA sample. Panel A: full distribution of peak photon rates. Panels
 B-E: Mean of the peak photon rate distribution in the different photon
@@ -415,7 +416,7 @@ steams. Color indicate different photon streams as follows: green
 \end{figure*}
 
 \begin{figure*}
-\includegraphics[width=0.70\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
+\includegraphics[width=0.9\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
 \caption{{\label{fig:alexhist48all} $E_{PR}$ versus $S_u$
 histograms for the different spots for the 12d dsDNA sample. Two
 populations visible D-only (cluster at \(E_{PR}=0\),
@@ -429,7 +430,7 @@ on the total burst size after background correction with a threshold of
 \end{figure*}
 
 \begin{figure*}
-\includegraphics[width=0.70\textwidth]{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_naa_AND_size_selection}}
+\includegraphics[width=0.9\textwidth]{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_naa_AND_size_selection}}
 \caption{{\label{fig:alexhist48fret} \(E_{PR}\) versus \(S_u\)
 histograms for the different spots for the 12d dsDNA sample. Data and
 burst search is identical as in figure~\ref{fig:alexhist48all}, while
@@ -442,7 +443,7 @@ reports spot number ($[\cdot]$) and number of bursts (\#B).%
 \end{figure*}
 
 \begin{figure}
-\includegraphics[width=0.8\columnwidth]{{figures/2017-05-23_08_12d_FRET_vs_DO_fitted_E-Su_peak_position}}
+\includegraphics[width=0.7\columnwidth]{{figures/2017-05-23_08_12d_FRET_vs_DO_fitted_E-Su_peak_position}}
 \caption{{\label{fig:fittedFRETscatter} Scatter plot of the fitted 
 $E_{PR}$, $S_u$ peak
 position in the different spots for the D-only (\emph{orange cross})
@@ -450,7 +451,7 @@ and FRET population (\emph{blue plus}).}}
 \end{figure}
 
 \begin{figure*}
-\includegraphics[width=0.70\textwidth]{{figures/2017-05-05_05_12d_48-spot_E-Su_peak_position_deviation_from_mean}}
+\includegraphics[width=0.9\textwidth]{{figures/2017-05-05_05_12d_48-spot_E-Su_peak_position_deviation_from_mean}}
 \caption{{\label{fig:fretfit48vsmean} Fitted FRET peak position (\(E_{PR}, S_u\),
 \emph{blue dots}) and \(\pm 1 \sigma \) of the fitted Gaussian
 (\emph{blue error bars}) for the 48 spots. As a reference, the mean
@@ -508,7 +509,7 @@ the detector to within 0.01 LCOS units.
 In practice, alignment of both SPADs to excitation patterns requires
 multiple steps. First the D-SPAD is scanned for precise location of
 pixel centers using the reference green LCOS configuration from pattern
-alignment. The 4x4 LCOS pattern is excited with the 532nm laser and
+alignment. The 4x4 LCOS pattern is excited with the 532~nm laser and
 excitation spots are used to scan the X and Y locations of pixels at the
 center of the D-SPAD. The D-SPAD is moved in LCOS units to match the
 center of the green LCOS. After each movement, scans are performed in
@@ -519,11 +520,11 @@ SPADs}\label{fine-x-y-alignment-of-spads}
 
 After alignment of the D-SPAD is fixed as previously described, the
 A-SPAD is aligned to the D-SPAD by using the reference position of the
-green LCOS under 532nm illumination and moving the A-SPAD with picomotor
+green LCOS under 532~nm illumination and moving the A-SPAD with picomotor
 control. This step is repeated until center positions of the green LCOS
 and A-SPAD converge. Once the centers are matched, the position of the
 A-SPAD is fixed. The fixed center position of the A-SPAD is tested with
-the red LCOS under 628nm excitation, and the center location of the red
+the red LCOS under 628~nm excitation, and the center location of the red
 LCOS is adjusted to maximize overlap of both detectors. It is important
 to note that due to spatial constraints the center position of the
 A-SPAD can not be adjusted after it is aligned with respect to the green
