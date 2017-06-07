@@ -42,6 +42,9 @@ preprint,%
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[polutonikogreek,english]{babel}
+\usepackage{hyperref}
+\hypersetup{pdftex,colorlinks=true,allcolors=blue}
+\usepackage{hypcap}
 
 \newcommand{\microsec}{\textgreek{μ}s}
 \newcommand{{\usalex}}{smFRET-\textgreek{μ}sALEX}
@@ -598,81 +601,81 @@ contains only background as noted before. With this notation, in both
 ALEX and PAX, we can define the total signal during D excitation
 (e.g.~burst size):
 
-\[
+\begin{equation}
 \Lambda = {F_{D_{ex}D_{em}} + F_{FRET}}
 \label{eq:burstsize_raw}
-\]
+\end{equation}
 
 and the \(\gamma\) corrected version\cite{Lee_2005,Ingargiola_2016,Ingargiola_2017}:
 
-\[
+\begin{equation}
 \Lambda_\gamma = {\gamma\,F_{D_{ex}D_{em}} + F_{FRET}}
 \label{eq:burstsize}
-\]
+\end{equation}
 
 where \(F_{FRET}\) is equal to \(F_{DexAem}\) after
 D-leakage and A-direct-excitation corrections:
 
-\[
+\begin{equation}
 F_{FRET} = F_{D_{ex}A_{em}} - Lk\,F_{D_{ex}D_{em}} - Dir
 \label{eq:F_FRET}
-\]
+\end{equation}
 
 With this definitions, we can write the proximity ratio
 \(E_{PR}\) and FRET efficiency \(E\) expression
 (valid for both ALEX and PAX):
 
-\[
+\begin{equation}
 E_{PR} = \frac{F_{FRET}}{\Lambda}
 \label{eq:Epr}
-\]
+\end{equation}
 
-\[
+\begin{equation}
 E = \frac{F_{FRET}}{\Lambda_\gamma}
 \label{eq:E}
-\]
+\end{equation}
 
 While eq.~\ref{eq:Epr} and~\ref{eq:E} are exactly the same for both ALEX
 and PAX, the \(S\) expression is slightly different. In
 ALEX we define \(S\) as:
 
-\[
+\begin{equation}
 S = \frac{\Lambda}{\Lambda + F_{AexAem}}
 \label{eq:S}
-\]
+\end{equation}
 
 and the corrected version \(S_{\gamma\beta}\) as:
 
-\[
+\begin{equation}
 S_{\gamma\beta} = \frac{\Lambda_\gamma}
 {\Lambda_\gamma + \frac{F_{AexAem}}{\beta}}
 \label{eq:Sgb}
-\]
+\end{equation}
 
 In PAX, we do not measure the \(F_{AexAem}\) stream, but we can
 compute it as:
 
-\[
+\begin{equation}
 \tilde{F}_{AexAem} = F_{DAexAem} - F_{DexAem}
 \label{eq:pax_Faa}
-\]
+\end{equation}
 
 Using eq.~\ref{eq:pax_Faa}, the expressions for \(S\) and
 \(S_{\gamma\beta}\) become formally identical to eq.~\ref{eq:S} and
 \ref{eq:Sgb} were the only difference is replacing \(F_{AexAem}\)
 with \(\tilde{F}_{AexAem}\):
 
-\[
+\begin{equation}
 S = \frac{\Lambda}
 {\Lambda + \tilde{F}_{AexAem}}
 \label{eq:Spax}
-\]
+\end{equation}
 
-\[
+\begin{equation}
 S_{\gamma\beta} = \frac{\Lambda_\gamma}
 {\Lambda_\gamma + \frac{\tilde{F}_{AexAem}}{\beta}}
 \label{eq:Sgb_pax}
-\]
+\end{equation}
 
 In PAX we can take advantage of the additional signal in
 \(F_{AexDem}\) and derive an equivalent set of PAX-enhanced
@@ -681,43 +684,43 @@ start extending the definitions of the total FRET signal of
 eq.~\ref{eq:burstsize_raw} and~\ref{eq:burstsize} by including
 \(F_{AexDem}\) as follows:
 
-\[
+\begin{equation}
 \Lambda_{PAX} = {F_{DexDem} + F_{AexDem} + 2 F_{FRET}}
 \label{eq:burstsizerawpaxe}
-\]
+\end{equation}
 
-\[
+\begin{equation}
 \Lambda_{\gamma,PAX} = {\gamma\,(F_{DexDem} + F_{AexDem}) + 2 F_{FRET}}
 \label{eq:burstsize_paxe}
-\]
+\end{equation}
 
 Based on eq.~\ref{eq:burstsizerawpaxe} and \ref{eq:burstsize_paxe}, we
 can write PAX-enhanced expressions for \(E\) and
 \(S\):
 
-\[
+\begin{equation}
 E_{PR,PAX} = \frac{2\,F_{FRET}}
 {\Lambda_{PAX}}
 \label{eq:Epr_paxe}
-\]
+\end{equation}
 
-\[
+\begin{equation}
 E_{PAX} = \frac{2\,F_{FRET}}
 {\Lambda_{\gamma,PAX}}
 \label{eq:Epaxe}
-\]
+\end{equation}
 
-\[
+\begin{equation}
 S = \frac{\Lambda_{PAX}}
 {\Lambda_{PAX} + \tilde{F}_{AexAem}}
 \label{eq:Spaxe}
-\]
+\end{equation}
 
-\[
+\begin{equation}
 S_{\gamma\beta,PAX} = \frac{\Lambda_{\gamma,PAX}}
 {\Lambda_{\gamma,PAX} + \frac{2\tilde{F}_{AexAem}}{\beta}}
 \label{eq:Sgb_paxe}
-\]
+\end{equation}
 
 
 Eq.~\ref{eq:Epr_paxe}, \ref{eq:Epaxe}, \ref{eq:Spaxe}
@@ -734,11 +737,11 @@ By replacing \(\tilde{F}_{AexAem}\) with \(F_{AexDAem}\) in eq.
 \ref{eq:Spax}, we can define a modified stoichiometry \(S_u\)
 as follows
 
-\[
+\begin{equation}
 S_u = \frac{\Lambda}
 {\Lambda + F_{AexDAem}}
 \label{eq:Su}
-\]
+\end{equation}
 
 This expression avoids the subtraction of photon counts necessary to
 compute \(\tilde{F}_{AexAem}\) in PAX (eq.~\ref{eq:pax_Faa}) and the
@@ -772,18 +775,18 @@ The gamma-factor of each channel \(\gamma_{ch}\) can be factorized in
 an average factor \(\gamma_m\) and a spot-specific adjustment
 \(\chi_{ch}\):
 
-\[
+\begin{equation}
 \gamma_{ch} = \gamma_m \cdot \chi_{ch}
 \label{eq:gamma_split}
-\]
+\end{equation}
 
 The factor \(\chi_{ch}\) can be easily computed from measurable
 quantities according to the following expression:
 
-\[
+\begin{equation}
 \chi_{ch} = \frac{\frac{1}{\langle E_{PR\,ch} \rangle_{ch}} - 1}{\frac{1}{E_{PR\,ch}} - 1}
 \label{eq:chich}
-\]
+\end{equation}
 
 In eq.~\ref{eq:chich}, \(E_{PR\,ch}\) is the population-level
 proximity ratio for a specific channel, and \( \langle E_{PRch} \rangle_{ch} \) is the
@@ -795,33 +798,33 @@ below. We start from the well known relation between \(E\)
 and \(E_{PR}\) when only \(\gamma\) correction is
 considered:
 
-\[
+\begin{equation}
 E = \frac{1}{1 + \gamma \left( \frac{1}{E_{PR}} - 1 \right)}
 \label{eq:EfuncEpr}
-\]
+\end{equation}
 
 Inverting eq.~\ref{eq:EfuncEpr} we obtain:
 
-\[
+\begin{equation}
 \gamma = \frac{\frac{1}{E} - 1}{\frac{1}{E_{PR}} - 1}
 \label{eq:gamma_funcEEpr}
-\]
+\end{equation}
 
 Formally, we can define \(\gamma = \gamma_1 \gamma_2 \) and a partially corrected
 proximity ratio \(E_1\) as:
 
-\[
+\begin{equation}
 E_1 = \frac{1}{1 + \gamma_1 \left( \frac{1}{E_{PR}} - 1 \right)}
-\]
+\end{equation}
 
 Then, we can express \(E\) as a function of the partially
 corrected \(E_{1}\) by a simple substitution of
 \ref{eq:gamma_funcEEpr} into eq.~\ref{eq:EfuncEpr}:
 
-\[
+\begin{equation}
 E = \frac{1}{1 + \gamma_2 \left( \frac{1}{E_1} - 1 \right)}
 \label{eq:EfuncE1}
-\]
+\end{equation}
 
 Eq.~\ref{eq:EfuncE1} shows that gamma corrections are composable. In the
 multispot case, we apply this property to split the gamma correction in
@@ -837,26 +840,26 @@ equivalent to \ref{eq:EfuncEpr} for \(S\) and
 \(S_{\gamma\beta}\). Dropping the \(\gamma\) subscript, we
 obtain:
 
-\[
+\begin{equation}
 S_{\beta} = \frac{1}{1 + \frac{1}{\beta} \left( \frac{1}{S} - 1 \right)}
 \label{eq:SbfuncS}
-\]
+\end{equation}
 
 Following the same arguments as in previous section, we can factorize
 the beta correction in a spot-average \(\beta_m\) and a
 per-channel correction \(\beta_{ch}\) as follows:
 
-\[
+\begin{equation}
 \beta = \beta_m \, \beta_{ch}
 \label{eq:beta_factor}
-\]
+\end{equation}
 
 Analogously to eq.~\ref{eq:chich}, we can compute \(\beta_{ch}\) as:
 
-\[
+\begin{equation}
 \frac{1}{\beta_{ch}} = \frac{\frac{1}{\langle S_{ch} \rangle_{ch}} - 1}{\frac{1}{S_{ch}} - 1}
 \label{eq:betach}
-\]
+\end{equation}
 
 where \(S_{ch}\) is the population-level non-beta-corrected
 stoichiometry for a specific channel, and \( \langle S_{ch} \rangle_{ch} \) is the
