@@ -460,7 +460,8 @@ can be found in section~\ref{sec:alex_pax}.
 Peak photon rate in each of the 48 spots for the 12d dsDNA sample.
 Panel A: full distribution of peak photon rates. Panels
 B-E: Mean of the peak photon rate distribution in the different photon
-steams.
+steams. Two lateral spots in the second exhibit no signal because of
+two malfunctioning pixels in the D-SPAD array.
 Colors indicate different photon streams.
 Green $D_{ex}D_{em}$, red $D_{ex}A_{em}$, light blue $DA_{ex}D_{em}$,
 purple $DA_{ex}A_{em}$.%
@@ -469,7 +470,7 @@ purple $DA_{ex}A_{em}$.%
 
 \begin{figure}
 \includegraphics[width=0.8\columnwidth]{{figures/2017-06-02_002_12d_usALEX_peak_phrate}}
-\caption{{\label{fig:pharates_usalex}
+\caption{{\label{fig:phrates_usalex}
 Distribution of peak photon rates in a single-spot {\usalex} measurement
 of the 12d dsDNA sample.
 Colors indicate different photon streams.
@@ -485,17 +486,26 @@ as D detector (50~{\micron} diameter, PDM Series, Micro Photon Devices
 Bolzano, Italy) realized in a similar technology as the SPAD arrays used in this work
 
 SPAD (Microphon) (setup in ref.~\onlinecite{Ingargiola_2017}).
+
 We start by analysis the peak photon rate reached in each burst,
 a quantity scaling with the peak PSF intensity\cite{Ingargiola_2017}.
-Fig.~\ref{fig:pharates48_comp} shows the background-corrected peak photon-rate
+Fig.~\ref{fig:phrates48_comp} shows the background-corrected peak photon-rate
 in each burst for the 48 spots. Panel A shows the full peak photon rate
 distributions with its characteristic exponential tail.
 Panel B-E show heatmaps of the peak photon-rate mean value
 (i.e. the decay constant of the exponential tail)
 for the different photon streams.
-In addition, fig.~\ref{fig:pharates_usalex} shows the distribution
+We note the intensity profile tapers off on the lateral pixels, an effect
+Due to the Gaussian profile of the excitation beam and to geometrical
+aberrations the lateral pixels recive a lower signal than the central ones.
+This results in a smaller number of detected single-molecule bursts in
+the lateral spots.
+
+Fig.~\ref{fig:phrates_usalex} shows the distribution
 of peak photon rates as obtained with the {\usalex} setup.
-Due to the 2x lower sensitivity
+Comparing Fig.~\ref{fig:pharates48_comp} Panel~A and~\ref{fig:pharates_usalex}
+we note that the lower sensitivity in the A-SPAD array results in lower peak
+photon rate in the $D_{ex}A_{em}$ (red) and $DA_{ex}A_{em}$ (purple) streams.
 
 Take one sample (12d) as an example and show:
 
