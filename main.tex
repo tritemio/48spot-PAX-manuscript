@@ -208,7 +208,7 @@ PC available for acquiring the next set of data.
 \subsection{Detectors}
 \label{sec:detectors}
 
-The current 48-spot setup employs two 12x4-pixel SPAD arrays whose
+The current 48-spot setup employs two identical 12x4-pixel SPAD arrays whose
 architecture and performance has been presented in~\onlinecite{Gulinatti_2013}.
 The active area of each pixel is 50~{\micron} with a 500~{\micron} pitch.
 The photon detection efficiency (PDE) has a maximum of $\sim$45\%
@@ -216,8 +216,11 @@ at around 550~nm\cite{Gulinatti_2013}.
 
 \begin{figure}
 \includegraphics[width=0.4\textwidth]{figures/DCR-comp}
-\caption{{\label{fig:dcr} Maps of Dark Counting Rates (DCR) of the two 12x4
-SPAD arrays used in the current 48-spot smFRET-PAX setup.}}
+\caption{{\label{fig:dcr} Heatmaps of Dark Counting Rates (DCR) of the two 12x4
+SPAD arrays (D and A) used in the current 48-spot smFRET-PAX setup.
+DCR values are overlayed on each pixels. All values are in cps.
+More details and the data undeliyng this figure can be found in the
+\href{https://github.com/48-spot-paper-analysis}{48-spot-paper-analysis}.}}
 \end{figure}
 
 48-spot smFRET-PAX results were compared to state-of-the-art single-spot
@@ -226,16 +229,14 @@ This setup employs two single-pixel MPD SPADs.
 The D detector (50~{\micron} diameter, PDM Series, Micro Photon Devices
 Bolzano, Italy) is realized in a similar technology as the SPAD arrays used
 in this work. The A detector (50~{\micron} diameter, PDM-RE Series,
-Micro Photon Devices) employs a different "red-enhanced"
-process~\cite{gulinatti_planar_2011,panzeri_silicon_2011,panzeri_single-molecule_2013}.
-
-
-A detailed description if this
-setup is reported in~\onlinecite{Ingargiola_2017}.
-we compare 48
-. The single-spot setup employs a standard single-pixel SPAD
-as D detector (50~{\micron} diameter, PDM Series, Micro Photon Devices
-Bolzano, Italy) realized in a similar technology as the SPAD arrays used in this work
+Micro Photon Devices) employs a different "red-enhanced" (RE)
+process~\cite{gulinatti_planar_2011,panzeri_silicon_2011,panzeri_single-molecule_2013}
+characterized by a PDE with a peak of 70\% at 650~nm (roughly twice the
+sensitivity of the D-SPAD at the same wavelength).
+Due to the use of this RE SPAD, the {\usalex} setup is expected to be
+at least 2x more sensitive in the A-channel then the 48-spot setup.
+A deeper comparison of the different SPAD technologies
+is reported in~\onlinecite{michalet_silicon_2014}.
 
 
 \section{Laser alignment}\label{sec:laseralign}
