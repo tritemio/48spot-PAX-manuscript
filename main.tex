@@ -45,6 +45,7 @@ preprint,%
 \hypersetup{colorlinks=true,allcolors=blue}
 \usepackage[all]{hypcap}
 
+\newcommand{\micron}{\textgreek{μ}m}
 \newcommand{\microsec}{\textgreek{μ}s}
 \newcommand{{\usalex}}{smFRET-\textgreek{μ}sALEX}
 
@@ -202,6 +203,28 @@ host PC, the raw data is immediately transferred to a linux-based
 workstation via 1~Gb Ethernet link. The second workstation automatically
 performs conversion to Photon-HDF5 and data analysis, leaving the host
 PC available for acquiring the next set of data.
+
+
+\subsection{Detectors}
+\label{sec:detectors}
+
+The 48-spot setup employs two 12x4-pixels SPAD arrays~\cite{Gulinatti_2013}.
+The active area of each pixel is 50~{\micron} with a 500~{\micron} pitch.
+The photon detection efficiency (PDE) of these devices has a maximum of 45\%
+at around 550~nm\cite{Gulinatti_2013}.
+We compare 48-spot smFRET-PAX results with similar measurements obtained
+with a state-of-the-art {\usalex} setup.
+This setup employs a single-pixel SPAD
+as D detector (50~{\micron} diameter, PDM Series, Micro Photon Devices
+Bolzano, Italy) realized in a similar technology as the SPAD arrays used in this work
+
+A detailed description if this
+setup is reported in~\onlinecite{Ingargiola_2017}.
+we compare 48
+. The single-spot setup employs a standard single-pixel SPAD
+as D detector (50~{\micron} diameter, PDM Series, Micro Photon Devices
+Bolzano, Italy) realized in a similar technology as the SPAD arrays used in this work
+
 
 \section{Laser alignment}\label{sec:laseralign}
 
@@ -424,38 +447,62 @@ can be found in section~\ref{sec:alex_pax}.
 Peak photon rate in each of the 48 spots for the 12d dsDNA sample.
 Panel A: full distribution of peak photon rates. Panels
 B-E: Mean of the peak photon rate distribution in the different photon
-steams. Color indicate different photon streams as follows: green
-$D_{ex}D_{em}$, red $D_{ex}A_{em}$, light blue
-$DA_{ex}D_{em}$, purple $DA_{ex}A_{em}$.%
+steams.
+Colors indicate different photon streams.
+Green $D_{ex}D_{em}$, red $D_{ex}A_{em}$, light blue $DA_{ex}D_{em}$,
+purple $DA_{ex}A_{em}$.%
 }}
 \end{figure*}
 
 \begin{figure}
-\includegraphics[width=0.7\columnwidth]{{figures/2017-06-02_002_12d_usALEX_peak_phrate}}
+\includegraphics[width=0.4\columnwidth]{{figures/2017-06-02_002_12d_usALEX_peak_phrate}}
 \caption{{\label{fig:pharates_usalex}
 Distribution of peak photon rates in a single-spot {\usalex} measurement
 of the 12d dsDNA sample.
-Colors indicate different photon streams as follows: green
-$D_{ex}D_{em}$, red $D_{ex}A_{em}$, purple $A_{ex}A_{em}$.%
+Colors indicate different photon streams.
+Green $D_{ex}D_{em}$, red $D_{ex}A_{em}$,
+purple $A_{ex}A_{em}$.%
 }}
 \end{figure}
 
-Fig.~\ref{fig:pharates48_comp} shows the peak photon rate
+In the following we show the results single-molecule measurements of
+a 12d dsDNA sample performed with both the 48-spot smFRET-PAX and
+a {\usalex} setup. The single-spot setup employs a standard single-pixel SPAD
+as D detector (50~{\micron} diameter, PDM Series, Micro Photon Devices
+Bolzano, Italy) realized in a similar technology as the SPAD arrays used in this work
+
+SPAD (Microphon) (setup in ref.~\onlinecite{Ingargiola_2017}).
+We start by analysis the peak photon rate reached in each burst,
+a quantity scaling with the peak PSF intensity\cite{Ingargiola_2017}.
+Fig.~\ref{fig:pharates48_comp} shows the background-corrected peak photon-rate
 in each burst for the 48 spots. Panel A shows the full peak photon rate
 distributions with its characteristic exponential tail.
-Panel B-E show the mean value (i.e. the decay constant of the exponential tail)
+Panel B-E show heatmaps of the peak photon-rate mean value
+(i.e. the decay constant of the exponential tail)
 for the different photon streams.
-As a comparison, fig.~\ref{fig:pharates_usalex} shows the same distribution
+In addition, fig.~\ref{fig:pharates_usalex} shows the distribution
+of peak photon rates as obtained with the {\usalex} setup.
+Due to the 2x lower sensitivity
 
-Take one sample (12d) as an example and show: - \textbf{Figure}: number
-of bursts and peak photon rate heatmap - \textbf{Figure}: 48-spot ALEX
+Take one sample (12d) as an example and show:
+
+- \textbf{Figure}: number
+of bursts and peak photon rate heatmap
+
+- \textbf{Figure}: 48-spot ALEX
 histograms without corrections, before and after FRET population
-selection - \textbf{Figure}: histogram of fitted E and S for each
-channel (showing dispersion) - \textbf{Figure}: histogram of fitted E
+selection
+
+- \textbf{Figure}: histogram of fitted E and S for each
+channel (showing dispersion)
+
+- \textbf{Figure}: histogram of fitted E
 and S in a second measurement with calibration made on the first,
 showing less dispersion. This to claim that we can calibrate with one
 static sample and measure a variable sample using the previous
-calibration. - \textbf{Figure}: 48-spot ALEX histograms showing only
+calibration.
+
+- \textbf{Figure}: 48-spot ALEX histograms showing only
 FRET populations for a mixture.
 
 
@@ -488,7 +535,7 @@ reports spot number ($[\cdot]$) and number of bursts (\#B).%
 \end{figure*}
 
 \begin{figure}
-\includegraphics[width=0.5\columnwidth]{figures/2017-05-23_08_12d_FRET_vs_DO_fitted_Epr-Su_peak_position}
+\includegraphics[width=0.4\columnwidth]{figures/2017-05-23_08_12d_FRET_vs_DO_fitted_Epr-Su_peak_position}
 \caption{\label{fig:fittedFRETscatter}
 Scatter plot of the fitted $E_{PR}$, $S_u$ peak
 position in the different spots for the D-only (\emph{orange cross})
