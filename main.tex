@@ -397,25 +397,55 @@ A-SPAD G laser, A-SPAD A laser.
 
 Single-molecule measurements were taken on dsDNA samples with D-A
 separation of 7, 12 and 22 base pairs. Full details of the sample is
-provide in ref. \cite{Ingargiola_2017}.
+provide in ref.~\onlinecite{Ingargiola_2017}.
 
 We followed a standard {\usalex} analysis\cite{Lee_2005}
 with modifications required for smFRET-PAX\cite{Doose_2007}.
-Specifically, we perform background estimation, burst search and
-selection independently on each channel\cite{Ingargiola_2016}. We used a
-constant-rate threshold for burst search, instead of a
-background-dependent one (also called constant-SBR) which makes the
-number of bursts largely independent from the detectors DCR. The
-background is used to correct the burst counts in the different photon
-streams.
+The three fundamental steps of the analysis are:
+(a) background estimation, (b) burst search, (c) burst selection.
+Background estimation, which is used to correct the burst counts
+in the different photon streams, was performed in 10~s time windows
+in order to track variations during the measurement.
+Burst search was performed independently on each spot
+using the sliding-window algorithm~\cite{fries_quantitative_1998}
+and a constant-rate threshold for all the spots\cite{Ingargiola_2016}.
 
 We computed proximity ratio $E_{PR}$ according to
 eq.~\ref{eq:Epr}, stoichiometry $S$ according to
 \ref{eq:S} and a ``modified'' stoichiometry $S_u$ defined
-in eq.~\ref{eq:Su}. The latter is a slight modification of the classical
-stoichiometry used in smFRET-PAX\cite{Doose_2007} that reduces shot nose
+in eq.~\ref{eq:Su}. The latter is a variant of the classical
+stoichiometry used in smFRET-PAX\cite{Doose_2007} that reduces shot noise
 and improves the separability D-only and FRET populations. More details
 can be found in section~\ref{sec:alex_pax}.
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{{figures/phrates_composite}}
+\caption{{\label{fig:pharates48_comp}
+Peak photon rate in each of the 48 spots for the 12d dsDNA sample.
+Panel A: full distribution of peak photon rates. Panels
+B-E: Mean of the peak photon rate distribution in the different photon
+steams. Color indicate different photon streams as follows: green
+$D_{ex}D_{em}$, red $D_{ex}A_{em}$, light blue
+$DA_{ex}D_{em}$, purple $DA_{ex}A_{em}$.%
+}}
+\end{figure*}
+
+\begin{figure}
+\includegraphics[width=0.7\columnwidth]{{figures/2017-06-02_002_12d_usALEX_peak_phrate}}
+\caption{{\label{fig:pharates_usalex}
+Distribution of peak photon rates in a single-spot {\usalex} measurement
+of the 12d dsDNA sample.
+Colors indicate different photon streams as follows: green
+$D_{ex}D_{em}$, red $D_{ex}A_{em}$, purple $A_{ex}A_{em}$.%
+}}
+\end{figure}
+
+Fig.~\ref{fig:pharates48_comp} shows the peak photon rate
+in each burst for the 48 spots. Panel A shows the full peak photon rate
+distributions with its characteristic exponential tail.
+Panel B-E show the mean value (i.e. the decay constant of the exponential tail)
+for the different photon streams.
+As a comparison, fig.~\ref{fig:pharates_usalex} shows the same distribution
 
 Take one sample (12d) as an example and show: - \textbf{Figure}: number
 of bursts and peak photon rate heatmap - \textbf{Figure}: 48-spot ALEX
@@ -428,16 +458,7 @@ static sample and measure a variable sample using the previous
 calibration. - \textbf{Figure}: 48-spot ALEX histograms showing only
 FRET populations for a mixture.
 
-\begin{figure*}
-\includegraphics[width=\textwidth]{{figures/phrates_composite}}
-\caption{{\label{fig:pharates48_comp} Peak photon rate in each of the 48 spots for the 12
-dsDNA sample. Panel A: full distribution of peak photon rates. Panels
-B-E: Mean of the peak photon rate distribution in the different photon
-steams. Color indicate different photon streams as follows: green
-$D_{ex}D_{em}$, red $D_{ex}A_{em}$, light blue
-$DA_{ex}D_{em}$, purple $DA_{ex}A_{em}$.%
-}}
-\end{figure*}
+
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
