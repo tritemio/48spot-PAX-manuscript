@@ -218,7 +218,7 @@ The photon detection efficiency (PDE) has a maximum of $\sim$45\%
 at around 550~nm\cite{Gulinatti_2013}.
 
 48-spot smFRET-PAX results were compared to state-of-the-art single-spot
-{\usalex} setup.
+{\usalex} setup previously described in~\citeonline{Ingargiola_2017}.
 This setup employs two single-pixel commercial SPADs.
 The D detector (50~{\micron} diameter, PDM Series, Micro Photon Devices
 Bolzano, Italy) is realized in a similar technology as the SPAD arrays used
@@ -230,8 +230,8 @@ characterized by a PDE with a peak of 70\% at 650~nm (roughly twice the
 sensitivity of the D-SPAD at the same wavelength).
 Due to the use of this RE SPAD, the {\usalex} setup is expected to be
 at least 2x more sensitive in the A-channel then the 48-spot setup.
-A deeper comparison of the different SPAD technologies
-is reported in~\onlinecite{michalet_silicon_2014}.
+A detailed comparison of the different SPAD technologies for single-molecule
+measurements is reported in~\onlinecite{michalet_silicon_2014}.
 
 \begin{figure}
 \includegraphics[width=0.95\columnwidth]{figures/DCR-comp}
@@ -432,15 +432,18 @@ non-idealities (stigmatism) in the optical path.
 \textbf{Figure}: scatter plot of center positions for: D-SPAD G laser,
 A-SPAD G laser, A-SPAD A laser.
 
-\section{smFRET measurements}\label{smfret-measurements}
+\section{smFRET measurements}\label{sec:smfret-meas}
 
-Single-molecule measurements were taken on dsDNA samples with D-A
-separation of 7, 12 and 22 base pairs. Full details of the sample is
-provide in ref.~\onlinecite{Ingargiola_2017}.
+Single-molecule measurements were taken on 40 base-pair dsDNA samples
+labeled with ATTOTEC dyes ATTO550 (D) and ATTO647N (A).
+D-A separation of 7d, 12 and 22 base pairs (7d, 12d, 22d) were tested.
+Samples were diluted to single-molecule concentration in TE50 buffer
+(10~mM Tris, bring to pH 8.0 with HCl, 1 mM EDTA, 50~mM NaCl).
+Full details regarding these samples are provide in ref.~\onlinecite{Ingargiola_2017}.
 
 We followed a standard {\usalex} analysis\cite{Lee_2005}
 with modifications required for smFRET-PAX\cite{Doose_2007}.
-The three fundamental steps of the analysis are:
+The three steps of the analysis are:
 (a) background estimation, (b) burst search, (c) burst selection.
 Background estimation, which is used to correct the burst counts
 in the different photon streams, was performed in 10~s time windows
@@ -451,11 +454,11 @@ and a constant-rate threshold for all the spots\cite{Ingargiola_2016}.
 
 We computed proximity ratio $E_{PR}$ according to
 eq.~\ref{eq:Epr}, stoichiometry $S$ according to
-\ref{eq:S} and a ``modified'' stoichiometry $S_u$ defined
-in eq.~\ref{eq:Su}. The latter is a variant of the classical
-stoichiometry used in smFRET-PAX\cite{Doose_2007} that reduces shot noise
-and improves the separability D-only and FRET populations. More details
-can be found in section~\ref{sec:alex_pax}.
+\ref{eq:S} and a ``modified stoichiometry'' $S_u$ defined
+in eq.~\ref{eq:Su}. $S_u$ is a variant of the classical
+smFRET-PAX\cite{Doose_2007} stoichiometry we here introduce to reduce
+shot noise and improves the separability D-only and FRET populations.
+More details can be found in section~\ref{sec:alex_pax}.
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{figures/phrates_composite}}
@@ -482,33 +485,28 @@ purple $A_{ex}A_{em}$.%
 }}
 \end{figure}
 
-In the following we show the results single-molecule measurements of
-a 12d dsDNA sample performed with both the 48-spot smFRET-PAX and
-a {\usalex} setup. The single-spot setup employs a standard single-pixel SPAD
-as D detector (50~{\micron} diameter, PDM Series, Micro Photon Devices
-Bolzano, Italy) realized in a similar technology as the SPAD arrays used in this work
-
-SPAD (Microphon) (setup in ref.~\onlinecite{Ingargiola_2017}).
-
-We start by analysis the peak photon rate reached in each burst,
+We start by analyzing the peak photon rate reached in each burst,
 a quantity scaling with the peak PSF intensity\cite{Ingargiola_2017}.
 Fig.~\ref{fig:phrates48_comp} shows the background-corrected peak photon-rate
-in each burst for the 48 spots. Panel A shows the full peak photon rate
-distributions with its characteristic exponential tail.
-Panel B-E show heatmaps of the peak photon-rate mean value
-(i.e. the decay constant of the exponential tail)
-for the different photon streams.
-We note the intensity profile tapers off on the lateral pixels, an effect
+in each burst for the 48 spots. Panel A shows the full peak photon-rate
+distributions with their characteristic exponential tails.
+Panel B-E show, for the different photon streams,
+heatmaps of the peak photon-rate mean values
+(i.e. the decay constant of the exponential tail).
 Due to the Gaussian profile of the excitation beam and to geometrical
-aberrations the lateral pixels recive a lower signal than the central ones.
-This results in a smaller number of detected single-molecule bursts in
-the lateral spots.
+aberrations, the lateral pixels receive a lower signal than the central ones.
+As a results the peak photon-rate decreases and a smaller number of
+single-molecule bursts is detected in the lateral spots.
+While this effect somewhat decreases the overall maximum reachable throughput,
+it does not influence the uniformity of the ratiometric quantities
+$E_{PR}$ and $S$ from different spots.
 
 Fig.~\ref{fig:phrates_usalex} shows the distribution
 of peak photon rates as obtained with the {\usalex} setup.
 Comparing Fig.~\ref{fig:phrates48_comp} Panel~A and~\ref{fig:phrates_usalex}
 we note that the lower sensitivity in the A-SPAD array results in lower peak
-photon rate in the $D_{ex}A_{em}$ (red) and $DA_{ex}A_{em}$ (purple) streams.
+photon rate in the $D_{ex}A_{em}$ (red) and $DA_{ex}A_{em}$ (purple) streams
+in the 48-spot setup.
 
 Take one sample (12d) as an example and show:
 
