@@ -703,128 +703,115 @@ ALEX and PAX, we can define the total fluorescence signal during D excitation
 (e.g.~burst size):
 
 \begin{equation}
-\Lambda = {F_{D_{ex}D_{em}} + F_{FRET}}
-\label{eq:burstsize_raw}
+    \Lambda = {F_{D_{ex}D_{em}} + F_{FRET}}
+    \label{eq:burstsize_raw}
 \end{equation}
 
 \noindent where with $F$ we indicate background-corrected photon counts.
-In eq.~\ref{eq:burstsize_raw}, $F_{FRET}$ is equal to $F_{DexAem}$ after
-D-leakage and A-direct-excitation corrections:
+$F_{FRET}$ is the A fluorescence due to FRET, computed
+subtracting D-leakage and A-direct-excitation from $F_{D_{ex}A_{em}}$:
 
 \begin{equation}
-F_{FRET} = F_{D_{ex}A_{em}} - Lk\,F_{D_{ex}D_{em}} - Dir
-\label{eq:F_FRET}
+    F_{FRET} = F_{D_{ex}A_{em}} - Lk\,F_{D_{ex}D_{em}} - Dir
+    \label{eq:F_FRET}
 \end{equation}
 
-Similarly, we can define the $\gamma$-corrected version of $\Lambda$ as follows:
-\cite{Lee_2005,Ingargiola_2016,Ingargiola_2017}:
+We also define the correction factors$\gamma$ and $\beta$:
+
+\begin{align}
+    \gamma &= \frac{\phi_A \, \eta_{A_{det}}^{A_{em}}}
+                   {\phi_D \, \eta_{D_{det}}^{D_{em}}} \label{eq:gamma} \\
+    \beta &= \frac{I_{A_{ex}}\sigma_{A_{ex}}^A}{I_{D_{ex}}\sigma_{D_{ex}}^D}
+    \label{eq:beta}
+\end{align}
+
+\noindent where $\phi_A$, $\phi_D$ are dyes quantum yield
+and $\eta_{A_{det}}^{A_{em}}$, $\eta_{D_{det}}^{D_{em}}$ are PDEs of
+D and A channels.
+In eq.~\ref{eq:beta}, $I_{A_{ex}}$ and $I_{D_{ex}}$ are A and D excitation
+intensities, while $\sigma_{A_{ex}}^A$ and $\sigma_{D_{ex}}^D$
+are the dyes absorption cross-section at the wavelength of the respective laser.
+$\beta$ accounts for the difference of D and A dye fluorescence when
+each dye is excited by its respective lasers.
+
+We can define the $\gamma$-corrected total signal
+as~\cite{Lee_2005,Ingargiola_2016,Ingargiola_2017}:
 
 \begin{equation}
-\Lambda_\gamma = {\gamma\,F_{D_{ex}D_{em}} + F_{FRET}}
-\label{eq:burstsize}
+    \Lambda_\gamma = {\gamma\,F_{D_{ex}D_{em}} + F_{FRET}}
+    \label{eq:burstsize}
 \end{equation}
 
+Differently from $Lambda$, the quantity $\Lambda_\gamma$ does not change with
+FRET (as long as the dyes quantum efficiency does not changes).
 
-With these definitions, we can write the proximity ratio
-$E_{PR}$ and FRET efficiency $E$ expression
-(valid for both ALEX and PAX):
+With these definitions, we can write the expression for proximity ratio
+$E_{PR}$ and FRET efficiency $E$ which are valid for both ALEX and PAX:
 
-\begin{equation}
-E_{PR} = \frac{F_{FRET}}{\Lambda}
-\label{eq:Epr}
-\end{equation}
+\begin{align}
+    E_{PR} &= \frac{F_{FRET}}{\Lambda} \label{eq:Epr} \\
+    E &= \frac{F_{FRET}}{\Lambda_\gamma} \label{eq:E}
+\end{align}
 
-\begin{equation}
-E = \frac{F_{FRET}}{\Lambda_\gamma}
-\label{eq:E}
-\end{equation}
+Conversely, the $S$ expression is slightly different for ALEX and PAX. In
+ALEX we define $S$ and the corrected version $S_{\gamma\beta}$ as:
 
-While eq.~\ref{eq:Epr} and~\ref{eq:E} are exactly the same for both ALEX
-and PAX, the $S$ expression is slightly different. In
-ALEX we define $S$ as:
+\begin{align}
+    S &= \frac{\Lambda}{\Lambda + F_{AexAem}} \label{eq:S} \\
+    S_{\gamma\beta} &= \frac{\Lambda_\gamma}
+                            {\Lambda_\gamma + \frac{F_{AexAem}}{\beta}}
+                            \label{eq:Sgb}
+\end{align}
 
-\begin{equation}
-S = \frac{\Lambda}{\Lambda + F_{AexAem}}
-\label{eq:S}
-\end{equation}
+The value $S_{\gamma\beta}$ is always centered around 0.5 for dual-labeled
+species, regardless of FRET efficiency or D and A excitation intensities.
 
-and the corrected version $S_{\gamma\beta}$ as:
-
-\begin{equation}
-S_{\gamma\beta} = \frac{\Lambda_\gamma}
-{\Lambda_\gamma + \frac{F_{AexAem}}{\beta}}
-\label{eq:Sgb}
-\end{equation}
-
-In PAX, we do not measure the $F_{A_{ex}A_{em}}$ stream, but we can
+In PAX, we do not measure the $F_{A_{ex}A_{em}}$ directly, but we can
 compute it as:
 
 \begin{equation}
-\tilde{F}_{AexAem} = F_{DA_{ex}A_{em}} - F_{D_{ex}A_{em}}
-\label{eq:pax_Faa}
+    \tilde{F}_{A_{ex}A_{em}} = F_{DA_{ex}A_{em}} - F_{D_{ex}A_{em}}
+    \label{eq:pax_Faa}
 \end{equation}
 
-Using eq.~\ref{eq:pax_Faa}, the expressions for $S$ and
-$S_{\gamma\beta}$ become formally identical to eq.~\ref{eq:S} and
-\ref{eq:Sgb} were the only difference is replacing $F_{AexAem}$
-with $\tilde{F}_{A_{ex}A_{em}}$:
+By replacing $F_{A_{ex}A_{em}}$ with $\tilde{F}_{A_{ex}A_{em}}$,
+the PAX expressions for $S$ and $S_{\gamma\beta}$ become formally identical
+to eq.~\ref{eq:S} and \ref{eq:Sgb}:
 
-\begin{equation}
-S = \frac{\Lambda}
-{\Lambda + \tilde{F}_{AexAem}}
-\label{eq:Spax}
-\end{equation}
-
-\begin{equation}
-S_{\gamma\beta} = \frac{\Lambda_\gamma}
-{\Lambda_\gamma + \frac{\tilde{F}_{AexAem}}{\beta}}
-\label{eq:Sgb_pax}
-\end{equation}
+\begin{align}
+S &= \frac{\Lambda}
+          {\Lambda + \tilde{F}_{AexAem}} \label{eq:Spax} \\
+S_{\gamma\beta} &= \frac{\Lambda_\gamma}
+                        {\Lambda_\gamma + \frac{\tilde{F}_{AexAem}}{\beta}}
+         \label{eq:Sgb_pax}
+\end{align}
 
 In PAX we can take advantage of the additional signal in
-$F_{AexDem}$ and derive an equivalent set of PAX-enhanced
+$F_{A_{ex}D_{em}}$ and derive an equivalent set of PAX-enhanced
 expressions for $E$ and $S$. We can
 start extending the definitions of the total FRET signal of
 eq.~\ref{eq:burstsize_raw} and~\ref{eq:burstsize} by including
 $F_{A_{ex}D_{em}}$ as follows:
 
-\begin{equation}
-\Lambda_{PAX} = {F_{D_{ex}D_{em}} + F_{A_{ex}D_{em}} + 2 F_{FRET}}
-\label{eq:burstsizerawpaxe}
-\end{equation}
-
-\begin{equation}
-\Lambda_{\gamma,PAX} = {\gamma\,(F_{D_{ex}D_{em}} + F_{A_{ex}De_{m}}) + 2 F_{FRET}}
-\label{eq:burstsize_paxe}
-\end{equation}
+\begin{align}
+    \Lambda_{PAX} &= {F_{D_{ex}D_{em}} + F_{A_{ex}D_{em}} + 2 F_{FRET}}
+    \label{eq:burstsizerawpaxe} \\
+    \Lambda_{\gamma,PAX} &= {\gamma\,(F_{D_{ex}D_{em}} + F_{A_{ex}De_{m}}) + 2 F_{FRET}}
+    \label{eq:burstsize_paxe}
+\end{align}
 
 Based on eq.~\ref{eq:burstsizerawpaxe} and \ref{eq:burstsize_paxe}, we
 can write PAX-enhanced expressions for $E$ and $S$:
 
-\begin{equation}
-E_{PR,PAX} = \frac{2\,F_{FRET}}
-{\Lambda_{PAX}}
-\label{eq:Epr_paxe}
-\end{equation}
-
-\begin{equation}
-E_{PAX} = \frac{2\,F_{FRET}}
-{\Lambda_{\gamma,PAX}}
-\label{eq:Epaxe}
-\end{equation}
-
-\begin{equation}
-S = \frac{\Lambda_{PAX}}
-{\Lambda_{PAX} + \tilde{F}_{A_{ex}A_{em}}}
-\label{eq:Spaxe}
-\end{equation}
-
-\begin{equation}
-S_{\gamma\beta,PAX} = \frac{\Lambda_{\gamma,PAX}}
-{\Lambda_{\gamma,PAX} + \frac{2\tilde{F}_{A_{ex}A_{em}}}{\beta}}
-\label{eq:Sgb_paxe}
-\end{equation}
-
+\begin{align}
+    E_{PR,PAX} &= \frac{2\,F_{FRET}}{\Lambda_{PAX}} \label{eq:Epr_paxe} \\
+    E_{PAX} &= \frac{2\,F_{FRET}}{\Lambda_{\gamma,PAX}} \label{eq:Epaxe} \\
+    S_{PAX} &= \frac{\Lambda_{PAX}}{\Lambda_{PAX} + \tilde{F}_{A_{ex}A_{em}}}
+    \label{eq:Spaxe} \\
+    S_{\gamma\beta,PAX} &= \frac{\Lambda_{\gamma,PAX}}
+        {\Lambda_{\gamma,PAX} + \frac{2\tilde{F}_{A_{ex}A_{em}}}{\beta}}
+    \label{eq:Sgb_paxe}
+\end{align}
 
 Eq.~\ref{eq:Epr_paxe}, \ref{eq:Epaxe}, \ref{eq:Spaxe}
 and~\ref{eq:Sgb_paxe} contain more photons than the classical expressions
