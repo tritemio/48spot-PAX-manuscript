@@ -349,13 +349,13 @@ due to geometrical aberrations.%
 }}
 \end{figure}
 
-\section{SPAD alignment}\label{spad-alignment}
+\section{SPAD arrays alignment}\label{spad-alignment}
 
 Both detectors must be aligned so that each pixel is optically
 conjugated to the corresponding excitation volume (excitation PSF). The
-goal is having corresponding pairs of pixels on the two arrays,
+goal is having pairs of corresponding pixels on the two arrays,
 detecting photons from the same volume in the sample (detection PSF). At
-the same time, to maximize the signal, the detection PSF needs to be
+the same time, in order to maximize the signal, the detection PSF needs to be
 concentric with the excitation PSF. Achieving this with a 2-D
 arrangement of spots and pixels requires not only aligning the X-Y
 position of the detectors (as in single-spot measurements) but also
@@ -363,35 +363,41 @@ aligning the relative rotation of the two SPADs and adjusting the pitch
 and rotation of the excitation pattern to optimally match the detectors'
 geometry.
 
-For alignment we use an high concentration dye mixture (ATTO550,
-ATTO647N, $\sim$500~nM) that is excited by both lasers. With
-this sample the 532~nm laser yields fluorescence signal in both D and A
-channel, while the 628~nm laser only yields signal in the A channel. The
-center of the excitation pattern for both 532~nm and 628~nm laser is
-pre-determined from the need of minimizing geometrical aberrations as
-described in previous section~\ref{sec:laseralign}. Therefore the
-excitation pattern position is used as reference to align the SPADs.
+For alignment we use a high concentration dye mixture (ATTO550,
+ATTO647N, $\sim$500~nM) excited by both lasers.
+With this sample, the 532~nm laser generates fluorescence signal in both D and A
+channel, while the 628~nm laser only generates signal in the A channel.
+At this point, the center of the both 532~nm and 628~nm excitation patterns
+has already been fixed in order to minimize geometrical aberrations
+as described in section~\ref{sec:laseralign}.
+Therefore, the excitation pattern position is used as the reference
+to which aligning the SPAD arrays.
 Starting with the green laser only, both SPADs are manually positioned
-in X-Y to match the center of the excitation pattern. This is achieved
-by maximizing timetraces of SPADs counts (displayed by the acquisition
+in X and Y to match the center of the excitation pattern. This is achieved
+by maximizing timetraces of SPAD counts (displayed by the acquisition
 program) while moving the detectors.
 
 Next, we perform a more automated procedure for fine alignment called in
 the following ``multispot scan''. A multispot scan involves rigidly
-translating a multispot pattern (typically 4x4) on a LCOS-SLM in
-discrete steps along a cross path. A the same time counts from a SPAD
-array are integrated for each pattern position. During the scan, each
-emission spot draws a cross path roughly centered on a SPAD's pixel. The
-acquired counts as a function of the LCOS-SLM position resemble a peak
+translating a multispot pattern (typically 4x4 spots) on a LCOS-SLM in
+discrete steps along a cross path.
+At the same time, counts from a SPAD
+array are integrated for each pattern position for 300~ms.
+During a scan, each emission spot draws a cross path roughly centered
+on a SPAD's pixel.
+A typical scan covers a range of 10 LCOS-SLM pixels with a step of 0.4
+and is performed sequentially in X and Y directions.
+The acquired counts as a function of the LCOS-SLM position resemble a peak
 profile that is used to estimate SPAD's pixel positions in LCOS-SLM
 coordinates. Averaging the SPAD pixel positions we obtain an accurate
 estimation of the SPAD array's center. Ultimately, this procedure yields
-the offset of each SPAD array from the ideal excitation pattern
-position. With this information, we move the SPAD arrays to the ideal
-X-Y position using computer-controlled micro-positioners. The sequence of
-multispot scan and SPAD array translation is repeated until convergence.
+the offset of each SPAD array with respect to the ideal excitation pattern
+center. With this information, we move the SPAD arrays to the ideal
+X-Y position using software-controlled piezo micro-positioners.
+The sequence of multispot scan and SPAD array translation is repeated
+until convergence.
 Initially the two SPAD arrays are aligned with respect to the green
-LCOS-SLM pattern (532 nm). Next, position of the red LCOS-SLM pattern
+LCOS-SLM pattern (532 nm). Next, the position of the red LCOS-SLM pattern
 (628 nm) is fine-tuned to match the position of the A SPAD array (the D
 SPAD array does not detect any signal with 628 nm excitation). The
 optimal position of the red excitation pattern is determined from a
@@ -407,22 +413,22 @@ beginning of each day of measurements and requires about 30 minutes.
 adjustment}\label{rotation-and-pitch-adjustment}
 
 In the previous section we outlined the general fine-alignment procedure
-that is repeated daily when using the multispot setup. However, when
-building the setup, or when optics are changes, additional steps are
+repeated daily when using the multispot setup. However, when
+building the setup, additional steps are
 necessary (a) to align the relative rotation of the two SPAD arrays, (b)
 to determine the best pitch in X and Y for the green and red excitation
 pattern and (c) to optimize the SPAD position along the optical axis
 (Z).
 
-To extract rotation and pitch information ((a) and (b)), we perform a
-multispot scan with the addition of an analysis step. In particular, the
-set of X-Y positions of each pixel obtained from the scan is fitted to a
-rectangular grid with the same number of points as the pixels. The
-fitted grip parameters are center position, pitch in X, pitch in Y and
-rotation angle. Each SPAD array will have an different set of fitted
+To extract rotation and pitch information, we perform a
+multispot scan followed by an additional analysis step. In particular, the
+set of X-Y positions of each SPAD pixel obtained from the scan is fitted to a
+rectangular grid.
+The fitted grid parameters are: center position, pitch in X, pitch in Y and
+rotation angle. Each SPAD array will have a different set of fitted
 parameters.
 
-To adjust the rotation, the orientation of one of the SPAD arrays (D) is
+To adjust the rotation angle, one of the SPAD arrays (D) is
 rotated about the optical axis in order to minimize the difference in
 rotation angle between the two SPAD arrays as obtained from the scan
 fits. Once, the orientation two SPAD arrays matches, the rotational
