@@ -237,13 +237,30 @@ A detailed comparison of the different SPAD technologies for single-molecule
 measurements is reported in~\onlinecite{michalet_silicon_2014}.
 
 \begin{figure}
-\includegraphics[width=0.95\columnwidth]{figures/DCR-comp}
+\includegraphics[width=\columnwidth]{figures/DCR-comp}
 \caption{{\label{fig:dcr} Heatmaps of Dark Counting Rates (DCR) of the two 12x4
 SPAD arrays (D and A) used in the current 48-spot smFRET-PAX setup.
-DCR values are overlayed on each pixels. All values are in cps.
-More details and the data undeliyng this figure can be found in the
+DCR values are overlaid on each pixels. All values are in cps.
+More details and the data underliyng this figure can be found in the
 \href{https://github.com/48-spot-paper-analysis}{48-spot-paper-analysis}.}}
 \end{figure}
+
+\subsection{LCOS-SLM Modulation}
+\label{sec:lcos}
+
+The array of 48 excitation spots is generated for each color by an LCOS-SLM
+via phase modulation of an incoming plane wave using an approach
+previously described in~\onlinecite{colyer_high-throughput_2010,Ingargiola_2017}.
+The LCOS-SLM phase-pattern
+implements an array of lenses that focus the spots in an image plane
+at a distance of a few cm (see Fig.~\ref{fig:setup}).
+The pitch of the lenses in the red and green pattern is approximately the same
+(dictated by the detector geometry). Therefore a change in focal length
+determines a change in diameter and thus NA of the LCOS-SLM lenses.
+The chosen LCOS-SLM focal length differs in the green and red pattern
+(32~mm for the red and 36~mm for the green)
+in order to reduce the difference in PSF sizes between green and red excitation.
+
 
 \section{Laser alignment}\label{sec:laseralign}
 
@@ -259,8 +276,7 @@ In addition, (c) the excitation pattern of the two laser need to be
 aligned so that, for each spot, there is a maximum overlap between D
 and A excitation volumes.
 
-\subsection{Individual laser
-alignment}
+\subsection{Individual laser alignment}
 
 The 3X monolithic beam expanders have an adjustment ring used to control
 the beam collimation. A simple way to ensure beam collimation is by sending
