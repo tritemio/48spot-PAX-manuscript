@@ -476,13 +476,29 @@ in the different photon streams, was performed in 10~s time windows
 in order to track variations during the measurement.
 Burst search was performed independently on each spot
 using the sliding-window algorithm~\cite{fries_quantitative_1998}
-and a constant-rate threshold for all the spots\cite{Ingargiola_2016}.
+and a constant-rate threshold for all the spots~\cite{Ingargiola_2016}.
 
-We computed proximity ratio $E_{PR}$ according to
-eq.~\ref{eq:Epr}, stoichiometry $S$ according to
-\ref{eq:S} and a ``modified stoichiometry'' $S_u$ defined
+The main result of the {\usalex} analysis is the E-S histogram,
+a 2-D histograms where each bursts is represented by a
+pair of values $(E, S)$. $E$ is the FRET efficiency or, more commonly,
+the proximity ratio $E_{PR}$.  The latter being is an easy to compute
+approximation that is suitable for the common case of identify sub-populations.
+Conversely, when the purpose is extracting D-A distances,
+$E$ needs to be computed, requiring and accurate estimation of
+all the correction coefficients.
+$S$ is the "stoichiometry", a quantity ideally centered around 0.5 for
+dual-labeled species, while being close to 0 for A-only and close to 1
+for D-only species. When using the simpler form without correction
+(eq.~\ref{eq:S}), $S$ can have a dependency on $E$ and, for dual-labeled
+molecules and is only roughly centered around 0.5.
+The combined use of $E$ and $S$ (either corrected or uncorrected)
+allow separating singly- and doubly-labeled species and, among the
+doubly-labeled ones, distinguishing FRET populations.
+
+In this paper we report proximity ratios $E_{PR}$ computed according to
+eq.~\ref{eq:Epr}, and a ``modified stoichiometry'' $S_u$ defined
 in eq.~\ref{eq:Su}. $S_u$ is a variant of the classical
-smFRET-PAX\cite{Doose_2007} stoichiometry we here introduce to reduce
+smFRET-PAX\cite{Doose_2007} stoichiometry which reduces
 shot noise and improves the separability D-only and FRET populations.
 More details can be found in section~\ref{sec:alex_pax}.
 
@@ -521,11 +537,16 @@ heatmaps of the peak photon-rate mean values
 (i.e. the decay constant of the exponential tail).
 Due to the Gaussian profile of the excitation beam and to geometrical
 aberrations, the lateral pixels receive a lower signal than the central ones.
-As a results the peak photon-rate decreases and a smaller number of
+As a result, the peak photon-rate decreases and a smaller number of
 single-molecule bursts is detected in the lateral spots.
 While this effect somewhat decreases the overall maximum reachable throughput,
 it does not influence the uniformity of the ratiometric quantities
-$E_{PR}$ and $S$ from different spots.
+$E_{PR}$ and $S$ across the different spots.
+In Fig.~\ref{fig:phrates48_comp} (Panels C, E), we observe that pixel
+at position (1, 7) in the A-SPAD arrays systematically
+detects less photons, because of a lower PDE. Furthermore, two pixels in the
+D-SPAD arrays had a failure in their active quenching circuit (AQC),
+and results for their respective spots are therefore missing.
 
 Fig.~\ref{fig:phrates_usalex} shows the distribution
 of peak photon rates as obtained with the {\usalex} setup.
