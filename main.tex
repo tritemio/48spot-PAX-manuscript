@@ -222,16 +222,11 @@ at around 550~nm\cite{Gulinatti_2013}.
 
 48-spot smFRET-PAX results were compared to state-of-the-art single-spot
 {\usalex} setup previously described in~\onlinecite{Ingargiola_2017}.
-This setup employs two single-pixel commercial SPADs.
-The D detector (50~{\micron} diameter, PDM Series, Micro Photon Devices
-Bolzano, Italy) is realized in a similar technology as the SPAD arrays used
-in this work and exhibit similar PDE.
-The A detector (50~{\micron} diameter, PDM-RE Series,
-Micro Photon Devices) employs a different "red-enhanced" (RE)
-process~\cite{gulinatti_planar_2011,panzeri_silicon_2011,panzeri_single-molecule_2013}
-characterized by a PDE with a peak of 70\% at 650~nm (roughly twice the
-sensitivity of the D-SPAD at the same wavelength).
-Due to the use of this RE SPAD, the {\usalex} setup is expected to be
+This setup employs two single-pixel commercial SPADs
+(SPCM-AQRH, Excelitas Technology Corp., Waltham, MA, USA)
+characterized by similar PDE in the D spectral band and two-fold higher PDE
+in the A spectral band.
+For this reason, the {\usalex} setup is expected to be
 at least 2x more sensitive in the A-channel then the 48-spot setup.
 A detailed comparison of the different SPAD technologies for single-molecule
 measurements is reported in~\onlinecite{michalet_silicon_2014}.
@@ -460,6 +455,8 @@ A-SPAD G laser, A-SPAD A laser.
 
 \section{smFRET measurements}\label{sec:smfret-meas}
 
+\subsection{Analysis}
+
 Single-molecule measurements were taken on 40 base-pair dsDNA samples
 labeled with ATTOTEC dyes ATTO550 (D) and ATTO647N (A).
 D-A separation of 7d, 12 and 22 base pairs (7d, 12d, 22d) were tested.
@@ -491,7 +488,7 @@ dual-labeled species, while being close to 0 for A-only and close to 1
 for D-only species. When using the simpler form without correction
 (eq.~\ref{eq:S}), $S$ can have a dependency on $E$ and, for dual-labeled
 molecules and is only roughly centered around 0.5.
-The combined use of $E$ and $S$ (either corrected or uncorrected)
+The use of the $E$ and $S$ pair (corrected or uncorrected)
 allow separating singly- and doubly-labeled species and, among the
 doubly-labeled ones, distinguishing FRET populations.
 
@@ -501,6 +498,10 @@ in eq.~\ref{eq:Su}. $S_u$ is a variant of the classical
 smFRET-PAX\cite{Doose_2007} stoichiometry which reduces
 shot noise and improves the separability D-only and FRET populations.
 More details can be found in section~\ref{sec:alex_pax}.
+Moreover, the results of two spots (the two leftmost in the second row) are missing,
+because of an active quenching circuit (AQC) failure in the D-SPAD array.
+
+\subsection{Peak photon rate}
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{figures/phrates_composite}}
@@ -539,14 +540,14 @@ Due to the Gaussian profile of the excitation beam and to geometrical
 aberrations, the lateral pixels receive a lower signal than the central ones.
 As a result, the peak photon-rate decreases and a smaller number of
 single-molecule bursts is detected in the lateral spots.
-While this effect somewhat decreases the overall maximum reachable throughput,
+While this effect decreases the overall maximum reachable throughput,
 it does not influence the uniformity of the ratiometric quantities
 $E_{PR}$ and $S$ across the different spots.
-In Fig.~\ref{fig:phrates48_comp} (Panels C, E), we observe that pixel
-at position (1, 7) in the A-SPAD arrays systematically
-detects less photons, because of a lower PDE. Furthermore, two pixels in the
-D-SPAD arrays had a failure in their active quenching circuit (AQC),
-and results for their respective spots are therefore missing.
+Conversely, in Fig.~\ref{fig:phrates48_comp} (Panels C, E), we observe that pixel
+at position (1, 7) in the A-SPAD arrays, systematically
+detects less photons, an effect ascribed to a lower PDE of that pixel.
+This effect causes a bias in $E_{PR}$ and $S$ quantities as shown below.
+Furthermore, two pixels in the
 
 Fig.~\ref{fig:phrates_usalex} shows the distribution
 of peak photon rates as obtained with the {\usalex} setup.
@@ -555,28 +556,39 @@ we note that the lower sensitivity in the A-SPAD array results in lower peak
 photon rate in the $D_{ex}A_{em}$ (red) and $DA_{ex}A_{em}$ (purple) streams
 in the 48-spot setup.
 
-Take one sample (12d) as an example and show:
+\subsection{E-S histograms}
+After the initial burst search it is necessary to apply a burst selection
+criterium to reject the smallest burst which dominate the distribution.
+Fig.~\ref{fig:alexhist48all} shows the E-S histogram for the 12d sample,
+after a burt selection obtained setting a threshold on the minimum
+bursts counts obtained from photon in all the streams.
+We observe that D-only and FRET populations (respectively top left corner
+and center in the 2-D histogram) are clearly distinguishable in most channels.
+Moreover, as shown in Fig~\ref{fig:alexhist48fret}, it is easy to isolate
+the FRET population(s) by applying a burst
+selection on the $DA_{ex}A_{em}$ counts and on $D_ex$ counts.
+The separation of FRET from singly-labeled species is the main advantage
+of the dual laser excitation.
 
-- \textbf{Figure}: number
-of bursts and peak photon rate heatmap
-
-- \textbf{Figure}: 48-spot ALEX
-histograms without corrections, before and after FRET population
-selection
-
-- \textbf{Figure}: histogram of fitted E and S for each
-channel (showing dispersion)
-
-- \textbf{Figure}: histogram of fitted E
-and S in a second measurement with calibration made on the first,
-showing less dispersion. This to claim that we can calibrate with one
-static sample and measure a variable sample using the previous
-calibration.
-
-- \textbf{Figure}: 48-spot ALEX histograms showing only
-FRET populations for a mixture.
-
-
+Without any further calibration, the spread across the different channels
+is limited and does not affect the ability to distinguish sub-populations.
+This is evident in Fig.~\ref{fig:fittedFRETscatter} which shows the
+$E_PR$ and $S_u$ peak center position in the the different spots for
+both D-only and FRET populations.
+Fig.~\ref{fig:fretfit48vsmean} shows, separately for each channel,
+the center and $\pm1\,\sigma$ range of the fitted E-S peak
+for the FRET population (blue dot and error-bar).
+The orange dot is the mean center peak position
+across all the channels. We note that, for almost all channels, the
+deviation of the peak position is very well below the $\pm1\,\sigma$
+range. One exception is channel 19, where the lower PDE of the A pixel
+causes a larger deviation of the peak position.
+While in Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
+we present results without any channel calibration for the purpose
+of illustrating the raw performances of the system.
+It is possible, however, to reduce the channel-to-channel variation
+on E and S peak position by applying the per-channel calibration reported
+in~\ref{sec:perchcorr}.
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
@@ -610,7 +622,9 @@ reports spot number ($[\cdot]$) and number of bursts (\#B).%
 \caption{\label{fig:fittedFRETscatter}
 Scatter plot of the fitted $E_{PR}$, $S_u$ peak
 position in the different spots for the D-only (\emph{orange cross})
-and FRET population (\emph{blue plus}).}
+and FRET population (\emph{blue plus}). Values were obtained by simple Gaussian
+fitting of the 1-D histogram of $E_PR$ and $S_u$ after a bursts selection
+that isolated D-only and FRET populations respectively.}
 \end{figure}
 
 \begin{figure*}
@@ -624,19 +638,48 @@ each subplot.%
 }}
 \end{figure*}
 
+\subsection{Pooling all channels}
+To illustrate the high-throughput performances of the 48-spot system we
+build the ALEX histogram from a single pool of bursts from all the channels
+taking only a slice of 15~s of measurement (Fig.~\ref{fig:alex_mspot_15}).
+As a comparison, Fig.~\ref{alex_sspot_15} we report the analogous results
+obtained in 15~s of measurement of the same sample with the standard
+single-spot {\usalex} setup.
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figures/2017-05-23_08_12d_alex_jointplot_15s}
+\caption{\label{fig:alex_mspot_15}
+Multispot ALEX histogram obtained from 15~s of acquisition by pooling bursts
+from all the 48 spots.}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figures/2017-06-11_000_12d_alex_jointplot_15s}
+\caption{\label{fig:alex_sspot_15}
+Single-spot ALEX histogram obtained from 15~s of acquisition for the same
+sample as in~\ref{fig:alex_mspot_15}.}
+\end{figure}
+
+\section{Conclusions}
+
 
 \begin{acknowledgments}
-We wish to acknowledge the support of the author community in using
-REV\TeX{}, offering suggestions and encouragement, testing new versions,
-\dots.
+This work was supported by NIH grants R01 GM095904 \& R01 GM069709 and
+NSF grant MCB 1244175.
+
+Conflict of interest statements: S. Weiss discloses equity in
+Nesher Technologies and intellectual property used in the research
+reported here. The work at UCLA was conducted in Dr. Weiss's Laboratory.
+M. Ghioni discloses equity in Micro Photon Devices S.r.l. (MPD).
+No resources or personnel from MPD were involved in this work.
 \end{acknowledgments}
 
-\appendix
-\section{Appendix: Alignment
-Protocol}\label{appendix-alignment-protocol}
 
-\subsection{Signal optimization for coarse alignment of LCOSs to
-SPADs}
+\appendix
+\section{Appendix: Alignment Protocol}
+\label{appendix-alignment-protocol}
+
+\subsection{Signal optimization for coarse alignment of LCOSs to SPADs}
 
 Signal is maximized by matching the center of the excitation pattern to
 the center of the SPAD array. Figure XXX shows pixel map geometry for
@@ -646,8 +689,9 @@ pattern is adjusted with respect to the center position of the detector
 to maximize the signal. This step allows coarse alignment of excitation
 spots to SPADs by maximizing the LCOS-SPAD overlap.
 
-\subsection{Coalignment of SPADs to LCOS pattern by
-scanning}\label{coalignment-of-spads-to-lcos-pattern-by-scanning}
+
+\subsection{Coalignment of SPADs to LCOS pattern by scanning}
+\label{coalignment-of-spads-to-lcos-pattern-by-scanning}
 
 After green and red LCOS center positions are coarsely set during signal
 optimization, both D and A detectors must be aligned with respect to the
@@ -678,8 +722,8 @@ center of the D-SPAD. The D-SPAD is moved in LCOS units to match the
 center of the green LCOS. After each movement, scans are performed in
 triplicate. This is repeated until convergence.
 
-\subsection{Fine X-Y alignment of
-SPADs}\label{fine-x-y-alignment-of-spads}
+\subsection{Fine X-Y alignment of SPADs}
+\label{fine-x-y-alignment-of-spads}
 
 After alignment of the D-SPAD is fixed as previously described, the
 A-SPAD is aligned to the D-SPAD by using the reference position of the
@@ -694,8 +738,9 @@ A-SPAD can not be adjusted after it is aligned with respect to the green
 LCOS, thus a mean position for the center of the red LCOS is selected
 based on data from scan fits.
 
-\subsection{X-Y pitch and rotation of green and red LCOSs by scan
-fits}\label{x-y-pitch-and-rotation-of-green-and-red-lcoss-by-scan-fits}
+
+\subsection{X-Y pitch and rotation of green and red LCOSs by scan fits}
+\label{x-y-pitch-and-rotation-of-green-and-red-lcoss-by-scan-fits}
 
 Spot rotation and pitch must also be aligned for maximum overlap of
 green and red excitation patterns. Alignment of rotation and pitch is an
