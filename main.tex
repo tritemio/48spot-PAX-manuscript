@@ -458,14 +458,12 @@ A-SPAD G laser, A-SPAD A laser.
 \subsection{Analysis}
 
 Single-molecule measurements were performed with 40 base-pair dsDNA samples
-labeled with ATTO550 (D) and ATTO647N (A) (ATTOTEC, City, State) located at different distances.
-% * <michalet@chem.ucla.edu> 2017-06-15T00:24:29.353Z:
-% 
-% > City, State
-% missing info
-% 
-% ^.
-D-A separation of 7d, 12 and 22 base pairs (7d, 12d, 22d) were used in these experiments, as they cover the typical range of distances of interest in single-molecule FRET.
+labeled with ATTO550 (D) and ATTO647N (A) (ATTOTEC GmbH, Heidelberg, Germany)
+located at different distances.
+
+D-A separation of 7d, 12 and 22 base pairs (7d, 12d, 22d) were used in these
+experiments, as they cover the typical range of distances of interest in
+single-molecule FRET.
 Samples were diluted to single-molecule concentration (~50 pM) in TE50 buffer
 (10~mM Tris, bring to pH 8.0 with HCl, 1 mM EDTA, 50~mM NaCl).
 Full details regarding these samples are provide in ref.~\onlinecite{Ingargiola_2017}.
@@ -484,9 +482,11 @@ and a constant-rate threshold for all spots~\cite{Ingargiola_2016}.
 The main result of the {\usalex} analysis is a so-called E-S histogram,
 a 2-D histograms where each bursts is represented by a
 pair of values $(E, S)$. $E$ is either the FRET efficiency or, more commonly,
-the uncorrected FRET efficiency known as proximity ratio, $E_{PR}$.  $E_{PR}$ is easier to compute
+the uncorrected FRET efficiency known as proximity ratio, $E_{PR}$.  $E_{PR}$
+is easier to compute
 and provides an approximation suitable for identifying sub-populations.
-However, when the purpose is to extract D-A distances (which is not the objective of this study),
+However, when the purpose is to extract D-A distances (which is not the
+objective of this study),
 $E$ needs to be computed, requiring and accurate estimation of
 all  correction coefficients.
 $S$ is the "stoichiometry ratio", a quantity ideally centered around 0.5 for
@@ -501,10 +501,11 @@ doubly-labeled ones, distinguishing FRET sub-populations.
 In this paper, we report proximity ratios $E_{PR}$ computed according to
 eq.~\ref{eq:Epr}, and a ``modified stoichiometry ratio'' $S_u$ defined
 in eq.~\ref{eq:Su}. $S_u$ is a variant of the classical
-smFRET-PAX\cite{Doose_2007} stoichiometry, which reduces the effect of
+smFRET-PAX stoichiometry\cite{Doose_2007}, which reduces the effect of
 shot noise and improves the separability of D-only and FRET populations.
 More details can be found in section~\ref{sec:alex_pax}.
-Note that, in all this work, the results of two spots (the two leftmost spots in the second row) are missing,
+Note that, in all this work, the results of two spots (the two leftmost
+spots in the second row) are missing,
 because of an active quenching circuit (AQC) failure in the D-SPAD array.
 
 \subsection{Peak photon rate}
@@ -647,18 +648,29 @@ each subplot.%
 
 \subsection{Pooling data from all channels}
 To illustrate the high-throughput performance of the 48-spot system, we
-build an ALEX histogram with bursts from all channels within a 15~s window of one measurement (Fig.~\ref{fig:alex_mspot_15}).
-For comparison, Fig.~\ref{alex_sspot_15} shows a similar histogram obtained from a 15~s window during a measurement of the same sample using the single-spot {\usalex} setup. The total number of bursts  detected in the multispot measurement is about 12 times larger than in the single spot measurement. This is less than the theoretical factor of 48, which would be expected if all spots in the multispot setup were equivalent to the single-spot setup, but is consistent with the facts that (i) the excitation power in some of the spots is lower than in others, and (ii) the detection efficiency of the SPAD array in the red part of the spectrum is lower than that of the corresponding SPAD in the single-spot setup, reducing total burst size.
-% * <michalet@chem.ucla.edu> 2017-06-14T22:12:55.029Z:
-% 
-% Check that last argument, as I don't know your burst search and selection criteria in the two measurements.
-% 
-% ^.
-% * <michalet@chem.ucla.edu> 2017-06-14T20:47:55.026Z:
-% 
-% This figure is apparently not found. I suppose this is Fig. 11?
-% 
-% ^.
+build an ALEX histogram with bursts from all channels within a 15~s window
+of one measurement (Fig.~\ref{fig:alex_mspot_15}).
+For comparison, Fig.~\ref{fig:alex_sspot_15} shows a similar histogram obtained
+from a 15~s window during a measurement of the same sample using the
+single-spot {\usalex} setup. While, we observe that
+the total number of bursts  detected in the multispot measurement
+is about 12 times larger than in the single spot measurement a quantitative
+comparison cannot be done because the measurements were taken on different
+dilutions in the two setups. Apart from the difficulty in controlling
+the sample concentration with high accuracy, there are other reasons why the
+burst number would not exactly scale with the number of spots.
+First, in the multispot setup, it is difficult to estimate the power
+in each spot because the intensity is not uniform (the lateral spots
+receive less power). The power is calibrated so that, in the central spots,
+we obtain a signal in the D-channel comparable to the single-spot measurements
+(which used 180~\textgreek{μ}W @ 532~nm). The lateral spots receive a lower
+power and therefore detect lower number of bursts.
+Second, the detection efficiency of the SPAD array in the red part
+of the spectrum is lower than that of the corresponding SPAD in the
+single-spot setup (see section~\ref{sec:detectors}),
+reducing total burst size and therefore the number of bursts selected with
+a given threshold.
+
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/2017-05-23_08_12d_alex_jointplot_15s}
@@ -813,9 +825,9 @@ subtracting D-leakage and A-direct-excitation from $F_{D_{ex}A_{em}}$:
 
 We also need the usual correction factors $\gamma$ and $\beta$:
 % * <michalet@chem.ucla.edu> 2017-06-15T00:05:01.220Z:
-% 
+%
 % cite Lee et al, BJ 2005
-% 
+%
 % ^.
 
 \begin{align}
@@ -828,10 +840,10 @@ We also need the usual correction factors $\gamma$ and $\beta$:
 \noindent where $\phi_A$, $\phi_D$ are the dye quantum yields
 and $\eta_{A_{det}}^{A_{em}}$, $\eta_{D_{det}}^{D_{em}}$ are the PDEs of the
 % * <michalet@chem.ucla.edu> 2017-06-15T00:05:44.455Z:
-% 
+%
 % > PDE
 % defined previously?
-% 
+%
 % ^.
 D and A channels.
 In eq.~\ref{eq:beta}, $I_{A_{ex}}$ and $I_{D_{ex}}$ are A and D excitation
