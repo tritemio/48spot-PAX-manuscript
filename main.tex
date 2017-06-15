@@ -457,48 +457,54 @@ A-SPAD G laser, A-SPAD A laser.
 
 \subsection{Analysis}
 
-Single-molecule measurements were taken on 40 base-pair dsDNA samples
-labeled with ATTOTEC dyes ATTO550 (D) and ATTO647N (A).
-D-A separation of 7d, 12 and 22 base pairs (7d, 12d, 22d) were tested.
-Samples were diluted to single-molecule concentration in TE50 buffer
+Single-molecule measurements were performed with 40 base-pair dsDNA samples
+labeled with ATTO550 (D) and ATTO647N (A) (ATTOTEC, City, State) located at different distances.
+% * <michalet@chem.ucla.edu> 2017-06-15T00:24:29.353Z:
+% 
+% > City, State
+% missing info
+% 
+% ^.
+D-A separation of 7d, 12 and 22 base pairs (7d, 12d, 22d) were used in these experiments, as they cover the typical range of distances of interest in single-molecule FRET.
+Samples were diluted to single-molecule concentration (~50 pM) in TE50 buffer
 (10~mM Tris, bring to pH 8.0 with HCl, 1 mM EDTA, 50~mM NaCl).
 Full details regarding these samples are provide in ref.~\onlinecite{Ingargiola_2017}.
 
-We followed a standard {\usalex} analysis\cite{Lee_2005}
+We analyzed data using standard {\usalex} methods\cite{Lee_2005}
 with modifications required for smFRET-PAX\cite{Doose_2007}.
 The three steps of the analysis are:
 (a) background estimation, (b) burst search, (c) burst selection.
 Background estimation, which is used to correct the burst counts
 in the different photon streams, was performed in 10~s time windows
-in order to track variations during the measurement.
-Burst search was performed independently on each spot
+in order to account for possible variations during the measurement.
+Burst search was performed independently for each spot
 using the sliding-window algorithm~\cite{fries_quantitative_1998}
-and a constant-rate threshold for all the spots~\cite{Ingargiola_2016}.
+and a constant-rate threshold for all spots~\cite{Ingargiola_2016}.
 
-The main result of the {\usalex} analysis is the E-S histogram,
+The main result of the {\usalex} analysis is a so-called E-S histogram,
 a 2-D histograms where each bursts is represented by a
-pair of values $(E, S)$. $E$ is the FRET efficiency or, more commonly,
-the proximity ratio $E_{PR}$.  The latter being is an easy to compute
-approximation that is suitable for the common case of identify sub-populations.
-Conversely, when the purpose is extracting D-A distances,
+pair of values $(E, S)$. $E$ is either the FRET efficiency or, more commonly,
+the uncorrected FRET efficiency known as proximity ratio, $E_{PR}$.  $E_{PR}$ is easier to compute
+and provides an approximation suitable for identifying sub-populations.
+However, when the purpose is to extract D-A distances (which is not the objective of this study),
 $E$ needs to be computed, requiring and accurate estimation of
-all the correction coefficients.
-$S$ is the "stoichiometry", a quantity ideally centered around 0.5 for
-dual-labeled species, while being close to 0 for A-only and close to 1
-for D-only species. When using the simpler form without correction
-(eq.~\ref{eq:S}), $S$ can have a dependency on $E$ and, for dual-labeled
-molecules and is only roughly centered around 0.5.
-The use of the $E$ and $S$ pair (corrected or uncorrected)
-allow separating singly- and doubly-labeled species and, among the
-doubly-labeled ones, distinguishing FRET populations.
+all  correction coefficients.
+$S$ is the "stoichiometry ratio", a quantity ideally centered around 0.5 for
+doubly-labeled species, close to 0 for A-only and close to 1
+for D-only species. When using the simpler version without correction
+(eq.~\ref{eq:S}), $S$ can depend on $E$ and, for doubly-labeled
+molecules, is only approximately centered around 0.5.
+The use of the $(E, S)$ pair (corrected or uncorrected)
+allows separating singly- and doubly-labeled species and, within the
+doubly-labeled ones, distinguishing FRET sub-populations.
 
-In this paper we report proximity ratios $E_{PR}$ computed according to
-eq.~\ref{eq:Epr}, and a ``modified stoichiometry'' $S_u$ defined
+In this paper, we report proximity ratios $E_{PR}$ computed according to
+eq.~\ref{eq:Epr}, and a ``modified stoichiometry ratio'' $S_u$ defined
 in eq.~\ref{eq:Su}. $S_u$ is a variant of the classical
-smFRET-PAX\cite{Doose_2007} stoichiometry which reduces
-shot noise and improves the separability D-only and FRET populations.
+smFRET-PAX\cite{Doose_2007} stoichiometry, which reduces the effect of
+shot noise and improves the separability of D-only and FRET populations.
 More details can be found in section~\ref{sec:alex_pax}.
-Moreover, the results of two spots (the two leftmost in the second row) are missing,
+Note that, in all this work, the results of two spots (the two leftmost spots in the second row) are missing,
 because of an active quenching circuit (AQC) failure in the D-SPAD array.
 
 \subsection{Peak photon rate}
@@ -639,13 +645,20 @@ each subplot.%
 \end{figure*}
 
 
-\subsection{Pooling all channels}
-To illustrate the high-throughput performances of the 48-spot system we
-build the ALEX histogram from a single pool of bursts from all the channels
-taking only a slice of 15~s of measurement (Fig.~\ref{fig:alex_mspot_15}).
-As a comparison, Fig.~\ref{alex_sspot_15} we report the analogous results
-obtained in 15~s of measurement of the same sample with the standard
-single-spot {\usalex} setup.
+\subsection{Pooling data from all channels}
+To illustrate the high-throughput performance of the 48-spot system, we
+build an ALEX histogram with bursts from all channels within a 15~s window of one measurement (Fig.~\ref{fig:alex_mspot_15}).
+For comparison, Fig.~\ref{alex_sspot_15} shows a similar histogram obtained from a 15~s window during a measurement of the same sample using the single-spot {\usalex} setup. The total number of bursts  detected in the multispot measurement is about 12 times larger than in the single spot measurement. This is less than the theoretical factor of 48, which would be expected if all spots in the multispot setup were equivalent to the single-spot setup, but is consistent with the facts that (i) the excitation power in some of the spots is lower than in others, and (ii) the detection efficiency of the SPAD array in the red part of the spectrum is lower than that of the corresponding SPAD in the single-spot setup, reducing total burst size.
+% * <michalet@chem.ucla.edu> 2017-06-14T22:12:55.029Z:
+% 
+% Check that last argument, as I don't know your burst search and selection criteria in the two measurements.
+% 
+% ^.
+% * <michalet@chem.ucla.edu> 2017-06-14T20:47:55.026Z:
+% 
+% This figure is apparently not found. I suppose this is Fig. 11?
+% 
+% ^.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/2017-05-23_08_12d_alex_jointplot_15s}
@@ -663,13 +676,13 @@ sample as in Fig.~\ref{fig:alex_mspot_15}.}
 
 \section{Conclusions}
 
+In summary, we have described a new 48-spot single-molecule FRET setup designed for high-throughput single-molecule assays. Its design incorporate a number of technical solutions of potential interest for other applications, as well as proof of principle demonstration of its single-molecule FRET measurement capabilities. We provide a careful comparison of its performance with that of a standard single-spot (confocal) single-molecule FRET setup. Applications of this new instrument to the study of the initial stages of bacterial transcription and high-throughput diagnostics will be described in future publications.
 
 \begin{acknowledgments}
 This work was supported by NIH grants R01 GM095904 \& R01 GM069709 and
 NSF grant MCB 1244175.
 
-Conflict of interest statements: S. Weiss discloses equity in
-Nesher Technologies and intellectual property used in the research
+Conflict of interest statements: S. Weiss discloses intellectual property used in the research
 reported here. The work at UCLA was conducted in Dr. Weiss's Laboratory.
 M. Ghioni discloses equity in Micro Photon Devices S.r.l. (MPD).
 No resources or personnel from MPD were involved in this work.
@@ -680,7 +693,7 @@ No resources or personnel from MPD were involved in this work.
 \section{Appendix: Alignment Protocol}
 \label{appendix-alignment-protocol}
 
-\subsection{Signal optimization for coarse alignment of LCOSs to SPADs}
+\subsection{Signal optimization for coarse alignment of LCOS to SPAD}
 
 Signal is maximized by matching the center of the excitation pattern to
 the center of the SPAD array. Figure XXX shows pixel map geometry for
@@ -691,7 +704,7 @@ to maximize the signal. This step allows coarse alignment of excitation
 spots to SPADs by maximizing the LCOS-SPAD overlap.
 
 
-\subsection{Coalignment of SPADs to LCOS pattern by scanning}
+\subsection{Coalignment of SPAD to LCOS pattern by pattern scanning}
 \label{coalignment-of-spads-to-lcos-pattern-by-scanning}
 
 After green and red LCOS center positions are coarsely set during signal
@@ -723,7 +736,7 @@ center of the D-SPAD. The D-SPAD is moved in LCOS units to match the
 center of the green LCOS. After each movement, scans are performed in
 triplicate. This is repeated until convergence.
 
-\subsection{Fine X-Y alignment of SPADs}
+\subsection{Fine X-Y alignment of SPAD}
 \label{fine-x-y-alignment-of-spads}
 
 After alignment of the D-SPAD is fixed as previously described, the
@@ -740,7 +753,7 @@ LCOS, thus a mean position for the center of the red LCOS is selected
 based on data from scan fits.
 
 
-\subsection{X-Y pitch and rotation of green and red LCOSs by scan fits}
+\subsection{Determination of LCOS X-Y pitch and rotation}
 \label{x-y-pitch-and-rotation-of-green-and-red-lcoss-by-scan-fits}
 
 Spot rotation and pitch must also be aligned for maximum overlap of
@@ -759,14 +772,13 @@ the center of the green LCOS reference.
 \section{Appendix: ALEX and PAX}
 \label{sec:alex_pax}
 
-In ALEX we have two alternation periods $D_{ex}$ and
+In ALEX, two alternation periods $D_{ex}$ and
 $A_{ex}$ (respectively D or A excitation) and two
-detectors (D and A). This results in four basic photon streams named
-$D_{ex}D_{em}$, $D_{ex}A_{em}$, $A_{ex}D_{em}$, $A_{ex}A_{em}$.
+detectors (D and A) are involved. This results in four basic photon streams named
+$D_{ex}D_{em}$, $D_{ex}A_{em}$, $A_{ex}D_{em}$, $A_{ex}A_{em}$, where the first symbol indicate the excitation period and the second, the detection channel.
 The $A_{ex}D_{em}$ stream only contains
 background because there is no fluorescent emission in the D spectral
-band during A-laser excitation. For simplicity, we assume here and in
-the following that all the quantities are corrected for
+band during A-laser excitation. For simplicity, we assume here  that these quantities are first corrected for
 background\cite{Ingargiola_2016}.
 
 A PAX setup has two detectors (D and A) but only one alternating laser (A).
@@ -790,8 +802,8 @@ ALEX and PAX, we can define the total fluorescence signal during D excitation
     \label{eq:burstsize_raw}
 \end{equation}
 
-\noindent where with $F$ we indicate background-corrected photon counts.
-$F_{FRET}$ is the A fluorescence due to FRET, computed
+\noindent where the $F$ quantities are background-corrected photon counts.
+$F_{FRET}$ is the A fluorescence due to FRET, computed by
 subtracting D-leakage and A-direct-excitation from $F_{D_{ex}A_{em}}$:
 
 \begin{equation}
@@ -799,7 +811,12 @@ subtracting D-leakage and A-direct-excitation from $F_{D_{ex}A_{em}}$:
     \label{eq:F_FRET}
 \end{equation}
 
-We also define the correction factors $\gamma$ and $\beta$:
+We also need the usual correction factors $\gamma$ and $\beta$:
+% * <michalet@chem.ucla.edu> 2017-06-15T00:05:01.220Z:
+% 
+% cite Lee et al, BJ 2005
+% 
+% ^.
 
 \begin{align}
     \gamma &= \frac{\phi_A \, \eta_{A_{det}}^{A_{em}}}
@@ -808,14 +825,20 @@ We also define the correction factors $\gamma$ and $\beta$:
     \label{eq:beta}
 \end{align}
 
-\noindent where $\phi_A$, $\phi_D$ are dyes quantum yield
-and $\eta_{A_{det}}^{A_{em}}$, $\eta_{D_{det}}^{D_{em}}$ are PDEs of
+\noindent where $\phi_A$, $\phi_D$ are the dye quantum yields
+and $\eta_{A_{det}}^{A_{em}}$, $\eta_{D_{det}}^{D_{em}}$ are the PDEs of the
+% * <michalet@chem.ucla.edu> 2017-06-15T00:05:44.455Z:
+% 
+% > PDE
+% defined previously?
+% 
+% ^.
 D and A channels.
 In eq.~\ref{eq:beta}, $I_{A_{ex}}$ and $I_{D_{ex}}$ are A and D excitation
 intensities, while $\sigma_{A_{ex}}^A$ and $\sigma_{D_{ex}}^D$
-are the dyes absorption cross-section at the wavelength of the respective laser.
+are the dye absorption cross-sections at the respective laser wavelength.
 $\beta$ accounts for the difference of D and A dye fluorescence when
-each dye is excited by its respective lasers.
+each dye is excited by its respective laser.
 
 We can define the $\gamma$-corrected total signal
 as~\cite{Lee_2005,Ingargiola_2016,Ingargiola_2017}:
