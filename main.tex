@@ -47,13 +47,13 @@ reprint,%
 
 \newcommand{\micron}{\textgreek{μ}m}
 \newcommand{\microsec}{\textgreek{μ}s}
-\newcommand{{\usalex}}{smFRET-\textgreek{μ}sALEX}
+\newcommand{{\usalex}}{\textgreek{μ}sALEX}
 
 \begin{document}
 
 \preprint{AIP/123-QED}
 
-\title[48-spot draft]{48-spot single-molecule FRET with alternated excitation}
+\title[48-spot draft]{48-spot single-molecule FRET setup with periodic acceptor excitation}
 
 \author{Antonino Ingargiola}%
  \email{ingargiola.antonino@gmail.com}
@@ -92,25 +92,27 @@ Valid PACS numbers may be entered using the \verb+\pacs{#1}+ command.
 
 \section{Introduction} \label{sec:intro}
 
-Among the solution-based single-molecule FRET
-(smFRET) methods, \emph{microsecond alternated excitation}
-({\usalex}) is one of the most powerful.
-In {\usalex} two exciting lasers are alternated with a period of a
-few tens of {\microsec} and the fluorescent emission is detected in two
-spectral bands (donor and acceptor, or D and A) by two separate
-detectors. Using two alternating lasers for excitation, a family of
-techniques dubbed ALEX\cite{Kapanidis_2005}, allows separating singly- from
-doubly-labeled species, greatly extending the range of subpopulations
-that is possible to resolve in a given sample. As an example, dual-laser
-excitation allows separating D-only from zero or low FRET species that would
-be indistinguishable with only a single excitation laser.
-
-Single-molecule FRET Periodic Acceptor Excitation (smFRET-PAX)
-\cite{Doose_2007} is a technique closely related to {\usalex},
-where the D laser is constantly on and the A laser is alternated. This
-approach allows simplifying the optical setup while maintaining the same
-advantages of {\usalex}, namely the ability to resolve species based
-on the number of attached dyes.
+Single-molecule FRET (smFRET) studies of freely-diffusing molecules in solutions are traditionally performed using heavily customized confocal microscopes, modified to include either multiple laser excitations, multiple spectral or polarization channels, or time-correlated single-photon counting (TCSPC)  electronics for fluorescence lifetime measurements [refs]. Despite multiple possible variants tailored for particular applications and the impressive results obtained with this technique, freely-diffusing smFRET measurements generally suffer from very low throughput, due to the requirement of low sample concentration, imposed by the necessity to have no more than 1 molecule within the diffraction-limited confocal volume [ref]. To overcome this limitation, we recently introduced a multispot excitation scheme taking advantage of novel single-photon avalanche diode (SPAD) arrays. We demonstrated that the resulting setup indeed allows acquiring single-molecule data of quality comparable to that of standard single-spot setups, but with a throughput increased by a factor equal to the number of spots (equal to the number of SPAD pixels in each detection channel). We illustrated an application of this enhanced throughput by measuring the bubble closing kinetic in bacterial transcription [ref]. While encouraging, these results were partially unsatisfactory because they were obtained (i) with a rather small number of spots, but also because (ii) the setup only incorporated a single laser, used to excite the donor dye of the FRET donor-acceptor pair [ref].
+Single-laser smFRET indeed suffers from the fact that low FRET molecules (molecules in which the donor-acceptor distance is large compared to the characteristic FRET length scale) are indistinguishable from molecules labeled only with a donor dye, or whose acceptor dye is either inactivated or bleached. Since the latter categories  are often present in most samples, it is important to be able to identify them and separate them from the "interesting" doubly-labeled low FRET molecules.
+\emph{Microsecond Alternated Laser EXcitation}
+({\usalex}) smFRET ({\usalex} for short),  was introduced several years ago to address this problem \cite{Kapanidis_2005}, and later extended to pulsed laser excitation schemes (nsALEX [ref] or PIE [ref]). Briefly, in {\usalex}, two exciting lasers are alternatively turned on and off every few tens of {\microsec} to allows separating singly- from
+% * <michalet@chem.ucla.edu> 2017-06-16T00:00:19.579Z:
+% 
+% > {\usalex}
+% I have changed the definition of this macro, because I believe we never speak of usALEX-smFRET (or smFRET-ALEX) but only of ALEX. Check that this does not create inconsistencies in other part of the text though,
+% 
+% ^.
+doubly-labeled species, due to the fact that molecules lacking an active acceptor dye do not emit fluorescence when the acceptor laser is on (and the donor laser is off). This in turn extends the range of FRET subpopulations
+which can be identified within a sample to the low FRET value regime. This scheme has since been extended to more laser excitations, allowing powerful molecular sorting applications [refs].
+A simplified version of this laser alternation principle was presented in ref. [Doose], where a single laser, the donor excitation laser is left on at all time, and only the acceptor laser is alternated. This Periodic Acceptor Excitation (PAX) single-molecule FRET technique \cite{Doose_2007} (PAX for short) allows simplifying the optical setup while maintaining the advantages of {\usalex}, namely the ability to identify the number of donor and acceptor dyes (or donor stoichiometry) present in each single molecule.
+Here we present a significant improvement over our original multispot setup by (i) introducing a 48-spot illumination and detection scheme, and (ii) implementing a 2-laser PAX illumination approach.
+This paper is organized as follows. TBC.
+% * <michalet@chem.ucla.edu> 2017-06-16T17:35:25.309Z:
+% 
+% > TBC
+% Add an overview of the different sections
+% 
+% ^.
 
 \section{Setup description}\label{sec:setup}
 
@@ -177,6 +179,12 @@ rotation about the optical axis, used to match the relative orientation
 of the SPAD arrays.
 
 Each SPAD arrays is equipped with an USB 2.0 connection for low-resolution
+% * <michalet@chem.ucla.edu> 2017-06-16T17:36:19.581Z:
+% 
+% > equipped with an USB 2.0 connection
+% it's more than that. Maybe Polimi can expand a bit?
+% 
+% ^.
 time-binned counting and humidity control.
 In addition, a standard SCSI connector
 includes 48 independent outputs providing a pulse for every detected
@@ -217,17 +225,23 @@ Here we only describe the most salient features.
 The active area of each pixel is 50~{\micron}
 arranged in 4 rows of 12 pixels (4x12) with a 500~{\micron} pitch in
 each direction.
-The photon detection efficiency (PDE) has a maximum of $\sim$45\%
+The photon detection efficiency (PDE) reaches a maximum of $\sim$45\%
 at around 550~nm\cite{Gulinatti_2013}.
 
 48-spot smFRET-PAX results were compared to state-of-the-art single-spot
 {\usalex} setup previously described in~\onlinecite{Ingargiola_2017}.
 This setup employs two single-pixel commercial SPADs
 (SPCM-AQRH, Excelitas Technology Corp., Waltham, MA, USA)
-characterized by similar PDE in the D spectral band and two-fold higher PDE
+characterized by similar PDE as our SPAD arrays in the D spectral band but two-fold higher PDE
+% * <michalet@chem.ucla.edu> 2017-06-16T00:03:05.421Z:
+% 
+% > two-fold
+% I believe this is more.
+% 
+% ^.
 in the A spectral band.
 For this reason, the {\usalex} setup is expected to be
-at least 2x more sensitive in the A-channel then the 48-spot setup.
+at least twice as sensitive in the A-channel than the 48-spot setup.
 A detailed comparison of the different SPAD technologies for single-molecule
 measurements is reported in~\onlinecite{michalet_silicon_2014}.
 
@@ -246,6 +260,11 @@ More details and the data underliyng this figure can be found in the
 The array of 48 excitation spots is generated for each color by an LCOS-SLM
 via phase modulation of an incoming plane wave using an approach
 previously described in~\onlinecite{colyer_high-throughput_2010,Ingargiola_2017}.
+% * <michalet@chem.ucla.edu> 2017-06-16T17:38:21.229Z:
+% 
+% We should mention the Delon papers I sent you somewhere around here or when characterizing the illumination pattern.
+% 
+% ^.
 The LCOS-SLM phase-pattern
 implements an array of lenses that focus the spots in an image plane
 at a distance of a few cm (see Fig.~\ref{fig:setup}).
@@ -690,11 +709,14 @@ sample as in Fig.~\ref{fig:alex_mspot_15}.}
 
 In summary, we have described a new 48-spot single-molecule FRET setup
 designed for high-throughput single-molecule assays.
-Compared to a previous multi-spot setup the number of spots was increased from
-8 to 48 with a consequent increase in throughput.
-Crucially, the addition of a second alternating excitation laser for
-allows separating singly- from doubly-labeled species, thus enabling
-48-spot measurements for a much wider range of assays.
+Compared to our previous multispot setup the number of spots was increased six-fold with a corresponding increase in throughput. While larger SPAD arrays have been fabricated and demonstrated [refs], they are generally fabricated using standard high-voltage CMOS processes not designed for photon detector optimization but instead dense integrated circuit design, resulting in poorer photon-counting performance than the custom technology process employed here. Convincing applications in cell FCS and FLIM (among others) have been published with these CMOS SPAD arrays, but they remain a long way from offering the sensitivity needed for single-molecule applications.
+% * <michalet@chem.ucla.edu> 2017-06-16T17:40:44.369Z:
+% 
+% > [refs]
+% cite our Zappa collaboration papers, reviews, and the Langowski-Charbon papers, Henderson papers,etc
+% 
+% ^.
+Compared to our previous works, a second alternating excitation laser was incorporated, and the corresponding alignment hurdles solved, permitting the sorting of single-molecules according to their donor-acceptor stoichiometry. In particular, we have shown that the setup allows identifying singly- and doubly-labeled species over the full range of FRET efficiencies, opening the door to a much wider range of assays than previously possible.
 
 The presented a detailed multispot design descriptions and alignment procedure
 which incorporates a number of technical solutions of potential interest
