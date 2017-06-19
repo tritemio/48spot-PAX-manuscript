@@ -1068,7 +1068,7 @@ $\chi_{ch}$:
 \label{eq:gamma_split}
 \end{equation}
 
- $\chi_{ch}$ can be easily computed from measurable
+$\chi_{ch}$ can be easily computed from measurable
 quantities according to the following expression:
 
 \begin{equation}
@@ -1081,54 +1081,60 @@ proximity ratio for a specific channel, and $ \langle E_{PRch} \rangle_{ch} $ is
 average over all $N$
 channels (in this case $N= 48$).
 
-Eq.~\ref{eq:chich} follows from the relation between $E$
+Eq.~\ref{eq:chich} follows from the following relation between $E$
 and $E_{PR}$\cite{lee_accurate_2005, ingargiola_applying_2017}:
 
 \begin{equation}
-E = \frac{1}{1 + \gamma \left( \frac{1}{E_{PR}} - 1 \right)}
+E = f(E_{PR}, \gamma) = \frac{1}{1 + \gamma \left( \frac{1}{E_{PR}} - 1 \right)}
 \label{eq:EfuncEpr}
 \end{equation}
 
-From eq.~\ref{eq:EfuncEpr}, we obtain:
+Solving eq.~\ref{eq:EfuncEpr} for $\gamma$, we obtain:
 
 \begin{equation}
 \gamma = \frac{\frac{1}{E} - 1}{\frac{1}{E_{PR}} - 1}
 \label{eq:gamma_funcEEpr}
 \end{equation}
 
-Formally, we can write $\gamma = \gamma_1 \gamma_2 $, where $\gamma_1$ is associated with a partially corrected
-% * <michalet@chem.ucla.edu> 2017-06-19T13:50:25.586Z:
-%
-% > Formally
-% I haven't verified the following derivation
-%
-% ^.
-proximity ratio $E_1$ by:
+Formally, we can write $\gamma = \gamma_1 \gamma_2 $, where $\gamma_1$
+is associated with a partially corrected
+proximity ratio $E_1$ as follows:
 
 \begin{equation}
-E_1 = \frac{1}{1 + \gamma_1 \left( \frac{1}{E_{PR}} - 1 \right)}
+E_1 = f(E_{PR}, \gamma_1) = \frac{1}{1 + \gamma_1 \left( \frac{1}{E_{PR}} - 1 \right)}
+\label{eq:E1funcEpr}
 \end{equation}
 
-$E$ is a function of the partially
-corrected $E_{1}$ obtained by a simple substitution of
-\ref{eq:gamma_funcEEpr} into eq.~\ref{eq:EfuncEpr}:
+With a simple substitution of \ref{eq:gamma_funcEEpr} into
+eq.~\ref{eq:EfuncEpr}, $E$ can be expressed as a function of the partially
+corrected proximity ratio $E_{1}$:
 
 \begin{equation}
-E = \frac{1}{1 + \gamma_2 \left( \frac{1}{E_1} - 1 \right)}
+E = f(E_1, \gamma_2) = \frac{1}{1 + \gamma_2 \left( \frac{1}{E_1} - 1 \right)}
 \label{eq:EfuncE1}
 \end{equation}
 
-Eq.~\ref{eq:EfuncE1} expresses the relation between partially corrected $E$, where the full gamma correction is decomposed into the product of partial corrections. In the
-multispot case, we apply this property to decompose the gamma correction into
-a spot-specific correction and an average correction as in
-\ref{eq:gamma_split}. Therefore, eq.~\ref{eq:chich} directly derives
-from \ref{eq:gamma_funcEEpr} with simple substitutions.
+Eq.~\ref{eq:EfuncE1} has the same form as \ref{eq:EfuncEpr}
+and~\ref{eq:EfuncE1}. Therefore,
+$E$ can be obtained by two subsequent (chained) corrections for $\gamma_1$ and
+$\gamma_2$ respectively as in eq.~\ref{eq:EfuncEprE1}.
+
+\begin{equation}
+E = f(E_{PR}, \gamma) =  f(E_1, \gamma_2) = f(f(E_{PR}, \gamma_1), \gamma_2)
+\label{eq:EfuncEprE1}
+\end{equation}
+
+In the multispot case, we apply this property to decompose the gamma
+correction into a spot-specific correction and an average correction as
+in~\ref{eq:gamma_split}.
+In particular, eq.~\ref{eq:chich} directly derives from~\ref{eq:gamma_funcEEpr}
+with simple substitutions.
 
 \subsection{Beta correction}
 
 Since, formally eq.~\ref{eq:S} and~\ref{eq:Sgb} have the same form as
 $E_{PR}$ and $E$, we can write an expression
-equivalent to \ref{eq:EfuncEpr} for $S$ and
+equivalent to~\ref{eq:EfuncEpr} for $S$ and
 $S_{\gamma\beta}$. Dropping the $\gamma$ subscript, we
 obtain:
 
