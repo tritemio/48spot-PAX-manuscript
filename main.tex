@@ -125,11 +125,11 @@ quality comparable to that of standard single-spot setups, but with a
 throughput increased by a factor equal to the number of spots (equal to the
 number of SPAD pixels in each detection channel). We illustrated an application
 of this enhanced throughput by measuring the bubble closing kinetic in
-bacterial transcription [ref].
+bacterial transcription [ref PLOS].
 While encouraging, these results were partially unsatisfactory because they
 were obtained (i) with a rather small number of spots, but also because (ii)
 the setup only incorporated a single laser, used to excite the donor dye
-of the FRET donor-acceptor pair [ref].
+of the FRET donor-acceptor pair [ref SPIEs, PLOS].
 Single-laser smFRET indeed suffers from the fact that low FRET molecules
 (molecules in which the donor-acceptor distance is large compared to the
 characteristic FRET length scale) are indistinguishable from molecules
@@ -151,10 +151,10 @@ acceptor dye do not emit fluorescence when the acceptor laser is on (and the
 donor laser is off). This in turn extends the range of FRET subpopulations
 which can be identified within a sample to the low FRET value regime. This
 scheme has since been extended to more laser excitations, allowing powerful
-molecular sorting applications [refs].
+molecular sorting applications [ref 3c and 4c ALEX].
 A simplified version of this laser alternation principle was presented in
 ref.~\onlinecite{doose_periodic_2007}, where the donor excitation laser
-is left on at all time, while the acceptor laser is alternated.
+is left on at all times, while the acceptor laser is alternated.
 This Periodic Acceptor Excitation (PAX) single-molecule FRET
 technique~\cite{doose_periodic_2007} (PAX for short) allows simplifying the optical
 setup while maintaining the advantages of {\usalex}, namely the ability to
@@ -169,7 +169,7 @@ This paper is organized as follows. TBC.
 % > TBC
 % Add an overview of the different sections
 %
-% ^.
+% ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:43.535Z.
 
 \section{Setup description}\label{sec:setup}
 
@@ -241,7 +241,7 @@ Each SPAD arrays is equipped with an USB 2.0 connection for low-resolution
 % > equipped with an USB 2.0 connection
 % it's more than that. Maybe Polimi can expand a bit?
 %
-% ^.
+% ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:35.719Z.
 time-binned counting and humidity control.
 In addition, a standard SCSI connector
 includes 48 independent outputs providing a pulse for every detected
@@ -286,7 +286,7 @@ diameter. The array comprises 4 rows of 12 pixels (4x12) with a 500~{\micron} pi
 % > pitch
 % Somewhere, we need to translate this into spot separation in the sample plane
 %
-% ^.
+% ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:33.005Z.
 each direction.
 The photon detection efficiency (PDE) reaches a maximum of $\sim$45\%
 at around 550~nm\cite{gulinatti_48-pixel_2013}.
@@ -301,7 +301,7 @@ characterized by similar PDE as our SPAD arrays in the D spectral band but two-f
 % > two-fold
 % I believe this is more.
 %
-% ^.
+% ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:30.183Z.
 in the A spectral band.
 For this reason, the {\usalex} setup is expected to be
 at least twice as sensitive in the A-channel than the 48-spot setup.
@@ -318,6 +318,12 @@ More details and the data underliyng this figure can be found in the
 \end{figure}
 
 \subsection{LCOS-SLM Modulation}
+% * <michalet@chem.ucla.edu> 2017-06-19T18:38:04.163Z:
+% 
+% > Modulation
+% Be consistent with capitalization throughout
+% 
+% ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:26.023Z.
 \label{sec:lcos}
 
 The array of 48 excitation spots is generated for each color by an LCOS-SLM
@@ -327,7 +333,7 @@ previously described in~\onlinecite{colyer_high-throughput_2010,ingargiola_multi
 %
 % We should mention the Delon papers I sent you somewhere around here or when characterizing the illumination pattern.
 %
-% ^.
+% ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:23.311Z.
 The LCOS-SLM phase-pattern
 implements an array of lenses that focus the spots in an image plane
 at a distance of a few cm (see Fig.~\ref{fig:setup}).
@@ -389,7 +395,7 @@ $L3$ a spot is formed at a different focus position.
 $L3$ can be aligned assuring that this new spot is a the
 same position of the spot obtained without $L3$.
 
-\subsection{Coalignment of Green and Red
+\subsection{Achieving overlap of the green and red
 patterns}
 
 Starting with the green LCOS-SLM, we project a multispot pattern into a
@@ -774,24 +780,24 @@ sample as in Fig.~\ref{fig:alex_mspot_15}.}
 
 In summary, we have described a new 48-spot single-molecule FRET setup
 designed for high-throughput single-molecule assays.
-Compared to our previous multispot setup the number of spots was increased six-fold with a corresponding increase in throughput. While larger SPAD arrays have been fabricated and demonstrated [refs], they are generally fabricated using standard high-voltage CMOS processes not designed for photon detector optimization but instead dense integrated circuit design, resulting in poorer photon-counting performance than the custom technology process employed here. Convincing applications in cell FCS and FLIM (among others) have been published with these CMOS SPAD arrays, but they remain a long way from offering the sensitivity needed for single-molecule applications.
+Compared to our previous multispot setup, the number of spots was increased six-fold with a corresponding increase in throughput. While larger SPAD arrays have been fabricated and demonstrated [refs Zappa, Charbon, Henderson], they are fabricated using standard high-voltage CMOS processes not designed for photon detector optimization but instead dense integrated circuit design, resulting in poorer photon-counting performance than the custom technology process employed here. Convincing applications in cell FCS and FLIM (among others) have been published with these CMOS SPAD arrays, but they remain a long way from offering the sensitivity needed for single-molecule applications.
 % * <michalet@chem.ucla.edu> 2017-06-16T17:40:44.369Z:
 %
 % > [refs]
 % cite our Zappa collaboration papers, reviews, and the Langowski-Charbon papers, Henderson papers,etc
 %
-% ^.
+% ^ <michalet@chem.ucla.edu> 2017-06-19T18:43:21.736Z.
 Compared to our previous works, a second alternating excitation laser was incorporated, and the corresponding alignment hurdles solved, permitting the sorting of single-molecules according to their donor-acceptor stoichiometry. In particular, we have shown that the setup allows identifying singly- and doubly-labeled species over the full range of FRET efficiencies, opening the door to a much wider range of assays than previously possible.
 
-The presented a detailed multispot design descriptions and alignment procedure
+We presented a detailed description of the multispot setup and alignment procedure,
 which incorporates a number of technical solutions of potential interest
-for other applications, as well as proof of principle
-demonstration of its single-molecule FRET measurement capabilities.
-We provide a comparison of its performance with that
+for other applications. We also illustrated  the smFRET measurement capabilities of the new setup using doubly-labeled dsDNA molecules  as a proof of principle
+demonstration of sub-population separations and high-throughput measurements.
+Finally, we provided a comparison of its performance with that
 of a standard single-spot (confocal) {\usalex} setup.
 Applications of this new instrument to the study of the initial
 stages of bacterial transcription and high-throughput diagnostics
-will be described in future publications.
+will be explored in future work.
 
 \begin{acknowledgments}
 This work was supported by NIH grants R01 GM095904 \& R01 GM069709 and
@@ -1185,7 +1191,7 @@ channels ($N= 48$ in this case).
 % > Additional data
 % Needs some text?
 %
-% ^.
+% ^ <michalet@chem.ucla.edu> 2017-06-19T18:51:52.355Z.
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{figures/2017-05-23_04_22d_48spot_alex_hist_Su_all-bursts}}
