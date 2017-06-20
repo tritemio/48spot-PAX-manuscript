@@ -107,11 +107,6 @@ as DNA transcription by RNA polymerase.
 \maketitle
 
 \section{Introduction} \label{sec:intro}
-% * <michalet@chem.ucla.edu> 2017-06-20T02:03:44.711Z:
-% 
-% I "closed" most of my comments because I misunderstood what that meant (I thought it was just a matter of collapsing the comment box), so please check all my comments if you haven't addressed them already.
-% 
-% ^.
 
 Single-molecule FRET (smFRET) studies of freely-diffusing molecules in
 solutions are traditionally performed using heavily customized
@@ -324,28 +319,20 @@ More details and the data underliyng this figure can be found in the
 \end{figure}
 
 \subsection{LCOS-SLM Modulation}
-% * <michalet@chem.ucla.edu> 2017-06-19T18:38:04.163Z:
-%
-% > Modulation
-% Be consistent with capitalization throughout
-%
-% ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:26.023Z.
 \label{sec:lcos}
 
 The array of 48 excitation spots is generated for each color by an LCOS-SLM
-via phase modulation of an incoming plane wave using an approach
+via phase modulation of an incoming plane wave direct-space modulation as
 previously described in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}.
-% * <michalet@chem.ucla.edu> 2017-06-16T17:38:21.229Z:
-%
-% We should mention the Delon papers I sent you somewhere around here or when characterizing the illumination pattern.
-%
-% ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:23.311Z.
-The LCOS-SLM phase-pattern
-implements an array of lenses that focus the spots in an image plane
-at a distance of a few cm (see Fig.~\ref{fig:setup}).
-The pitch of the lenses in the red and green pattern is approximately the same
-(dictated by the detector geometry). Therefore a change in focal length
-determines a change in diameter and thus NA of the LCOS-SLM lenses.
+Briefly, the LCOS-SLM
+implements the phase profile of a lenslet array that focuses an array of spots
+in an image plane at a distance of 3-4 cm from the modulator surface
+(see Fig.~\ref{fig:setup}).
+For both excitation wavelengths, the pitch and therefore the diameter
+of the lenslets is is dictated by the detector geometry and by the
+magnification of the optical train.
+A change in focal length of the LCOS lenslets, with constant diameter,
+results in a change in their NA and therefore spot size.
 The chosen LCOS-SLM focal length differs in the green and red pattern
 (32~mm for the red and 36~mm for the green)
 in order to reduce the difference in PSF sizes between green and red excitation.
@@ -1232,15 +1219,6 @@ reports spot number ($[\cdot]$) and number of bursts (\#B).%
 \end{figure*}
 
 \nocite{*}
-% * <michalet@chem.ucla.edu> 2017-06-20T02:02:29.558Z:
-% 
-% The bibliography items need to be edited as I commented on the Progress Report Publication List (and more).
-% 
-% ^ <tritemio@gmail.com> 2017-06-20T04:33:24.432Z:
-% 
-% I did some minor tweak, but they look pretty good to me. All links and DOI are working, that's what matters for finding the papers.
-%
-% ^.
 \bibliography{biblio}% Produces the bibliography via BibTeX.
 
 \end{document}
