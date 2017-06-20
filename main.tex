@@ -694,38 +694,6 @@ photon rate in the $D_{ex}A_{em}$ (red) and $DA_{ex}A_{em}$ (purple) streams
 in the 48-spot setup.
 
 \subsection{E-S histograms}
-After the initial burst search it is necessary to apply a burst selection
-criterium to reject the smallest burst which dominate the distribution.
-Fig.~\ref{fig:alexhist48all} shows the E-S histogram for the 12d sample,
-after a burt selection obtained setting a threshold on the minimum
-bursts counts obtained from photon in all the streams.
-We observe that D-only and FRET populations (respectively top left corner
-and center in the 2-D histogram) are clearly distinguishable in most channels.
-Moreover, as shown in Fig~\ref{fig:alexhist48fret}, it is easy to isolate
-the FRET population(s) by applying a burst
-selection on the $DA_{ex}A_{em}$ counts and on $D_ex$ counts.
-The separation of FRET from singly-labeled species is the main advantage
-of the dual laser excitation.
-
-Without any further calibration, the spread across the different channels
-is limited and does not affect the ability to distinguish sub-populations.
-This is evident in Fig.~\ref{fig:fittedFRETscatter} which shows the
-$E_PR$ and $S_u$ peak center position in the the different spots for
-both D-only and FRET populations.
-Fig.~\ref{fig:fretfit48vsmean} shows, separately for each channel,
-the center and $\pm1\,\sigma$ range of the fitted E-S peak
-for the FRET population (blue dot and error-bar).
-The orange dot is the mean center peak position
-across all the channels. We note that, for almost all channels, the
-deviation of the peak position is very well below the $\pm1\,\sigma$
-range. One exception is channel 19, where the lower PDE of the A pixel
-causes a larger deviation of the peak position.
-While in Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
-we present results without any channel calibration for the purpose
-of illustrating the raw performances of the system.
-It is possible, however, to reduce the channel-to-channel variation
-on E and S peak position by applying the per-channel calibration reported
-in~\ref{sec:perchcorr}.
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
@@ -774,6 +742,40 @@ in each subplot.  The spot number is indicated in the top right corner of
 each subplot.%
 }}
 \end{figure*}
+
+
+After the initial burst search it is necessary to apply a burst selection
+criterium to reject the smallest burst which dominate the distribution.
+Fig.~\ref{fig:alexhist48all} shows the E-S histogram for the 12d sample,
+after a burt selection obtained setting a threshold on the minimum
+bursts counts obtained from photon in all the streams.
+We observe that D-only and FRET populations (respectively top left corner
+and center in the 2-D histogram) are clearly distinguishable in most channels.
+Moreover, as shown in Fig~\ref{fig:alexhist48fret}, it is easy to isolate
+the FRET population(s) by applying a burst
+selection on the $DA_{ex}A_{em}$ counts and on $D_ex$ counts.
+The separation of FRET from singly-labeled species is the main advantage
+of the dual laser excitation.
+
+Without any further calibration, the spread across the different channels
+is limited and does not affect the ability to distinguish sub-populations.
+This is evident in Fig.~\ref{fig:fittedFRETscatter} which shows the
+$E_PR$ and $S_u$ peak center position in the the different spots for
+both D-only and FRET populations.
+Fig.~\ref{fig:fretfit48vsmean} shows, separately for each channel,
+the center and $\pm1\,\sigma$ range of the fitted E-S peak
+for the FRET population (blue dot and error-bar).
+The orange dot is the mean center peak position
+across all the channels. We note that, for almost all channels, the
+deviation of the peak position is very well below the $\pm1\,\sigma$
+range. One exception is channel 19, where the lower PDE of the A pixel
+causes a larger deviation of the peak position.
+While in Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
+we present results without any channel calibration for the purpose
+of illustrating the raw performances of the system.
+It is possible, however, to reduce the channel-to-channel variation
+on E and S peak position by applying the per-channel calibration reported
+in~\ref{sec:perchcorr}.
 
 
 \subsection{Pooling data from all channels}
