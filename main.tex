@@ -416,7 +416,7 @@ in the 48-spot setup.
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
-\caption{{\label{fig:alexhist48all} $E_{PR}$ versus $S_u$
+\caption{{\label{fig:alexhist48all12d} $E_{PR}$ versus $S_u$
 histograms for the different spots for the 12d dsDNA sample. Two
 populations visible D-only (cluster at $E_{PR}=0$,
 $S_u=1$) and FRET population (cluster at $E_{PR}=0.6$,
@@ -430,9 +430,9 @@ on the total burst size after background correction with a threshold of
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_naa_AND_size_selection}}
-\caption{{\label{fig:alexhist48fret} $E_{PR}$ versus $S_u$
+\caption{{\label{fig:alexhist48fret12d} $E_{PR}$ versus $S_u$
 histograms for the different spots for the 12d dsDNA sample. Data and
-burst search is identical as in figure~\ref{fig:alexhist48all}, while
+burst search is identical as in figure~\ref{fig:alexhist48all12d}, while
 burst selection has been tailored to select only the FRET population.
 The burst selection criteria is the following: a burst is selected if
 counts in $D_{ex}DA_{em}$ stream are larger than 20 and counts in
@@ -465,12 +465,12 @@ each subplot.%
 
 After the initial burst search it is necessary to apply a burst selection
 criterium to reject the smallest burst which dominate the distribution.
-Fig.~\ref{fig:alexhist48all} shows the E-S histogram for the 12d sample,
+Fig.~\ref{fig:alexhist48all12d} shows the E-S histogram for the 12d sample,
 after a burt selection obtained setting a threshold on the minimum
 bursts counts obtained from photon in all the streams.
 We observe that D-only and FRET populations (respectively top left corner
 and center in the 2-D histogram) are clearly distinguishable in most channels.
-Moreover, as shown in Fig~\ref{fig:alexhist48fret}, it is easy to isolate
+Moreover, as shown in Fig~\ref{fig:alexhist48fret12d}, it is easy to isolate
 the FRET population(s) by applying a burst
 selection on the $DA_{ex}A_{em}$ counts and on $D_ex$ counts.
 The separation of FRET from singly-labeled species is the main advantage
@@ -925,8 +925,7 @@ due to non-idealities (stigmatism) in the optical path.
 A-SPAD G laser, A-SPAD A laser.
 
 
-
-\section{Appendix: ALEX and PAX}
+\section{ALEX and PAX}
 \label{sec:alex_pax}
 
 In ALEX, two alternation periods $D_{ex}$ and
@@ -1076,7 +1075,8 @@ compensate for the doubling of the D signal) and therefore its
 shot-noise is amplified.
 
 
-\subsection{Modified stoichiometry}\label{modified-stoichiometry}
+\subsection{Modified stoichiometry}
+\label{modified-stoichiometry}
 
 By replacing $\tilde{F}_{A_{ex}A_{em}}$ with $F_{A_{ex}DA_{em}}$ in eq.
 \ref{eq:Spax}, we can define a modified stoichiometry $S_u$
@@ -1111,7 +1111,6 @@ section \ref{sec:perchcorr}.
 
 
 \section{Individual channel corrections}
-
 \label{sec:perchcorr}
 
 \subsection{Gamma correction}
@@ -1221,23 +1220,16 @@ average over all $N$
 channels ($N= 48$ in this case).
 
 \section{Additional data}
-% * <michalet@chem.ucla.edu> 2017-06-21T16:49:15.509Z:
-%
-% What is that? Needs some text?
-%
-% ^.
-% * <michalet@chem.ucla.edu> 2017-06-19T13:33:49.301Z:
-%
-% > Additional data
-% Needs some text?
-%
-% ^ <michalet@chem.ucla.edu> 2017-06-19T18:51:52.355Z.
+Here we provide addiaional results obtained with the 22d DNA sample (low-FRET).
+Fig.~\ref{fig:alexhist48all22d} shows the E-S histograms for the different
+channels.
+
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{figures/2017-05-23_04_22d_48spot_alex_hist_Su_all-bursts}}
-\caption{{\label{fig:alexhist48fret2} $E_{PR}$ versus $S_u$
+\caption{{\label{fig:alexhist48all22d} $E_{PR}$ versus $S_u$
 histograms for the different spots for the 22d dsDNA sample. Data and
-burst search is identical as in figure~\ref{fig:alexhist48all}, while
+burst search is identical as in figure~\ref{fig:alexhist48all12d}, while
 burst selection has been tailored to select only the FRET population.
 The burst selection criteria is the following: a burst is selected if
 counts in $D_{ex}DA_{em}$ stream are larger than 20 and counts in
