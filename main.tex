@@ -222,23 +222,22 @@ A schematic of the setup is reported in Fig.~\ref{fig:setup}.
 The setup includes two CW excitation laser (green: 532~nm, red: 628~nm)
 with only the one (red) being modulated via an acoustic-optic modulator (AOM).
 After polarization adjustment and beam expansion, the two lasers
-are phase modulated by two LCOS-SLM generating
-48-spots pattern on a plane after each LCOS-SLM (\emph{LCOS image plane}).
+are phase modulated by the respective LCOS-SLM generating two
+48-spots patterns on a plane after each LCOS-SLM (\emph{LCOS image plane}).
 The two lasers are then combined by a dichroic mirror ($DM_{MIX}$),
 recollimated ($L3$) before being focused into the sample by an
 high numerical aperture (NA) objective lens (60x, NA=1.2).
 The emitted fluorescence is collected by the same objective lens,
-separated by the excitation via dual-band polychroic mirror ($DM_{EX}$).
+separated by the excitation through a dual-band polychroic mirror ($DM_{EX}$),
 and focused by the tube lens ($L2$) into an image plane.
 Next, the fluorescence light is recollimated ($L4$) separated in donor
-and acceptor spectral band ($DM_{EM}$) and focused in two different
-48-pixel SPAD arrays mounted on motorized micro-positioners.
-The system is aligned so that each pixel is optically
+and acceptor spectral bands ($DM_{EM}$) and focused in two different
+48-pixel SPAD arrays mounted on motorized micro-positioning stages.
+The system is aligned so that each SPAD pixel is optically
 conjugated to one excitation spots into the sample.
 
-The detectors output is feed to an FPGA-based board which performs
-photon timestamping (12.5~ns resolution) and data transfer
-to an host PC.
+The detectors output is processed by an FPGA-based board which performs
+photon timestamping (12.5~ns resolution) and data transfer to an host PC.
 The host PC runs an acquisition software that displays 96-channel timetraces
 in realtime, implements alignment routines and saves the acquisition to
 disk. Further data conversion and analysis is performed on a second PC.
@@ -277,12 +276,21 @@ measurements is reported in~\onlinecite{michalet_silicon_2014}.
 \subsection{48-spot pattern}
 \label{sec:48spot-pattern}
 
-The array of 48 excitation spots is generated independently for each color
-by two LCOS-SLM via phase modulation of an incoming plane wave, as
-previously described in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}.
+The 48 excitation spots are generated independently for each wavelength
+via phase modulation of an incoming plane wave, as
+previously described
+in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}.
+The phase modulation operates in the directs space (as opposed to Fourier space)
+and implements the phase profile a Fresnel lenslet array.
 
-TODO: Add brief description of the 48-spot pattern generation that justifies
-and introduces Fig.~\ref{fig:patternfit}.
+Fig.~\ref{fig:patternfit} shows the emission pattern due to green (Panel A)
+and red laser (Panel B) acquired by the camera
+on the microscope side-port using a high-concentration dye sample. The two
+patterns are aligned to maximize the overlap of each of the 48 spots.
+The two pattern overlap and centering with respect to the optical axis
+is assessed via 2-D Gaussian fitting (Panel C). More details on the alignment
+procedure and pattern assessment can be found in appendix~\ref{sec:lcos}.
+
 
 See appendix~\ref{sec:lcos} for more details.
 
