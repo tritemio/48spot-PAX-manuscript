@@ -191,9 +191,9 @@ setup by (i) introducing a 48-spot illumination and detection scheme,
 and (ii) implementing a 2-laser PAX illumination approach.
 This paper is organized as follows. TBC.
 % * <michalet@chem.ucla.edu> 2017-06-21T16:47:03.885Z:
-% 
+%
 % Add an overview of the different sections
-% 
+%
 % ^.
 % * <michalet@chem.ucla.edu> 2017-06-16T17:35:25.309Z:
 %
@@ -201,11 +201,10 @@ This paper is organized as follows. TBC.
 % Add an overview of the different sections
 %
 % ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:43.535Z.
-The software needed to operate the multispot setup (including
+Software needed to operate the multispot setup (including
 LCOS-SLM pattern generation, LabVIEW-FPGA timestamping code,
-piezo-motor control, etc.) is open source.
-The various software components are organized in different repositories
-and available at
+piezo-motor control, etc.) is organized in different repositories
+available on GitHub at
 \href{https://github.com/multispot-software}{https://github.com/multispot-software}.
 
 \begin{figure*}
@@ -215,113 +214,36 @@ and available at
 \end{figure*}
 
 \section{Setup description}
-\label{sec:setup}
+\label{sec:setup_brief}
 
-The setup (Fig.~\ref{fig:setup}) comprises two excitation CW lasers at
-532~nm and 628~nm (2RU-VFL-Series, MPB Communications Inc., QC, Canada).
-For each laser, a half-waveplate and polarizing beam splitter are used
-for polarization and intensity control, as the polarization orientation
-needs to be aligned along the direction required by the LCOS-SLM. The
-628 nm laser is directed through an acousto-optical modulator (P/N 48058
-PCAOM, electronics: P/N 64048-80-.1-4CH-5M, Neos Technology, Melbourne,
-FL, USA) used for {\microsec} time-scale modulation, while the 532~nm
-laser is unmodulated.
-Each laser goes through a first beam expander (Keplerian
-telescope, doublet lenses: 50~mm and 250~mm focal lengths). Two periscopes
-bring the beams to a raised optical breadboard where a microscope body
-(X71, Olympus Corporation, Japan) is fixed with its bottom port sitting
-over a circular aperture. Past the periscope, each beam goes through a
-second adjustable beam expander (3X, P/N 59-131, Edmund Optics Inc.).
-The red laser is reflected off mirrors $M1_R$ and
-$M2_R$ and phase-modulated by the ``red'' LCOS-SLM (P/N
-X10468-07, Hamamatzu, Japan), before passing through the dichroic mirror
-$D_{MIX}$. The green laser is reflected off $M3$,
-phase-modulated by the ``green'' LCOS-SLM (P/N X10468-01, Hamamatzu),
-and combines with the red excitation via the dichroic mirror
-$D_{MIX}$ (T550LPXR, Chroma Technology Corp, VT, USA). Both
-beams are recollimated by the $L3$ lens (f=250~mm,
-AC508-250-A, Thorlabs) and focused into the sample by an high-NA
-objective lens (UAPOPlan 60x, NA 1.2, Olympus) after being reflected off
-the excitation dichroic mirror $DM_{EX}$ (Brightline
-FF545/650-Di01, Semrock Inc., NY, USA). The excitation pattern forms a
-dual-color 12x4 array of spots into the sample matching the geometry of
-the two SPAD arrays. The fluorescence emission is collected by the same
-objective lens, passes through the excitation dichroic
-$DM_{EX}$ and is focused by the microscope tube lens either on
-the side or the bottom port of the microscope. The side port mounts a
-sCMOS camera (Grasshopper3 GS3-U3-23S6M-C, FLIR Integrated Imaging
-Solutions Inc., BC, Canada) used during alignment while the bottom port
-redirects the beams toward the emission path. Here, a relay lens
-$L4$ (f=100~mm, AC254-100-A, Thorlabs) recollimates the
-image and sends it to an emission dichroic mirror $D_{EM}$
-(Brightline Di02-R635, Semrock), which splits the signal into a donor
-(D) and acceptor (A) spectral bands. The D path goes through a band-pass
-filter (Brightline FF01-582/75, Semrock) which removes residual 628~nm
-laser leakage and helps suppressing any Raman scattering from the 532~nm
-laser. Both D and A paths are refocused by lenses $L5_D$ /
-$L5_A$ (f=150~mm, AC254-150-A, Thorlabs) on two 48-pixels
-SPAD arrays\cite{gulinatti_48-pixel_2013} (denoted as donor and acceptor SPAD in the
-following).
+In this section we outline a brief description of the setup.
+A more detailed description can be found in
+appendix~\ref{sec:setup}.
 
-Both SPAD arrays are mounted on 3-axis micro-positioners. The directions
-orthogonal to the optical axis (X-Y) are software-controlled via open-loop
-piezo actuators
-(actuators: Newport 8302; drivers: Newport 8752 \& 8753; Newport
-Corporation, Irvine, CA, USA). The third axis (Z) has manual actuators
-since the requirements on the Z directions are much less stringent than
-for the X-Y directions. The donor SPAD array has an additional stage for
-rotation about the optical axis, used to match the relative orientation
-of the SPAD arrays. Software for controlling the micro-positioners is
-available in the
-\href{https://github.com/multispot-software/picomotor}{picomotor} repository.
+A schematic of the setup is reported in Fig.~\ref{fig:setup}.
+The setup includes two CW excitation laser (green: 532~nm, red: 628~nm)
+with only the one (red) being modulated via an acoustic-optic modulator (AOM).
+After polarization adjustment and beam expansion, the two lasers
+are phase modulated by two LCOS-SLM generating
+48-spots pattern on a plane after each LCOS-SLM (\emph{LCOS image plane}).
+The two lasers are then combined by a dichroic mirror ($DM_{MIX}$),
+recollimated ($L3$) before being focused into the sample by an
+high numerical aperture (NA) objective lens (60x, NA=1.2).
+The emitted fluorescence is collected by the same objective lens,
+separated by the excitation via dual-band polychroic mirror ($DM_{EX}$).
+and focused by the tube lens ($L2$) into an image plane.
+Next, the fluorescence light is recollimated ($L4$) separated in donor
+and acceptor spectral band ($DM_{EM}$) and focused in two different
+48-pixel SPAD arrays mounted on motorized micro-positioners.
+The system is aligned so that each pixel is optically
+conjugated to one excitation spots into the sample.
 
-Each SPAD arrays is equipped with an USB 2.0 connection for low-resolution
-% * <michalet@chem.ucla.edu> 2017-06-21T16:47:39.503Z:
-% 
-% it's more than that. Maybe Polimi can expand a bit?
-% 
-% ^.
-% * <michalet@chem.ucla.edu> 2017-06-16T17:36:19.581Z:
-%
-% > equipped with an USB 2.0 connection
-% it's more than that. Maybe Polimi can expand a bit?
-%
-% ^ <michalet@chem.ucla.edu> 2017-06-19T18:38:35.719Z.
-time-binned counting and humidity control.
-In addition, a standard SCSI connector
-includes 48 independent outputs providing a pulse for every detected
-photon in each pixel~\cite{gulinatti_48-pixel_2013}. The two SCSI ports are fed
-through a custom adapter to an FPGA-based acquisition board (FPGA board:
-PXI-7813R, rack: PXI-1000B, National Instruments, Austin, TX) which
-performs timestamping with 12.5~ns resolution in parallel on the 96
-channels (task implemented in LabVIEW 2011 using the FPGA Toolkit,
-code available \href{https://github.com/multispot-software/MultichannelTimestamper}{here}).
-The board transfers the data asynchronously to a host PC via an MXI-4 link
-to a custom acquisition program written in LabVIEW 2011 (MXI-4 link:
-rack board PXI-8331; PC board PCI-8331, National Instruments). The
-acquisition program also controls the red laser alternation using a
-pulse generation board (PXI-6602, National Instruments), whose clock is
-synchronized with the timestamping FPGA board (PXI-7813R) through the
-common bus line on the rack (PXI-1000B).
-
-In addition to the aforementioned acquisition program, the host computer
-runs a second LabVIEW 2011 program controlling the phase pattern on the
-two LCOS-SLM. During alignment the acquisition program communicates with
-the LCOS-control program to scan the positions of the LCOS pattern and
-assess the position of the SPAD arrays (see section~\ref{sec:laseralign}).
-
-The raw binary data is saved together with a text-based metadata file
-containing measurement details that are used to create the final
-Photon-HDF5 file\cite{ingargiola_photon-hdf5:_2016,ingargiola_photon-hdf5:_2016-1}.
-Once the measurement is saved on the
-host PC, the raw data is immediately transferred to a linux-based
-workstation via 1~Gb Ethernet link. The second workstation automatically
-performs conversion to Photon-HDF5 and data analysis, leaving the host
-PC available for acquiring the next set of data.
-The scripts for data transfer conversion and analysis are available in the
-\href{https://github.com/multispot-software/transfer\_convert}{transfer\_convert}
-repository.
-
+The detectors output is feed to an FPGA-based board which performs
+photon timestamping (12.5~ns resolution) and data transfer
+to an host PC.
+The host PC runs an acquisition software that displays 96-channel timetraces
+in realtime, implements alignment routines and saves the acquisition to
+disk. Further data conversion and analysis is performed on a second PC.
 
 \subsection{Detectors}
 \label{sec:detectors}
@@ -355,254 +277,8 @@ measurements is reported in~\onlinecite{michalet_silicon_2014}.
 \end{figure}
 
 
-\subsection{LCOS-SLM Modulation}
-\label{sec:lcos}
-
-The array of 48 excitation spots is generated independently for each color
-by two LCOS-SLM via phase modulation of an incoming plane wave, as
-previously described in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}.
-Briefly, the LCOS-SLM
-implements in direct-space the phase profile of a lenslet array that
-focuses an array of spots in an LCOS image plane at a distance of 3-4 cm
-from the modulator surface (see Fig.~\ref{fig:setup}).
-A rectangular region of the LCOS-SLM is subdivided in 12x4 adjacent blocks
-each implementing a single lens. The pattern can be adjusted
-by changing its center position, rotation, and X and Y pitch independently
-(operations equivalent to shifting, rotating or stretching the lenslet array).
-For both excitation wavelengths, the pitch and therefore the diameter
-of the lenslets is dictated by the detector geometry and by the
-magnification of the optical train from the LCOS-SLM to the detector.
-The spot pitch on the sample that nominally matches the detector geometry is
-5.5~\micron ($500 {\rm \mu m}/ 90$) in each direction,
-resulting in a LCOS-SLM lenslet pitch of 463~{\micron} (23.1 LCOS-SLM pixels).
-This value is optimized during alignment to match the actual magnification
-and optical aberrations.
-Keeping the LCOS lenslets diameter and pitch constant,
-a change in the focal length results in a change in NA and therefore spot size.
-The ratio of focal lengths in the two LCOS-SLM
-(32~mm for the red and 36~mm for the green)
-is chosen to compensate the difference in PSF sizes between 532~nm and
-628~nm wavelengths.
-
-The LCOS-SLM region surrounding the 12x4 pattern receives light that can
-can cause a stray "wide-field" excitation and a therefore a strong background.
-For this reason, we fill the unused LCOS-SLM area with a "beam steering"
-pattern (a periodic pattern in one direction)
-that diffracts the incoming light at an angle with respect to the optical axis.
-This "steering" assures that light not contributing to the multispot patterns
-is not being collected by the back aperture of the objective lens.
-Additionally, the expanded laser beam is clipped by two rectangular apertures
-(slits) that are around 1~mm larger than the multispot pattern further
-reducing the light that could contribute to background.
-This approach achieved low background without the need of using a  spatial
-filter as in our previous setup~\cite{ingargiola_multispot_2017}.
-
-Software to generate the pattern is available in the
-\href{https://github.com/multispot-software/lcos\_multispot\_pattern}{lcos\_multispot\_pattern}
-repository.
-
-
-\section{Laser alignment}
-\label{sec:laseralign}
-
-Each of the two lasers needs to be aligned in order
-to ensure (a) maximum uniformity between spots intensities
-(b) minimal aberrations across the patterns. To achieve (a) the Gaussian
-laser beam is expanded so that only the central part of the beam covers
-the excitation pattern (which has a maximum extension of 5~mm). To ensure
-(b), the geometrical center of the pattern needs to be placed on the
-optical axis.
-
-In addition, (c) the excitation pattern of the two laser need to be
-aligned so that, for each spot, there is a maximum overlap between D
-and A excitation volumes.
-
-\subsection{Individual laser alignment}
-
-The 3X monolithic beam expanders have an adjustment ring used to control
-the beam collimation. A simple way to ensure beam collimation is by sending
-the beam into the microscope through the excitation dichroic mirror, removing
-the external recollimation lens $L3$ and the objective
-lens, while placing a mirror on the sample holder and using the LCSO-SLM
-as a mirror (i.e.~with a constant phase pattern). Using the camera on
-the microscope output port, we adjust the collimation until a tight spot
-is formed. After adjusting the collimation, each beam needs to be
-aligned so that the peak intensity is at the center of the optical axis.
-To this end, without the recollimating lens $L3$, an iris
-$I2$ is placed before the beam enters the microscope side
-port. Using an aperture of 1-2 mm, only a narrow beamlet goes through
-the objective and generates a spot from the cover-glass reflection. Only
-when the input beam is parallel to the optical axis, the spot is in the
-center of the field of view, assumed to be located with the center of a
-cross-hair in the microscope's eyepiece.
-In order to make the input beams parallel to the
-optical axis, the last mirrors before the microscope is adjusted
-($M2_R$ for the red and $DM_{MIX}$ for the green
-laser). By defocusing the spot, we obtain symmetrical concentric patterns
-only if the input beamlet intersects with the optical axis at the back
-aperture of the objective lens. Since the direction is already fixed, we
-move the $I2$ iris to obtain the most radially-symmetric
-defocused pattern. In this way the beamlet that goes through
-$I2$ coincides with the microscope optical axis. The last
-steps is laterally translating the input beams (without changing the
-incidence angle) in order to place the intensity peak on the iris
-center. Alignment of beam direction and iris need to be repeated until
-convergence. Once done, both beams are (to a good approximation)
-parallel and concentric with the optical axis. When placing
-$L3$ a spot is formed at a different focus position.
-$L3$ can be aligned assuring that this new spot is a the
-same position of the spot obtained without $L3$.
-
-\subsection{Achieving overlap of the green and red
-patterns}
-
-Starting with the green LCOS-SLM, we project a multispot pattern into a
-highly concentrated solution of dyes (100~nM - 1~\textgreek{μ}M) used for alignment.
-Using a square grid of spots with an odd number of spot per side
-(i.e.~9x9) ensures that one spot is at the center of the pattern. The
-camera on the side-port detects an image of the pattern. The centering
-of the pattern with respect to the optical axis can be assessed from the
-amount of geometrical aberrations in the lateral spots. We center the
-excitation pattern by rigidly translating the pattern on the LCOS-SLM so
-that geometrical aberrations are roughly equivalent on the four sides.
-Next, we perform a 2-D Gaussian fitting of each spot, and from the
-distribution of sigmas and rotation of each Gaussian we estimate a more
-accurate position of the the optical axis (analysis performed with
-notebook XXX). This step may be repeated a few times until convergence.
-From this point on, the X-Y positions of the green LCOS-SLM is not
-changed anymore and its center becomes a reference for the optical axis
-position.
-
-Next, we activate the red LCOS-SLM and project a multispot pattern
-excited by the 628~nm laser. Using the camera we align the red pattern to
-the green one used as reference. A first coarse adjustment of the red
-LCOS-SLM pattern is manually performed by looking at the emission
-pattern on the live camera display. Then, the center position of the red
-LCOS-SLM pattern is finely adjusted by fitting the spot positions in the
-green and red images (Fig.~\ref{fig:patternfit}), taken separately (the
-analysis notebook can be found in
-\href{https://github.com/multispot-software}{multispot-software}).
-
-Finally, in order to reduce the background due to unmodulated light, two
-custom-made rectangular slits (aluminum with black finish) are added in
-the path before each LCOS. The slits are aligned to illuminate only the
-12x4 pattern ($\pm$1~mm) on the LCOS-SLM (see section~\ref{sec:lcos}).
-
-\begin{figure}
-    \includegraphics[width=\columnwidth]{{figures/2017-04-28_conf9_G_conf14_R_green_red_pattern_and_fit}}
-    \caption{{\label{fig:patternfit}
-    The 12x4 multispot pattern for green (A) and red (B)
-    excitation and Gaussian fit of the spots (C). The pattern is acquired by
-    a camera on the microscope side port (see fig.~\ref{fig:setup}) using a
-    solution of ATTO550 and ATTO647N at high concentration ($\sim$100~nM).
-    Emission due to 532~nm and 628~nm laser is acquired with two subsequent
-    acquisitions and reported in false-colors in panels (A) and (B).
-    Scale bars are 5~{\micron} long.
-    To assess the alignment,
-    each spot in the two images is fitted with a 2D Gaussian function. Panel
-    (C) reports an overlays of the fitted peak positions peak positions and
-    contour of the Gaussian waist for 532~nm (\emph{green}) and 628~nm
-    (\emph{red}) images. A zoom-in for 3 representative spots is reported on
-    the right. The elliptical shape of the Gaussian and their rotation is
-    due to geometrical aberrations.%
-    }}
-\end{figure}
-
-\section{SPAD arrays alignment}
-\label{spad-alignment}
-
-Both detectors must be aligned so that each pixel is optically
-conjugated to the corresponding excitation volume (excitation PSF). The
-goal is having pairs of corresponding pixels on the two arrays,
-detecting photons from the same volume in the sample (detection PSF). At
-the same time, in order to maximize the signal, the detection PSF needs to be
-concentric with the excitation PSF. Achieving this with a 2-D
-arrangement of spots and pixels requires not only aligning the X-Y
-position of the detectors (as in single-spot measurements) but also
-aligning the relative rotation of the two SPADs and adjusting the pitch
-and rotation of the excitation pattern to optimally match the detectors'
-geometry.
-
-For alignment we use a high concentration dye mixture (ATTO550,
-ATTO647N, $\sim$500~nM) excited by both lasers.
-With this sample, the 532~nm laser generates fluorescence signal in both D and A
-channel, while the 628~nm laser only generates signal in the A channel.
-At this point, the center of the both 532~nm and 628~nm excitation patterns
-has already been fixed in order to minimize geometrical aberrations
-as described in section~\ref{sec:laseralign}.
-Therefore, the excitation pattern position is used as the reference
-to which aligning the SPAD arrays.
-Starting with the green laser only, both SPADs are manually positioned
-in X and Y to match the center of the excitation pattern. This is achieved
-by maximizing timetraces of SPAD counts (displayed by the acquisition
-program) while moving the detectors.
-
-Next, we perform a more automated procedure for fine alignment called in
-the following ``multispot scan''. A multispot scan involves rigidly
-translating a multispot pattern (typically 4x4 spots) on a LCOS-SLM in
-discrete steps along a cross path.
-At the same time, counts from a SPAD
-array are integrated for each pattern position for 300~ms.
-During a scan, each emission spot draws a cross path roughly centered
-on a SPAD's pixel.
-A typical scan covers a range of 10 LCOS-SLM pixels with a step of 0.4
-and is performed sequentially in X and Y directions.
-The acquired counts as a function of the LCOS-SLM position resemble a peak
-profile that is used to estimate SPAD's pixel positions in LCOS-SLM
-coordinates. Averaging the SPAD pixel positions we obtain an accurate
-estimation of the SPAD array's center. Ultimately, this procedure yields
-the offset of each SPAD array with respect to the ideal excitation pattern
-center. With this information, we move the SPAD arrays to the ideal
-X-Y position using software-controlled piezo micro-positioners.
-The sequence of multispot scan and SPAD array translation is repeated
-until convergence.
-Initially the two SPAD arrays are aligned with respect to the green
-LCOS-SLM pattern (532 nm). Next, the position of the red LCOS-SLM pattern
-(628 nm) is fine-tuned to match the position of the A SPAD array (the D
-SPAD array does not detect any signal with 628 nm excitation). The
-optimal position of the red excitation pattern is determined from a
-multispot scan performed with the red LCOS-SLM while counts are acquired
-with the A SPAD array. After this, both red an green excitation
-patterns, and D/A SPAD array positions are fixed and the alignment is
-complete.
-
-The whole fine alignment procedure is routinely performed at the
-beginning of each day of measurements and requires about 30 minutes.
-
-\subsection{Rotation and pitch
-adjustment}\label{rotation-and-pitch-adjustment}
-
-In the previous section we outlined the general fine-alignment procedure
-repeated daily when using the multispot setup. However, when
-building the setup, additional steps are
-necessary (a) to align the relative rotation of the two SPAD arrays, (b)
-to determine the best pitch in X and Y for the green and red excitation
-pattern and (c) to optimize the SPAD position along the optical axis
-(Z).
-
-To extract rotation and pitch information, we perform a
-multispot scan followed by an additional analysis step. In particular, the
-set of X-Y positions of each SPAD pixel obtained from the scan is fitted to a
-rectangular grid.
-The fitted grid parameters are: center position, pitch in X, pitch in Y and
-rotation angle. Each SPAD array will have a different set of fitted
-parameters.
-
-To adjust the rotation angle, one of the SPAD arrays (D) is
-rotated about the optical axis in order match the angle
-of the second SPAD (the rotation angle of each SPAD is obtained from the scan
-fits). Once the orientations of two SPAD arrays matches, the rotation
-stage is locked, ensuring long-term stability of the rotational angle.
-
-Regarding the pitch, the information from the scan fits is used to
-finely tune the X and Y pitch of the LCOS-SLM pattern that optimally
-matches both SPAD arrays. We observed X and Y pitch difference of 1-2\%
-due to non-idealities (stigmatism) in the optical path.
-
-\textbf{Figure}: scatter plot of center positions for: D-SPAD G laser,
-A-SPAD G laser, A-SPAD A laser.
-
-\section{smFRET measurements}\label{sec:smfret-meas}
+\section{smFRET measurements}
+\label{sec:smfret-meas}
 
 \subsection{Analysis}
 
@@ -879,13 +555,13 @@ stages of bacterial transcription and high-throughput diagnostics
 will be explored in future work.
 
 \begin{acknowledgments}
-Research reported in this publication was supported by the National Institute Of General Medical Sciences of the National Institutes of Health under Award Number R01GM095904 \& R01 GM069709, and by the National Science Foundation under Award Number MCB 1244175. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health or the National Science Foundation.
-% * <michalet@chem.ucla.edu> 2017-06-20T23:54:25.507Z:
-%
-% I realized that this is the wording we should have been using all along...
-%
-% ^.
-
+Research reported in this publication was supported by the National Institute
+Of General Medical Sciences of the National Institutes of Health under
+Award Number R01GM095904 \& R01 GM069709, and by the National Science
+Foundation under Award Number MCB 1244175.
+The content is solely the responsibility of the authors and does not
+necessarily represent the official views of the National Institutes of
+Health or the National Science Foundation.
 Conflict of interest statements: S. Weiss discloses intellectual
 property used in the research reported here.
 The work at UCLA was conducted in Dr. Weiss's Laboratory.
@@ -895,6 +571,355 @@ No resources or personnel from MPD were involved in this work.
 
 
 \appendix
+
+\section{Detailed setup description}
+\label{sec:setup}
+
+The setup (Fig.~\ref{fig:setup}) comprises two excitation CW lasers at
+532~nm and 628~nm (2RU-VFL-Series, MPB Communications Inc., QC, Canada).
+For each laser, a half-waveplate and polarizing beam splitter are used
+for polarization and intensity control, as the polarization orientation
+needs to be aligned along the direction required by the LCOS-SLM. The
+628 nm laser is directed through an acousto-optical modulator (P/N 48058
+PCAOM, electronics: P/N 64048-80-.1-4CH-5M, Neos Technology, Melbourne,
+FL, USA) used for {\microsec} time-scale modulation, while the 532~nm
+laser is unmodulated.
+Each laser goes through a first beam expander (Keplerian
+telescope, doublet lenses: 50~mm and 250~mm focal lengths). Two periscopes
+bring the beams to a raised optical breadboard where a microscope body
+(X71, Olympus Corporation, Japan) is fixed with its bottom port sitting
+over a circular aperture. Past the periscope, each beam goes through a
+second adjustable beam expander (3X, P/N 59-131, Edmund Optics Inc.).
+The red laser is reflected off mirrors $M1_R$ and
+$M2_R$ and phase-modulated by the ``red'' LCOS-SLM (P/N
+X10468-07, Hamamatzu, Japan), before passing through the dichroic mirror
+$D_{MIX}$. The green laser is reflected off $M3$,
+phase-modulated by the ``green'' LCOS-SLM (P/N X10468-01, Hamamatzu),
+and combines with the red excitation via the dichroic mirror
+$D_{MIX}$ (T550LPXR, Chroma Technology Corp, VT, USA). Both
+beams are recollimated by the $L3$ lens (f=250~mm,
+AC508-250-A, Thorlabs) and focused into the sample by an high-NA
+objective lens (UAPOPlan 60x, NA 1.2, Olympus) after being reflected off
+the excitation dichroic mirror $DM_{EX}$ (Brightline
+FF545/650-Di01, Semrock Inc., NY, USA). The excitation pattern forms a
+dual-color 12x4 array of spots into the sample matching the geometry of
+the two SPAD arrays. The fluorescence emission is collected by the same
+objective lens, passes through the excitation dichroic
+$DM_{EX}$ and is focused by the microscope tube lens either on
+the side or the bottom port of the microscope. The side port mounts a
+sCMOS camera (Grasshopper3 GS3-U3-23S6M-C, FLIR Integrated Imaging
+Solutions Inc., BC, Canada) used during alignment while the bottom port
+redirects the beams toward the emission path. Here, a relay lens
+$L4$ (f=100~mm, AC254-100-A, Thorlabs) recollimates the
+image and sends it to an emission dichroic mirror $D_{EM}$
+(Brightline Di02-R635, Semrock), which splits the signal into a donor
+(D) and acceptor (A) spectral bands. The D path goes through a band-pass
+filter (Brightline FF01-582/75, Semrock) which removes residual 628~nm
+laser leakage and helps suppressing any Raman scattering from the 532~nm
+laser. Both D and A paths are refocused by lenses $L5_D$ /
+$L5_A$ (f=150~mm, AC254-150-A, Thorlabs) on two 48-pixels
+SPAD arrays\cite{gulinatti_48-pixel_2013} (denoted as donor and acceptor SPAD in the
+following).
+
+Both SPAD arrays are mounted on 3-axis micro-positioners. The directions
+orthogonal to the optical axis (X-Y) are software-controlled via open-loop
+piezo actuators
+(actuators: Newport 8302; drivers: Newport 8752 \& 8753; Newport
+Corporation, Irvine, CA, USA). The third axis (Z) has manual actuators
+since the requirements on the Z directions are much less stringent than
+for the X-Y directions. The donor SPAD array has an additional stage for
+rotation about the optical axis, used to match the relative orientation
+of the SPAD arrays. Software for controlling the micro-positioners is
+available in the
+\href{https://github.com/multispot-software/picomotor}{picomotor} repository.
+
+Each SPAD arrays is equipped with an USB 2.0 connection for low-resolution
+time-binned counting and humidity control.
+In addition, a standard SCSI connector
+includes 48 independent outputs providing a pulse for every detected
+photon in each pixel~\cite{gulinatti_48-pixel_2013}. The two SCSI ports are fed
+through a custom adapter to an FPGA-based acquisition board (FPGA board:
+PXI-7813R, rack: PXI-1000B, National Instruments, Austin, TX) which
+performs timestamping with 12.5~ns resolution in parallel on the 96
+channels (task implemented in LabVIEW 2011 using the FPGA Toolkit,
+code available \href{https://github.com/multispot-software/MultichannelTimestamper}{here}).
+The board transfers the data asynchronously to a host PC via an MXI-4 link
+to a custom acquisition program written in LabVIEW 2011 (MXI-4 link:
+rack board PXI-8331; PC board PCI-8331, National Instruments). The
+acquisition program also controls the red laser alternation using a
+pulse generation board (PXI-6602, National Instruments), whose clock is
+synchronized with the timestamping FPGA board (PXI-7813R) through the
+common bus line on the rack (PXI-1000B).
+
+In addition to the aforementioned acquisition program, the host computer
+runs a second LabVIEW 2011 program controlling the phase pattern on the
+two LCOS-SLM. During alignment the acquisition program communicates with
+the LCOS-control program to scan the positions of the LCOS pattern and
+assess the position of the SPAD arrays (see section~\ref{sec:laseralign}).
+
+The raw binary data is saved together with a text-based metadata file
+containing measurement details that are used to create the final
+Photon-HDF5 file\cite{ingargiola_photon-hdf5:_2016,ingargiola_photon-hdf5:_2016-1}.
+Once the measurement is saved on the
+host PC, the raw data is immediately transferred to a linux-based
+workstation via 1~Gb Ethernet link. The second workstation automatically
+performs conversion to Photon-HDF5 and data analysis, leaving the host
+PC available for acquiring the next set of data.
+The scripts for data transfer conversion and analysis are available in the
+\href{https://github.com/multispot-software/transfer\_convert}{transfer\_convert}
+repository.
+
+\subsection{LCOS-SLM Modulation}
+\label{sec:lcos}
+
+The array of 48 excitation spots is generated independently for each color
+by two LCOS-SLM via phase modulation of an incoming plane wave, as
+previously described in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}.
+Briefly, the LCOS-SLM
+implements in direct-space the phase profile of a lenslet array that
+focuses an array of spots in an LCOS image plane at a distance of 3-4 cm
+from the modulator surface (see Fig.~\ref{fig:setup}).
+A rectangular region of the LCOS-SLM is subdivided in 12x4 adjacent blocks
+each implementing a single lens. The pattern can be adjusted
+by changing its center position, rotation, and X and Y pitch independently
+(operations equivalent to shifting, rotating or stretching the lenslet array).
+For both excitation wavelengths, the pitch and therefore the diameter
+of the lenslets is dictated by the detector geometry and by the
+magnification of the optical train from the LCOS-SLM to the detector.
+The spot pitch on the sample that nominally matches the detector geometry is
+5.5~\micron ($500 {\rm \mu m}/ 90$) in each direction,
+resulting in a LCOS-SLM lenslet pitch of 463~{\micron} (23.1 LCOS-SLM pixels).
+This value is optimized during alignment to match the actual magnification
+and optical aberrations.
+Keeping the LCOS lenslets diameter and pitch constant,
+a change in the focal length results in a change in NA and therefore spot size.
+The ratio of focal lengths in the two LCOS-SLM
+(32~mm for the red and 36~mm for the green)
+is chosen to compensate the difference in PSF sizes between 532~nm and
+628~nm wavelengths.
+
+The LCOS-SLM region surrounding the 12x4 pattern receives light that can
+can cause a stray "wide-field" excitation and a therefore a strong background.
+For this reason, we fill the unused LCOS-SLM area with a "beam steering"
+pattern (a periodic pattern in one direction)
+that diffracts the incoming light at an angle with respect to the optical axis.
+This "steering" assures that light not contributing to the multispot patterns
+is not being collected by the back aperture of the objective lens.
+Additionally, the expanded laser beam is clipped by two rectangular apertures
+(slits) that are around 1~mm larger than the multispot pattern further
+reducing the light that could contribute to background.
+This approach achieved low background without the need of using a  spatial
+filter as in our previous setup~\cite{ingargiola_multispot_2017}.
+
+Software to generate the pattern is available in the
+\href{https://github.com/multispot-software/lcos\_multispot\_pattern}{lcos\_multispot\_pattern}
+repository.
+
+
+
+\section{Laser alignment}
+\label{sec:laseralign}
+
+Each of the two lasers needs to be aligned in order
+to ensure (a) maximum uniformity between spots intensities
+(b) minimal aberrations across the patterns. To achieve (a) the Gaussian
+laser beam is expanded so that only the central part of the beam covers
+the excitation pattern (which has a maximum extension of 5~mm). To ensure
+(b), the geometrical center of the pattern needs to be placed on the
+optical axis.
+
+In addition, (c) the excitation pattern of the two laser need to be
+aligned so that, for each spot, there is a maximum overlap between D
+and A excitation volumes.
+
+\subsection{Individual laser alignment}
+
+The 3X monolithic beam expanders have an adjustment ring used to control
+the beam collimation. A simple way to ensure beam collimation is by sending
+the beam into the microscope through the excitation dichroic mirror, removing
+the external recollimation lens $L3$ and the objective
+lens, while placing a mirror on the sample holder and using the LCSO-SLM
+as a mirror (i.e.~with a constant phase pattern). Using the camera on
+the microscope output port, we adjust the collimation until a tight spot
+is formed. After adjusting the collimation, each beam needs to be
+aligned so that the peak intensity is at the center of the optical axis.
+To this end, without the recollimating lens $L3$, an iris
+$I2$ is placed before the beam enters the microscope side
+port. Using an aperture of 1-2 mm, only a narrow beamlet goes through
+the objective and generates a spot from the cover-glass reflection. Only
+when the input beam is parallel to the optical axis, the spot is in the
+center of the field of view, assumed to be located with the center of a
+cross-hair in the microscope's eyepiece.
+In order to make the input beams parallel to the
+optical axis, the last mirrors before the microscope is adjusted
+($M2_R$ for the red and $DM_{MIX}$ for the green
+laser). By defocusing the spot, we obtain symmetrical concentric patterns
+only if the input beamlet intersects with the optical axis at the back
+aperture of the objective lens. Since the direction is already fixed, we
+move the $I2$ iris to obtain the most radially-symmetric
+defocused pattern. In this way the beamlet that goes through
+$I2$ coincides with the microscope optical axis. The last
+steps is laterally translating the input beams (without changing the
+incidence angle) in order to place the intensity peak on the iris
+center. Alignment of beam direction and iris need to be repeated until
+convergence. Once done, both beams are (to a good approximation)
+parallel and concentric with the optical axis. When placing
+$L3$ a spot is formed at a different focus position.
+$L3$ can be aligned assuring that this new spot is a the
+same position of the spot obtained without $L3$.
+
+\subsection{Achieving overlap of the green and red
+patterns}
+
+Starting with the green LCOS-SLM, we project a multispot pattern into a
+highly concentrated solution of dyes (100~nM - 1~\textgreek{μ}M) used for alignment.
+Using a square grid of spots with an odd number of spot per side
+(i.e.~9x9) ensures that one spot is at the center of the pattern. The
+camera on the side-port detects an image of the pattern. The centering
+of the pattern with respect to the optical axis can be assessed from the
+amount of geometrical aberrations in the lateral spots. We center the
+excitation pattern by rigidly translating the pattern on the LCOS-SLM so
+that geometrical aberrations are roughly equivalent on the four sides.
+Next, we perform a 2-D Gaussian fitting of each spot, and from the
+distribution of sigmas and rotation of each Gaussian we estimate a more
+accurate position of the the optical axis (analysis performed with
+notebook XXX). This step may be repeated a few times until convergence.
+From this point on, the X-Y positions of the green LCOS-SLM is not
+changed anymore and its center becomes a reference for the optical axis
+position.
+
+Next, we activate the red LCOS-SLM and project a multispot pattern
+excited by the 628~nm laser. Using the camera we align the red pattern to
+the green one used as reference. A first coarse adjustment of the red
+LCOS-SLM pattern is manually performed by looking at the emission
+pattern on the live camera display. Then, the center position of the red
+LCOS-SLM pattern is finely adjusted by fitting the spot positions in the
+green and red images (Fig.~\ref{fig:patternfit}), taken separately (the
+analysis notebook can be found in
+\href{https://github.com/multispot-software}{multispot-software}).
+
+Finally, in order to reduce the background due to unmodulated light, two
+custom-made rectangular slits (aluminum with black finish)
+are added in the path before each LCOS ($S_R$ and $S_G$ in
+Fig.~\ref{fig:setup}). The slits are aligned to illuminate only the
+12x4 pattern ($\pm$1~mm) on the LCOS-SLM (see section~\ref{sec:lcos}).
+
+\begin{figure}
+    \includegraphics[width=\columnwidth]{{figures/2017-04-28_conf9_G_conf14_R_green_red_pattern_and_fit}}
+    \caption{{\label{fig:patternfit}
+    The 12x4 multispot pattern for green (A) and red (B)
+    excitation and Gaussian fit of the spots (C). The pattern is acquired by
+    a camera on the microscope side port (see fig.~\ref{fig:setup}) using a
+    solution of ATTO550 and ATTO647N at high concentration ($\sim$100~nM).
+    Emission due to 532~nm and 628~nm laser is acquired with two subsequent
+    acquisitions and reported in false-colors in panels (A) and (B).
+    Scale bars are 5~{\micron} long.
+    To assess the alignment,
+    each spot in the two images is fitted with a 2D Gaussian function. Panel
+    (C) reports an overlays of the fitted peak positions peak positions and
+    contour of the Gaussian waist for 532~nm (\emph{green}) and 628~nm
+    (\emph{red}) images. A zoom-in for 3 representative spots is reported on
+    the right. The elliptical shape of the Gaussian and their rotation is
+    due to geometrical aberrations.%
+    }}
+\end{figure}
+
+\section{SPAD arrays alignment}
+\label{spad-alignment}
+
+Both detectors must be aligned so that each pixel is optically
+conjugated to the corresponding excitation volume (excitation PSF). The
+goal is having pairs of corresponding pixels on the two arrays,
+detecting photons from the same volume in the sample (detection PSF). At
+the same time, in order to maximize the signal, the detection PSF needs to be
+concentric with the excitation PSF. Achieving this with a 2-D
+arrangement of spots and pixels requires not only aligning the X-Y
+position of the detectors (as in single-spot measurements) but also
+aligning the relative rotation of the two SPADs and adjusting the pitch
+and rotation of the excitation pattern to optimally match the detectors'
+geometry.
+
+For alignment we use a high concentration dye mixture (ATTO550,
+ATTO647N, $\sim$500~nM) excited by both lasers.
+With this sample, the 532~nm laser generates fluorescence signal in both D and A
+channel, while the 628~nm laser only generates signal in the A channel.
+At this point, the center of the both 532~nm and 628~nm excitation patterns
+has already been fixed in order to minimize geometrical aberrations
+as described in section~\ref{sec:laseralign}.
+Therefore, the excitation pattern position is used as the reference
+to which aligning the SPAD arrays.
+Starting with the green laser only, both SPADs are manually positioned
+in X and Y to match the center of the excitation pattern. This is achieved
+by maximizing timetraces of SPAD counts (displayed by the acquisition
+program) while moving the detectors.
+
+Next, we perform a more automated procedure for fine alignment called in
+the following ``multispot scan''. A multispot scan involves rigidly
+translating a multispot pattern (typically 4x4 spots) on a LCOS-SLM in
+discrete steps along a cross path.
+At the same time, counts from a SPAD
+array are integrated for each pattern position for 300~ms.
+During a scan, each emission spot draws a cross path roughly centered
+on a SPAD's pixel.
+A typical scan covers a range of 10 LCOS-SLM pixels with a step of 0.4
+and is performed sequentially in X and Y directions.
+The acquired counts as a function of the LCOS-SLM position resemble a peak
+profile that is used to estimate SPAD's pixel positions in LCOS-SLM
+coordinates. Averaging the SPAD pixel positions we obtain an accurate
+estimation of the SPAD array's center. Ultimately, this procedure yields
+the offset of each SPAD array with respect to the ideal excitation pattern
+center. With this information, we move the SPAD arrays to the ideal
+X-Y position using software-controlled piezo micro-positioners.
+The sequence of multispot scan and SPAD array translation is repeated
+until convergence.
+Initially the two SPAD arrays are aligned with respect to the green
+LCOS-SLM pattern (532 nm). Next, the position of the red LCOS-SLM pattern
+(628 nm) is fine-tuned to match the position of the A SPAD array (the D
+SPAD array does not detect any signal with 628 nm excitation). The
+optimal position of the red excitation pattern is determined from a
+multispot scan performed with the red LCOS-SLM while counts are acquired
+with the A SPAD array. After this, both red an green excitation
+patterns, and D/A SPAD array positions are fixed and the alignment is
+complete.
+
+The whole fine alignment procedure is routinely performed at the
+beginning of each day of measurements and requires about 30 minutes.
+
+\subsection{Rotation and pitch
+adjustment}\label{rotation-and-pitch-adjustment}
+
+In the previous section we outlined the general fine-alignment procedure
+repeated daily when using the multispot setup. However, when
+building the setup, additional steps are
+necessary (a) to align the relative rotation of the two SPAD arrays, (b)
+to determine the best pitch in X and Y for the green and red excitation
+pattern and (c) to optimize the SPAD position along the optical axis
+(Z).
+
+To extract rotation and pitch information, we perform a
+multispot scan followed by an additional analysis step. In particular, the
+set of X-Y positions of each SPAD pixel obtained from the scan is fitted to a
+rectangular grid.
+The fitted grid parameters are: center position, pitch in X, pitch in Y and
+rotation angle. Each SPAD array will have a different set of fitted
+parameters.
+
+To adjust the rotation angle, one of the SPAD arrays (D) is
+rotated about the optical axis in order match the angle
+of the second SPAD (the rotation angle of each SPAD is obtained from the scan
+fits). Once the orientations of two SPAD arrays matches, the rotation
+stage is locked, ensuring long-term stability of the rotational angle.
+
+Regarding the pitch, the information from the scan fits is used to
+finely tune the X and Y pitch of the LCOS-SLM pattern that optimally
+matches both SPAD arrays. We observed X and Y pitch difference of 1-2\%
+due to non-idealities (stigmatism) in the optical path.
+
+\textbf{Figure}: scatter plot of center positions for: D-SPAD G laser,
+A-SPAD G laser, A-SPAD A laser.
+
+
+
 \section{Appendix: Alignment Protocol}
 \label{appendix-alignment-protocol}
 
@@ -1270,9 +1295,9 @@ channels ($N= 48$ in this case).
 
 \section{Additional data}
 % * <michalet@chem.ucla.edu> 2017-06-21T16:49:15.509Z:
-% 
+%
 % What is that? Needs some text?
-% 
+%
 % ^.
 % * <michalet@chem.ucla.edu> 2017-06-19T13:33:49.301Z:
 %
