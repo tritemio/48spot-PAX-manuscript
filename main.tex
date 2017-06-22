@@ -77,29 +77,31 @@ Dept. Chemistry and Biochemistry, University of California Los Angeles, USA}
              %  but any date may be explicitly specified
 
 \begin{abstract}
-Single-molecule FRET (smFRET) allows measuring distances between a donor (D) and
-an acceptor (A) fluorophore on the 3-10~nm scale range.
+Single-molecule FRET (smFRET) allows measuring distances between donor (D) and
+acceptor (A) fluorophores on the 3-10~nm range.
 Solution-based smFRET  allows measuring binding-unbinding
 or conformational changes of dye-labeled biomolecules without ensemble averaging
-and free from perturbation from surfaces binding. When employing dual (or multi)
-laser excitation, the technique allows resolving the number of fluorescent
-labels on each molecule, greatly enhancing the ability to study heterogeneous
-samples.
+and free from surface perturbations. When employing dual (or multi)
+laser excitation,
+the technique allows resolving the number of fluorescent
+labels on each molecule, which greatly enhances the ability to study
+heterogeneous samples.
 A major drawback of solution-based smFRET technique is the low throughput,
 which renders repetitive measurements expensive and hinder the ability
 to study kinetic phenomena in realtime.
 
-Here we demonstrate an high-throughput single-molecule FRET system which
+Here we demonstrate a high-throughput single-molecule FRET system which
 multiplexes the acquisition by using 48 excitation spots and
 48-pixels SPAD array detectors. The systems employs two excitation lasers
-allowing the separation of doubly- and singly-labeled species.
-The performances of the systems are demonstrated on a set of dual-labeled
-double-stranded DNA oligos with different D and A dye separations.
+allowing the separation of species with one or two active fluorophores.
+The performances of the systems are demonstrated on a set of doubly-labeled
+double-stranded DNA oligos
+with different distances between D and A dyes along the DNA duplex.
 We show that the acquisition time for accurate sub-population identification
 is reduced from several minutes to seconds, opening the way
 to high-throughput screening applications as well as
-to realtime kinetics studies of enzymatic reactions such
-as DNA transcription by RNA polymerase.
+to realtime kinetics studies of enzymatic reactions such as DNA transcription
+by bacterial RNA polymerase.
 \end{abstract}
 
 \keywords{Single-molecule FRET, high-throughput, SPAD array}
@@ -112,8 +114,8 @@ as DNA transcription by RNA polymerase.
 % Check the Polimi author list with Polimi.
 %
 % ^.
-Detailed knowledge of the three dimensional (3D) atomistic structure of
-macromolecular complexes is important for the understanding of their
+Detailed knowledge of the three-dimensional (3D) atomistic structure of
+macromolecular complexes is important for understanding of their
 biological function. For decades, X-Ray crystallography and nuclear
 magnetic resonance (NMR) spectroscopy have been the techniques of choice
 for attaining atomic-detailed macromolecular structures. More recently,
@@ -124,20 +126,23 @@ spontaneously and dynamically explore various conformations in equilibrium
 that are hard to capture by the above-mentioned methods. Understanding the
 functional roles of these structures requires a full dynamic picture.
 Single-molecule Förster resonance energy transfer (smFRET) paved the way
-for studying such structural dynamics in biologically relevant conditions.
+for studying such structural dynamics in biologically-relevant conditions.
 It allows the determination of each conformational state that may exist in
-a population of macromolecular complexes as well as the distance between
-specific residues for each state. Recently, several groups used smFRET to
+the ensemble of macromolecular complexes as well as the distance between
+specific residues for each state.
+Recently, several groups used smFRET to
 measure distances between multiple distinct pairs of residues for
 constructing 3D macromolecular structures of distinct conformations by
-triangulation and comparison to existing X-ray crystal structures.
+triangulation and comparison to existing X-ray crystal
+structures~\cite{dimura_quantitative_2016,hellenkamp_multidomain_2017,hoefling_structural_2011,kalinin_toolkit_2012,muschielok_nano-positioning_2008,muschielok_application_2011}.
 Moreover, smFRET can, in principle, measure evolution in time of multiple
 distances between multiple pairs, hence report of the dynamic 3D structure
 of a macromolecule undergoing conformational changes,
 but due to the requirement of low sample concentration, imposed by the
 necessity to have no more than 1 molecule within the diffraction-limited
-confocal volume at a given time[ref], only very slow kinetics could
-be measured. Therefore, both static and dynamic measurements of multiple
+confocal volume at a given time~\cite{deniz_single-pair_1999},
+only very slow kinetics could be measured.
+Therefore, both static and dynamic measurements of multiple
 distances could greatly benefit from increasing throughput.
 
 To overcome
