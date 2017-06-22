@@ -305,9 +305,8 @@ can be found in appendix~\ref{sec:lcos}.
     The 12x4 multispot pattern for green (A) and red (B)
     excitation and Gaussian fit of the spots (C). The pattern is acquired by
     a camera on the microscope side port (see Fig.~\ref{fig:setup}) using a
-    solution of ATTO550 and ATTO647N at high concentration ($\sim$100~nM).
-    Emission due to 532~nm and 628~nm laser is acquired with two subsequent
-    acquisitions and reported in false-colors in panels (A) and (B).
+    solution of ATTO550 and ATTO647N dyes at high concentration ($\sim$100~nM).
+    Fluorescent images obtained upon 532~nm or 628~nm laser excitation were acquired separately and are reported in green and red intensity levels in panels (A) and (B), respectively.
     Scale bars are 5~{\micron} long.
     To assess the alignment,
     each spot in the two images is fitted with a 2D Gaussian function. Panel
@@ -389,7 +388,7 @@ because of an active quenching circuit (AQC) failure in the D-SPAD array.
     Peak photon rate in each of the 48 spots for the 12d dsDNA sample.
     Panel A: full distribution of peak photon rates. Panels
     B-E: Mean of the peak photon rate distribution in the different photon
-    steams. Two lateral spots in the second exhibit no signal because of
+    streams. Two lateral spots in the second row exhibit no signal because of
     two malfunctioning pixels in the D-SPAD array.
     Colors indicate different photon streams.
     Green $D_{ex}D_{em}$, red $D_{ex}A_{em}$, light blue $DA_{ex}D_{em}$,
@@ -429,9 +428,9 @@ detects less photons, an effect ascribed to a lower PDE of that pixel.
 This effect causes a bias in $E_{PR}$ and $S$ quantities as shown below.
 
 Fig.~\ref{fig:phrates_usalex} shows the distribution
-of peak photon rates as obtained with the {\usalex} setup.
+of peak photon rates obtained with the {\usalex} setup.
 Comparing Figs.~\ref{fig:phrates48_comp} Panel~A and~\ref{fig:phrates_usalex}
-we note that the lower sensitivity in the A-SPAD array results in lower peak
+it is clear that the lower sensitivity in the A-SPAD array results in lower peak
 photon rate in the $D_{ex}A_{em}$ (red) and $DA_{ex}A_{em}$ (purple) streams
 in the 48-spot setup.
 
@@ -440,13 +439,13 @@ in the 48-spot setup.
 \begin{figure*}
 \includegraphics[width=\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
 \caption{{\label{fig:alexhist48all12d} $E_{PR}$ versus $S_u$
-histograms for the different spots for the 12d dsDNA sample. Two
-populations visible D-only (cluster at $E_{PR}=0$,
-$S_u=1$) and FRET population (cluster at $E_{PR}=0.6$,
-$S_u=0.6$). Burst search is performed on all photons with
-constant-threshold burst search (50~kcps). Burst selection is performed
-on the total burst size after background correction with a threshold of
-40 photons. Text in each subplot reports spot number
+histograms for the different spots in the 12d dsDNA sample. Two
+populations are visible: D-only (around $E_{PR}=0$,
+$S_u=1$) and FRET population (around $E_{PR}=0.6$,
+$S_u=0.6$). Burst search was performed using all photons with
+constant-threshold burst search (50~kcps). Burst selection was performed
+on the total burst size after background correction, using a threshold of
+40 photons. The legend in each subplot reports spot number
 ($[\cdot]$) and number of bursts (\#B).%
 }}
 \end{figure*}
@@ -454,12 +453,10 @@ on the total burst size after background correction with a threshold of
 \begin{figure*}
 \includegraphics[width=\textwidth]{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_naa_AND_size_selection}}
 \caption{{\label{fig:alexhist48fret12d} $E_{PR}$ versus $S_u$
-histograms for the different spots for the 12d dsDNA sample. Data and
-burst search is identical as in figure~\ref{fig:alexhist48all12d}, while
-burst selection has been tailored to select only the FRET population.
-The burst selection criteria is the following: a burst is selected if
-counts in $D_{ex}DA_{em}$ stream are larger than 20 and counts in
-$DA_{ex}A_{em}$ stream are larger than 20. Text in each subplot
+histograms for the different spots in the 12d dsDNA sample. Data  analysis and
+burst search are identical to figure~\ref{fig:alexhist48all12d}, while
+burst selection was tailored to select only the FRET population: a burst is selected if the number of
+counts in the $D_{ex}DA_{em}$ and $DA_{ex}A_{em}$ streams are both larger than 20. The legend in each subplot
 reports spot number ($[\cdot]$) and number of bursts (\#B).%
 }}
 \end{figure*}
@@ -469,9 +466,9 @@ reports spot number ($[\cdot]$) and number of bursts (\#B).%
 \caption{\label{fig:fittedFRETscatter}
 Scatter plot of the fitted $E_{PR}$, $S_u$ peak
 position in the different spots for the D-only (\emph{orange cross})
-and FRET population (\emph{blue plus}). Values were obtained by simple Gaussian
-fitting of the 1-D histogram of $E_PR$ and $S_u$ after a bursts selection
-that isolated D-only and FRET populations respectively.}
+and FRET populations (\emph{blue plus}). Values were obtained by simple Gaussian
+fitting of the 1-D histogram of $E_{PR}$ and $S_u$ after a bursts selection
+that isolated D-only and FRET populations, respectively.}
 \end{figure}
 
 \begin{figure*}
@@ -550,7 +547,7 @@ a given threshold.
 \includegraphics[width=\columnwidth]{figures/2017-05-23_08_12d_alex_jointplot_15s}
 \caption{\label{fig:alex_mspot_15}
 Multispot ALEX histogram obtained from 15~s of acquisition by pooling bursts
-from all the 48 spots.}
+from all 48 spots.}
 \end{figure}
 
 \begin{figure}
@@ -1248,22 +1245,26 @@ average over all $N$
 channels ($N= 48$ in this case).
 
 \section{Additional data}
-Here we provide results obtained with a low-FRET 22d DNA sample.
-Fig.~\ref{fig:alexhist48all22d} shows the E-S histograms for the different
-channels using $E_{PR}$ (eq.~\ref{eq:Epr} and $S_u$ (eq.~\ref{eq:Su})
-as defined. We observe that even though the FRET population has an $S_u$
-value $>0.5$ it is still possible to filter bursts and separate
-the FRET and D-only populations.
+
+Fig.~\ref{fig:alexhist48all22d} shows $E_{PR}$-$S_u$ histograms for the different
+channels obtained during the measurement of a 22d DNA sample (low-FRET).
+Due to the choice of donor and acceptor excitation powers during this measurement, the FRET population has an $S_u$ value larger than 0.5, artificially compressing the histograms in the upper part of the graphs. Nonetheless, it is still possible to distinguish FRET from D-only bursts, despite the low  value of $E_{PR}$ for that sample, allowing a bias-free estimation of $E_{PR}$, by contrast of what would have happened in the absence of  acceptor excitation [cite 8-spot paper].
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{figures/2017-05-23_04_22d_48spot_alex_hist_Su_all-bursts}}
 \caption{{\label{fig:alexhist48all22d} $E_{PR}$ versus $S_u$
-histograms for the different spots for the 22d dsDNA sample. Data and
-burst search is identical as in figure~\ref{fig:alexhist48all12d}, while
-burst selection has been tailored to select only the FRET population.
-The burst selection criteria is the following: a burst is selected if
-counts in $D_{ex}DA_{em}$ stream are larger than 20 and counts in
-$DA_{ex}A_{em}$ stream are larger than 20. Text in each subplot
+histograms of all spots for the 22d dsDNA sample. Data analysis and
+burst search are identical as in figure~\ref{fig:alexhist48all12d}, while
+burst selection has been tailored to select only the FRET population:
+% * <michalet@chem.ucla.edu> 2017-06-22T12:29:56.838Z:
+% 
+% > only the FRET population
+% that doesn't sound right, since the DO population is visible
+% 
+% ^.
+a burst is selected if the number of 
+counts in the $D_{ex}DA_{em}$ stream is larger than 20 and counts larger than 20 in the
+$DA_{ex}A_{em}$ stream. The legend in each subplot
 reports spot number ($[\cdot]$) and number of bursts (\#B).%
 }}
 \end{figure*}
