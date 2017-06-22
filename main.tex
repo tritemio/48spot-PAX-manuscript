@@ -143,7 +143,7 @@ necessity to have no more than 1 molecule within the diffraction-limited
 confocal volume at a given time~\cite{deniz_single-pair_1999},
 only very slow kinetics could be measured.
 Therefore, both static and dynamic measurements of multiple
-distances could greatly benefit from increasing throughput.
+distances could greatly benefit from increased throughput.
 
 To overcome
 this limitation, we recently introduced a multispot excitation scheme taking
@@ -151,20 +151,21 @@ advantage of novel single-photon avalanche diode (SPAD) arrays. We demonstrated
 that the resulting setup indeed allows acquiring single-molecule data of
 quality comparable to that of standard single-spot setups, but with a
 throughput increased by a factor equal to the number of spots (equal to the
-number of SPAD pixels in each detection channel). We illustrated an application
-of this enhanced throughput by measuring the bubble closing kinetic in
-bacterial transcription~\cite{ingargiola_multispot_2017}.
+number of SPAD pixels in each detection channel).
+We illustrated an application of this enhanced throughput
+by measuring, in bacterial transcription,
+the bubble closing kinetic upon promoter escape~\cite{ingargiola_multispot_2017}.
 While encouraging, these results were partially unsatisfactory because they
 were obtained (i) with a rather small number of spots, but also because (ii)
-the setup only incorporated a single laser, used to excite the donor dye
-of the FRET donor-acceptor
+the setup only incorporated a single laser, used for excitation of the
+donor dye of the FRET donor-acceptor
 pair~\cite{ingargiola_parallel_2012,ingargiola_8-spot_2013,ingargiola_multispot_2017}.
 Single-laser smFRET indeed suffers from the fact that low FRET molecules
 (molecules in which the donor-acceptor distance is large compared to the
 characteristic FRET length scale) are indistinguishable from molecules
 labeled only with a donor dye, or whose acceptor dye is either inactivated
-or bleached. Since the latter categories  are often present in most samples,
-it is important to be able to identify them and separate them from the
+or bleached. Since the latter categories are present in most samples,
+it is important to be able to identify and separate them from the
 "interesting" doubly-labeled low FRET molecules.
 
 \emph{Microsecond Alternated Laser EXcitation}
@@ -175,20 +176,21 @@ laser excitation schemes (nsALEX~\cite{laurence_probing_2005} or
 PIE~\cite{muller_pulsed_2005}). Briefly, in {\usalex},
 two exciting lasers are alternatively turned on and off every few tens of
 {\microsec} to allows separating singly- from
-doubly-labeled species, due to the fact that molecules lacking an active
-acceptor dye do not emit fluorescence when the acceptor laser is on (and the
-donor laser is off). This in turn extends the range of FRET subpopulations
-which can be identified within a sample to the low FRET value regime. This
-scheme has since been extended to more laser excitations, allowing powerful
-molecular sorting applications~\cite{lee_three-color_2007,yim_four-color_2012}.
+doubly-labeled species, due to the fact that molecules lacking an
+fluorescently-active A dye do not emit fluorescence when the A-laser is on
+(and the donor laser is off).
+This, in turn, extends the number of FRET sub-populations that can be possibly
+identified within a sample in the regime of low mean FRET efficiencies.
+This scheme has since been extended to more laser excitations, allowing
+powerful molecular sorting applications~\cite{lee_three-color_2007,yim_four-color_2012}.
 A simplified version of this laser alternation principle was presented in
 ref.~\onlinecite{doose_periodic_2007}, where the donor excitation laser
 is left on at all times, while the acceptor laser is alternated.
 This Periodic Acceptor Excitation (PAX) single-molecule FRET
 technique~\cite{doose_periodic_2007} (PAX for short) allows simplifying the optical
 setup while maintaining the advantages of {\usalex}, namely the ability to
-identify the number of donor and acceptor dyes (or donor stoichiometry)
-present in each single molecule.
+identify in each single molecule the number of D and A dyes (stoichiometry)
+or to identify changes in the fluorescence quantum yields~\cite{lee_accurate_2005}.
 Here we present a significant improvement over our original multispot
 setup by (i) introducing a 48-spot illumination and detection scheme,
 and (ii) implementing a 2-laser PAX illumination approach.
@@ -322,13 +324,15 @@ can be found in appendix~\ref{sec:lcos}.
 
 \subsection{Analysis}
 
-Single-molecule measurements were performed with 40 base-pair dsDNA samples
-labeled with ATTO550 (D) and ATTO647N (A) (ATTOTEC GmbH, Heidelberg, Germany)
-located at different distances.
+Single-molecule measurements were performed with 40 base-pair (bp) dsDNA
+samples labeled with dyes ATTO550 (D) and ATTO647N (A)
+(ATTOTEC GmbH, Heidelberg, Germany)
+attached to different DNA bases and yielding different inter-dye distances.
 
 D-A separation of 7, 12 and 22 base pairs (7d, 12d, 22d) were used in these
-experiments, as they cover the typical range of distances of interest in
-single-molecule FRET.
+experiments,
+as they cover the typical range of distances that can be accurately measured
+with smFRET using this dye pair.
 Samples were diluted to single-molecule concentration ($\sim50$~pM) in TE50 buffer
 (10~mM Tris, bring to pH 8.0 with HCl, 1 mM EDTA, 50~mM NaCl).
 Full details regarding these samples are provide in
@@ -346,14 +350,14 @@ using the sliding-window algorithm~\cite{fries_quantitative_1998}
 and a constant-rate threshold for all spots~\cite{ingargiola_fretbursts:_2016}.
 
 The main result of the {\usalex} analysis is a so-called E-S histogram,
-a 2-D histograms where each bursts is represented by a
+a two-dimensional histograms where each bursts is represented by a
 pair of values $(E, S)$. $E$ is either the FRET efficiency or, more commonly,
 the uncorrected FRET efficiency known as proximity ratio, $E_{PR}$.  $E_{PR}$
 is easier to compute
 and provides an approximation suitable for identifying sub-populations.
 However, when the purpose is to extract D-A distances (which is not the
 objective of this study),
-$E$ needs to be computed, requiring and accurate estimation of
+$E$ needs to be computed, requiring accurate estimation of
 all  correction coefficients.
 $S$ is the "stoichiometry ratio", a quantity ideally centered around 0.5 for
 doubly-labeled species, close to 0 for A-only and close to 1
