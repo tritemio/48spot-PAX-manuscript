@@ -263,22 +263,25 @@ architecture and performance has been presented
 in~\onlinecite{gulinatti_48-pixel_2013}.
 Here we only describe the most salient features.
 The active area of each pixel has a 50~{\micron}
-diameter. The array comprises 4 rows of 12 pixels (4x12) with a 500~{\micron} pitch in
-each direction.
+diameter. The array comprises 4 rows of 12 pixels (4x12) with a 500~{\micron}
+pitch in each direction.
 
 To easily integrate the detectors into a multispot setup,
- we developed a photon counting module that integrates a 48-pixel SPAD
- array and the electronics required for device operation, data acquisition and transmission into
- a compact, user friendly module.
+we developed a photon counting module that integrates a 48-pixel SPAD
+array and the electronics required for device operation, data acquisition
+and transmission into a compact, user friendly module.
 In particular, the SPAD array is housed into a hermetically
-sealed chamber separated from the rest of the module. Sealing in a dry atmosphere makes
- it possible to mount the array on a double-stage Peltier and to cool
-the detector down to temperatures of about -15 $^{\circ}$C, thereby reducing
+sealed chamber separated from the rest of the module. Sealing in a dry
+atmosphere makes it possible to mount the array on a double-stage Peltier
+and to cool
+the detector down to temperatures of about $-15^{\circ}$C, thereby reducing
 the dark count rate (DCR) and increasing the sensitivity of the instrument.
-Photon counting pulses are made externally available through a standard SCSI connector. This allows for an easy connection of the module to general-purpose boards for data acquisition and processing.
+Photon counting pulses are made externally available through a standard
+SCSI connector. This allows for an easy connection of the module to
+general-purpose boards for data acquisition and processing.
 Alternatively, an onboard FPGA (Xilinx Spartan 6, model SLX150)
-can be used to synchronize the 48 channels, time-stamp each detected
-count with a time resolution of 10 ns and send this information
+can be used to time-stamp counts detected  in each of the 48-channels
+with a time resolution of 10~ns and send this information
 to a remote PC  through a high-speed USB link.
 A C-mount at the top of the photon counting module
 allows also for an easy and reliable connection to the multispot setup.
@@ -717,8 +720,8 @@ filter (Brightline FF01-582/75, Semrock) which removes residual 628~nm
 laser leakage and helps suppressing any Raman scattering from the 532~nm
 laser. Both D and A paths are refocused by lenses $L5_D$ /
 $L5_A$ (f=150~mm, AC254-150-A, Thorlabs) on two 48-pixels
-SPAD arrays\cite{gulinatti_48-pixel_2013} (denoted as donor and acceptor SPAD in the
-following).
+SPAD arrays\cite{gulinatti_48-pixel_2013} (denoted as donor and acceptor
+SPAD in the text).
 
 Both SPAD arrays are mounted on 3-axis micro-positioners. The directions
 orthogonal to the optical axis (X-Y) are software-controlled via open-loop
@@ -732,9 +735,11 @@ of the SPAD arrays. Software for controlling the micro-positioners is
 available in the
 \href{https://github.com/multispot-software/picomotor}{picomotor} repository.
 
-Each SPAD arrays is equipped with a USB 2.0 connection for low-resolution
-time-binned counting and humidity control.
-In addition, a standard SCSI connector
+Each SPAD arrays modules is equipped with an internal FPGA
+(Xilinx Spartan 6, model SLX150), a humidity sensor and a USB 2.0 connection.
+The default FPGA firmware used in this work, allows acquiring low-resolution
+(10-100~ms) time-binned counts via the USB connection which is also used
+for humidity monitoring. In addition, a standard SCSI connector
 includes 48 independent outputs providing a pulse for every detected
 photon in each pixel~\cite{gulinatti_48-pixel_2013}. The two SCSI ports are fed
 through a custom adapter to an FPGA-based acquisition board (FPGA board:
