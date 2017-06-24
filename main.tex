@@ -219,7 +219,7 @@ for a 15~second acquisition.
 \begin{figure*}
     \includegraphics[width=0.7\textwidth]{figures/design_multispot_LCOS_camera_SPAD}
     \caption{{\label{fig:setup} Schematic of the 48-spot smFRET-PAX setup. See
-    section~\ref{sec:setup} for a detailed description.}}
+    man text and appendix~\ref{sec:setup} for a detailed description.}}
 \end{figure*}
 
 \section{Setup description}
@@ -227,7 +227,9 @@ for a 15~second acquisition.
 
 In this section, we outline a brief description of the setup.
 A more detailed description can be found in
-appendix~\ref{sec:setup}.
+appendix~\ref{sec:setup}, while details of laser and SPAD array
+alignment can be found in appendix~\ref{sec:laseralign}
+and~\ref{sec:spadalign} respectively.
 
 A schematic of the setup is reported in Fig.~\ref{fig:setup}.
 The setup includes two 1W CW excitation laser (green: 532~nm, red: 628~nm)
@@ -383,13 +385,12 @@ and a constant-rate threshold for all spots~\cite{ingargiola_fretbursts:_2016}.
 The main result of the {\usalex} analysis is a so-called E-S histogram,
 a two-dimensional histogram where each burst is represented by a
 pair of values $(E, S)$. $E$ is either the FRET efficiency or, more commonly,
-the uncorrected FRET efficiency, known as proximity ratio, $E_{PR}$.  $E_{PR}$
-is easier to compute
+the uncorrected FRET efficiency, known as proximity ratio, $E_{PR}$.
+$E_{PR}$ is easier to compute
 and provides an approximation suitable for identifying sub-populations.
 However, when the purpose is to extract D-A distances (which is not the
-objective of this study),
-$E$ needs to be computed, requiring accurate estimation of
-all the correction coefficients.
+objective of this study), $E$ needs to be computed, requiring accurate
+estimation of all the correction coefficients.
 $S$ is the "stoichiometry ratio", a quantity ideally centered around 0.5 for
 doubly-labeled species, close to 0 for A-only and close to 1
 for D-only species. Note that D-only and A-only species also include
@@ -401,13 +402,15 @@ molecules is only approximately centered around 0.5.
 The use of the $(E, S)$ pair (corrected or uncorrected)
 allows separating singly- and doubly-labeled species and, within the
 doubly-labeled ones, distinguishing FRET sub-populations.
+Definition of all these quantities and a comparison with their ALEX
+counterpart is reported in appendix~\ref{sec:alex_pax}.
 
 In this paper, we report proximity ratios $E_{PR}$ computed according to
 eq.~\ref{eq:Epr}, and a ``modified stoichiometry ratio'' $S_u$ defined
 in eq.~\ref{eq:Su}. $S_u$ is a variant of the classical
 smFRET-PAX stoichiometry\cite{doose_periodic_2007}, which reduces the effect of
 shot noise and improves the separability of D-only and FRET populations.
-More details can be found in section~\ref{sec:alex_pax}.
+More details on $S_u$ can be found in appendix~\ref{sec:Su}.
 Note that, in all this work, the results of two spots (the two leftmost
 spots in the second row) are missing,
 because of an active quenching circuit (AQC) failure in the D-SPAD array.
@@ -538,25 +541,39 @@ both D-only and FRET populations.
 Fig.~\ref{fig:fretfit48vsmean} shows, separately for each channel,
 the center and $\pm1\,\sigma$ range of the fitted E-S peak
 for the FRET population (blue dot and error-bar).
-The orange dot is the mean center peak position
-across all the channels. We note that, for almost all channels, the
+The orange dot is the mean center peak position of the FRET population
+across all the spots. We note that, for almost all channels, the
 deviation of the peak position is very well below the $\pm1\,\sigma$
 range. One exception is channel 19, where the lower PDE of the A pixel
 causes a larger deviation of the peak position.
-While in Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
+In Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
 we present results without any channel calibration for the purpose
 of illustrating the raw performances of the system.
-It is possible, however, to reduce the channel-to-channel variation
-on E-S peak position by applying the per-channel calibration reported in~\ref{sec:perchcorr}.
+It is possible, however, to reduce the channel-to-channel variations
+on E-S peak position by applying a per-spot calibration briefly
+described in the next section (with full details in
+appendix~\ref{sec:perchcorr}). For comparison,
+the E-S histogram for a low-FRET dsDNA (DA-separation 22bp) is reported
+in appendix~\ref{sec:moredata}, Fig.~\ref{fig:alexhist48all22d}.
 
 
 \subsection{Pooling data from all channels}
 \label{sec:alexpax-comp}
 To illustrate the high-throughput performance of the 48-spot system, we
-build an ALEX histogram with bursts from all channels within a 15~s window
-of one measurement (Fig.~\ref{fig:alex_mspot_15}).
+build an ALEX histogram accumulating bursts from all spots for a short
+time window of 15~s (Fig.~\ref{fig:alex_mspot_15}). In principle,
+non-uniformities between different channels can be taken into account
+by decomposing $\gamma$ and $\beta$ in two factors: one that is an average
+value for all the spots and another that is a per-spot "relative" adjustment.
+The per-spot component of $\gamma$ and $\beta$ can be easily computed
+from a measurement of a static FRET sample
+(details in appendix~\ref{sec:perchcorr}).
+Fig.~\ref{fig:alex_mspot_15}, for simplicity, due to the good uniformity
+across the spots, we report the raw $E_{PR}$ and $S_u$ values without
+any spot-specific adjustment.
+
 For comparison, Fig.~\ref{fig:alex_sspot_15} shows a similar histogram obtained
-from a 15~s window during a measurement of the same sample using the
+accumulating bursts for 15~s during a measurement of the same sample    using the
 single-spot {\usalex} setup. While we observe that
 the total number of bursts  detected in the multispot measurement
 is about 12 times larger than in the single spot measurement, a quantitative
@@ -737,7 +754,7 @@ In addition to the aforementioned acquisition program, the host computer
 runs a second LabVIEW 2011 program controlling the phase pattern on the
 two LCOS-SLM. During alignment, the acquisition program communicates with
 the LCOS-control program to scan the positions of the LCOS pattern and
-assess the position of the SPAD arrays (see section~\ref{sec:laseralign}).
+assess the position of the SPAD arrays (see appendix~\ref{sec:laseralign}).
 
 The raw binary data is saved together with a text-based metadata file
 containing measurement details that are used to create the final
@@ -850,8 +867,7 @@ $L3$ a spot is formed at a different focus position.
 $L3$ can be aligned assuring that this new spot is at the
 same position of the spot obtained without $L3$.
 
-\subsection{Achieving overlap of the green and red
-patterns}
+\subsection{Achieving overlap of the green and red patterns}
 
 Starting with the green LCOS-SLM, we project a multispot pattern into a
 highly concentrated solution of dyes (100~nM - 1~\textgreek{μ}M) used for alignment.
@@ -884,11 +900,11 @@ Finally, in order to reduce the background due to unmodulated light, two
 custom-made rectangular slits (aluminum with black finish)
 are added in the path before each LCOS ($S_R$ and $S_G$ in
 Fig.~\ref{fig:setup}). The slits are aligned to illuminate only the
-12x4 pattern ($\pm$1~mm) on the LCOS-SLM (see section~\ref{sec:lcos}).
+12x4 pattern ($\pm$1~mm) on the LCOS-SLM (see appendix~\ref{sec:lcos}).
 
 
 \section{SPAD arrays alignment}
-\label{spad-alignment}
+\label{sec:spadalign}
 
 Both detectors must be aligned so that each pixel is optically
 conjugated to the corresponding excitation volume (excitation PSF). The
@@ -908,7 +924,7 @@ With this sample, the 532~nm laser generates fluorescence signal in both D and A
 channel, while the 628~nm laser only generates a signal in the A channel.
 At this point, the center of the both 532~nm and 628~nm excitation patterns
 has already been fixed in order to minimize geometrical aberrations
-as described in section~\ref{sec:laseralign}.
+as described in appendix~\ref{sec:laseralign}.
 Therefore, the excitation pattern position is used as the reference
 to which aligning the SPAD arrays.
 Starting with the green laser only, both SPADs are manually positioned
@@ -948,8 +964,8 @@ complete.
 The whole fine alignment procedure is routinely performed at the
 beginning of each day of measurements and requires about 30 minutes.
 
-\subsection{Rotation and pitch
-adjustment}\label{rotation-and-pitch-adjustment}
+\subsection{Rotation and pitch adjustment}
+\label{sec:rot-pitch-align}
 
 In the previous section, we outlined the general fine alignment procedure
 repeated daily when using the multispot setup. However, when
@@ -1134,10 +1150,10 @@ shot-noise is amplified.
 
 
 \subsection{Modified stoichiometry}
-\label{modified-stoichiometry}
+\label{sec:Su}
 
-By replacing $\tilde{F}_{A_{ex}A_{em}}$ with $F_{A_{ex}DA_{em}}$ in eq.
-\ref{eq:Spax}, we define the "modified stoichiometry" $S_u$
+By replacing $\tilde{F}_{A_{ex}A_{em}}$ with $F_{A_{ex}DA_{em}}$ in
+eq.~\ref{eq:Spax}, we define the "modified stoichiometry" $S_u$
 used in this paper as:
 
 \begin{equation}
@@ -1150,7 +1166,7 @@ This expression avoids the subtraction of photon counts
 (and the corresponding increase in shot-noise) necessary in PAX to
 compute $\tilde{F}_{A_{ex}A_{em}}$ (eq.~\ref{eq:pax_Faa}).
 As a result, the
-$S_u$ distributions are tighter, permiting easier
+$S_u$ distributions are tighter, permitting easier
 separation of FRET and D-only population. Note, however, that $S_u$ has a
 built-in dependency on the population FRET value, in particular
 $S_u$ decreases with the increasing $E$.
@@ -1281,6 +1297,7 @@ average over all $N$
 channels ($N= 48$ in this case).
 
 \section{Additional data}
+\label{sec:moredata}
 
 Fig.~\ref{fig:alexhist48all22d} shows $E_{PR}$-$S_u$ histograms for the different
 channels obtained during the measurement of a 22d DNA sample (low-FRET).
