@@ -115,11 +115,7 @@ by bacterial RNA polymerase.
 \maketitle
 
 \section{Introduction} \label{sec:intro}
-% * <michalet@chem.ucla.edu> 2017-06-20T11:45:50.970Z:
-%
-% Check the Polimi author list with Polimi.
-%
-% ^.
+
 Detailed knowledge of the three-dimensional (3D) atomistic structure of
 macromolecular complexes is important to understand their
 biological function. For decades, X-Ray crystallography and nuclear
@@ -210,7 +206,15 @@ available on GitHub at
 This paper is organized as follows.
 In section~\ref{sec:setup_brief} we briefly introduce the optical setup,
 the detectors (section~\ref{sec:detectors}) and the modulation scheme
-(section~\ref{sec:48spot-pattern}).TBC
+(section~\ref{sec:48spot-pattern}). In section~\ref{sec:smfret-meas} we
+report single-molecule measurements, starting with a brief
+description of the data analysis (section~\ref{sec:analysis}).
+To demonstrate the uniformity across the channels, we report, for each spots,
+the peak photon rate in bursts (section~\ref{sec:peak-phrate}),
+and the E-S histograms (section~\ref{sec:EShist}).
+Finally, in section~\ref{sec:alexpax-comp} we present a
+comparison of single-spot {\usalex} and 48-spot PAX measurements
+for a 15~second acquisition.
 
 \begin{figure*}
     \includegraphics[width=0.7\textwidth]{figures/design_multispot_LCOS_camera_SPAD}
@@ -280,7 +284,8 @@ allows also for an easy and reliable connection to the multispot setup.
 The two SPAD arrays used in the current 48-spot smFRET-PAX setup are operated at a temperature of -10 $^{\circ}$C.
 The photon detection efficiency (PDE) reaches a maximum of $\sim$45\%
 at around 550~nm, dropping to about 35\% at
-628nm\cite{gulinatti_48-pixel_2013,michalet_silicon_2014}. The PDE is highly uniform over the array, with a peak-to-peak spread of only a few percent.
+628nm\cite{gulinatti_48-pixel_2013,michalet_silicon_2014}. The PDE is highly
+uniform over the array, with a peak-to-peak spread of only a few percent.
 Fig.~\ref{fig:dcr} shows the heatmaps of dark count rates of the two
 12x4 SPAD arrays. About 80\% of the pixels have a DCR lower than 1000 counts
 per second (cps), whereas the worst pixel has a fairly low DCR of less than
@@ -348,6 +353,7 @@ can be found in appendix~\ref{sec:lcos}.
 \label{sec:smfret-meas}
 
 \subsection{Analysis}
+\label{sec:analysis}
 
 Single-molecule measurements were performed with 40 base-pair (bp) dsDNA
 samples labeled with dyes ATTO550 (D) and ATTO647N (A)
@@ -407,6 +413,7 @@ spots in the second row) are missing,
 because of an active quenching circuit (AQC) failure in the D-SPAD array.
 
 \subsection{Peak photon rate}
+\label{sec:peak-phrate}
 
 \begin{figure*}
     \includegraphics[width=\textwidth]{{figures/phrates_composite}}
@@ -461,6 +468,7 @@ photon rate in the $D_{ex}A_{em}$ (red) and $DA_{ex}A_{em}$ (purple) streams
 in the 48-spot setup.
 
 \subsection{E-S histograms}
+\label{sec:EShist}
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
@@ -543,6 +551,7 @@ on E-S peak position by applying the per-channel calibration reported in~\ref{se
 
 
 \subsection{Pooling data from all channels}
+\label{sec:alexpax-comp}
 To illustrate the high-throughput performance of the 48-spot system, we
 build an ALEX histogram with bursts from all channels within a 15~s window
 of one measurement (Fig.~\ref{fig:alex_mspot_15}).
