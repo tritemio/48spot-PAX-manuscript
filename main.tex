@@ -365,12 +365,11 @@ samples labeled with dyes ATTO550 (D) and ATTO647N (A)
 (ATTOTEC GmbH, Heidelberg, Germany)
 attached to different DNA bases and yielding different inter-dye distances.
 
-D-A separation of 7, 12 and 22 base pairs (7d, 12d, 22d) were used in these
-experiments,
+D-A separation of 12 and 22 base pairs (bp) were used in these experiments,
 as they cover the typical range of distances that can be accurately measured
 with smFRET using this dye pair.
-Samples were diluted to single-molecule concentration ($\sim50$~pM) in TE50 buffer
- (10~mM Tris, bring to pH 8.0 with HCl, 1 mM EDTA, 50~mM NaCl).
+Samples were diluted to single-molecule concentration ($\sim50$~pM) in TE50
+buffer (10~mM Tris, bring to pH 8.0 with HCl, 1 mM EDTA, 50~mM NaCl).
 Full details regarding these samples are provided in
 ref.~\onlinecite{ingargiola_multispot_2017}.
 
@@ -424,7 +423,8 @@ because of an active quenching circuit (AQC) failure in the D-SPAD array.
 \begin{figure*}
     \includegraphics[width=\textwidth]{{figures/phrates_composite}}
     \caption{{\label{fig:phrates48_comp}
-    Peak photon rate in each of the 48 spots for the 12d dsDNA sample.
+    Peak photon rate in each of the 48 spots for a dsDNA sample with
+    D-A separation of 12bp.
     Panel A: full distribution of peak photon rates. Panels
     B-E: Mean of the peak photon rate distribution in the different photon
     streams. Two lateral spots in the second row exhibit no signal because of
@@ -439,7 +439,7 @@ because of an active quenching circuit (AQC) failure in the D-SPAD array.
     \includegraphics[width=0.8\columnwidth]{{figures/2017-06-02_002_12d_usALEX_peak_phrate}}
     \caption{{\label{fig:phrates_usalex}
     Distribution of peak photon rates in a single-spot {\usalex} measurement
-    of the 12d dsDNA sample.
+    of the dsDNA sample with D-A separation of 12bp.
     Colors indicate different photon streams.
     Green $D_{ex}D_{em}$, red $D_{ex}A_{em}$,
     purple $A_{ex}A_{em}$.%
@@ -479,8 +479,8 @@ in the 48-spot setup.
 \begin{figure*}
 \includegraphics[width=\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
 \caption{{\label{fig:alexhist48all12d} $E_{PR}$ versus $S_u$
-histograms for the different spots in the 12d dsDNA sample. Two
-populations are visible: D-only (around $E_{PR}=0$,
+histograms for the different spots in the dsDNA sample with D-A separation of 12bp.
+Two populations are visible: D-only (around $E_{PR}=0$,
 $S_u=1$) and FRET population (around $E_{PR}=0.6$,
 $S_u=0.6$). Burst search was performed using all photons with
 constant-threshold burst search (50~kcps). Burst selection was performed
@@ -493,7 +493,8 @@ on the total burst size after background correction, using a threshold of
 \begin{figure*}
 \includegraphics[width=\textwidth]{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_naa_AND_size_selection}}
 \caption{{\label{fig:alexhist48fret12d} $E_{PR}$ versus $S_u$
-histograms for the different spots in the 12d dsDNA sample. Data  analysis and
+histograms for the different spots in the dsDNA sample with D-A separation of 12bp.
+Data  analysis and
 burst search are identical to figure~\ref{fig:alexhist48all12d}, while
 burst selection was tailored to select only the FRET population: a burst is selected if the number of
 counts in the $D_{ex}DA_{em}$ and $DA_{ex}A_{em}$ streams are both larger than 20. The legend in each subplot
@@ -525,7 +526,8 @@ each subplot.%
 
 After the initial burst search, it is necessary to apply a burst selection
 criterium to reject the smallest burst which dominates the distribution.
-Fig.~\ref{fig:alexhist48all12d} shows the E-S histogram for the 12d sample,
+Fig.~\ref{fig:alexhist48all12d} shows the E-S histogram for the
+dsDNA sample with D-A separation of 12bp,
 after selecting bursts with photon counts from all the streams
 larger than a threshold.
 We observe that D-only and FRET populations (respectively top left corner
