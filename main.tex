@@ -266,11 +266,28 @@ The active area of each pixel has a 50~{\micron}
 diameter. The array comprises 4 rows of 12 pixels (4x12) with a 500~{\micron} pitch in
 each direction.
 
+To easily integrate the detectors into a multispot setup,
+ we developed a photon counting module that integrates a 48-pixel SPAD
+ array and the electronics required for device operation, data acquisition and transmission into
+ a compact, user friendly module.
+In particular, the SPAD array is housed into a hermetically 
+sealed chamber separated from the rest of the module. Sealing in a dry atmosphere makes
+ it possible to mount the array on a double-stage Peltier and to cool
+the detector down to temperatures of about -15 $^{\circ}$C, thereby reducing
+the dark count rate (DCR) and increasing the sensitivity of the instrument.
+Photon counting pulses are made externally available through a standard SCSI connector. This allows for an easy connection of the module to general-purpose boards for data acquisition and processing. 
+Alternatively, an onboard FPGA (Xilinx Spartan 6, model SLX150)
+can be used to synchronize the 48 channels, time-stamp each detected
+count with a time resolution of 10 ns and send this information
+to a remote PC  through a high-speed USB link.
+A C-mount at the top of the photon counting module 
+allows also for an easy and reliable connection to the multispot setup.
+
+The two SPAD arrays used in the current 48-spot smFRET-PAX setup are operated at a temperature of -10 $^{\circ}$C.
 The photon detection efficiency (PDE) reaches a maximum of $\sim$45\%
 at around 550~nm, dropping to about 35\% at
-628nm\cite{gulinatti_48-pixel_2013,michalet_silicon_2014}.
-About 90\% of the pixels have a dark count rate (DCR) lower than 1 kHz at -15 C,
-whereas the worst pixel has a fairly low DCR of about 2.5 kHz.
+628nm\cite{gulinatti_48-pixel_2013,michalet_silicon_2014}. The PDE is highly uniform over the array, with a peak-to-peak spread of only a few percent.
+Fig.~\ref{fig:dcr} shows the heatmaps of dark count rates of the two 12x4 SPAD arrays. About 80\% of the pixels have a DCR lower than 1000 counts per second (cps), whereas the worst pixel has a fairly low DCR of less than 6 kcps.
 
 48-spot smFRET-PAX results were compared to state-of-the-art single-spot
 {\usalex} setup previously described in~\onlinecite{ingargiola_multispot_2017}.
@@ -285,7 +302,7 @@ measurements is reported in~\onlinecite{michalet_silicon_2014}.
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/DCR-comp}
-    \caption{{\label{fig:dcr} Heatmaps of Dark Counting Rates (DCR) of the two 12x4
+    \caption{{\label{fig:dcr} Heatmaps of Dark Count Rates (DCR) of the two 12x4
     SPAD arrays (D and A) used in the current 48-spot smFRET-PAX setup.
     DCR values are overlaid on each pixel. All values are in counts per second (cps).
     More details and the data underlying this figure can be found in the
