@@ -131,7 +131,8 @@ Single-molecule Förster resonance energy transfer (smFRET) paved the way
 for studying such structural dynamics in biologically-relevant conditions.
 It allows the determination of each conformational state that may exist in
 the ensemble of macromolecular complexes as well as the distance between
-specific residues for each state.
+specific residues for each
+state~\cite{dahan_ratiometric_1999,deniz_single-pair_1999,ha_single-molecule_1999,kapanidis_fluorescence-aided_2004}.
 Recently, several groups used smFRET to
 measure distances between multiple distinct pairs of residues for
 constructing 3D macromolecular structures of distinct conformations by
@@ -142,18 +143,19 @@ distances between multiple pairs, hence report of the dynamic 3D structure
 of a macromolecule undergoing conformational changes,
 but due to the requirement of low sample concentration, imposed by the
 necessity to have no more than 1 molecule within the diffraction-limited
-confocal volume at a given time~\cite{deniz_single-pair_1999},
+confocal volume at a given time~\cite{dahan_ratiometric_1999,fries_quantitative_1998},
 only very slow kinetics could be measured.
 Therefore, both static and dynamic measurements of multiple
 distances could greatly benefit from increased throughput.
 
 To overcome
 this limitation, we recently introduced a multispot excitation scheme taking
-advantage of novel single-photon avalanche diode (SPAD) arrays. We demonstrated
-that the resulting setup indeed allows acquiring single-molecule data of
-quality comparable to that of standard single-spot setups, but with a
-throughput increased by a factor equal to the number of spots (equal to the
-number of SPAD pixels in each detection channel).
+advantage of novel single-photon avalanche diode (SPAD)
+arrays~\cite{ingargiola_parallel_2012,ingargiola_8-spot_2013,ingargiola_multispot_2017}.
+We demonstrated that the resulting setup indeed allows acquiring
+single-molecule data of quality comparable to that of standard single-spot
+setups, but with a throughput increased by a factor equal to the number
+of spots (equal to the number of SPAD pixels in each detection channel).
 We illustrated an application of this enhanced throughput
 by measuring, in bacterial transcription,
 the bubble closing kinetic upon promoter escape~\cite{ingargiola_multispot_2017}.
@@ -161,7 +163,7 @@ While encouraging, these results were partially unsatisfactory because they
 were obtained (i) with a rather small number of spots, but also because (ii)
 the setup only incorporated a single laser, used for excitation of the
 donor dye of the FRET donor-acceptor
-pair~\cite{ingargiola_parallel_2012,ingargiola_8-spot_2013,ingargiola_multispot_2017}.
+pair~\cite{ingargiola_multispot_2017}.
 Single-laser smFRET indeed suffers from the fact that low FRET molecules
 (molecules in which the donor-acceptor distance is large compared to the
 characteristic FRET length scale) are indistinguishable from molecules
@@ -189,10 +191,11 @@ A simplified version of this laser alternation principle was presented in
 ref.~\onlinecite{doose_periodic_2007}, where the donor excitation laser
 is left on at all times, while the acceptor laser is alternated.
 This Periodic Acceptor Excitation (PAX) single-molecule FRET
-technique~\cite{doose_periodic_2007} (PAX for short) allows simplifying the optical
-setup while maintaining the advantages of {\usalex}, namely the ability to
-identify in each single molecule the number of D and A dyes (stoichiometry)
-or to identify changes in the fluorescence quantum yields~\cite{lee_accurate_2005}.
+technique~\cite{doose_periodic_2007} (PAX for short) allows simplifying
+the optical setup while maintaining the advantages of {\usalex}, namely
+the ability to identify in each single molecule the number of D and A dyes
+(stoichiometry) or to identify changes in the fluorescence quantum
+yields~\cite{lee_accurate_2005}.
 Here we present a significant improvement over our original multispot
 setup by (i) introducing a 48-spot illumination and detection scheme,
 and (ii) implementing a 2-laser PAX illumination approach.
@@ -200,7 +203,7 @@ and (ii) implementing a 2-laser PAX illumination approach.
 Software needed to operate the multispot setup (including
 LCOS-SLM pattern generation, LabVIEW-FPGA timestamping code,
 piezo-motor control, etc.) is organized in different repositories
-available on GitHub at
+and available on GitHub at
 \href{https://github.com/multispot-software}{https://github.com/multispot-software}.
 
 This paper is organized as follows.
@@ -480,7 +483,7 @@ in the 48-spot setup.
 \includegraphics[width=\textwidth]{{{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}}}
 \caption{{\label{fig:alexhist48all12d} $E_{PR}$ versus $S_u$
 histograms for the different spots in the dsDNA sample with D-A separation of 12bp.
-Two populations are visible: D-only (around $E_{PR}=0$,
+Two subpopulations are visible: D-only (around $E_{PR}=0$,
 $S_u=1$) and FRET population (around $E_{PR}=0.6$,
 $S_u=0.6$). Burst search was performed using all photons with
 constant-threshold burst search (50~kcps). Burst selection was performed
@@ -496,8 +499,9 @@ on the total burst size after background correction, using a threshold of
 histograms for the different spots in the dsDNA sample with D-A separation of 12bp.
 Data  analysis and
 burst search are identical to figure~\ref{fig:alexhist48all12d}, while
-burst selection was tailored to select only the FRET population: a burst is selected if the number of
-counts in the $D_{ex}DA_{em}$ and $DA_{ex}A_{em}$ streams are both larger than 20. The legend in each subplot
+burst selection was tailored to select only the FRET population: a burst is
+selected if the number of counts in the $D_{ex}DA_{em}$ and $DA_{ex}A_{em}$
+streams are both larger than 20. The legend in each subplot
 reports spot number ($[\cdot]$) and number of bursts (\#B).%
 }}
 \end{figure*}
