@@ -289,7 +289,8 @@ to a remote PC  through a high-speed USB link.
 A C-mount at the top of the photon counting module
 allows also for an easy and reliable connection to the multispot setup.
 
-The two SPAD arrays used in the current 48-spot smFRET-PAX setup are operated at a temperature of -10 $^{\circ}$C.
+The two SPAD arrays used in the current 48-spot smFRET-PAX setup are operated
+at a temperature of -10 $^{\circ}$C.
 The photon detection efficiency (PDE) reaches a maximum of $\sim$45\%
 at around 550~nm, dropping to about 35\% at
 628nm\cite{gulinatti_48-pixel_2013,michalet_silicon_2014}. The PDE is highly
@@ -345,8 +346,9 @@ can be found in appendix~\ref{sec:lcos}.
     excitation and Gaussian fit of the spots (C). The pattern is acquired by
     a camera on the microscope side port (see Fig.~\ref{fig:setup}) using a
     solution of ATTO550 and ATTO647N dyes at high concentration ($\sim$100~nM).
-    Fluorescent images obtained upon 532~nm or 628~nm laser excitation were acquired separately and are reported in green and red intensity levels in panels (A) and (B), respectively.
-    Scale bars are 5~{\micron} long.
+    Fluorescent images obtained upon 532~nm or 628~nm laser excitation were
+    acquired separately and are reported in green and red intensity levels
+    in panels (A) and (B), respectively. Scale bars are 5~{\micron} long.
     To assess the alignment,
     each spot in the two images is fitted with a 2D Gaussian function. Panel
     (C) reports an overlay of the fitted peak positions peak positions and
@@ -413,8 +415,8 @@ counterpart is reported in appendix~\ref{sec:alex_pax}.
 In this paper, we report proximity ratios $E_{PR}$ computed according to
 eq.~\ref{eq:Epr}, and a ``modified stoichiometry ratio'' $S_u$ defined
 in eq.~\ref{eq:Su}. $S_u$ is a variant of the classical
-smFRET-PAX stoichiometry\cite{doose_periodic_2007}, which reduces the effect of
-shot noise and improves the separability of D-only and FRET populations.
+smFRET-PAX stoichiometry\cite{doose_periodic_2007}, which reduces the effect
+of shot noise and improves the separability of D-only and FRET populations.
 More details on $S_u$ can be found in appendix~\ref{sec:Su}.
 Note that, in all this work, the results of two spots (the two leftmost
 spots in the second row) are missing,
@@ -582,7 +584,7 @@ across the spots, we report the raw $E_{PR}$ and $S_u$ values without
 any spot-specific adjustment.
 
 For comparison, Fig.~\ref{fig:alex_sspot_15} shows a similar histogram obtained
-accumulating bursts for 15~s during a measurement of the same sample    using the
+accumulating bursts for 15~s during a measurement of the same sample using the
 single-spot {\usalex} setup. While we observe that
 the total number of bursts  detected in the multispot measurement
 is about 12 times larger than in the single spot measurement, a quantitative
@@ -881,8 +883,8 @@ same position of the spot obtained without $L3$.
 \subsection{Achieving overlap of the green and red patterns}
 
 Starting with the green LCOS-SLM, we project a multispot pattern into a
-highly concentrated solution of dyes (100~nM - 1~\textgreek{μ}M) used for alignment.
-Using a square grid of spots with an odd number of spots per side
+highly concentrated solution of dyes (100~nM - 1~\textgreek{μ}M) used for
+alignment. Using a square grid of spots with an odd number of spots per side
 (i.e.~9x9) ensures that one spot is at the center of the pattern. The
 camera on the side-port detects an image of the pattern. The centering
 of the pattern with respect to the optical axis can be assessed from the
@@ -931,10 +933,10 @@ geometry.
 
 For alignment, we use a high concentration dye mixture (ATTO550,
 ATTO647N, $\sim$500~nM) excited by both lasers.
-With this sample, the 532~nm laser generates fluorescence signal in both D and A
-channel, while the 628~nm laser only generates a signal in the A channel.
-At this point, the center of the both 532~nm and 628~nm excitation patterns
-has already been fixed in order to minimize geometrical aberrations
+With this sample, the 532~nm laser generates fluorescence signal in both
+D and A channels, while the 628~nm laser only generates a signal in the
+A channel. At this point, the center of the both 532~nm and 628~nm excitation
+patterns has already been fixed in order to minimize geometrical aberrations
 as described in appendix~\ref{sec:laseralign}.
 Therefore, the excitation pattern position is used as the reference
 to which aligning the SPAD arrays.
@@ -1014,10 +1016,10 @@ A-SPAD G laser, A-SPAD A laser.
 
 In ALEX, two alternation periods $D_{ex}$ and
 $A_{ex}$ (respectively D or A excitation) and two
-detectors (D and A) are involved. This results in four basic photon streams named
-$D_{ex}D_{em}$, $D_{ex}A_{em}$, $A_{ex}D_{em}$, $A_{ex}A_{em}$, where the first
-symbol indicates the excitation period and the second, the detection channel.
-The $A_{ex}D_{em}$ stream only contains
+detectors (D and A) are involved. This results in four basic photon streams
+named $D_{ex}D_{em}$, $D_{ex}A_{em}$, $A_{ex}D_{em}$, $A_{ex}A_{em}$, where
+the first symbol indicates the excitation period and the second the
+detection channel. The $A_{ex}D_{em}$ stream only contains
 background because there is no fluorescent emission in the D spectral
 band during A-laser excitation. For simplicity, we assume here that these
 quantities have been corrected for
@@ -1028,8 +1030,8 @@ We can still define two periods, one when only the D laser is on ($D_{ex}$)
 and one when both lasers are on (${DA}_{ex}$).
 As in ALEX, combining the two
 excitation periods and the two detectors leads to four basic PAX
-photon streams: $D_{ex}D_{em}$, $D_{ex}A_{em}$, $DA_{ex}D_{em}$, $DA_{ex}A_{em}$.
-Formally, the only difference
+photon streams: $D_{ex}D_{em}$, $D_{ex}A_{em}$, $DA_{ex}D_{em}$,
+$DA_{ex}A_{em}$. Formally, the only difference
 with the ALEX photon stream is that $A_{ex}$ in ALEX is
 replaced with $DA_{ex}$ in PAX. Differently from ALEX, however,
 all four photon streams in PAX contain useful fluorescent signal. In
@@ -1203,9 +1205,9 @@ section \ref{sec:perchcorr}.
 
 \subsection{Gamma correction}
 
-The gamma-factor of each channel, $\gamma_{ch}$, can be expressed as the product of
-an average factor $\gamma_m$ and a spot-specific adjustment factor
-$\chi_{ch}$:
+The gamma-factor of each channel, $\gamma_{ch}$, can be expressed as
+the product of an average factor $\gamma_m$ and a spot-specific adjustment
+factor $\chi_{ch}$:
 
 \begin{equation}
 \gamma_{ch} = \gamma_m \cdot \chi_{ch}
@@ -1221,9 +1223,8 @@ quantities according to the following expression:
 \end{equation}
 
 In eq.~\ref{eq:chich}, $E_{PR\,ch}$ is the population-level
-proximity ratio for a specific channel, and $ \langle E_{PRch} \rangle_{ch} $ is the
-average over all $N$
-channels (in this case $N= 48$).
+proximity ratio for a specific channel, and $ \langle E_{PRch} \rangle_{ch} $
+is the average over all $N$ channels (in this case $N= 48$).
 
 Eq.~\ref{eq:chich} follows from the following relation between $E$
 and $E_{PR}$\cite{lee_accurate_2005, ingargiola_applying_2017}:
@@ -1288,7 +1289,8 @@ S_{\beta} = \frac{1}{1 + \frac{1}{\beta} \left( \frac{1}{S} - 1 \right)}
 \end{equation}
 
 Following the same arguments as in the previous section,
-the beta correction can be expressed as the product of a spot-average $\beta_m$ and an individual channel correction $\beta_{ch}$:
+the beta correction can be expressed as the product of a spot-average
+$\beta_m$ and an individual channel correction $\beta_{ch}$:
 
 \begin{equation}
 \beta = \beta_m \, \beta_{ch}
@@ -1310,9 +1312,15 @@ channels ($N= 48$ in this case).
 \section{Additional data}
 \label{sec:moredata}
 
-Fig.~\ref{fig:alexhist48all22d} shows $E_{PR}$-$S_u$ histograms for the different
-channels obtained during the measurement of a 22d DNA sample (low-FRET).
-Due to the choice of donor and acceptor excitation powers during this measurement, the FRET population has an $S_u$ value larger than 0.5, artificially compressing the histograms in the upper part of the graphs. Nonetheless, it is still possible to distinguish FRET from D-only bursts, despite the low value of $E_{PR}$ for that sample, allowing a bias-free estimation of $E_{PR}$, as opposed to what would have happened in the absence of acceptor excitation~\cite{ingargiola_multispot_2017}.
+Fig.~\ref{fig:alexhist48all22d} shows $E_{PR}$-$S_u$ histograms for the
+different channels obtained during the measurement of a 22d DNA sample
+(low-FRET). Due to the choice of donor and acceptor excitation powers
+during this measurement, the FRET population has an $S_u$ value larger
+than 0.5, artificially compressing the histograms in the upper part of
+the graphs. Nonetheless, it is still possible to distinguish FRET from
+D-only bursts, despite the low value of $E_{PR}$ for that sample, allowing
+a bias-free estimation of $E_{PR}$, as opposed to what would have happened
+in the absence of acceptor excitation~\cite{ingargiola_multispot_2017}.
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{{figures/2017-05-23_04_22d_48spot_alex_hist_Su_all-bursts}}
