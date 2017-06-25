@@ -85,28 +85,28 @@ Dept. Chemistry and Biochemistry, University of California Los Angeles, USA}
 \begin{abstract}
 Single-molecule FRET (smFRET) allows measuring distances between donor (D) and
 acceptor (A) fluorophores on the 3-10~nm range.
-Solution-based smFRET  allows measuring binding-unbinding
+Solution-based smFRET allows measurement of binding-unbinding events
 or conformational changes of dye-labeled biomolecules without ensemble averaging
 and free from surface perturbations. When employing dual (or multi)
 laser excitation,
-the technique allows resolving the number of fluorescent
-labels on each molecule, which greatly enhances the ability to study
+smFRET allows resolution of the number of fluorescent
+labels on each molecule, greatly enhancing the ability to study
 heterogeneous samples.
-A major drawback of solution-based smFRET technique is the low throughput,
-which renders repetitive measurements expensive and hinder the ability
+A major drawback to solution-based smFRET is the low throughput,
+which renders repetitive measurements expensive and hinders the ability
 to study kinetic phenomena in real-time.
 
-Here we demonstrate a high-throughput single-molecule FRET system which
-multiplexes the acquisition by using 48 excitation spots and
-48-pixels SPAD array detectors. The system employs two excitation lasers
-allowing the separation of species with one or two active fluorophores.
-The performances of the system are demonstrated on a set of doubly-labeled
-double-stranded DNA oligos
+Here we demonstrate a high-throughput smFRET system which
+multiplexes acquisition by using 48 excitation spots and
+48-pixel SPAD array detectors. The system employs two excitation lasers
+allowing separation of species with one or two active fluorophores.
+The performance of the system is demonstrated on a set of doubly-labeled
+double-stranded DNA oligonucleotides 
 with different distances between D and A dyes along the DNA duplex.
 We show that the acquisition time for accurate subpopulation identification
 is reduced from several minutes to seconds, opening the way
-to high-throughput screening applications as well as
-to real-time kinetics studies of enzymatic reactions such as DNA transcription
+to high-throughput screening applications and 
+real-time kinetics studies of enzymatic reactions such as DNA transcription
 by bacterial RNA polymerase.
 \end{abstract}
 
@@ -117,60 +117,59 @@ by bacterial RNA polymerase.
 \section{Introduction} \label{sec:intro}
 
 Detailed knowledge of the three-dimensional (3D) atomistic structure of
-macromolecular complexes is important to understand their
-biological function. For decades, X-Ray crystallography and nuclear
+macromolecular complexes is crucial to understand their
+biological function. For decades, X-ray crystallography and nuclear
 magnetic resonance (NMR) spectroscopy have been the techniques of choice
-for attaining atomic-detailed macromolecular structures. More recently,
+for obtaining atomically resolved macromolecular structures. More recently,
 single-particle cryo-electron microscopy (cryo-EM) has complemented these
-methods for the determination of large macromolecular structures with the
+methods in determination of large macromolecular structures with the
 added ability to classify different conformations. However, macromolecules
 spontaneously and dynamically explore various conformations in equilibrium
 that are hard to capture by the above-mentioned methods. Understanding the
 functional roles of these structures requires a full dynamic picture.
 Single-molecule Förster resonance energy transfer (smFRET) paved the way
 for studying such structural dynamics in biologically-relevant conditions.
-It allows the determination of each conformational state that may exist in
+smFRET allows determination of each conformational state that may exist in
 the ensemble of macromolecular complexes as well as the distance between
 specific residues for each
 state~\cite{dahan_ratiometric_1999,deniz_single-pair_1999,ha_single-molecule_1999,kapanidis_fluorescence-aided_2004}.
 Recently, several groups used smFRET to
-measure distances between multiple distinct pairs of residues for
-constructing 3D macromolecular structures of distinct conformations by
+measure distances between multiple distinct pairs of residues to
+construct 3D macromolecular structures of distinct conformations by
 triangulation and comparison to existing X-ray crystal
 structures~\cite{dimura_quantitative_2016,hellenkamp_multidomain_2017,hoefling_structural_2011,kalinin_toolkit_2012,muschielok_nano-positioning_2008,muschielok_application_2011}.
-Moreover, smFRET can, in principle, measure evolution in time of multiple
-distances between multiple pairs, hence report of the dynamic 3D structure
-of a macromolecule undergoing conformational changes,
-but due to the requirement of low sample concentration, imposed by the
-necessity to have no more than 1 molecule within the diffraction-limited
+Moreover, smFRET can measure the evolution in time of multiple
+distances between multiple FRET pairs, and hence report upon the dynamic 3D structure
+of a macromolecule undergoing conformational changes.
+Previously, due to the requirement of low sample concentration imposed by the
+necessity to have no more than one molecule within the diffraction-limited
 confocal volume at a given time~\cite{dahan_ratiometric_1999,fries_quantitative_1998},
 only very slow kinetics could be measured.
-Therefore, both static and dynamic measurements of multiple
-distances could greatly benefit from increased throughput.
+Therefore, increased throughput is essential for both static and dynamic measurements of multiple
+distances.
 
 To overcome
 this limitation, we recently introduced a multispot excitation scheme taking
 advantage of novel single-photon avalanche diode (SPAD)
 arrays~\cite{ingargiola_parallel_2012,ingargiola_8-spot_2013,ingargiola_multispot_2017}.
-We demonstrated that the resulting setup indeed allows acquiring
-single-molecule data of quality comparable to that of standard single-spot
-setups, but with a throughput increased by a factor equal to the number
-of spots (equal to the number of SPAD pixels in each detection channel).
+We demonstrated that the resulting setup indeed allows quality acquisition of
+single-molecule data comparable to that of standard single-spot
+setups, but with throughput increased by a factor equal to the number
+of excitation spots.
 We illustrated an application of this enhanced throughput
-by measuring, in bacterial transcription,
-the bubble closing kinetic upon promoter escape~\cite{ingargiola_multispot_2017}.
+by measuring the bubble closing kinetics during promoter escape in bacterial transcription~\cite{ingargiola_multispot_2017}.
 While encouraging, these results were partially unsatisfactory because they
-were obtained (i) with a rather small number of spots, but also because (ii)
+were obtained with a rather small number of spots, and also because
 the setup only incorporated a single laser, used for excitation of the
 donor dye of the FRET donor-acceptor
 pair~\cite{ingargiola_multispot_2017}.
-Single-laser smFRET indeed suffers from the fact that low FRET molecules
+Single-laser smFRET suffers from inability to resolve low FRET molecules
 (molecules in which the donor-acceptor distance is large compared to the
-characteristic FRET length scale) are indistinguishable from molecules
-labeled only with a donor dye, or whose acceptor dye is either inactivated
-or bleached. Since the latter categories are present in most samples,
-it is important to be able to identify and separate them from the
-"interesting" doubly-labeled low FRET molecules.
+characteristic FRET length scale) i.e. dually-labeled molecules 
+are indistinguishable from molecules
+labeled with a single donor dye, or molecules with inactivated
+or bleached acceptor dyes. Since the latter categories are present in most samples,
+it is important to identify and separate them from doubly-labeled low FRET molecules of interest.
 
 \emph{Microsecond Alternated Laser EXcitation}
 ({\usalex}) smFRET ({\usalex} for short),  was introduced several years ago
