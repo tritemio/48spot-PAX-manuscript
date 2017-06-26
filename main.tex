@@ -89,7 +89,7 @@ Solution-based smFRET allows measurement of binding-unbinding events
 or conformational changes of dye-labeled biomolecules without ensemble averaging
 and free from surface perturbations. When employing dual (or multi)
 laser excitation,
-smFRET allows resolution of the number of fluorescent
+smFRET allows resolving the number of fluorescent
 labels on each molecule, greatly enhancing the ability to study
 heterogeneous samples.
 A major drawback to solution-based smFRET is the low throughput,
@@ -97,7 +97,7 @@ which renders repetitive measurements expensive and hinders the ability
 to study kinetic phenomena in real-time.
 
 Here we demonstrate a high-throughput smFRET system which
-multiplexes acquisition by using 48 excitation spots and
+multiplexes acquisition by using 48 excitation spots and two
 48-pixel SPAD array detectors. The system employs two excitation lasers
 allowing separation of species with one or two active fluorophores.
 The performance of the system is demonstrated on a set of doubly-labeled
@@ -122,7 +122,7 @@ biological function. For decades, X-ray crystallography and nuclear
 magnetic resonance (NMR) spectroscopy have been the techniques of choice
 for obtaining atomically resolved macromolecular structures. More recently,
 single-particle cryo-electron microscopy (cryo-EM) has complemented these
-methods in determination of large macromolecular structures with the
+methods for determination of large macromolecular structures with the
 added ability to classify different conformations. However, macromolecules
 spontaneously and dynamically explore various conformations in equilibrium
 that are hard to capture by the above-mentioned methods. Understanding the
@@ -139,57 +139,62 @@ construct 3D macromolecular structures of distinct conformations by
 triangulation and comparison to existing X-ray crystal
 structures~\cite{dimura_quantitative_2016,hellenkamp_multidomain_2017,hoefling_structural_2011,kalinin_toolkit_2012,muschielok_nano-positioning_2008,muschielok_application_2011}.
 Moreover, smFRET can measure the evolution in time of multiple
-distances between multiple FRET pairs, and hence report upon the dynamic 3D structure
-of a macromolecule undergoing conformational changes.
-Previously, due to the requirement of low sample concentration imposed by the
-necessity to have no more than one molecule within the diffraction-limited
-confocal volume at a given time~\cite{dahan_ratiometric_1999,fries_quantitative_1998},
-only very slow kinetics could be measured.
-Therefore, increased throughput is essential for both static and dynamic measurements of multiple
-distances.
+distances between multiple FRET pairs, and hence report upon the dynamic
+3D structure of a macromolecule undergoing conformational changes.
+So far, however, due to the requirement of low sample concentration imposed
+by the necessity to have no more than one molecule within the
+diffraction-limited confocal volume at a given
+time~\cite{dahan_ratiometric_1999,fries_quantitative_1998},
+only very slow kinetics could be measured. Therefore, increased throughput
+is essential for both static and dynamic measurements of multiple distances.
 
 To overcome
 this limitation, we recently introduced a multispot excitation scheme taking
 advantage of novel single-photon avalanche diode (SPAD)
 arrays~\cite{ingargiola_parallel_2012,ingargiola_8-spot_2013,ingargiola_multispot_2017}.
-We demonstrated that the resulting setup indeed allows quality acquisition of
+We demonstrated that the resulting setup indeed allows acquisition of
 single-molecule data comparable to that of standard single-spot
-setups, but with throughput increased by a factor equal to the number
+setups, but with a throughput that scales with the number
 of excitation spots.
 We illustrated an application of this enhanced throughput
-by measuring the bubble closing kinetics during promoter escape in bacterial transcription~\cite{ingargiola_multispot_2017}.
+by measuring the bubble closing kinetics during promoter escape in bacterial
+transcription~\cite{ingargiola_multispot_2017}.
 While encouraging, these results were partially unsatisfactory because they
-were obtained with a rather small number of spots, and also because
+were obtained with a rather small number of spots (8), and also because
 the setup only incorporated a single laser, used for excitation of the
-donor dye of the FRET donor-acceptor
-pair~\cite{ingargiola_multispot_2017}.
-Single-laser smFRET suffers from inability to resolve low FRET molecules
-(molecules in which the donor-acceptor distance is large compared to the
-characteristic FRET length scale) i.e. dually-labeled molecules
-are indistinguishable from molecules
-labeled with a single donor dye, or molecules with inactivated
-or bleached acceptor dyes. Since the latter categories are present in most samples,
-it is important to identify and separate them from doubly-labeled low FRET molecules of interest.
+donor (D) dye of the FRET donor-acceptor (D-A) pair~\cite{ingargiola_multispot_2017}.
+Single-laser smFRET is unable to distinguish between low FRET molecules
+(molecules with two active D and A dyes in which the D-A distance is
+large compared to the characteristic FRET length scale) from D-only molecules
+(i.e. molecules with a single D dye, or dually-labeled molecules
+with an inactivated or bleached A dye).
+Since the latter categories are present in most samples,
+it is important to identify and separate them from low FRET molecules
+of interest.
 
-\emph{Microsecond Alternated Laser EXcitation}
-({\usalex}) smFRET (referred throughout as {\usalex} for brevity),  was introduced several years ago
-to address this problem~\cite{kapanidis_alternating-laser_2005}, and later
-extended to pulsed
-laser excitation schemes (nsALEX~\cite{laurence_probing_2005} or
-PIE~\cite{muller_pulsed_2005}). Briefly, in {\usalex},
+To address this problem, \emph{Microsecond Alternated Laser EXcitation}
+smFRET (referred throughout as {\usalex} for brevity), was
+introduced several years ago~\cite{kapanidis_alternating-laser_2005},
+and later extended to pulsed laser excitation schemes
+(nsALEX~\cite{laurence_probing_2005} or PIE~\cite{muller_pulsed_2005}).
+Briefly, in {\usalex},
 two exciting lasers are alternatively turned on and off every few tens of
-{\microsec} to separate singly and doubly-labeled species,
-due to some molecules lacking a fluorescently-active A dye that
-does not emit fluorescence when the A-laser is on and the D-laser is off.
+{\microsec} allowing the separation of species with only a single active
+dye (D-only, A-only populations) from doubly-labeled species with both dyes
+active (FRET population). In fact, only for FRET populations, there
+is a fluorescence signal both during the D-laser excitation (due to
+excitation of the D dye) and the A-laser excitation (due to excitation
+of the A dye).
 This, in turn, extends the number of FRET sub-populations that can be possibly
 identified within a sample in the regime of low mean FRET efficiencies.
-This scheme has since been extended to more laser excitations, allowing
+This scheme has since been extended to 3 or 4 laser excitations, allowing
 powerful molecular sorting applications~\cite{lee_three-color_2007,yim_four-color_2012}.
 A simplified version of this laser alternation principle was presented in
 ref.~\onlinecite{doose_periodic_2007}, where the D-excitation laser
 is left on at all times while the A-laser is alternated.
-This Periodic Acceptor Excitation (PAX) single-molecule FRET
-technique~\cite{doose_periodic_2007} (referred to as PAX for brevity) allows simplifying
+This Periodic Acceptor Excitation single-molecule FRET
+technique~\cite{doose_periodic_2007} (referred to as PAX for brevity) allows
+simplifying
 the optical setup while maintaining the advantages of {\usalex}, namely
 the ability to determine the stoichiometry of D and A dyes on each single molecule
 or to identify changes in the fluorescence quantum yields~\cite{lee_accurate_2005}.
@@ -238,19 +243,20 @@ After polarization adjustment and beam expansion, the two lasers
 are phase modulated by the respective LCOS-SLM generating two
 48-spots patterns on a plane after each LCOS-SLM (\emph{LCOS image plane}).
 The two lasers are then combined by a dichroic mirror ($DM_{MIX}$) and
-recollimated ($L3$) before being focused into the sample by an
+recollimated ($L_3$) before being focused into the sample by an
 high numerical aperture (NA) objective lens (60x, NA=1.2).
 Emitted fluorescence is collected by the same objective lens,
 separated by excitation wavelength through a dual-band polychroic mirror ($DM_{EX}$),
-and focused by a tube lens ($L2$) into the image plane.
-Next, emitted fluorescence light is recollimated ($L4$), separated into donor
+and focused by a tube lens ($L_2$) into the image plane.
+Next, emitted fluorescence light is recollimated ($L_4$), separated into donor
 and acceptor spectral bands ($DM_{EM}$), and focused into two different
 48-pixel SPAD arrays that are mounted on motorized micro-positioning stages.
 The system is aligned so that each SPAD pixel is optically
 conjugated to one excitation spot into the sample.
 
 Output from the detectors is processed by an FPGA-based board which performs
-photon timestamping with 12.5~ns resolution, and data is transfered to a host PC.
+photon timestamping with 12.5~ns resolution and transfers data to a
+host PC.
 The host PC runs an acquisition software that displays 96-channel timetraces
 in real-time, implements alignment routines, and saves the acquisition to
 disk. Further data conversion and analysis is performed on a second PC.
@@ -263,8 +269,8 @@ architecture and performance has been presented
 in~\onlinecite{gulinatti_48-pixel_2013}.
 Here we describe only the most salient features.
 The active area of each pixel has a 50~{\micron}
-diameter. The array is comprised by 4 rows of 12 pixels (4x12) with a 500~{\micron}
-pitch in each direction.
+diameter. The array is comprised by 4 rows of 12 pixels (4x12) with a
+500~{\micron} pitch in each direction.
 
 To easily integrate the detectors into a multispot setup,
 we developed a photon-counting module that integrates a 48-pixel SPAD
@@ -278,11 +284,11 @@ thereby reducing the dark count rate (DCR) and increasing the sensitivity of the
 instrument. Photon-counting pulses are made externally available through a standard
 SCSI connector. This allows for an easy connection of the module to
 general-purpose boards for data acquisition and processing.
-Alternatively, an onboard FPGA (Xilinx Spartan 6, model SLX150)
+Alternatively, an onboard FPGA (Spartan 6 SLX150, Xilinx, San Jose, CA, USA)
 can be used to time-stamp counts detected in each of the 48-channels
-with a time resolution of 10~ns where information is sent
+with a time resolution of 10~ns where this information is sent
 to a remote PC through a high-speed USB link.
-A C-mount at the top of the photon-counting module also
+A C-mount at the top of the photon-counting module
 allows for easy and reliable connections to the multispot setup.
 
 The two SPAD arrays used in the current 48-spot smFRET-PAX setup are operated
@@ -293,7 +299,7 @@ at 550~nm and drops to 35\% at
 uniform over the array, with a peak-to-peak spread of only a few percent.
 Fig.~\ref{fig:dcr} shows heatmaps of dark count rates for the two
 12x4 SPAD arrays. About 80\% of the pixels have a DCR lower than 1000 counts
-per second (cps), compared to the lowest performing pixel that has
+per second (cps), whereas the worst performing pixel has
 a fairly low DCR of less than 6~kcps.
 
 48-spot smFRET-PAX results were compared to the state-of-the-art single-spot
@@ -301,7 +307,7 @@ a fairly low DCR of less than 6~kcps.
 This setup employs two single-pixel commercial SPADs
 (SPCM-AQRH, Excelitas Technology Corp., Waltham, MA, USA)
 characterized by PDE similar to our SPAD arrays in the D spectral band
-but has more than two-fold higher PDE in the A spectral band.
+but with a more than two-fold higher PDE in the A spectral band.
 For this reason, the {\usalex} setup is expected to be
 at least twice as sensitive in the A-channel than the 48-spot setup.
 A detailed comparison of the different SPAD technologies for single-molecule
@@ -350,7 +356,7 @@ can be found in appendix~\ref{sec:lcos}.
     in panels (A) and (B), respectively. Scale bars are 5~{\micron}.
     To assess the alignment,
     each spot in the two images is fitted with a 2D Gaussian function. Panel
-    (C) reports an overlay of the peak positions, fitted peak positions, and
+    (C) reports an overlay of the fitted peak positions and a
     contour of the Gaussian waist for 532~nm (\emph{green}) and 628~nm
     (\emph{red}) images. A zoom-in for 3 representative spots is reported on
     the right. The elliptical shape and rotation of the Gaussian is
@@ -384,7 +390,7 @@ The three steps of the analysis are:
 Background estimation, which is used to correct the burst counts
 in the different photon streams, was performed in 10~s time windows
 in order to account for possible variations during the measurement.
-Burst searcher were performed independently for each spot
+Burst searches were performed independently for each spot
 using the sliding-window algorithm~\cite{fries_quantitative_1998}
 and a constant-rate threshold for all spots~\cite{ingargiola_fretbursts:_2016}.
 
@@ -547,8 +553,8 @@ is limited and does not affect the ability to distinguish subpopulations.
 This is evident in Fig.~\ref{fig:fittedFRETscatter} which shows the
 $E_PR$ and $S_u$ peak center position in different spots for
 both D-only and FRET populations.
-Fig.~\ref{fig:fretfit48vsmean} shows the center and $\pm1\,\sigma$ 
-range of fitted E-S peaks for the FRET population (blue dot and error-bar) 
+Fig.~\ref{fig:fretfit48vsmean} shows the center and $\pm1\,\sigma$
+range of fitted E-S peaks for the FRET population (blue dot and error-bar)
 for each channel.
 The orange dot is the mean center peak position of the FRET population
 across all the spots. We note that, for almost all channels, the
@@ -597,7 +603,7 @@ we obtain a signal in the D-channel comparable to the single-spot measurements
 (which used 180~\textgreek{μ}W @ 532~nm). The lateral spots receive less
 power and therefore detect a lower number of bursts.
 Second, the detection efficiency of the SPAD array in the red region
-of the electromagnetic spectrum is lower than that of the corresponding 
+of the electromagnetic spectrum is lower than that of the corresponding
 SPAD in the single-spot setup (see section~\ref{sec:detectors}),
 reducing total burst size and therefore the number of bursts selected with
 a given threshold.
@@ -704,7 +710,7 @@ $D_{MIX}$. The green laser is reflected off $M3$,
 phase-modulated by the ``green'' LCOS-SLM (P/N X10468-01, Hamamatzu),
 and combines with the red excitation via the dichroic mirror
 $D_{MIX}$ (T550LPXR, Chroma Technology Corp, VT, USA). Both
-beams are recollimated by the $L3$ lens (f=250~mm,
+beams are recollimated by the $L_3$ lens (f=250~mm,
 AC508-250-A, Thorlabs) and focused into the sample by a high-NA
 objective lens (UAPOPlan 60x, NA 1.2, Olympus) after being reflected off
 the excitation dichroic mirror $DM_{EX}$ (Brightline
@@ -712,7 +718,7 @@ FF545/650-Di01, Semrock Inc., NY, USA). The excitation pattern forms a
 dual-color 12x4 array of spots into the sample matching the geometry of
 the two SPAD arrays. The fluorescence emission is collected by the same
 objective lens, passes through the excitation dichroic
-$DM_{EX}$ and is focused by the microscope tube lens either on
+$DM_{EX}$ and is focused by the microscope tube lens $L_2$ either on
 the side or the bottom port of the microscope. The side port mounts a
 sCMOS camera (Grasshopper3 GS3-U3-23S6M-C, FLIR Integrated Imaging
 Solutions Inc., BC, Canada) used during alignment while the bottom port
@@ -877,7 +883,7 @@ $I2$ coincides with the microscope optical axis. The last
 step is translating the input beam without changing its
 incidence angle until the intensity peak is aligned to the iris
 center. Alignment of beam direction and iris must be repeated until
-convergence. Once complete, both beams are parallel and concentric 
+convergence. Once complete, both beams are parallel and concentric
 with the optical axis to a good approximation. When placing
 $L3$ a spot is formed at a different focus position.
 $L3$ can be aligned assuring that this new spot is in the
