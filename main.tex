@@ -988,6 +988,9 @@ complete.
 
 The whole fine alignment procedure is routinely performed at the
 beginning of each day of measurements and requires about 30 minutes.
+Fig.~\ref{fig:scatter-spad-align} shows the fitted coordinates after
+fine alignment of the central 4x4 set of pixels in the D and A SPAD
+arrays.
 
 \subsection{Rotation and pitch adjustment}
 \label{sec:rot-pitch-align}
@@ -1019,9 +1022,13 @@ finely tune the X and Y pitch of the LCOS-SLM pattern that optimally
 matches both SPAD arrays. We observed X and Y pitch difference of 1-2\%
 due to non-idealities (stigmatism) in the optical path.
 
-\textbf{Figure}: scatter plot of center positions for D-SPAD G laser,
-A-SPAD G laser, A-SPAD A laser.
-
+\begin{figure*}
+\includegraphics[width=\columnwidth]{figures/2017-05-02_scan_fit_scatter}
+\caption{\label{fig:scatter-spad-align}
+Experimental SPAD pixel coordinates after fine alignment for the D-SPAD
+and A-SPAD arrays.
+}
+\end{figure*}
 
 \section{ALEX and PAX}
 \label{sec:alex_pax}
