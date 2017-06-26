@@ -957,20 +957,20 @@ in X and Y to match the center of the excitation pattern. This is achieved
 by maximizing timetraces of SPAD counts displayed by the acquisition
 program while moving the detectors.
 
-Next, we perform a more automated procedure for fine alignment called in
-the following ``multispot scan''. A multispot scan involves rigidly
+Next, we perform a more automated procedure for fine alignment referred to as 
+``multispot scan''. A multispot scan involves rigidly
 translating the multispot pattern on an LCOS-SLM (typically 4x4 spots) in
-discrete steps along two orthogonal segments i.e. a cross path.
+discrete steps along two orthogonal segments, forming a cross path.
 At the same time, counts from a SPAD
-array are integrated for each pattern position for 300~ms.
+array are integrated for each pattern position over 300~ms.
 During a scan, each emission spot draws a cross path roughly centered
-on a SPAD's pixel.
-A typical scan covers a range of 10 LCOS-SLM pixels with a step of 0.4
-and is performed sequentially in X and Y directions.
-The acquired counts as a function of the LCOS-SLM position resemble a peak
-profile that is used to estimate SPAD's pixel positions in LCOS-SLM
+on a SPAD pixel.
+A typical scan covers a range of 10 LCOS-SLM pixels with a step size of 0.4
+and is performed sequentially in both X and Y directions.
+The counts acquired as a function of the LCOS-SLM position resemble a peak
+profile that is used to estimate the SPAD pixel center positions in LCOS-SLM
 coordinates. Averaging the SPAD pixel positions we obtain an accurate
-estimation of the SPAD array's center. Ultimately, this procedure yields
+estimation for the center of the SPAD array. Ultimately, this procedure yields
 the offset of each SPAD array with respect to the ideal excitation pattern
 center. With this information, we move the SPAD arrays to the ideal
 X-Y position using software-controlled piezo micro-positioners.
@@ -978,18 +978,18 @@ The sequence of multispot scan and SPAD array translation is repeated
 until convergence.
 Initially, the two SPAD arrays are aligned with respect to the green
 LCOS-SLM pattern (532 nm). Next, the position of the red LCOS-SLM pattern
-(628 nm) is fine-tuned to match the position of the A SPAD array (the D
-SPAD array does not detect any signal with 628 nm excitation). The
+(628 nm) is fine-tuned to match the position of the A-SPAD array, and the 
+D-SPAD array does not detect any signal with 628 nm excitation. The
 optimal position of the red excitation pattern is determined from a
 multispot scan performed with the red LCOS-SLM while counts are acquired
-with the A SPAD array. After this, both red an green excitation
-patterns, and D/A SPAD array positions are fixed and the alignment is
+with the A-SPAD array. After this, both red an green excitation
+patterns, and D/A-SPAD array positions are fixed, and the alignment is
 complete.
 
 The whole fine alignment procedure is routinely performed at the
-beginning of each day of measurements and requires about 30 minutes.
+beginning of each day of measurements and lasts about 30 minutes.
 Fig.~\ref{fig:scatter-spad-align} shows the fitted coordinates after
-fine alignment of the central 4x4 set of pixels in the D and A SPAD
+fine alignment of the central 4x4 set of pixels in the D and A-SPAD
 arrays.
 
 \subsection{Rotation and pitch adjustment}
@@ -1000,27 +1000,27 @@ repeated daily when using the multispot setup. However, when
 building the setup, additional steps are
 necessary (a) to align the relative rotation of the two SPAD arrays, (b)
 to determine the best pitch in X and Y for the green and red excitation
-pattern and (c) to optimize the SPAD position along the optical axis
+patterns, and (c) to optimize the SPAD position along the optical axis
 (Z).
 
 To extract rotation and pitch information, we perform a
-multispot scan followed by an additional analysis step. In particular, the
+multispot scan followed by an additional analysis step. Specifically, the
 set of X-Y positions of each SPAD pixel obtained from the scan is fitted to a
 rectangular grid.
-The fitted grid parameters are center position, pitch in X, pitch in Y and
+The fitted grid parameters are center position, pitch in X, pitch in Y, and
 rotation angle. Each SPAD array will have a different set of fitted
 parameters.
 
 To adjust the rotation angle, one of the SPAD arrays (D) is
 rotated about the optical axis in order match the angle
-of the second SPAD (the rotation angle of each SPAD is obtained from the scan
-fits). Once the orientations of two SPAD arrays matches, the rotation
+of the second SPAD, where the rotation angle of each SPAD is obtained from
+the scan fits. Once the orientations of two SPAD arrays match, the rotation
 stage is locked, ensuring long-term stability of the rotational angle.
 
-Regarding the pitch, the information from the scan fits is used to
+Regarding the pitch, information from the scan fits is used to
 finely tune the X and Y pitch of the LCOS-SLM pattern that optimally
 matches both SPAD arrays. We observed X and Y pitch difference of 1-2\%
-due to non-idealities (stigmatism) in the optical path.
+due to non-idealities due to stigmatism in the optical path.
 
 \begin{figure}
 \includegraphics[width=0.9\columnwidth]{figures/2017-05-02_scan_fit_scatter}
@@ -1039,23 +1039,23 @@ excitation) and two detectors (D and A) are involved. This results in four
 basic photon streams named $D_{ex}D_{em}$, $D_{ex}A_{em}$, $A_{ex}D_{em}$,
 $A_{ex}A_{em}$, where the first symbol indicates the excitation period and the
 second the detection channel. The $A_{ex}D_{em}$ stream only contains
-background because there is no fluorescent emission in the D spectral band
+background because there is no fluorescent emission in the D-spectral band
 during A-laser excitation. For simplicity, we assume here that these
 quantities have been corrected for
 background~\cite{ingargiola_fretbursts:_2016}.
 
 A PAX setup has two detectors (D and A) but only one alternating laser (A). We
-can still define two periods, one when only the D laser is on ($D_{ex}$) and
+define two periods, one when only the D-laser is on ($D_{ex}$) and
 one when both lasers are on (${DA}_{ex}$). As in ALEX, combining the two
 excitation periods and the two detectors leads to four basic PAX photon
 streams: $D_{ex}D_{em}$, $D_{ex}A_{em}$, $DA_{ex}D_{em}$, $DA_{ex}A_{em}$.
 Formally, the only difference with the ALEX photon stream is that $A_{ex}$ in
 ALEX is replaced with $DA_{ex}$ in PAX. Differently from ALEX, however, all
 four photon streams in PAX contain useful fluorescent signal. In particular,
-$DA_{ex}D_{em}$ contains D fluorescence due to D laser excitation, while the
+$DA_{ex}D_{em}$ contains D-fluorescence due to D-laser excitation, while the
 corresponding term $A_{ex}D_{em}$ in ALEX contains only background. With this
 notation, in both ALEX and PAX, we can define the total fluorescence signal
-during D excitation (e.g.~burst size):
+during D-excitation (e.g.~burst size):
 
 \begin{equation}
     \Lambda = {F_{D_{ex}D_{em}} + F_{FRET}}
@@ -1085,10 +1085,10 @@ $\beta$~\cite{lee_accurate_2005}:
 and $\eta_{A_{det}}^{A_{em}}$, $\eta_{D_{det}}^{D_{em}}$ are the PDEs of the
 
 D and A channels.
-In eq.~\ref{eq:beta}, $I_{A_{ex}}$ and $I_{D_{ex}}$ are A and D excitation
+In eq.~\ref{eq:beta}, $I_{A_{ex}}$ and $I_{D_{ex}}$ are A and D-excitation
 intensities, while $\sigma_{A_{ex}}^A$ and $\sigma_{D_{ex}}^D$
 are the dye absorption cross-sections at the respective laser wavelengths.
-$\beta$ accounts for the difference of D and A dye fluorescence when
+$\beta$ accounts for the difference of D and A-dye fluorescence when
 each dye is excited by its respective laser.
 
 We can define the $\gamma$-corrected total signal
@@ -1121,7 +1121,7 @@ ALEX we define $S$ and the corrected version $S_{\gamma\beta}$ as:
 \end{align}
 
 The value $S_{\gamma\beta}$ is always centered around 0.5 for dual-labeled
-species, regardless of FRET efficiency or D and A excitation intensities.
+species, regardless of FRET efficiency or D and A-excitation intensities.
 
 In PAX, we do not measure the $F_{A_{ex}A_{em}}$ directly, but we can
 compute it as:
@@ -1173,8 +1173,8 @@ can write PAX-enhanced expressions for $E$ and $S$:
 Eq.~\ref{eq:Epr_paxe}, \ref{eq:Epaxe}, \ref{eq:Spaxe}
 and~\ref{eq:Sgb_paxe} contain more photons than the classical expressions
 and, therefore, can result in lower shot-noise. However, this effect is
-mitigated by the fact that $F_{FRET}$ is counted twice (to
-compensate for the doubling of the D signal) and, therefore, its
+mitigated by the fact that $F_{FRET}$ is counted twice to
+compensate for the doubling of the D signal and, therefore, its
 shot-noise is amplified.
 
 
@@ -1203,15 +1203,15 @@ In this work, even at low FRET values, better separation between
 FRET and D-only population was achieved using $S_u$ instead of
 $S$. In general, the preference of $S_u$ over $S$ may change in
 other PAX setups when the signal-to-noise and
-background-to-noise ratios is significantly higher.
+background-to-noise ratios are significantly higher.
 Once populations are separated, one
 can return using the classical $S$ expression for the
 purpose of computing gamma factors. Our interest, in the current paper,
-was not recovering absolute FRET values and D-A distances, but rather
-demonstrating the capabilities of the smFRET-PAX system in terms of
-spot uniformity and throughput increase. Therefore, we did not compute a
+was not recovering absolute FRET values and D-A distances, but rather to
+demonstrate the capabilities of the smFRET-PAX system in terms of
+spot uniformity and throughput gain. Therefore, we did not compute a
 complete gamma factor calibration. However, we addressed the differences
-in collection and detection efficiency across the different spots using
+in collection and detection efficiency across different spots using
 a ``relative'' gamma coefficient $\chi_{ch}$ as illustrated in
 section \ref{sec:perchcorr}.
 
