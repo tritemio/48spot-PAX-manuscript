@@ -101,11 +101,11 @@ multiplexes acquisition by using 48 excitation spots and
 48-pixel SPAD array detectors. The system employs two excitation lasers
 allowing separation of species with one or two active fluorophores.
 The performance of the system is demonstrated on a set of doubly-labeled
-double-stranded DNA oligonucleotides 
+double-stranded DNA oligonucleotides
 with different distances between D and A dyes along the DNA duplex.
 We show that the acquisition time for accurate subpopulation identification
 is reduced from several minutes to seconds, opening the way
-to high-throughput screening applications and 
+to high-throughput screening applications and
 real-time kinetics studies of enzymatic reactions such as DNA transcription
 by bacterial RNA polymerase.
 \end{abstract}
@@ -165,7 +165,7 @@ donor dye of the FRET donor-acceptor
 pair~\cite{ingargiola_multispot_2017}.
 Single-laser smFRET suffers from inability to resolve low FRET molecules
 (molecules in which the donor-acceptor distance is large compared to the
-characteristic FRET length scale) i.e. dually-labeled molecules 
+characteristic FRET length scale) i.e. dually-labeled molecules
 are indistinguishable from molecules
 labeled with a single donor dye, or molecules with inactivated
 or bleached acceptor dyes. Since the latter categories are present in most samples,
@@ -178,8 +178,8 @@ extended to pulsed
 laser excitation schemes (nsALEX~\cite{laurence_probing_2005} or
 PIE~\cite{muller_pulsed_2005}). Briefly, in {\usalex},
 two exciting lasers are alternatively turned on and off every few tens of
-{\microsec} to separate singly and doubly-labeled species, 
-due to some molecules lacking a fluorescently-active A dye that 
+{\microsec} to separate singly and doubly-labeled species,
+due to some molecules lacking a fluorescently-active A dye that
 does not emit fluorescence when the A-laser is on and the D-laser is off.
 This, in turn, extends the number of FRET sub-populations that can be possibly
 identified within a sample in the regime of low mean FRET efficiencies.
@@ -191,7 +191,7 @@ is left on at all times while the A-laser is alternated.
 This Periodic Acceptor Excitation (PAX) single-molecule FRET
 technique~\cite{doose_periodic_2007} (referred to as PAX for brevity) allows simplifying
 the optical setup while maintaining the advantages of {\usalex}, namely
-the ability to determine the stoichiometry of D and A dyes on each single molecule 
+the ability to determine the stoichiometry of D and A dyes on each single molecule
 or to identify changes in the fluorescence quantum yields~\cite{lee_accurate_2005}.
 Here we present a significant improvement to our original multispot
 setup by (i) introducing a 48-spot illumination and detection scheme,
@@ -273,8 +273,8 @@ and transmission into a compact, user friendly module.
 In particular, the SPAD array is housed into a hermetically
 sealed chamber separated from the rest of the module. Sealing in a dry
 atmosphere makes it possible to mount the array on a double-stage Peltier,
-cooling the detector down to temperatures of approximately $-15^{\circ}$C and 
-thereby reducing the dark count rate (DCR) and increasing the sensitivity of the 
+cooling the detector down to temperatures of approximately $-15^{\circ}$C and
+thereby reducing the dark count rate (DCR) and increasing the sensitivity of the
 instrument. Photon-counting pulses are made externally available through a standard
 SCSI connector. This allows for an easy connection of the module to
 general-purpose boards for data acquisition and processing.
@@ -293,7 +293,7 @@ at 550~nm and drops to 35\% at
 uniform over the array, with a peak-to-peak spread of only a few percent.
 Fig.~\ref{fig:dcr} shows heatmaps of dark count rates for the two
 12x4 SPAD arrays. About 80\% of the pixels have a DCR lower than 1000 counts
-per second (cps), compared to the lowest performing pixel that has 
+per second (cps), compared to the lowest performing pixel that has
 a fairly low DCR of less than 6~kcps.
 
 48-spot smFRET-PAX results were compared to the state-of-the-art single-spot
@@ -319,15 +319,19 @@ measurements is reported in~\onlinecite{michalet_silicon_2014}.
 \subsection{48-spot pattern}
 \label{sec:48spot-pattern}
 
-The 48 excitation spots are generated independently for each wavelength
-by phase modulation of an incoming plane wave, as previously described
-in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}.
-The phase modulation operates in direct space rather than Fourier space
-and implements the phase profile of a Fresnel lenslet array.
+The 48 excitation spots are generated independently for each wavelength by
+phase modulation of an incoming plane wave, as previously described
+in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}. The
+phase modulation operates in direct space rather than Fourier space and
+implements the phase profile of a Fresnel lenslet array. Delon's groups
+employed a conceptually similar direct-space modulation  scheme using an
+LCOS-SLM for multi-confocal fluorescence correlation  spectroscopy
+(FCS)~\cite{kloster-landsberg_cellular_2012} (although they use a different
+spatial arrangement of the phase pattern on the LCOS-SLM).
 
 Fig.~\ref{fig:patternfit} shows the emission pattern due to the green (Panel A)
-and red lasers (Panel B) acquired by a camera on the microscope side-port 
-using a high-concentration dye sample. The two patterns are aligned to 
+and red lasers (Panel B) acquired by a camera on the microscope side-port
+using a high-concentration dye sample. The two patterns are aligned to
 maximize overlap of each of the 48 spots.
 Overlap of the two wavelengths and centering with respect to
 the optical axis is assessed via 2-D Gaussian fitting as reported in Panel C.
@@ -394,7 +398,7 @@ However, when the purpose is to extract D-A distances (which is not the
 objective of this study), $E$ must be computed, requiring accurate
 estimation of all the correction coefficients.
 $S$ is the "stoichiometry ratio," a quantity ideally centered around 0.5 for
-doubly-labeled species, 0 for A-only, and 1 for D-only species. 
+doubly-labeled species, 0 for A-only, and 1 for D-only species.
 Note that D and A-only species also include
 doubly-labeled molecules where one dye is fluorescently inactive
 either in the blinking off state or bleached.
@@ -402,7 +406,7 @@ When using the simpler version without correction
 (eq.~\ref{eq:S}), $S$ can depend on $E$ and, for doubly-labeled
 molecules is only approximately centered around 0.5.
 The use of the $(E, S)$ pair (corrected or uncorrected)
-allows separation of singly and doubly-labeled species and 
+allows separation of singly and doubly-labeled species and
 distinguishing FRET sub-populations in the doubly-labeled population.
 Definition of all these quantities and a comparison with their ALEX
 counterpart is reported in the appendix~\ref{sec:alex_pax}.
@@ -413,8 +417,8 @@ in eq.~\ref{eq:Su}. $S_u$ is a variant of the classical
 smFRET-PAX stoichiometry\cite{doose_periodic_2007}, which reduces the effect
 of shot noise and improves the separability of D-only and FRET populations.
 More details on $S_u$ can be found in appendix~\ref{sec:Su}.
-Note that throughout this work the results of the two leftmost 
-spots in the second row are missing because of an active quenching circuit 
+Note that throughout this work the results of the two leftmost
+spots in the second row are missing because of an active quenching circuit
 (AQC) failure in the D-SPAD array.
 
 \subsection{Peak photon rate}
@@ -451,7 +455,7 @@ a quantity that scales with peak PSF intensity\cite{ingargiola_multispot_2017}.
 Fig.~\ref{fig:phrates48_comp} shows the background-corrected peak photon-rate
 in each burst for the 48 spots. Panel A shows the full peak photon-rate
 distributions with their characteristic exponential tails.
-Panels B-E show heatmaps for different photon streams of the peak photon-rate 
+Panels B-E show heatmaps for different photon streams of the peak photon-rate
 mean values i.e. the decay constant of the exponential tail.
 Due to the Gaussian profile of the excitation beam and to geometrical
 aberrations, the lateral pixels receive a lower signal intensity than central pixels.
@@ -625,7 +629,7 @@ they are fabricated using standard high-voltage CMOS processes
 resulting in poorer photon-counting performance than the custom technology
 process employed here. Convincing applications in cell FCS and FLIM,
 among others, have been published with these CMOS SPAD
-arrays~\cite{colyer_ultra_2011,burri_65k_2014,buchholz_fpga_2012,kufcsak_time-resolved_2017,kufcsak_time-resolved_2017},
+arrays~\cite{colyer_ultra_2011,burri_65k_2014,buchholz_fpga_2012,kloster-landsberg_note:_2013,kufcsak_time-resolved_2017,kufcsak_time-resolved_2017},
 (for an comprehensive review see~\onlinecite{bruschini_ten_2017})
 but they remain a long way from offering the sensitivity needed for
 single-molecule applications.
@@ -777,31 +781,29 @@ repository.
 \subsection{LCOS-SLM Modulation}
 \label{sec:lcos}
 
-The array of 48 excitation spots is generated independently for each color
-by two LCOS-SLM via phase modulation of an incoming plane wave, as
-previously described in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}.
-Briefly, the LCOS-SLM
-implements in direct-space the phase profile of a lenslet array that
-focuses an array of spots in a LCOS image plane at a distance of 3-4 cm
-from the modulator surface (see Fig.~\ref{fig:setup}).
-A rectangular region of the LCOS-SLM is subdivided into 12x4 adjacent blocks
-each implementing a single lens. The pattern can be adjusted
-by changing its center position, rotation, and X and Y pitch independently
-(operations equivalent to shifting, rotating or stretching the lenslet array).
-For both excitation wavelengths, the pitch and therefore the diameter
-of the lenslets is dictated by the detector geometry and by the
-magnification of the optical train from the LCOS-SLM to the detector.
-The spot pitch on the sample that nominally matches the detector geometry is
-5.5~\micron ($500 {\rm \mu m}/ 90$) in each direction,
-resulting in an LCOS-SLM lenslet pitch of 463~{\micron} (23.1 LCOS-SLM pixels).
-This value is optimized during alignment to match the actual magnification
-and optical aberrations.
-Keeping the LCOS lenslets diameter and pitch constant,
-a change in the focal length results in a change in NA and therefore spot size.
-The ratio of focal lengths in the two LCOS-SLM
-(32~mm for the red and 36~mm for the green)
-is chosen to compensate the difference in PSF sizes between 532~nm and
-628~nm wavelengths.
+The array of 48 excitation spots is generated independently for each color by
+two LCOS-SLM via phase modulation of an incoming plane wave, as previously
+described
+in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}.
+Briefly, the LCOS-SLM implements in direct-space the phase profile of a
+lenslet array that focuses an array of spots in a LCOS image plane at a
+distance of 3-4 cm from the modulator surface (see Fig.~\ref{fig:setup}). The
+approach has conceptual similarities with A rectangular region of the LCOS-SLM
+is subdivided into 12x4 adjacent blocks each implementing a single lens. The
+pattern can be adjusted by changing its center position, rotation, and X and Y
+pitch independently (operations equivalent to shifting, rotating or stretching
+the lenslet array). For both excitation wavelengths, the pitch and therefore
+the diameter of the lenslets is dictated by the detector geometry and by the
+magnification of the optical train from the LCOS-SLM to the detector. The spot
+pitch on the sample that nominally matches the detector geometry is
+5.5~\micron ($500 {\rm \mu m}/ 90$) in each direction, resulting in an
+LCOS-SLM lenslet pitch of 463~{\micron} (23.1 LCOS-SLM pixels). This value is
+optimized during alignment to match the actual magnification and optical
+aberrations. Keeping the LCOS lenslets diameter and pitch constant, a change
+in the focal length results in a change in NA and therefore spot size. The
+ratio of focal lengths in the two LCOS-SLM (32~mm for the red and 36~mm for
+the green) is chosen to compensate the difference in PSF sizes between 532~nm
+and 628~nm wavelengths.
 
 The LCOS-SLM region surrounding the 12x4 pattern receives light that can
 can cause a stray "wide-field" excitation and therefore a strong background.
@@ -816,10 +818,19 @@ reducing the light that could contribute to background.
 This approach achieved low background without the need of using a  spatial
 filter as in our previous setup~\cite{ingargiola_multispot_2017}.
 
-Software to generate the pattern is available in the
+A similar approach for multispot generation is used in multi-confocal FCS from
+Delon's group~\cite{kloster-landsberg_cellular_2012}. An important difference
+is that they use a much longer LCOS focal length and constructs a single phase
+pattern for all the spots (as the sum the contributions of each single spot).
+Conversely, in our approach, different portions of the LCOS-SLM are allocated
+to different spots. To the best of our knowledge, a detailed experimental
+comparison highlighting the relative strengths of these two approaches is
+currently lacking.
+
+Software used to generate the multispot phase pattern used in this work is
+available in the
 \href{https://github.com/multispot-software/lcos\_multispot\_pattern}{lcos\_multispot\_pattern}
 repository.
-
 
 
 \section{Laser alignment}
