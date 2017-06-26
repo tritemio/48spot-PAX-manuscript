@@ -938,11 +938,14 @@ For alignment, we use a high concentration dye mixture (ATTO550,
 ATTO647N, $\sim$500~nM) excited by both lasers.
 With this sample, the 532~nm laser generates fluorescence signal in both
 D and A channels, while the 628~nm laser only generates a signal in the
-A channel. At this point, the center of the both 532~nm and 628~nm excitation
-patterns has already been fixed in order to minimize geometrical aberrations
-as described in appendix~\ref{sec:laseralign}.
+A channel. At this point, the position of both 532~nm and 628~nm excitation
+patterns on the LCOS-SLM has already been fixed in order to minimize
+geometrical aberrations as described in appendix~\ref{sec:laseralign}.
 Therefore, the excitation pattern position is used as the reference
 to which aligning the SPAD arrays.
+Tyndall et al.~\cite{tyndall_automatic_2011} have presented an automatic
+procedure to align the LCOS-SLM multispot pattern to the detector,
+while here we align the SPADs to the LCOS-SLM pattern.
 Starting with the green laser only, both SPADs are manually positioned
 in X and Y to match the center of the excitation pattern. This is achieved
 by maximizing timetraces of SPAD counts (displayed by the acquisition
@@ -950,8 +953,8 @@ program) while moving the detectors.
 
 Next, we perform a more automated procedure for fine alignment called in
 the following ``multispot scan''. A multispot scan involves rigidly
-translating a multispot pattern (typically 4x4 spots) on an LCOS-SLM in
-discrete steps along a cross path.
+translating the multispot pattern on an LCOS-SLM (typically 4x4 spots)  in
+discrete steps along two orthogonal segments (a cross path).
 At the same time, counts from a SPAD
 array are integrated for each pattern position for 300~ms.
 During a scan, each emission spot draws a cross path roughly centered
