@@ -932,10 +932,10 @@ Both detectors must be aligned so that each pixel is optically
 conjugated to the corresponding excitation volume (excitation PSF). The
 goal is to have pairs of corresponding pixels on the two arrays
 detecting photons from the same sample volume (detection PSF). At
-the same time, in order to maximize the signal, the detection PSF needs to be
+the same time, in order to maximize the signal, the detection PSF must be
 concentric with the excitation PSF. Achieving this with a 2-D
 arrangement of spots and pixels requires not only aligning the X-Y
-position of the detectors (as in single-spot measurements) but also
+position of the detectors, as in single-spot measurements, but also
 aligning the relative rotation of the two SPADs and adjusting the pitch
 and rotation of the excitation pattern to optimally match the detectors'
 geometry.
@@ -948,13 +948,13 @@ A channel. At this point, the position of both 532~nm and 628~nm excitation
 patterns on the LCOS-SLM has already been fixed in order to minimize
 geometrical aberrations as described in appendix~\ref{sec:laseralign}.
 Therefore, the excitation pattern position is used as the reference
-to which aligning the SPAD arrays.
+for aligning the SPAD arrays.
 Tyndall et al.~\cite{tyndall_automatic_2011} have presented an automatic
-procedure to align the LCOS-SLM multispot pattern to the detector,
-while here we align the SPADs to the LCOS-SLM pattern.
+procedure to align the LCOS-SLM multispot pattern to the detector.
+Here we align the SPADs to the LCOS-SLM pattern.
 Starting with the green laser only, both SPADs are manually positioned
 in X and Y to match the center of the excitation pattern. This is achieved
-by maximizing timetraces of SPAD counts (displayed by the acquisition
+by maximizing timetraces of SPAD counts displayed by the acquisition
 program) while moving the detectors.
 
 Next, we perform a more automated procedure for fine alignment called in
@@ -1026,7 +1026,8 @@ due to non-idealities (stigmatism) in the optical path.
 \includegraphics[width=\columnwidth]{figures/2017-05-02_scan_fit_scatter}
 \caption{\label{fig:scatter-spad-align}
 Experimental SPAD pixel coordinates after fine alignment for the D-SPAD
-and A-SPAD arrays. D-SPAD denoted by
+and A-SPAD arrays. D-SPADs center positions are denoted by 'X' 
+and A-SPADs center positions are denoted with '+'. 
 }
 \end{figure*}
 
