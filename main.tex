@@ -156,7 +156,7 @@ advantage of novel single-photon avalanche diode (SPAD)
 arrays~\cite{ingargiola_parallel_2012,ingargiola_8-spot_2013,ingargiola_multispot_2017}.
 We demonstrated that the resulting setup indeed allowed acquisition of
 single-molecule data comparable to that of standard single-spot
-setups, but with a throughput that scaled with the number
+setups, but with a throughput that scaled linearly with the number
 of excitation spots.
 We illustrated an application of this enhanced throughput
 by measuring the bubble closing kinetics during promoter escape in bacterial
@@ -164,12 +164,12 @@ transcription~\cite{ingargiola_multispot_2017}.
 While encouraging, these results were partially unsatisfactory because they
 were obtained with only 8 spots, and also because
 the setup only incorporated a single laser, used for excitation of the
-donor (D) dye of the FRET donor-acceptor (D-A) pair~\cite{ingargiola_multispot_2017}.
+donor dye of the FRET pair~\cite{ingargiola_multispot_2017}.
 Single-laser smFRET is unable to distinguish between low FRET molecules
-(molecules with two active D and A dyes in which the D-A distance is
-large compared to the characteristic FRET length scale) from D-only molecules
-(i.e. molecules with a single D-dye, or dually-labeled molecules
-with an inactivated or bleached A-dye).
+(molecules with active donor (D) and acceptor (A) dyes in which the D-A distance is
+large compared to the Förster radius) from D-only molecules
+(i.e. molecules with a single donor, or dually-labeled molecules
+with an inactive or bleached acceptor).
 Since the latter categories are present in most samples,
 it is important to identify and separate them from low FRET molecules
 of interest.
@@ -180,29 +180,29 @@ introduced several years ago~\cite{kapanidis_fluorescence-aided_2004,kapanidis_a
 and later extended to pulsed laser excitation schemes
 (nsALEX~\cite{laurence_probing_2005} or PIE~\cite{muller_pulsed_2005}).
 Briefly, in {\usalex},
-two exciting lasers are alternately turned on and off every few tens of
+two excitation lasers are alternatively turned on and off every few tens of
 {\microsec} allowing the separation of species with only a single active
-dye (D-only, A-only populations) from doubly-labeled species with both dyes
-active (FRET population). In fact, only FRET populations
-give a fluorescence signal both during the D-laser excitation due to
-excitation of the D-dye and the A-laser excitation due to excitation
-of the A-dye.
-This, in turn, extends the number of FRET sub-populations that can be possibly
-identified within a sample in the regime of low mean FRET efficiencies.
+dye (D-only and A-only populations) from doubly-labeled species with both dyes
+active (FRET populations). Indeed, only FRET populations
+emit a fluorescence signal during both D-excitation laser  (due to
+excitation of the donor) and  A-excitation laser  (due to excitation
+of the acceptor).
+This, in turn, extends the number of FRET sub-populations that can be reliably
+identified within a sample in the regime of low mean FRET efficiencies ("low FRET").
 This scheme has since been extended to 3 or 4 laser excitations, allowing
 powerful molecular sorting applications~\cite{lee_three-color_2007,yim_four-color_2012}.
 A simplified version of this laser alternation principle was presented in
 ref.~\onlinecite{doose_periodic_2007}, where the D-excitation laser
-is left on at all times while the A-laser is alternated.
-This periodic acceptor excitation single-molecule FRET
+is left on at all times while the A-excitation laser is alternated.
+This Periodic Acceptor eXcitation single-molecule FRET
 technique~\cite{doose_periodic_2007} (referred to as PAX for brevity) allows
 simplifying
 the optical setup while maintaining the advantages of {\usalex}, namely
-the ability to determine the stoichiometry of D and A dyes on each single molecule
-or to identify changes in the fluorescence quantum yields~\cite{lee_accurate_2005}.
+the ability to determine the number of D and A dyes in each detected molecule
+or to simplify the extraction of accurate FRET efficiency values~\cite{lee_accurate_2005}.
 Here we present a significant improvement to our original multispot
 setup by (i) introducing a 48-spot illumination and detection scheme,
-and (ii) implementing a 2-laser PAX illumination approach.
+and (ii) implementing a 2-lasers, PAX illumination approach.
 
 This paper is organized as follows.
 In section~\ref{sec:setup_brief} we briefly introduce the optical setup,
@@ -210,14 +210,20 @@ the detectors (section~\ref{sec:detectors}) and the modulation scheme
 (section~\ref{sec:48spot-pattern}). In section~\ref{sec:smfret-meas} we
 report single-molecule measurements, starting with a brief
 description of the data analysis (section~\ref{sec:analysis}).
-To demonstrate the uniformity across channels, for each spot we report
-the peak photon rate in bursts (section~\ref{sec:peak-phrate})
+To demonstrate the uniformity across channels,  we discuss
+the burst peak photon rate across spots(section~\ref{sec:peak-phrate})
 and E-S histograms (section~\ref{sec:EShist}).
-Finally, in section~\ref{sec:alexpax-comp} we present a
-comparison of single-spot {\usalex} and 48-spot PAX measurements
-for a 15~second acquisition.
+Finally, we compare single-spot {\usalex} and 48-spot PAX measurements
+(section~\ref{sec:alexpax-comp} ). We conclude with a brief summary and perspective in section
+~\ref{sec:conclusion}.
 
 \subsection{Software and data availability}
+% * <michalet@chem.ucla.edu> 2017-07-12T18:07:44.733Z:
+% 
+% > \subsection{Software and data availability}
+% Is it possible to not have a section number (or letter) for this sub-heading? It looks odd to have only one.
+% 
+% ^.
 Software needed to operate the multispot setup (including
 LCOS-SLM pattern generation, LabVIEW-FPGA timestamping code,
 piezo-motor control, etc.) is organized in different repositories
@@ -656,7 +662,7 @@ For more details see the notebook
 \end{figure}
 
 \section{Conclusion}
-
+\label{sec:conclusion}
 We have described a new 48-spot single-molecule FRET setup
 designed for high-throughput single-molecule assays.
 Compared to our previous multispot setup~\cite{ingargiola_multispot_2017},
