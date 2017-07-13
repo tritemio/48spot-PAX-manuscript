@@ -222,8 +222,14 @@ the detectors (section~\ref{sec:detectors}) and the modulation scheme
 (section~\ref{sec:48spot-pattern}). In section~\ref{sec:smfret-meas} we
 report single-molecule measurements, starting with a brief
 description of the data analysis (section~\ref{sec:analysis}).
-To demonstrate the uniformity across channels, we discuss
-the burst peak photon rate across spots(section~\ref{sec:peak-phrate})
+To demonstrate the uniformity across spots, we study
+% * <michalet@chem.ucla.edu> 2017-07-13T19:43:54.777Z:
+% 
+% > spots
+% To remain consistent throughout, spot is for... spot and channel is for... data channel.
+% 
+% ^.
+the burst peak photon rate (section~\ref{sec:peak-phrate})
 and E-S histograms (section~\ref{sec:EShist}).
 Finally, we compare single-spot {\usalex} and 48-spot PAX measurements
 (section~\ref{sec:alexpax-comp} ). We conclude with a brief summary and perspective in section
@@ -617,14 +623,14 @@ dsDNA sample with a 12 bp D-A separation,
 after selecting bursts with total photon count
 larger than the specified threshold.
 The D-only and FRET populations (respectively top left corner
-and center in the 2-D histogram) are clearly distinguishable in all channels.
+and center in the 2D histogram) are clearly distinguishable in all spots.
 Moreover, as shown in Fig~\ref{fig:alexhist48fret12d}, it is easy to isolate
 the FRET population(s) by applying a burst
 selection on the $DA_{ex}A_{em}$ counts and on $D_ex$ counts.
 The separation of FRET from singly-labeled species is the primary advantage
 of dual laser excitation.
 
-Without any further calibration, the spread across different channels
+Without any further calibration, the spread across different spots
 % * <michalet@chem.ucla.edu> 2017-07-13T00:14:06.871Z:
 % 
 % > further 
@@ -637,15 +643,15 @@ $E_{PR}$ and $S_u$ peak center position in different spots for
 both D-only and FRET populations.
 Fig.~\ref{fig:fretfit48vsmean} shows the center and $\pm1\,\sigma$
 range of fitted E-S peaks for the FRET population (blue dot and error-bar)
-for each channel.
+for each spot.
 The orange dot is the mean center peak position of the FRET population
-across all spots. For most channels, the
+across all spots. For most spots, the
 deviation of the peak position is well below the $\pm1\,\sigma$
-range, with the exception of channel 19, where lower PDE of the A pixel
+range, with the exception of spot 19, where lower PDE of the A pixel
 causes a larger deviation from the peak position.
 Note that since Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
 present results without calibration, they showcase the minimum performance of the system.
-It is possible, however, to reduce channel-to-channel variations
+It is possible, however, to reduce spot-to-spot variations
 of the E-S peak position by applying a per-spot calibration, as briefly
 described in the next section (details in
 appendix~\ref{sec:perchcorr}). For comparison,
@@ -653,7 +659,7 @@ the E-S histogram for a low-FRET dsDNA (22 bp D-A separation) is reported
 in appendix~\ref{sec:moredata}, Fig.~\ref{fig:alexhist48all22d}.
 
 
-\subsection{Pooling data from all channels}
+\subsection{Pooling data from all spots}
 \label{sec:alexpax-comp}
 To illustrate the high-throughput performance of the 48-spot system, we
 built an E-S histogram accumulating bursts from all spots over a short (15~s)
@@ -664,7 +670,7 @@ built an E-S histogram accumulating bursts from all spots over a short (15~s)
 % 
 % ^.
 time window (Fig.~\ref{fig:alex_mspot_15}). In principle,
-non-uniformities between different channels can be taken into account
+non-uniformities between different spots can be taken into account
 by decomposing each correction factor $\gamma$ and $\beta$ (Eq. XX \& XX) as a product of two factors: one which is an average
 % * <michalet@chem.ucla.edu> 2017-07-13T00:30:35.049Z:
 % 
@@ -1437,44 +1443,44 @@ in collection and detection efficiencies across spots, which can affect such a c
 section \ref{sec:perchcorr}.
 
 
-\section{Individual channel corrections}
+\section{Individual spot corrections}
 \label{sec:perchcorr}
 
 \subsection{Gamma correction}
 
-The gamma-factor of each channel, $\gamma_{ch}$, can be expressed as
+The gamma-factor of each spot, $\gamma_{sp}$, can be expressed as
 the product of an average factor $\gamma_m$ and a spot-specific adjustment
-factor $\chi_{ch}$:
+factor $\chi_{sp}$:
 
 \begin{equation}
-\gamma_{ch} = \gamma_m \cdot \chi_{ch}
+\gamma_{sp} = \gamma_m \cdot \chi_{sp}
 \label{eq:gamma_split}
 \end{equation}
 
-$\chi_{ch}$ can be easily computed from measurable
+$\chi_{sp}$ can be easily computed from measurable
 quantities according to the following expression:
 
 \begin{equation}
-\chi_{ch} = \frac{{\langle E_{PR\,ch} \rangle_N}^{-1} - 1}{{E_{PR\,ch}}^{-1} - 1}
+\chi_{sp} = \frac{{\langle E_{PR,sp} \rangle_N}^{-1} - 1}{{E_{PR,sp}}^{-1} - 1}
 \label{eq:chich}
 \end{equation}
 
-In eq.~\ref{eq:chich}, $E_{PR\,ch}$ is the population-level
-proximity ratio for a specific channel, and $ \langle E_{PRch} \rangle_N $
-is the average over all $N$ channels (in this case $N= 48$).
+In eq.~\ref{eq:chich}, $E_{PR,sp}$ is the sub-population
+proximity ratio measured in a specific spot, and $ \langle E_{PR,sp} \rangle_N $
+is its average over all $N$ spots (here, $N= 48$).
 
 Eq.~\ref{eq:chich} follows from the following relation between $E$
 and $E_{PR}$\cite{lee_accurate_2005, ingargiola_applying_2017}:
 
 \begin{equation}
-E = f(E_{PR}, \gamma) = \frac{1}{1 + \gamma \left( \frac{1}{E_{PR}} - 1 \right)}
+E = f(E_{PR}, \gamma) = \frac{1}{1 + \gamma \left( {E_{PR}}^{-1} - 1 \right)}
 \label{eq:EfuncEpr}
 \end{equation}
 
 Solving eq.~\ref{eq:EfuncEpr} for $\gamma$, we obtain:
 
 \begin{equation}
-\gamma = \frac{\frac{1}{E} - 1}{\frac{1}{E_{PR}} - 1}
+\gamma = \frac{{E}^{-1} - 1}{{E_{PR}}^{-1} - 1}
 \label{eq:gamma_funcEEpr}
 \end{equation}
 
@@ -1527,21 +1533,21 @@ S_{\beta} = \frac{1}{1 + {\beta}^{-1} \left( {S}^{-1} - 1 \right)}
 
 Following the same arguments as in the previous section,
 the beta correction can be expressed as the product of a spot-average
-$\beta_m$ and an individual channel correction $\beta_{ch}$:
+$\beta_m$ and an individual spot correction $\beta_{sp}$:
 
 \begin{equation}
-\beta = \beta_m \, \beta_{ch}
+\beta = \beta_m \, \beta_{sp}
 \label{eq:beta_factor}
 \end{equation}
 
-Similarly to eq.~\ref{eq:chich}, we can compute $\beta_{ch}$ as:
+Similarly to eq.~\ref{eq:chich}, we can compute $\beta_{sp}$ as:
 
 \begin{equation}
-\frac{1}{\beta_{ch}} = \frac{\frac{1}{\langle S_{ch} \rangle_{ch}} - 1}{\frac{1}{S_{ch}} - 1}
+\frac{1}{\beta_{sp}} = \frac{{\langle S_{sp} \rangle_{N}}^{-1} - 1}{{S_{sp}}^{-1} - 1}
 \label{eq:betach}
 \end{equation}
 
-\noindent where $S_{ch}$ is the population-level non-beta-corrected
+\noindent where $S_{sp}$ is the sub-population-level non-beta-corrected
 stoichiometry  ratio for a specific channel, and $ \langle S_{ch} \rangle_{ch} $ is the
 average over all $N$
 channels ($N= 48$ in this case).
