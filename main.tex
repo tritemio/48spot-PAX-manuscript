@@ -1234,28 +1234,35 @@ and A-SPADs center positions are denoted by '+'. The typical distance between X 
 \section{ALEX and PAX}
 \label{sec:alex_pax}
 
-In ALEX, two alternation periods $D_{ex}$ and $A_{ex}$ (respectively D or A
-excitation) and two detectors (D and A) are involved. This results in four
-basic photon streams named $D_{ex}D_{em}$, $D_{ex}A_{em}$, $A_{ex}D_{em}$,
-$A_{ex}A_{em}$, where the first symbol indicates the excitation period and the
+In ALEX, two alternation time windows, $D_{ex}$ and $A_{ex}$ (respectively the D or A
+excitation window) and two detectors (D and A) are involved. This results in four
+photon streams noted $D_{ex}D_{em}$, $D_{ex}A_{em}$, $A_{ex}D_{em}$,
+$A_{ex}A_{em}$, where the first letter indicates the excitation period and the
 second the detection channel. The $A_{ex}D_{em}$ stream only contains
 background because there is no fluorescent emission in the D-spectral band
-during A-laser excitation. For simplicity, we assume here that these
+during A-laser excitation and is therefore ignored. For simplicity, we assume in the following that all
 quantities have been corrected for
 background~\cite{ingargiola_fretbursts:_2016}.
 
-A PAX setup has two detectors (D and A) but only one alternating laser (A). We
-define two periods, one when only the D-laser is on ($D_{ex}$) and
-one when both lasers are on (${DA}_{ex}$). As in ALEX, combining the two
-excitation periods and the two detectors leads to four basic PAX photon
-streams: $D_{ex}D_{em}$, $D_{ex}A_{em}$, $DA_{ex}D_{em}$, $DA_{ex}A_{em}$.
-Formally, the only difference with the ALEX photon stream is that $A_{ex}$ in
-ALEX is replaced with $DA_{ex}$ in PAX. Differently from ALEX, however, all
-four photon streams in PAX contain useful fluorescent signal. In particular,
-$DA_{ex}D_{em}$ contains D-fluorescence due to D-laser excitation, while the
-corresponding term $A_{ex}D_{em}$ in ALEX contains only background. With this
-notation, in both ALEX and PAX, we can define the total fluorescence signal
-during D-excitation (e.g.~burst size):
+A PAX setup has two detectors (D and A) but only one alternating laser (A). 
+As in ALEX, two alternation time windows can be defined:
+$D_{ex}$, corresponding to the interval during which only the D-laser is on and
+${DA}_{ex}$, when both lasers are on. As before this results into four photon
+streams noted $D_{ex}D_{em}$, $D_{ex}A_{em}$, $DA_{ex}D_{em}$, $DA_{ex}A_{em}$.
+Formally, the only difference with ALEX is that $A_{ex}$ in
+ALEX is replaced with $DA_{ex}$. In PAX, however, all
+four photon streams contain fluorescent signal. In particular,
+$DA_{ex}D_{em}$ contains D-fluorescence due to D-laser excitation (the
+corresponding term in ALEX, $A_{ex}D_{em}$, contains only background).
+With this
+notation,  we can define the total fluorescence signal
+during D-excitation (valid in both ALEX and PAX) as:
+% * <michalet@chem.ucla.edu> 2017-07-13T16:24:27.225Z:
+% 
+% > burst size
+% I would personally reserve the term burst size to the total counts, regardless of excitation period. This is the historical and logical definition.
+% 
+% ^.
 
 \begin{equation}
     \Lambda = {F_{D_{ex}D_{em}} + F_{FRET}}
@@ -1263,16 +1270,20 @@ during D-excitation (e.g.~burst size):
 \end{equation}
 
 \noindent where the $F$ quantities are background-corrected photon counts.
-$F_{FRET}$ is the A fluorescence due to FRET, computed by
+$F_{FRET}$ is the detected acceptor fluorescence due to FRET, computed by
 subtracting D-leakage and A-direct-excitation from $F_{D_{ex}A_{em}}$:
+% * <michalet@chem.ucla.edu> 2017-07-13T17:41:44.448Z:
+% 
+% We need to define Lk and Dir!
+% 
+% ^.
 
 \begin{equation}
     F_{FRET} = F_{D_{ex}A_{em}} - Lk\,F_{D_{ex}D_{em}} - Dir
     \label{eq:F_FRET}
 \end{equation}
 
-We also need the usual correction factors $\gamma$ and
-$\beta$~\cite{lee_accurate_2005}:
+We also need the usual correction factors $\gamma$ and $\beta$~\cite{lee_accurate_2005}:
 
 \begin{align}
     \gamma &= \frac{\phi_A \, \eta_{A_{det}}^{A_{em}}}
@@ -1281,84 +1292,93 @@ $\beta$~\cite{lee_accurate_2005}:
     \label{eq:beta}
 \end{align}
 
-\noindent where $\phi_A$, $\phi_D$ are the dye quantum yields
-and $\eta_{A_{det}}^{A_{em}}$, $\eta_{D_{det}}^{D_{em}}$ are the PDEs of the
-
+\noindent where $\phi_A$, $\phi_D$ are the acceptor and donor quantum yields
+and $\eta_{A_{det}}^{A_{em}}$, $\eta_{D_{det}}^{D_{em}}$ are the detection efficiencies of the D and A signals in the
 D and A channels.
 In eq.~\ref{eq:beta}, $I_{A_{ex}}$ and $I_{D_{ex}}$ are A and D-excitation
 intensities, while $\sigma_{A_{ex}}^A$ and $\sigma_{D_{ex}}^D$
-are the dye absorption cross-sections at the respective laser wavelengths.
-$\beta$ accounts for the difference of D and A-dye fluorescence when
+are the dye absorption cross-sections at their respective laser wavelengths.
+$\beta$ accounts for the difference in D and A-dye excitation rates when
 each dye is excited by its respective laser.
 
-We can define the $\gamma$-corrected total signal
+We can define the $\gamma$-corrected total signal upon D-excitation
 as~\cite{lee_accurate_2005,ingargiola_applying_2017}:
 
 \begin{equation}
     \Lambda_\gamma = {\gamma\,F_{D_{ex}D_{em}} + F_{FRET}}
     \label{eq:burstsize}
 \end{equation}
-
-Differently from $\Lambda$, the quantity $\Lambda_\gamma$ does not change with
-FRET (as long as the dyes quantum efficiency does not change).
-
-With these definitions, we can write the expression for proximity ratio
-$E_{PR}$ and FRET efficiency $E$ which is valid for both ALEX and PAX:
+With these definitions, the proximity ratio
+$E_{PR}$ and FRET efficiency $E$ are given by the following expression, valid for both ALEX and PAX:
 
 \begin{align}
     E_{PR} &= \frac{F_{FRET}}{\Lambda} \label{eq:Epr} \\
     E &= \frac{F_{FRET}}{\Lambda_\gamma} \label{eq:E}
 \end{align}
 
-Conversely, the $S$ expression is slightly different for ALEX and PAX. In
-ALEX we define $S$ and the corrected version $S_{\gamma\beta}$ as:
+By contrast, the expression for the stoichiometry ratio $S$ is slightly different for ALEX and PAX. In
+ALEX, $S$ and its corrected version $S_{\gamma\beta}$ are defined as:
 
 \begin{align}
     S &= \frac{\Lambda}{\Lambda + F_{AexAem}} \label{eq:S} \\
     S_{\gamma\beta} &= \frac{\Lambda_\gamma}
-                            {\Lambda_\gamma + \frac{F_{AexAem}}{\beta}}
+                            {\Lambda_\gamma + {\beta}^{-1}F_{AexAem}}
                             \label{eq:Sgb}
 \end{align}
 
-The value $S_{\gamma\beta}$ is always centered around 0.5 for dual-labeled
+The value $S_{\gamma\beta}$ is always centered around 0.5 for doubly-labeled
 species, regardless of FRET efficiency or D and A-excitation intensities.
 
-In PAX, we do not measure the $F_{A_{ex}A_{em}}$ directly, but we can
-compute it as:
+In PAX, there is no such signal as $F_{A_{ex}A_{em}}$, but in the particular case where the two alternation 
+intervals are identical (which is usually the case), and the alternation period is sufficiently short
+to assume that the excitation intensity doesn't change from one interval to the next, an equivalent quantity can be
+% * <michalet@chem.ucla.edu> 2017-07-13T17:10:26.998Z:
+% 
+% >  but in the particular case where the two alternation 
+% > intervals are identical (which is usually the case), and the alternation period is sufficiently short
+% > to assume that the excitation intensity doesn't change from one interval to the next,
+% This is important to emphasize, as it is easy to break these assumptions experimentally.
+% 
+% ^.
+computed by subtracting the contribution of D-excitation to $F_{DA_{ex}A_{em}}$:
 
 \begin{equation}
     \tilde{F}_{A_{ex}A_{em}} = F_{DA_{ex}A_{em}} - F_{D_{ex}A_{em}}
     \label{eq:pax_Faa}
 \end{equation}
 
-By replacing $F_{A_{ex}A_{em}}$ with $\tilde{F}_{A_{ex}A_{em}}$,
-the PAX expressions for $S$ and $S_{\gamma\beta}$ become formally identical
-to eq.~\ref{eq:S} and \ref{eq:Sgb}:
+Expressions for $S$ and $S_{\gamma\beta}$ defined for ALEX (eq.~\ref{eq:S} and \ref{eq:Sgb}) can then
+be used for PAX, with the replacement of $F_{A_{ex}A_{em}}$ by $\tilde{F}_{A_{ex}A_{em}}$:
 
 \begin{align}
 S &= \frac{\Lambda}
           {\Lambda + \tilde{F}_{AexAem}} \label{eq:Spax} \\
 S_{\gamma\beta} &= \frac{\Lambda_\gamma}
-                        {\Lambda_\gamma + \frac{\tilde{F}_{AexAem}}{\beta}}
+                        {\Lambda_\gamma + {\beta}^{-1}{\tilde{F}_{AexAem}}}
          \label{eq:Sgb_pax}
 \end{align}
-
-In PAX we can take advantage of the additional signal in
-$F_{A_{ex}D_{em}}$ and derive an equivalent set of PAX-enhanced
-expressions for $E$ and $S$. We can
-start extending the definitions of the total FRET signal of
-eq.~\ref{eq:burstsize_raw} and~\ref{eq:burstsize} by including
-$F_{A_{ex}D_{em}}$ as follows:
+Since the D-excitation is always on in PAX experiments, we can use the signal in
+$F_{DA_{ex}D_{em}}$ to improve photon statistics, and derive a modified set of PAX
+% * <michalet@chem.ucla.edu> 2017-07-13T18:15:42.675Z:
+% 
+% > improve photon statistics
+% Strictly speaking, the inclusion of F_DA^D (real counts), which should reduce the statistical noise, requires doubling the contribution of F_FRET, which adds some noise (twice that of F_FRET, in fact), so the gain is not obvious. I am not particularly convinced of the usefulness of this trick, in particular for low FRET species.
+% Note: I saw (and edited) the corresponding sentence in the text.
+% 
+% ^.
+expressions for $E$ and $S$ (under the two assumptions stated above), starting from 
+the following modified definitions of the total FRET signal:
 
 \begin{align}
-    \Lambda_{PAX} &= {F_{D_{ex}D_{em}} + F_{A_{ex}D_{em}} + 2 F_{FRET}}
+    \Lambda_{PAX} &= {F_{D_{ex}D_{em}} + F_{DA_{ex}D_{em}} + 2 F_{FRET}}
     \label{eq:burstsizerawpaxe} \\
-    \Lambda_{\gamma,PAX} &= {\gamma\,(F_{D_{ex}D_{em}} + F_{A_{ex}De_{m}}) + 2 F_{FRET}}
+    \Lambda_{\gamma,PAX} &= {\gamma\,(F_{D_{ex}D_{em}} + F_{DA_{ex}De_{m}}) + 2 F_{FRET}}
     \label{eq:burstsize_paxe}
 \end{align}
-
+In the above expressions, the acceptor contribution to $\Lambda$ (eq. \ref{eq:burstsize_raw}) 
+and $\Lambda_{\gamma}$ (eq. \ref{eq:burstsize}), $F_{FRET}$, is doubled, to match the addition of $F_{DA_{ex}D_{em}}$.
 Based on eq.~\ref{eq:burstsizerawpaxe} and \ref{eq:burstsize_paxe}, we
-can write PAX-enhanced expressions for $E$ and $S$:
+can write modified PAX expressions for $E$ and $S$:
 
 \begin{align}
     E_{PR,PAX} &= \frac{2\,F_{FRET}}{\Lambda_{PAX}} \label{eq:Epr_paxe} \\
@@ -1366,7 +1386,7 @@ can write PAX-enhanced expressions for $E$ and $S$:
     S_{PAX} &= \frac{\Lambda_{PAX}}{\Lambda_{PAX} + \tilde{F}_{A_{ex}A_{em}}}
     \label{eq:Spaxe} \\
     S_{\gamma\beta,PAX} &= \frac{\Lambda_{\gamma,PAX}}
-        {\Lambda_{\gamma,PAX} + \frac{2\tilde{F}_{A_{ex}A_{em}}}{\beta}}
+        {\Lambda_{\gamma,PAX} + 2{\beta}^{-1}\tilde{F}_{A_{ex}A_{em}}}
     \label{eq:Sgb_paxe}
 \end{align}
 
@@ -1375,44 +1395,45 @@ and~\ref{eq:Sgb_paxe} contain more photons than the classical expressions
 and, therefore, can result in lower shot-noise. However, this effect is
 mitigated by the fact that $F_{FRET}$ is counted twice to
 compensate for the doubling of the D signal and, therefore, its
-shot-noise is amplified.
+shot-noise is amplified, an effect that can become large for low FRET or donor-only species.
 
 
 \subsection{Modified stoichiometry}
 \label{sec:Su}
 
-By replacing $\tilde{F}_{A_{ex}A_{em}}$ with $F_{A_{ex}DA_{em}}$ in
-eq.~\ref{eq:Spax}, we define the "modified stoichiometry" $S_u$
-used in this paper as:
+By replacing $\tilde{F}_{A_{ex}A_{em}}$ with $F_{DA_{ex}A_{em}}$ in
+eq.~\ref{eq:Spax}, a modified or "uncorrected stoichiometry" $S_u$can be defined:
 
 \begin{equation}
 S_u = \frac{\Lambda}
-{\Lambda + F_{A_{ex}DA_{em}}}
+{\Lambda + F_{DA_{ex}A_{em}}}
 \label{eq:Su}
 \end{equation}
 
-This expression avoids the subtraction of photon counts
-(and the corresponding increase in shot-noise) necessary in PAX to
-compute $\tilde{F}_{A_{ex}A_{em}}$ (eq.~\ref{eq:pax_Faa}).
+This expression avoids subtracting $F_{D_{ex}A_{em}}$ counts from $F_{DA_{ex}A_{em}}$ (an operation which sums the statistical noise
+of these two quantities), therefore improving the overall dispersion of the ratiometric quantity $S_u$, especially for low FRET
+or donor-only species.
 As a result, the
-$S_u$ distributions are tighter, permitting easier
+$S_u$ distributions are narrower, permitting easier
 separation of FRET and D-only population. Note, however, that $S_u$ has a
 built-in dependency on the population FRET value, in particular
-$S_u$ decreases with the increasing $E$.
+$S_u$ decreases with increasing $E$.
 In this work, even at low FRET values, better separation between
 FRET and D-only population was achieved using $S_u$ instead of
-$S$. In general, the preference of $S_u$ over $S$ may change in
-other PAX setups when the signal-to-noise and
-background-to-noise ratios are significantly higher.
-Once populations are separated, one
-can return using the classical $S$ expression for the
-purpose of computing gamma factors. Our interest, in the current paper,
-was not recovering absolute FRET values and D-A distances, but rather to
-demonstrate the capabilities of the smFRET-PAX system in terms of
-spot uniformity and throughput gain. Therefore, we did not compute a
-complete gamma factor calibration. However, we addressed the differences
-in collection and detection efficiency across different spots using
-a ``relative'' gamma coefficient $\chi_{ch}$ as illustrated in
+$S$. In general, the advantage of $S_u$ over $S$ may change in
+other situations, especially when  signal-to-noise and
+background-to-noise ratios are large.
+% * <michalet@chem.ucla.edu> 2017-07-13T17:15:25.592Z:
+% 
+% > background-to-noise
+% never used background-to-noise ratio before. Where does it intervene?
+% 
+% ^.
+Once populations are separated in the $E-S_u$ histogram, one
+can use the classical $S$ expression (eq. \ref{eq:Spax}) to compute gamma factor as described in ref. \ref{lee_accurate_2005}.
+In this work, no attempt was made to recover exact FRET values and D-A distances, therefore
+no gamma factor calibration was performed. However, we address the issue of differences
+in collection and detection efficiencies across spots, which can affect such a calibration, in
 section \ref{sec:perchcorr}.
 
 
@@ -1434,12 +1455,12 @@ $\chi_{ch}$ can be easily computed from measurable
 quantities according to the following expression:
 
 \begin{equation}
-\chi_{ch} = \frac{\frac{1}{\langle E_{PR\,ch} \rangle_{ch}} - 1}{\frac{1}{E_{PR\,ch}} - 1}
+\chi_{ch} = \frac{{\langle E_{PR\,ch} \rangle_N}^{-1} - 1}{{E_{PR\,ch}}^{-1} - 1}
 \label{eq:chich}
 \end{equation}
 
 In eq.~\ref{eq:chich}, $E_{PR\,ch}$ is the population-level
-proximity ratio for a specific channel, and $ \langle E_{PRch} \rangle_{ch} $
+proximity ratio for a specific channel, and $ \langle E_{PRch} \rangle_N $
 is the average over all $N$ channels (in this case $N= 48$).
 
 Eq.~\ref{eq:chich} follows from the following relation between $E$
@@ -1500,7 +1521,7 @@ $S_{\gamma\beta}$. Dropping the $\gamma$ subscript, we
 obtain:
 
 \begin{equation}
-S_{\beta} = \frac{1}{1 + \frac{1}{\beta} \left( \frac{1}{S} - 1 \right)}
+S_{\beta} = \frac{1}{1 + {\beta}^{-1} \left( {S}^{-1} - 1 \right)}
 \label{eq:SbfuncS}
 \end{equation}
 
