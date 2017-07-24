@@ -867,16 +867,18 @@ common bus line on the PXI rack.
 In addition to the aforementioned acquisition program, the host computer
 runs a second LabVIEW 2011 program controlling the phase pattern on the
 two LCOS-SLMs. During alignment, the acquisition program communicates with
-the LCOS-control program to scan the positions of the LCOS pattern while recording signal from the SPAD arrays (see appendix~\ref{sec:laseralign}).
+the LCOS-control program to scan the positions of the LCOS pattern while
+recording signal from the SPAD arrays (see appendix~\ref{sec:laseralign}).
 
-Raw data transferred from the FPGA is saved in a binary file with a text-based metadata file
-containing measurement details, which are both used to create the final
+Raw data transferred from the FPGA is saved in a binary file together with a
+text-based metadata file containing measurement details.
+Both files are used to create the final
 Photon-HDF5 file\cite{ingargiola_photon-hdf5:_2016,ingargiola_photon-hdf5:_2016-1}.
-Once the measurement is saved on the
-host PC, the raw data is automatically transferred to a Linux-based
-workstation via 1~Gb Ethernet link. The second workstation automatically
-performs conversion to Photon-HDF5 and data analysis, leaving the host
-PC available for acquiring the next set of data.
+Once the measurement is saved on the host PC, the raw data is automatically
+transferred to a Linux-based workstation via 1~Gb Ethernet link.
+The second workstation automatically performs conversion to Photon-HDF5
+and data analysis, leaving the host PC available for acquiring the next
+set of data.
 The scripts for data transfer conversion and analysis are available in the
 \href{https://github.com/multispot-software/transfer\_convert}{transfer\_convert}
 repository.
