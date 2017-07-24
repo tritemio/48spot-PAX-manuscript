@@ -870,8 +870,9 @@ two LCOS-SLMs. During alignment, the acquisition program communicates with
 the LCOS-control program to scan the positions of the LCOS pattern while
 recording signal from the SPAD arrays (see appendix~\ref{sec:laseralign}).
 
-Raw data transferred from the FPGA is saved in a binary file together with a
-text-based metadata file containing measurement details.
+Raw data transferred from the FPGA is saved to disk in a binary file
+together with a text-based metadata file containing measurement details
+(sample description, laser powers, alternation info, etc.).
 Both files are used to create the final
 Photon-HDF5 file\cite{ingargiola_photon-hdf5:_2016,ingargiola_photon-hdf5:_2016-1}.
 Once the measurement is saved on the host PC, the raw data is automatically
@@ -879,7 +880,8 @@ transferred to a Linux-based workstation via 1~Gb Ethernet link.
 The second workstation automatically performs conversion to Photon-HDF5
 and data analysis, leaving the host PC available for acquiring the next
 set of data.
-The scripts for data transfer conversion and analysis are available in the
+The scripts for data transfer, conversion and automated analysis are
+available in the
 \href{https://github.com/multispot-software/transfer\_convert}{transfer\_convert}
 repository.
 
@@ -891,36 +893,32 @@ two LCOS-SLMs via phase modulation of an incoming plane wave, as previously
 described
 in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}.
 Briefly, the LCOS-SLM implements the phase profile of a
-lenslet array which focuses the incoming plane wave into an array of spots 3-4 cm in front of the LCOS-SLM surface (see Fig.~\ref{fig:setup}). A
+lenslet array which focuses the incoming plane wave into an array of spots
+3-4 cm in front of the LCOS-SLM surface (see Fig.~\ref{fig:setup}). A
 rectangular region of the LCOS-SLM is subdivided into 12x4 adjacent blocks
 each implementing a single lens. The pattern can be adjusted by changing its
 center position, rotation, and X and Y pitch independently (operations
 equivalent to shifting, rotating or scaling the lenslet array). For both
 excitation wavelengths, the pitch and therefore the diameter of the lenslets
 is imposed by the detector geometry and the magnification of the optical
-setup in both excitation (xXX) and emission (x90) paths. The spot pitch in the sample % * <michalet@chem.ucla.edu> 2017-07-13T01:32:05.228Z:
-%
-% > XX
-% complete
-%
-% ^.
-nominally matching the detector pitch is 5.5~\micron ~($500~{\rm \mu m}/ 90$)
-in both direction, resulting in an LCOS-SLM lenslet pitch of 463~{\micron}
-(23.1 LCOS-SLM pixels). This value is optimized during alignment to match the
-actual magnification and optical aberrations. Keeping the LCOS lenslets
-diameter and pitch constant, a change in the focal length results in a change
-in NA and therefore spot size. The ratio of focal lengths in the two LCOS-SLM
-(32~mm for the red and 36~mm for the green) is chosen to compensate the
-difference in PSF sizes between 532~nm and 628~nm wavelengths.
-% * <michalet@chem.ucla.edu> 2017-07-13T01:34:03.858Z:
-%
-% > sizes
-% Is it not also changing the focusing depth? Is it not what matters most?
-%
-% ^.
+setup in both excitation ($83\times$) and emission
+($90\times\;=\;60\times1.5$) paths.
+Nominally, the spot pitch in the sample matching the detector pitch is
+5.5~\micron ($500~{\rm \mu m}/ 90$) in both direction, resulting in
+an LCOS-SLM lenslet pitch of 463~{\micron} (23.1 LCOS-SLM pixels).
+The value is optimized during alignment to match the
+actual magnification and optical aberrations. Keeping constant the LCOS-SLM
+lenslet diameter and pitch, a change in the lenslet focal length results
+in a change in NA and therefore spot size. The ratio of focal lengths
+in the two LCOS-SLM (32~mm for the red and 36~mm for the green) is chosen
+to compensate the difference in PSF sizes between 532~nm and 628~nm
+wavelengths. Note that changing the lenslet focal length requires changing
+the distance between $L3$ and the LCOS-SLM so that the LCOS focal plane
+remains at focal distance from $L3$.
 
 The LCOS-SLM region surrounding the 12x4 pattern receives light that can
-can result in stray "wide-field" excitation and therefore increase background signal.
+can result in stray "wide-field" excitation and therefore increase the
+background signal.
 For this reason, we fill the unused LCOS-SLM area with a "beam steering"
 pattern (a periodic pattern in one direction)
 that diffracts the incoming light at an angle with respect to the optical axis.
@@ -929,19 +927,20 @@ is not being collected by the back aperture of the objective lens.
 Additionally, the expanded laser beam is clipped by two rectangular apertures
 (slits) approximately 1~mm larger than the multispot pattern, further
 reducing sources of background.
-This approach achieves low background without the need of an additional spatial
-filter as used in our previous setup~\cite{ingargiola_multispot_2017}.
+This approach achieves low background without the need of an additional
+spatial filter as used in our previous 8-spot setup~\cite{ingargiola_multispot_2017}.
 
-A similar approach for multispot generation was used for multi-confocal FCS~\cite{kloster-landsberg_cellular_2012}.
-An important difference
-is that that work used a much longer LCOS focal length to construct a single phase
-pattern for all spots (as the sum the contributions of each single spot).
-By contrast, in the approach presented here, different portions of the LCOS-SLM are allocated
-to different spots. An experimental
+A similar approach for multispot generation was used for multi-confocal
+FCS by Kloster \emph{et al.}~\cite{kloster-landsberg_cellular_2012}.
+The fundamental difference of Kloster's method is the use of a much longer
+LCOS focal length to construct a single phase pattern for all spots
+(as the sum the contributions of each single spot).
+By contrast, in our approach, different portions of the LCOS-SLM are allocated
+to different spots. A detailed experimental
 comparison highlighting the relative strengths of these two approaches is
 currently lacking.
 
-Software used to generate the multispot phase pattern used in this work is
+Software to generate the multispot phase pattern used in this work is
 available in the
 \href{https://github.com/multispot-software/lcos\_multispot\_pattern}{lcos\_multispot\_pattern}
 repository.
