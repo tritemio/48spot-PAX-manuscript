@@ -515,7 +515,7 @@ aberrations, the lateral pixels receive a lower signal intensity than
 the central pixels. As a result, the peak photon rate decreases and fewer
 single-molecule bursts are detected in the lateral spots.
 Despite this decrease in excitation intensity, the positions of the
-$E_{PR}$ and $S$ remains quite uniform across the spots
+$E_{PR}$ and $S$ peaks remains quite uniform across the spots
 (see Fig.~\ref{fig:alexhist48fret12d} and~\ref{fig:fretfit48vsmean}).
 An exception can be seen in Fig.~\ref{fig:phrates48_comp} (Panels C, E),
 where the pixel at position (1, 7) in the A-SPAD array
@@ -610,8 +610,7 @@ For more details see the
 \end{figure*}
 
 
-After the burst search and selection described in section~\ref{sec:analysis},
-Fig.~\ref{fig:alexhist48all12d} reports the E-S histogram for the
+Fig.~\ref{fig:alexhist48all12d} reports on the E-S histograms for the
 dsDNA sample with a 12 bp D-A separation,
 obtained after the burst search and size-selection
 described in section~\ref{sec:analysis}.
@@ -640,7 +639,7 @@ a lower PDE of the A pixel causes a larger deviation from the peak position.
 Note that since Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
 present results without calibration, they showcase the minimum
 performance of the system.
-It is possible, however, to reduce spot-to-spot variations
+It is possible to further reduce spot-to-spot variations
 of the E-S peak position by applying a per-spot calibration, as briefly
 described in the next section (details in appendix~\ref{sec:perchcorr}).
 As an additional example, the E-S histogram for a low-FRET dsDNA
@@ -660,9 +659,10 @@ one which is an average correction factor over all spots and another
 which is a per-spot relative correction.
 The per-spot correction of $\gamma$ and $\beta$ can be easily computed
 from a measurement of a static FRET sample
-(details in appendix~\ref{sec:perchcorr}). In Fig.~\ref{fig:alex_mspot_15}, we reported raw $E_{PR}$ and $S_u$ values without
-any spot-specific adjustments for simplicity and because of the good uniformity
-across spots.
+(details in appendix~\ref{sec:perchcorr}).
+In Fig.~\ref{fig:alex_mspot_15}, we reported raw $E_{PR}$ and $S_u$
+values without any spot-specific adjustments for simplicity and because
+of the good uniformity across spots.
 
 For comparison, Fig.~\ref{fig:alex_sspot_15} shows a similar histogram
 obtained by accumulating bursts for 15~s during a measurement of the
@@ -672,21 +672,21 @@ in concentration, the same gasket-enclosed sample was first measured
 on the {\usalex} setup and subsequently measured in the multispot setup.
 The resulting number of bursts detected in the
 multispot measurement are about 22 times larger than in the
-single-spot measurement. The throughput increase is smaller that the
-the theoretical 46-fold (discarding the two spots with malfunctioning
-pixels). This discrepancy can be explained by two factors.
+single-spot measurement. This factor is smaller that the
+the 46-fold increase theoretically expected (discarding the two spots
+with malfunctioning pixels). This discrepancy can be explained by two factors.
 First, the decreasing power in the lateral spots causes smaller bursts and
-results in less bursts after size selection with a given threshold.
+results in less bursts surviving the size-selection with a given threshold.
 Second, the detection efficiency of the SPAD array in the red region
 of the spectrum is at least 2-fold lower than that of the corresponding
 SPAD in the single-spot setup (see section~\ref{sec:detectors}).
-This halves the signal in the A-SPAD, resulting in smaller bursts
-and less bursts selected above a given size threshold.
+This more than halves the signal in the A-SPAD, resulting in smaller bursts
+and, as before, less bursts with sizes above a given threshold.
 Both issues can be solved in future iterations of the setup.
 The excitation uniformity can be increased
 using flat-top optics before the LCSO-SLM modulation,
 while the lower PDE can be overcome using new red-enhanced SPAD
-arrays~\cite{}.
+arrays~\cite{gulinatti_new_2012}.
 
 Overall we note that a significant number of bursts can be obtained
 in just a few seconds of acquisition. In realtime kinetic experiments
