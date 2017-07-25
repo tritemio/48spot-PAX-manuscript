@@ -671,7 +671,7 @@ single-spot {\usalex} setup. To minimize differences
 in concentration, the same gasket-enclosed sample was first measured
 on the {\usalex} setup and subsequently measured in the multispot setup.
 The resulting number of bursts detected in the
-multispot measurement are about 22 times larger than in the
+multispot measurement are about 24 times larger than in the
 single-spot measurement. This factor is smaller that the
 the 46-fold increase theoretically expected (discarding the two spots
 with malfunctioning pixels). This discrepancy can be explained by two factors.
@@ -830,11 +830,12 @@ filter (Brightline FF01-582/75, Semrock) which removes residual 628~nm
 laser leakage and helps suppress Raman scattering from the 532~nm
 laser. Both D and A signals are refocused by lenses $L5_D$ /
 $L5_A$ (f=150~mm, AC254-150-A, Thorlabs) on two 48-pixel
-SPAD arrays\cite{gulinatti_48-pixel_2013} (denoted as D- and A-SPAD in the remainder of the text).
+SPAD arrays\cite{gulinatti_48-pixel_2013} (denoted as D- and A-SPAD in
+the text).
 
-Both SPAD arrays are mounted on 3-axis micro-positioners. Motion along the X \& Y directions
-orthogonal to the optical axis  are software-controlled via open-loop
-piezo-actuators
+Both SPAD arrays are mounted on 3-axis micro-positioners. Motion along the
+X \& Y directions orthogonal to the optical axis  are software-controlled
+via open-loop piezo-actuators
 (P/N 8302; drivers: P/N 8752 \& 8753; Newport
 Corporation, Irvine, CA). The third axis (Z) uses a manual actuator,
 as requirements on the Z direction are much less stringent than
@@ -976,48 +977,24 @@ To this end, after removing the recollimating lens $L3$, an iris
 $I2$ is placed before the beam enters the microscope side
 port. Using an aperture of 1-2 mm, only a narrow beamlet goes through
 the objective and generates a spot from the cover-glass reflection. Only
-% * <michalet@chem.ucla.edu> 2017-07-13T01:44:58.068Z:
-%
-% > cover-glass
-% is this a cover glass or a mirror?
-%
-% ^.
-when the input beam is parallel to the optical axis, the spot in the
-center of the field of view is assumed to be located in the center of the
-cross-hair in the microscope's eyepiece.
-% * <michalet@chem.ucla.edu> 2017-07-13T01:45:47.679Z:
-%
-% > Only
-% > % * <michalet@chem.ucla.edu> 2017-07-13T01:44:58.068Z:
-% > %
-% > % > cover-glass
-% > % is this a cover glass or a mirror?
-% > %
-% > % ^.
-% > when the input beam is parallel to the optical axis, the spot in the
-% > center of the field of view is assumed to be located in the center of the
-% > cross-hair in the microscope's eyepiece.
-% This sentence doesn't make sense as is.
-%
-% ^.
+when the input beam is parallel to the optical axis, the spot will begin
+located in the center of the cross-hair in the microscope's eyepiece.
 In order to make the input beams parallel to the
 optical axis, the last mirrors before the microscope are adjusted
 ($M2_R$ for the red and $DM_{MIX}$ for the green
-laser). By defocusing the spot, we obtain symmetrically concentric patterns
-only if the input beamlet intersects with the optical axis at the back
+laser). When changing the microscope's focus,
+we obtain symmetrically concentric patterns only if the input beamlet
+intersects with the optical axis at the back
 aperture of the objective lens. Since the direction is already fixed, we
 move the $I2$ iris to obtain the most radially-symmetric
 defocused pattern. In this way, the beamlet that goes through
 $I2$ coincides with the microscope optical axis. The last
 step involves translating the input beam without changing its
-% * <michalet@chem.ucla.edu> 2017-07-13T01:47:16.206Z:
-%
-% > translating
-% how?
-%
-% ^.
 incidence angle until the intensity peak is aligned to the iris
-center. Alignment of beam direction and iris must be repeated until
+center. A pure translation is achieved by rotating two mirrors in two
+opposite directions so that the initial and final beam angle remains
+unchanged.
+Alignment of beam direction and iris must be repeated until
 convergence. Once complete, both beams are parallel and concentric
 with the optical axis to a good approximation. When placing
 $L3$ a spot is formed at a different focus position.
