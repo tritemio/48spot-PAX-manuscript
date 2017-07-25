@@ -991,7 +991,7 @@ defocused pattern. In this way, the beamlet that goes through
 $I2$ coincides with the microscope optical axis. The last
 step involves translating the input beam without changing its
 incidence angle until the intensity peak is aligned to the iris
-center. A pure translation is achieved by rotating two mirrors in two
+center. A pure translation is achieved by rotating two mirrors in
 opposite directions so that the initial and final beam angle remains
 unchanged.
 Alignment of beam direction and iris must be repeated until
@@ -1004,22 +1004,18 @@ same position as the spot obtained without $L3$.
 \subsection{Achieving overlap of the green and red patterns}
 
 Starting with the green LCOS-SLM, we project a multispot pattern into a
-highly concentrated solution of dyes (100~nM - 1~\textgreek{μ}M). A square grid of spots with an odd number of spots per side
-% * <michalet@chem.ucla.edu> 2017-07-13T01:51:08.781Z:
-%
-% > dyes
-% which?
-%
-% ^.
-(e.g. ~9x9) ensures that one spot is at the center of the pattern. The
-camera on the side-port detects an image of the pattern. The centering
+highly concentrated solution of Cy3B and ATTO647N dyes
+(100~nM - 1~\textgreek{μ}M). Using a square grid with an odd
+number of spots per side (e.g. ~9x9) ensures that one spot is always at
+the center of the pattern.
+The camera on the side-port detects an image of the pattern. The centering
 of the pattern with respect to the optical axis can be assessed from the
 amount of geometrical aberrations in the lateral spots. We center the
 excitation pattern by rigidly translating the pattern on the LCOS-SLM so
 that geometrical aberrations are roughly equivalent on all four sides.
 Next, we perform a 2D Gaussian fitting of each spot, and from the
-distribution of waist size and tilt angle for each Gaussian, we estimate a more
-accurate position of the optical axis (for the analysis see the notebook
+distribution of waist size and tilt angle for each Gaussian, we estimate
+a more accurate position of the optical axis (for the analysis see the notebook
 \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{LCOS pattern fitting-conf9\_G\_conf14\_R\_4x12\_slits}).
 This step may be repeated multiple times until convergence.
 From this point on, the X \& Y positions of the green LCOS-SLM is not
@@ -1111,8 +1107,9 @@ LCOS-SLM pattern (532 nm). Next, the position of the red LCOS-SLM pattern
 D-SPAD array does not detect any signal with 628 nm excitation). The
 optimal position of the red excitation pattern is determined from a
 multispot scan performed with the red LCOS-SLM, while counts are acquired
-with the A-SPAD array, as previously described. After this last step, both red an green excitation
-patterns, as well as  D- and A-SPAD array positions are fixed, completing the setup alignment.
+with the A-SPAD array, as previously described. After this last step,
+both red an green excitation patterns, as well as  D- and A-SPAD array
+positions are fixed, completing the setup alignment.
 
 The whole fine alignment procedure is routinely performed at the
 beginning of each day of measurements and lasts about 30 minutes.
@@ -1126,13 +1123,14 @@ arrays.
 In the previous section, we outlined the general fine alignment procedure
 repeated daily when using the multispot setup. However, when
 building the setup, additional steps are
-necessary to (a) align the relative rotation of the two SPAD arrays, (b) determine the best pitch in X and Y for the green and red excitation
+necessary to (a) align the relative rotation of the two SPAD arrays,
+(b) determine the best pitch in X and Y for the green and red excitation
 patterns, and (c) optimize the SPAD position along the optical axis (Z).
 
 To extract rotation and pitch information, we perform a
 multispot scan followed by an additional analysis step. Specifically, the
-set of (X, Y) positions of each SPAD pixel obtained from the scan is fitted to a
-rectangular grid.
+set of (X, Y) positions of each SPAD pixel obtained from the scan is fitted
+to a rectangular grid.
 The fitted grid parameters are: center position, X pitch, Y pitch, and
 rotation angle. Each SPAD array will generally have a different set of fitted
 parameters.
@@ -1140,25 +1138,24 @@ parameters.
 To adjust the rotation angle, one of the SPAD arrays (D) is
 rotated about the optical axis in order to match the angle
 of the second SPAD, where the rotation angle of each SPAD is obtained from
-the scan fits. Once the orientations of two SPAD arrays match each other, the rotation
-stage is locked, ensuring long-term stability of the rotational angle.
+the scan fits. Once the orientations of two SPAD arrays match each other,
+the rotation stage is locked, ensuring long-term stability of the rotational
+angle.
 
 To adjust the pitch, information from the scan fits is used to
 finely tune the X and Y pitch of the LCOS-SLM pattern in order to optimally
-match both SPAD arrays. Residual X and Y pitch difference of 1-2\% are observed
-due to non-idealities (stigmatism) in the optical path.
+match both SPAD arrays. Residual X and Y pitch difference of 1-2\% are
+observed due to non-idealities (stigmatism) in the optical path.
 
 \begin{figure}
 \includegraphics[width=0.9\columnwidth]{figures/2017-05-02_scan_fit_scatter}
 \caption{\label{fig:scatter-spad-align}
 Experimental SPAD pixel coordinates after fine alignment for the D-SPAD
-% * <michalet@chem.ucla.edu> 2017-07-13T00:34:43.659Z:
-%
-% in what unit/reference frame?
-%
-% ^.
 and A-SPAD arrays. D-SPADs center positions are denoted by 'X'
-and A-SPADs center positions are denoted by '+'. The typical distance between X and + is XX {\micron}
+and A-SPADs center positions are denoted by '+'.
+The mean distance between D- and A-SPAD pixels is XX~{\micron}.
+For details see the notebook.
+\href{https://todo}{ADD LINK HERE}
 % * <michalet@chem.ucla.edu> 2017-07-13T00:38:04.899Z:
 %
 % > XX
