@@ -1151,17 +1151,12 @@ observed due to non-idealities (stigmatism) in the optical path.
 \includegraphics[width=0.9\columnwidth]{figures/2017-05-02_scan_fit_scatter}
 \caption{\label{fig:scatter-spad-align}
 Experimental SPAD pixel coordinates after fine alignment for the D-SPAD
-and A-SPAD arrays. D-SPADs center positions are denoted by 'X'
+and A-SPAD arrays obtained with scans of the green LCOS-SLM.
+D-SPADs center positions are denoted by 'X'
 and A-SPADs center positions are denoted by '+'.
-The mean distance between D- and A-SPAD pixels is XX~{\micron}.
+The mean distance between D- and A-SPAD pixels is 2.3~{\micron}.
 For details see the notebook.
 \href{https://todo}{ADD LINK HERE}
-% * <michalet@chem.ucla.edu> 2017-07-13T00:38:04.899Z:
-%
-% > XX
-% Do you have this information?
-%
-% ^.
 }
 \end{figure}
 
@@ -1191,12 +1186,6 @@ corresponding term in ALEX, $A_{ex}D_{em}$, contains only background).
 With this
 notation,  we can define the total fluorescence signal
 during D-excitation (valid in both ALEX and PAX) as:
-% * <michalet@chem.ucla.edu> 2017-07-13T16:24:27.225Z:
-%
-% > burst size
-% I would personally reserve the term burst size to the total counts, regardless of excitation period. This is the historical and logical definition.
-%
-% ^.
 
 \begin{equation}
     \Lambda = {F_{D_{ex}D_{em}} + F_{FRET}}
@@ -1205,19 +1194,18 @@ during D-excitation (valid in both ALEX and PAX) as:
 
 \noindent where the $F$ quantities are background-corrected photon counts.
 $F_{FRET}$ is the detected acceptor fluorescence due to FRET, computed by
-subtracting D-leakage and A-direct-excitation from $F_{D_{ex}A_{em}}$:
-% * <michalet@chem.ucla.edu> 2017-07-13T17:41:44.448Z:
-%
-% We need to define Lk and Dir!
-%
-% ^.
+subtracting D-leakage ($Lk$) and A-direct-excitation ($Dir$)
+from $F_{D_{ex}A_{em}}$~\cite{lee_accurate_2005}:
 
 \begin{equation}
-    F_{FRET} = F_{D_{ex}A_{em}} - Lk\,F_{D_{ex}D_{em}} - Dir
+    F_{FRET} = F_{D_{ex}A_{em}} - Lk - Dir
     \label{eq:F_FRET}
 \end{equation}
 
-We also need the usual correction factors $\gamma$ and $\beta$~\cite{lee_accurate_2005}:
+Definitions of $Lk$ and $Dir$ are reported in
+ref.~\onlinecite{lee_accurate_2005}.
+We also need the usual correction factors
+$\gamma$ and $\beta$~\cite{lee_accurate_2005}:
 
 \begin{align}
     \gamma &= \frac{\phi_A \, \eta_{A_{det}}^{A_{em}}}
@@ -1227,8 +1215,8 @@ We also need the usual correction factors $\gamma$ and $\beta$~\cite{lee_accurat
 \end{align}
 
 \noindent where $\phi_A$, $\phi_D$ are the acceptor and donor quantum yields
-and $\eta_{A_{det}}^{A_{em}}$, $\eta_{D_{det}}^{D_{em}}$ are the detection efficiencies of the D and A signals in the
-D and A channels.
+and $\eta_{A_{det}}^{A_{em}}$, $\eta_{D_{det}}^{D_{em}}$ are the detection
+efficiencies of the D and A signals in the D and A channels.
 In eq.~\ref{eq:beta}, $I_{A_{ex}}$ and $I_{D_{ex}}$ are A and D-excitation
 intensities, while $\sigma_{A_{ex}}^A$ and $\sigma_{D_{ex}}^D$
 are the dye absorption cross-sections at their respective laser wavelengths.
@@ -1243,15 +1231,17 @@ as~\cite{lee_accurate_2005,ingargiola_applying_2017}:
     \label{eq:burstsize}
 \end{equation}
 With these definitions, the proximity ratio
-$E_{PR}$ and FRET efficiency $E$ are given by the following expression, valid for both ALEX and PAX:
+$E_{PR}$ and FRET efficiency $E$ are given by the following expression,
+valid for both ALEX and PAX:
 
 \begin{align}
     E_{PR} &= \frac{F_{FRET}}{\Lambda} \label{eq:Epr} \\
     E &= \frac{F_{FRET}}{\Lambda_\gamma} \label{eq:E}
 \end{align}
 
-By contrast, the expression for the stoichiometry ratio $S$ is slightly different for ALEX and PAX. In
-ALEX, $S$ and its corrected version $S_{\gamma\beta}$ are defined as:
+By contrast, the expression for the stoichiometry ratio $S$ is slightly
+different for ALEX and PAX.
+In ALEX, $S$ and its corrected version $S_{\gamma\beta}$ are defined as:
 
 \begin{align}
     S &= \frac{\Lambda}{\Lambda + F_{AexAem}} \label{eq:S} \\
@@ -1263,9 +1253,10 @@ ALEX, $S$ and its corrected version $S_{\gamma\beta}$ are defined as:
 The value $S_{\gamma\beta}$ is always centered around 0.5 for doubly-labeled
 species, regardless of FRET efficiency or D and A-excitation intensities.
 
-In PAX, there is no such signal as $F_{A_{ex}A_{em}}$, but in the particular case where the two alternation
-intervals are identical (which is usually the case), and the alternation period is sufficiently short
-to assume that the excitation intensity doesn't change from one interval to the next, an equivalent quantity can be
+In PAX, there is no such signal as $F_{A_{ex}A_{em}}$. However, when
+the alternation period is sufficiently short to assume that the excitation
+intensity doesn't change from one interval to the next
+(which is usually the case), an equivalent quantity can be
 % * <michalet@chem.ucla.edu> 2017-07-13T17:10:26.998Z:
 %
 % >  but in the particular case where the two alternation
@@ -1281,8 +1272,13 @@ computed by subtracting the contribution of D-excitation to $F_{DA_{ex}A_{em}}$:
     \label{eq:pax_Faa}
 \end{equation}
 
-Expressions for $S$ and $S_{\gamma\beta}$ defined for ALEX (eq.~\ref{eq:S} and \ref{eq:Sgb}) can then
-be used for PAX, with the replacement of $F_{A_{ex}A_{em}}$ by $\tilde{F}_{A_{ex}A_{em}}$:
+Note that if the alternation periods have different duration
+(i.e. duty cycle $\ne 0.5$),
+eq.~\ref{eq:pax_Faa} should be modified by introducing weights in the
+subtraction that account for the actual duty cycle.
+Expressions for $S$ and $S_{\gamma\beta}$ defined for ALEX (eq.~\ref{eq:S}
+and \ref{eq:Sgb}) can then be used for PAX, with the replacement of
+$F_{A_{ex}A_{em}}$ by $\tilde{F}_{A_{ex}A_{em}}$:
 
 \begin{align}
 S &= \frac{\Lambda}
@@ -1291,8 +1287,10 @@ S_{\gamma\beta} &= \frac{\Lambda_\gamma}
                         {\Lambda_\gamma + {\beta}^{-1}{\tilde{F}_{AexAem}}}
          \label{eq:Sgb_pax}
 \end{align}
-Since the D-excitation is always on in PAX experiments, we can use the signal in
-$F_{DA_{ex}D_{em}}$ to improve photon statistics, and derive a modified set of PAX
+
+Since the D-excitation is always on in PAX experiments, we can use
+the signal in $F_{DA_{ex}D_{em}}$ to improve photon statistics, and
+derive a modified set of PAX
 % * <michalet@chem.ucla.edu> 2017-07-13T18:15:42.675Z:
 %
 % > improve photon statistics
@@ -1300,7 +1298,7 @@ $F_{DA_{ex}D_{em}}$ to improve photon statistics, and derive a modified set of P
 % Note: I saw (and edited) the corresponding sentence in the text.
 %
 % ^.
-expressions for $E$ and $S$ (under the two assumptions stated above), starting from
+expressions for $E$ and $S$, starting from
 the following modified definitions of the total FRET signal:
 
 \begin{align}
@@ -1309,8 +1307,13 @@ the following modified definitions of the total FRET signal:
     \Lambda_{\gamma,PAX} &= {\gamma\,(F_{D_{ex}D_{em}} + F_{DA_{ex}De_{m}}) + 2 F_{FRET}}
     \label{eq:burstsize_paxe}
 \end{align}
-In the above expressions, the acceptor contribution to $\Lambda$ (eq. \ref{eq:burstsize_raw})
-and $\Lambda_{\gamma}$ (eq. \ref{eq:burstsize}), $F_{FRET}$, is doubled, to match the addition of $F_{DA_{ex}D_{em}}$.
+
+In the above expressions, the acceptor contribution $F_{FRET}$,
+is multiplied by a factor 2, to compensate for the addition of
+$F_{DA_{ex}D_{em}}$.
+In case of non-equal alternation periods, this factor must be modified
+to take into account the actual duty cycle.
+
 Based on eq.~\ref{eq:burstsizerawpaxe} and \ref{eq:burstsize_paxe}, we
 can write modified PAX expressions for $E$ and $S$:
 
@@ -1329,7 +1332,8 @@ and~\ref{eq:Sgb_paxe} contain more photons than the classical expressions
 and, therefore, can result in lower shot-noise. However, this effect is
 mitigated by the fact that $F_{FRET}$ is counted twice to
 compensate for the doubling of the D signal and, therefore, its
-shot-noise is amplified, an effect that can become large for low FRET or donor-only species.
+shot-noise is amplified, an effect that can become large for low FRET
+or donor-only species.
 
 
 \subsection{Modified stoichiometry}
