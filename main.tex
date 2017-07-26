@@ -1257,25 +1257,18 @@ In PAX, there is no such signal as $F_{A_{ex}A_{em}}$. However, when
 the alternation period is sufficiently short to assume that the excitation
 intensity doesn't change from one interval to the next
 (which is usually the case), an equivalent quantity can be
-% * <michalet@chem.ucla.edu> 2017-07-13T17:10:26.998Z:
-%
-% >  but in the particular case where the two alternation
-% > intervals are identical (which is usually the case), and the alternation period is sufficiently short
-% > to assume that the excitation intensity doesn't change from one interval to the next,
-% This is important to emphasize, as it is easy to break these assumptions experimentally.
-%
-% ^.
-computed by subtracting the contribution of D-excitation to $F_{DA_{ex}A_{em}}$:
+computed by subtracting the contribution of D-excitation to
+$F_{DA_{ex}A_{em}}$:
 
 \begin{equation}
-    \tilde{F}_{A_{ex}A_{em}} = F_{DA_{ex}A_{em}} - F_{D_{ex}A_{em}}
+    \tilde{F}_{A_{ex}A_{em}} = F_{DA_{ex}A_{em}} - \frac{W_A}{W_D}F_{D_{ex}A_{em}}
     \label{eq:pax_Faa}
 \end{equation}
 
-Note that if the alternation periods have different duration
-(i.e. duty cycle $\ne 0.5$),
-eq.~\ref{eq:pax_Faa} should be modified by introducing weights in the
-subtraction that account for the actual duty cycle.
+\noindent where $W_A$ and $W_D$ are the durations of the $D_{ex}$ and
+$DA_{ex}$ excitation periods.
+Typically the alternation periods have the same duration
+(i.e. duty cycle $= 0.5$) and $W_A/W_D = 1$.
 Expressions for $S$ and $S_{\gamma\beta}$ defined for ALEX (eq.~\ref{eq:S}
 and \ref{eq:Sgb}) can then be used for PAX, with the replacement of
 $F_{A_{ex}A_{em}}$ by $\tilde{F}_{A_{ex}A_{em}}$:
@@ -1289,41 +1282,35 @@ S_{\gamma\beta} &= \frac{\Lambda_\gamma}
 \end{align}
 
 Since the D-excitation is always on in PAX experiments, we can use
-the signal in $F_{DA_{ex}D_{em}}$ to improve photon statistics, and
-derive a modified set of PAX
-% * <michalet@chem.ucla.edu> 2017-07-13T18:15:42.675Z:
-%
-% > improve photon statistics
-% Strictly speaking, the inclusion of F_DA^D (real counts), which should reduce the statistical noise, requires doubling the contribution of F_FRET, which adds some noise (twice that of F_FRET, in fact), so the gain is not obvious. I am not particularly convinced of the usefulness of this trick, in particular for low FRET species.
-% Note: I saw (and edited) the corresponding sentence in the text.
-%
-% ^.
-expressions for $E$ and $S$, starting from
-the following modified definitions of the total FRET signal:
+the signal in $F_{DA_{ex}D_{em}}$ to improve photon statistics.
+To derive a modified set of PAX expressions for $E$ and $S$
+we start defining the "modified" total FRET signal as:
 
 \begin{align}
-    \Lambda_{PAX} &= {F_{D_{ex}D_{em}} + F_{DA_{ex}D_{em}} + 2 F_{FRET}}
+    \Lambda_{PAX} &= {F_{D_{ex}D_{em}} + F_{DA_{ex}D_{em}}
+                     + \alpha^{-1}F_{FRET}}
     \label{eq:burstsizerawpaxe} \\
-    \Lambda_{\gamma,PAX} &= {\gamma\,(F_{D_{ex}D_{em}} + F_{DA_{ex}De_{m}}) + 2 F_{FRET}}
+    \Lambda_{\gamma,PAX} &= \gamma\,(F_{D_{ex}D_{em}} + F_{DA_{ex}De_{m}})
+                            + \alpha^{-1}F_{FRET}
     \label{eq:burstsize_paxe}
 \end{align}
 
 In the above expressions, the acceptor contribution $F_{FRET}$,
-is multiplied by a factor 2, to compensate for the addition of
-$F_{DA_{ex}D_{em}}$.
-In case of non-equal alternation periods, this factor must be modified
-to take into account the actual duty cycle.
+is divided by $\alpha$, which is the $D_{ex}$ duty-cycle
+($\alpha = 0.5$ when alternation periods have same duration).
+The factor $\alpha^{-1}$ amplifies the A signal in order to compensate
+for the additional donor signal $F_{DA_{ex}D_{em}}$.
 
 Based on eq.~\ref{eq:burstsizerawpaxe} and \ref{eq:burstsize_paxe}, we
 can write modified PAX expressions for $E$ and $S$:
 
 \begin{align}
-    E_{PR,PAX} &= \frac{2\,F_{FRET}}{\Lambda_{PAX}} \label{eq:Epr_paxe} \\
-    E_{PAX} &= \frac{2\,F_{FRET}}{\Lambda_{\gamma,PAX}} \label{eq:Epaxe} \\
+    E_{PR,PAX} &= \frac{\alpha^{-1} \, F_{FRET}}{\Lambda_{PAX}} \label{eq:Epr_paxe} \\
+    E_{PAX} &= \frac{\alpha^{-1} \, F_{FRET}}{\Lambda_{\gamma,PAX}} \label{eq:Epaxe} \\
     S_{PAX} &= \frac{\Lambda_{PAX}}{\Lambda_{PAX} + \tilde{F}_{A_{ex}A_{em}}}
     \label{eq:Spaxe} \\
     S_{\gamma\beta,PAX} &= \frac{\Lambda_{\gamma,PAX}}
-        {\Lambda_{\gamma,PAX} + 2{\beta}^{-1}\tilde{F}_{A_{ex}A_{em}}}
+        {\Lambda_{\gamma,PAX} + (\alpha\beta)^{-1}\tilde{F}_{A_{ex}A_{em}}}
     \label{eq:Sgb_paxe}
 \end{align}
 
@@ -1340,17 +1327,19 @@ or donor-only species.
 \label{sec:Su}
 
 By replacing $\tilde{F}_{A_{ex}A_{em}}$ with $F_{DA_{ex}A_{em}}$ in
-eq.~\ref{eq:Spax}, a modified or "uncorrected stoichiometry" $S_u$can be defined:
+eq.~\ref{eq:Spax}, a modified or "uncorrected stoichiometry" $S_u$ can
+be defined:
 
 \begin{equation}
 S_u = \frac{\Lambda}
-{\Lambda + F_{DA_{ex}A_{em}}}
+           {\Lambda + F_{DA_{ex}A_{em}} }
 \label{eq:Su}
 \end{equation}
 
-This expression avoids subtracting $F_{D_{ex}A_{em}}$ counts from $F_{DA_{ex}A_{em}}$ (an operation which sums the statistical noise
-of these two quantities), therefore improving the overall dispersion of the ratiometric quantity $S_u$, especially for low FRET
-or donor-only species.
+This expression avoids subtracting $F_{D_{ex}A_{em}}$ counts from
+$F_{DA_{ex}A_{em}}$ (an operation which sums the statistical noise
+of these two quantities), therefore improving the overall dispersion
+of the ratiometric quantity $S_u$.
 As a result, the
 $S_u$ distributions are narrower, permitting easier
 separation of FRET and D-only population. Note, however, that $S_u$ has a
@@ -1360,19 +1349,15 @@ In this work, even at low FRET values, better separation between
 FRET and D-only population was achieved using $S_u$ instead of
 $S$. In general, the advantage of $S_u$ over $S$ may change in
 other situations, especially when  signal-to-noise and
-background-to-noise ratios are large.
-% * <michalet@chem.ucla.edu> 2017-07-13T17:15:25.592Z:
-%
-% > background-to-noise
-% never used background-to-noise ratio before. Where does it intervene?
-%
-% ^.
+signal-to-background ratios are large.
 Once populations are separated in the $E-S_u$ histogram, one
-can use the classical $S$ expression (eq. \ref{eq:Spax}) to compute gamma factor as described in ref. \ref{lee_accurate_2005}.
-In this work, no attempt was made to recover exact FRET values and D-A distances, therefore
-no gamma factor calibration was performed. However, we address the issue of differences
-in collection and detection efficiencies across spots, which can affect such a calibration, in
-section \ref{sec:perchcorr}.
+can use the classical $S$ expression (eq. \ref{eq:Spax}) to compute
+gamma factor as described in ref.~\onlinecite{lee_accurate_2005}.
+In this work, no attempt was made to recover exact FRET values and
+D-A distances, therefore no gamma factor calibration was performed.
+However, we address the issue of differences in collection and detection
+efficiencies across spots, which can affect such a calibration, in
+section~\ref{sec:perchcorr}.
 
 
 \section{Individual spot corrections}
