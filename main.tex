@@ -1261,14 +1261,14 @@ computed by subtracting the contribution of D-excitation to
 $F_{DA_{ex}A_{em}}$:
 
 \begin{equation}
-    \tilde{F}_{A_{ex}A_{em}} = F_{DA_{ex}A_{em}} - \frac{W_A}{W_D}F_{D_{ex}A_{em}}
+    \tilde{F}_{A_{ex}A_{em}} = F_{DA_{ex}A_{em}} - \frac{w_A}{w_D}F_{D_{ex}A_{em}}
     \label{eq:pax_Faa}
 \end{equation}
 
-\noindent where $W_A$ and $W_D$ are the durations of the $D_{ex}$ and
-$DA_{ex}$ excitation periods.
+\noindent where $w_A$ and $w_D$ are the durations of the $DA_{ex}$ and
+$D_{ex}$ excitation periods respectively.
 Typically the alternation periods have the same duration
-(i.e. duty cycle $= 0.5$) and $W_A/W_D = 1$.
+(i.e. duty cycle $= 0.5$) and $w_A/w_D = 1$.
 Expressions for $S$ and $S_{\gamma\beta}$ defined for ALEX (eq.~\ref{eq:S}
 and \ref{eq:Sgb}) can then be used for PAX, with the replacement of
 $F_{A_{ex}A_{em}}$ by $\tilde{F}_{A_{ex}A_{em}}$:
@@ -1281,25 +1281,24 @@ S_{\gamma\beta} &= \frac{\Lambda_\gamma}
          \label{eq:Sgb_pax}
 \end{align}
 
-Since the D-excitation is always on in PAX experiments, we can use
+Since in PAX experiments the D-excitation is always on, we can use
 the signal in $F_{DA_{ex}D_{em}}$ to improve photon statistics.
 To derive a modified set of PAX expressions for $E$ and $S$
-we start defining the "modified" total FRET signal as:
+we start defining the ``modified'' total FRET signal as:
 
 \begin{align}
-    \Lambda_{PAX} &= {F_{D_{ex}D_{em}} + F_{DA_{ex}D_{em}}
-                     + \alpha^{-1}F_{FRET}}
+    \Lambda_{PAX} &= F_{D_{ex}D_{em}} + F_{DA_{ex}D_{em}}
+                     + \alpha^{-1}\,F_{FRET}
     \label{eq:burstsizerawpaxe} \\
     \Lambda_{\gamma,PAX} &= \gamma\,(F_{D_{ex}D_{em}} + F_{DA_{ex}De_{m}})
-                            + \alpha^{-1}F_{FRET}
+                            + \alpha^{-1}\,F_{FRET}
     \label{eq:burstsize_paxe}
 \end{align}
 
-In the above expressions, the acceptor contribution $F_{FRET}$,
-is divided by $\alpha$, which is the $D_{ex}$ duty-cycle
-($\alpha = 0.5$ when alternation periods have same duration).
-The factor $\alpha^{-1}$ amplifies the A signal in order to compensate
-for the additional donor signal $F_{DA_{ex}D_{em}}$.
+\noindent where $\alpha = \left( 1 + \frac{w_A}{w_D} \right)^{-1}$ is the
+$D_{ex}$ duty cycle (typically, $w_A = w_D$ and $\alpha = 0.5$).
+The factor $\alpha^{-1}$ amplifies the $F_{FRET}$ signal in order
+to compensate for the additional donor signal $F_{DA_{ex}D_{em}}$.
 
 Based on eq.~\ref{eq:burstsizerawpaxe} and \ref{eq:burstsize_paxe}, we
 can write modified PAX expressions for $E$ and $S$:
@@ -1317,10 +1316,10 @@ can write modified PAX expressions for $E$ and $S$:
 Eq.~\ref{eq:Epr_paxe}, \ref{eq:Epaxe}, \ref{eq:Spaxe}
 and~\ref{eq:Sgb_paxe} contain more photons than the classical expressions
 and, therefore, can result in lower shot-noise. However, this effect is
-mitigated by the fact that $F_{FRET}$ is counted twice to
-compensate for the doubling of the D signal and, therefore, its
-shot-noise is amplified, an effect that can become large for low FRET
-or donor-only species.
+mitigated by the fact that $F_{FRET}$ is multiplied by $\alpha^{-1}$ to
+compensate for the additional D signal $F_{DA_{ex}D_{em}}$, and
+therefore its shot-noise is amplified.
+
 
 
 \subsection{Modified stoichiometry}
