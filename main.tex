@@ -577,9 +577,9 @@ burst search are identical to figure~\ref{fig:alexhist48all12d}, while
 burst selection was tailored to select only the FRET population: a burst is
 selected if the number of counts in the $D_{ex}A_{em}$ and $DA_{ex}A_{em}$
 % * <michalet@chem.ucla.edu> 2017-07-29T00:10:17.075Z:
-% 
+%
 % check the stream definitions.
-% 
+%
 % ^.
 streams are both larger than 20. The legend in each subplot
 reports spot number in brackets and number of bursts (\#B).%
@@ -617,10 +617,10 @@ For more details see the
 
 Fig.~\ref{fig:alexhist48all12d} shows E-S histograms for the
 % * <michalet@chem.ucla.edu> 2017-07-29T00:06:03.848Z:
-% 
+%
 % > shows
 % A reporter " reports on". A figure does not. At most, it " reports"  something.
-% 
+%
 % ^.
 dsDNA sample with a 12 bp separation between D and A,
 obtained after burst search and size-selection
@@ -660,9 +660,23 @@ Fig.~\ref{fig:alexhist48all22d}.
 
 \subsection{Pooling data from all spots}
 \label{sec:alexpax-comp}
-To illustrate the high-throughput performance of the 48-spot system, we
-built an E-S histogram accumulating bursts from all spots over a short (15~s)
-time window (Fig.~\ref{fig:alex_mspot_15}). In principle,
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figures/2017-07-11_06_12d_22d_ES-hist-collapsed-all-pops}
+\caption{\label{fig:ES48mix-all}
+TODO
+}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{figures/2017-07-11_06_12d_22d_ES-hist-collapsed-FRET-pops}
+\caption{\label{fig:ES48mix-fret}
+TODO
+}
+\end{figure}
+
+The final step of multispot measurements merging data from all
+spots in order to accumulate bursts at an higher pace. In principle,
 non-uniformities between different spots can be taken into account
 by decomposing each correction factor $\gamma$ and $\beta$
 (Eq.~\ref{eq:gamma} and~\ref{eq:beta}) as a product of two factors:
@@ -671,29 +685,53 @@ which is a per-spot relative correction.
 The per-spot correction of $\gamma$ and $\beta$ can be easily computed
 from a measurement of a static FRET sample
 (details in appendix~\ref{sec:perchcorr}).
-In Fig.~\ref{fig:alex_mspot_15}, we reported raw $E_{PR}$ and $S_u$
-values without any spot-specific adjustments for simplicity and because
-of the good uniformity across spots.
+In the following, for simplicity and due to the good uniformity,
+we do not any spot-specific adjustment.
 
-For comparison, Fig.~\ref{fig:alex_sspot_15} shows a similar histogram
-obtained by accumulating bursts for 15~s during a measurement of the
-same doubly-labeled dsDNA construct using the
-single-spot {\usalex} setup. To minimize differences
-in concentration, the same gasket-enclosed sample was first measured
+Fig.~\ref{fig:ES48mix-all} shows the E-S histograms of a mixture
+of two dsDNA constructs with donor-acceptor separation of 12 and
+22~bp (see section~\ref{sec:analysis}),
+resulting mean $E_{PR}$ of $\sim0.6$ and $0.15$ respectively.
+A significant D-only population is visible as peak close to $E_{PR}=0.05$
+$S_u=1$. Due to the relatively low PDE
+of the acceptor channel (see section~\ref{sec:detectors}), the separation
+of D-only and FRET populations could in principle be problematic.
+Fig.~\ref{fig:ES48mix-fret} shows the same E-S histogram after
+D-only filtering. For this purpose,
+we set a threshold of 12.5 photons on the background-corrected
+$F_{DA_{ex}A_{em}}$ counts in each burst.
+We notice that the selection effectively removes the large D-only
+peak, isolating the FRET populations without a significant loss
+of FRET bursts.
+
+In order to showcase the high-throughput capability of the multispot
+system we compared short acquisitions of the same sample in both the
+multispot and a standard single-spot {\usalex} setup.
+In Fig.~\ref{fig:alex_mspot_5}, we report the E-S histogram
+built from a 5~s acquisition of a doubly-labeled dsDNA measured
+on the 48-spot PAX setup.
+For comparison, Fig.~\ref{fig:alex_sspot_5} shows a measurement of the
+same sample obtained accumulating bursts for 5~s on the single-spot
+{\usalex} setup.
+To minimize differences in concentration,
+the same gasket-enclosed sample was first measured
 on the {\usalex} setup and subsequently measured in the multispot setup.
-The resulting number of bursts detected in the
-multispot measurement are about 24 times larger than in the
-single-spot measurement. This factor is smaller that the
-the 46-fold increase theoretically expected (discarding the two spots
-with malfunctioning pixels). This discrepancy can be explained by two factors.
-First, the decreasing power in the lateral spots causes smaller bursts and
+In both cases we performed the same burst search with a constant
+rate-threshold of 50~kcps.
+For burst selection, we used a minimum threshold of 40 photons
+for the $gamma$-corrected burst size.
+In principle, we expect a 46X "gain" in burst accumulation rate
+in the multispot setup (48 minus two non-functional spots). However,
+many factors contribute reducing this theoretical limit.
+First, the decreasing power in the lateral spots (see
+Fig.~\ref{fig:patternfit}) causes smaller bursts and
 results in less bursts surviving the size-selection with a given threshold.
-Second, the detection efficiency of the SPAD array in the red region
+In addition, the detection efficiency of the SPAD array in the red region
 of the spectrum is at least 2-fold lower than that of the corresponding
 SPAD in the single-spot setup (see section~\ref{sec:detectors}).
 This more than halves the signal in the A-SPAD, resulting in smaller bursts
-and, as before, less bursts with sizes above a given threshold.
-Both issues can be solved in future iterations of the setup.
+and, as before, less bursts above a given threshold.
+Both issues can be in principle solved in future iterations of the setup.
 The excitation uniformity can be increased
 using flat-top optics before the LCSO-SLM modulation,
 while the lower PDE can be overcome using new red-enhanced SPAD
@@ -712,23 +750,23 @@ In this case, 500 bursts per slice maybe sufficient,
 resulting in a time resolution < 5~s with the current setup.
 To avoid dead time during mixing, however, the multispot setup needs to be
 equipped with a microfluidic mixer than can mix and flow a sample
-in << 1~s.
+in $\ll$~1~s.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/2017-05-23_08_12d_alex_jointplot_15s}
-\caption{\label{fig:alex_mspot_15}
-Multispot ALEX histogram obtained from 15~s of acquisition by pooling bursts
-from all 48 spots.
+\includegraphics[width=\columnwidth]{figures/2017-07-16_02_12d_1000pM_alex_jointplot_5s_Dex}
+\caption{\label{fig:alex_mspot_5}
+48-spot E-S histogram obtained from 5~s of acquisition by pooling bursts
+from all the 46 active spots.
 For more details see the
 \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{smFRET-PAX\_single\_pop-2017-05-23\_08\_12d} notebook.
 }
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/2017-06-11_000_12d_alex_jointplot_15s}
-\caption{\label{fig:alex_sspot_15}
-Single-spot E-S histogram obtained from 15~s of acquisition for the same
-sample as in Fig.~\ref{fig:alex_mspot_15}.
+\includegraphics[width=\columnwidth]{figures/2017-07-16_003_12d_alex_jointplot_5s}
+\caption{\label{fig:alex_sspot_5}
+Single-spot E-S histogram obtained from 5~s of acquisition for the same
+sample as in Fig.~\ref{fig:alex_mspot_5}.
 For more details see the
 \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/us-ALEX\_analysis-2017-06-11\_000\_12d.ipynb}{us-ALEX\_analysis-2017-06-11\_000\_12d} notebook.
 }
