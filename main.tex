@@ -629,8 +629,8 @@ described in section~\ref{sec:analysis}.
 The D-only and FRET populations (respectively top left corner
 and center in the 2D histogram) are clearly distinguishable in all spots.
 Moreover, as shown in Fig~\ref{fig:alexhist48fret12d}, it is easy to isolate
-the FRET population(s) by applying a burst
-selection on the $DA_{ex}A_{em}$ counts and on $D_ex$ counts.
+the FRET population(s) by applying a second burst
+selection by setting a threshold on $DA_{ex}A_{em}$ counts.
 The separation of FRET from singly-labeled species is the primary advantage
 of dual laser excitation.
 
@@ -664,14 +664,26 @@ Fig.~\ref{fig:alexhist48all22d}.
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/2017-07-11_06_12d_22d_ES-hist-collapsed-all-pops}
 \caption{\label{fig:ES48mix-all}
-TODO
+48-spot PAX measurement of a mixture of two dsDNA constructs with 12 and
+22~bp D-A separation (sample details in~\ref{sec:analysis}).
+Burst search has been performed on all channels
+using a constant-rate threshold of 50~kcps.
+Burst selected by total size with the criterion $\Lambda_{\gamma,PAX} > 80$,
+using $\gamma = 0.5$ (see eq.~\ref{eq:burstsize_paxe}).
+The E-S histogram is built by pooling data from all the spots without any
+spot-specific adjustments.
 }
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/2017-07-11_06_12d_22d_ES-hist-collapsed-FRET-pops}
 \caption{\label{fig:ES48mix-fret}
-TODO
+48-spot PAX E-S histograms of the same measurement of
+Fig.~\ref{fig:ES48mix-all}. Additional filtering of the D-only population
+is performed using the criterion $F_{D_{ex}DA_{em}} > 25$
+(see appendix~\ref{sec:alex_pax}).
+The E-S histogram is built by pooling data from all the spots without any
+spot-specific adjustments.
 }
 \end{figure}
 
@@ -686,23 +698,22 @@ The per-spot correction of $\gamma$ and $\beta$ can be easily computed
 from a measurement of a static FRET sample
 (details in appendix~\ref{sec:perchcorr}).
 In the following, for simplicity and due to the good uniformity,
-we do not any spot-specific adjustment.
+we do not apply any spot-specific adjustment.
 
 Fig.~\ref{fig:ES48mix-all} shows the E-S histograms of a mixture
 of two dsDNA constructs with donor-acceptor separation of 12 and
 22~bp (see section~\ref{sec:analysis}),
-resulting mean $E_{PR}$ of $\sim0.6$ and $0.15$ respectively.
-A significant D-only population is visible as peak close to $E_{PR}=0.05$
+resulting in mean $E_{PR}$ of $\sim0.6$ and $0.15$ respectively.
+A significant D-only population is visible as peak close to $E_{PR}=0.05$,
 $S_u=1$. Due to the relatively low PDE
 of the acceptor channel (see section~\ref{sec:detectors}), the separation
 of D-only and FRET populations could in principle be problematic.
-Fig.~\ref{fig:ES48mix-fret} shows the same E-S histogram after
-D-only filtering. For this purpose,
-we set a threshold of 12.5 photons on the background-corrected
-$F_{DA_{ex}A_{em}}$ counts in each burst.
-We notice that the selection effectively removes the large D-only
-peak, isolating the FRET populations without a significant loss
-of FRET bursts.
+Similarly to what done in Fig.~\ref{fig:alexhist48fret12d},
+we can select the FRET populations by setting a threshold on the
+background-corrected $DA_{ex}A_{em}$ counts.
+Fig.~\ref{fig:ES48mix-fret} shows that the selection effectively
+removes the large D-only peak, isolating the FRET populations
+without a significant loss of FRET bursts.
 
 In order to showcase the high-throughput capability of the multispot
 system we compared short acquisitions of the same sample in both the
@@ -1129,7 +1140,8 @@ Here we align the SPADs to the LCOS-SLM pattern.
 % ^.
 Starting with the green laser only, both SPADs are manually positioned
 in X and Y to match the center of the excitation pattern. This is achieved
-by finding the location of the maximum recorded SPAD counts while moving the detectors.
+by finding the location of the maximum recorded SPAD counts while moving
+the detectors.
 
 Next, we perform a more automated procedure for fine alignment referred to as
 ``multispot scan''. A multispot scan involves rigidly
