@@ -682,9 +682,9 @@ spot-specific adjustments.
 }
 \end{figure}
 
-The final step of multispot measurements is merging data from all
-spots in order to accumulate bursts at an higher rate. In principle,
-non-uniformities between different spots can be taken into account
+The final step of multispot analysis is merging data from all
+spots in order to accumulate bursts at an higher rate.
+Non-uniformities between different spots can be taken into account
 by decomposing each correction factor $\gamma$ and $\beta$
 (Eq.~\ref{eq:gamma} and~\ref{eq:beta}) as a product of two factors:
 one which is an average correction factor over all spots and another
@@ -703,14 +703,14 @@ A significant D-only population is visible as a peak close to $E_{PR}=0.05$,
 $S_u=1$. Due to the relatively low PDE
 of the acceptor channel (see section~\ref{sec:detectors}), the separation
 of D-only and FRET populations could in principle be problematic.
-Similarly to what done in Fig.~\ref{fig:alexhist48fret12d},
+As previously shown (Fig.~\ref{fig:alexhist48fret12d}),
 we can select the FRET populations by setting a threshold on the
 background-corrected $DA_{ex}A_{em}$ counts.
 Fig.~\ref{fig:ES48mix-fret} shows that the selection effectively
 removes the large D-only peak, isolating the FRET populations
 without a significant loss of FRET bursts.
 
-In order to showcase the high-throughput capability of the multispot
+In order to illustrate the high-throughput capability of the multispot
 system, in Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5}
 we show an example of a short 5~s acquisitions of the same doubly-labeled
 dsDNA sample in the multispot and a standard single-spot {\usalex} setup
@@ -721,7 +721,7 @@ To minimize differences in concentration,
 the same gasket-enclosed sample was first measured
 on the {\usalex} setup and subsequently in the multispot setup.
 In both cases we performed the same burst search with a constant
-rate-threshold of 50~kcps and similar burst-size selection.
+rate-threshold of 30~kcps and similar burst-size selection.
 At first glance, we would expect a theoretical 46X "gain" in burst
 accumulation rate in the multispot setup (48 minus two non-functional spots).
 However, many factors may affect the burst rate.
@@ -735,9 +735,9 @@ This reduces the signal in the A-SPAD, resulting in smaller bursts
 and, less bursts above a given threshold.
 Moreover, The two setups use different set of emission path filters which
 can further affect the detected photon rate, burst size and $\gamma$ factor.
-Finally, analysis of the burst duration histogram show that the spots are
-generally larger in the multi-spot setup, due to the specific modulation
-which does not generate diffraction-limited PSFs. Larger PSF volumes
+The burst duration histograms show that burst durations are on average
+larger in the multi-spot setup, meaning that a larger sample volume is
+probed by each spot. Larger PSF volumes
 cause an higher number of bursts in the multi-spot compared to the
 single-spot setup.
 
