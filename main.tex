@@ -505,11 +505,11 @@ spots in the second row are missing because of an active quenching circuit
 
 The peak photon rate reached in each burst reports on the peak PSF
 intensity~\cite{ingargiola_multispot_2017}.
-Fig.~\ref{fig:phrates48_comp} shows the background-corrected peak photon
-rate distribution in the 48 spots. Panel A shows the full peak photon rate
-distributions with their characteristic exponential tails.
-Panels B-E show heatmaps for different photon streams of the peak photon-rate
-mean values, i.e. the decay constant of the exponential tail.
+Fig.~\ref{fig:phrates48_comp} Panel A shows the background-corrected
+peak photon rate distributions with their characteristic exponential tails.
+Fig.~\ref{fig:phrates48_comp} Panels B-E show, for different
+photon streams, heatmaps of the peak photon-rate mean values,
+i.e. the decay constant of the exponential tail.
 Due to the Gaussian profile of the excitation beam and to geometrical
 aberrations, the lateral pixels receive a lower signal intensity than
 the central pixels. As a result, the peak photon rate decreases and fewer
@@ -616,12 +616,6 @@ For more details see the
 
 
 Fig.~\ref{fig:alexhist48all12d} shows E-S histograms for the
-% * <michalet@chem.ucla.edu> 2017-07-29T00:06:03.848Z:
-%
-% > shows
-% A reporter " reports on". A figure does not. At most, it " reports"  something.
-%
-% ^.
 dsDNA sample with a 12 bp separation between D and A,
 obtained after burst search and size-selection
 described in section~\ref{sec:analysis}.
@@ -630,7 +624,8 @@ The D-only and FRET populations (respectively top left corner
 and center in the 2D histogram) are clearly distinguishable in all spots.
 Moreover, as shown in Fig~\ref{fig:alexhist48fret12d}, it is easy to isolate
 the FRET population(s) by applying a second burst
-selection by setting a threshold on $DA_{ex}A_{em}$ counts.
+selection which sets a threshold on $DA_{ex}A_{em}$ counts
+(a second example of such selection is shown in Fig.~\ref{fig:ES48mix-fret}).
 The separation of FRET from singly-labeled species is the primary advantage
 of dual laser excitation.
 
@@ -640,23 +635,23 @@ This is evident in Fig.~\ref{fig:fittedFRETscatter} which shows the
 $E_{PR}$ and $S_u$ peak center position in different spots for
 both D-only and FRET populations.
 Fig.~\ref{fig:fretfit48vsmean} shows the center and $\pm1\,\sigma$
-range from Gaussian fits of $E_{PR}$ and $S$ histograms
+range from Gaussian fits of $E_{PR}$ and $S_u$ histograms
 of the FRET population (blue dot and error-bar).
 The orange dot is the mean center peak position of the FRET population
 across all spots. For most spots, the
 deviation of the peak position is well below the $\pm1\,\sigma$
-range, with the exception of spot 19, where as note before
-a lower PDE of the A pixel causes a larger deviation from the peak position.
+range, with the exception of spot 19, where
+a lower A-pixel PDE causes a larger deviation.
 Note that since Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
 present results without calibration, they showcase the minimum
 performance of the system.
-It is possible to further reduce spot-to-spot variations
-of the E-S peak position by applying a per-spot calibration, as briefly
+It is possible to virtually eliminate spot-to-spot variations
+of the E-S peak position during post-processing by applying
+a per-spot calibration, as briefly
 described in the next section (details in appendix~\ref{sec:perchcorr}).
 As an additional example, the E-S histogram for a low-FRET dsDNA
-(22 bp D-A separation) is reported in appendix~\ref{sec:moredata},
-Fig.~\ref{fig:alexhist48all22d}.
-
+(22 bp D-A separation) is reported in Fig.~\ref{fig:alexhist48all22d},
+appendix~\ref{sec:moredata}.
 
 \subsection{Pooling data from all spots}
 \label{sec:alexpax-comp}
@@ -687,8 +682,8 @@ spot-specific adjustments.
 }
 \end{figure}
 
-The final step of multispot measurements merging data from all
-spots in order to accumulate bursts at an higher pace. In principle,
+The final step of multispot measurements is merging data from all
+spots in order to accumulate bursts at an higher rate. In principle,
 non-uniformities between different spots can be taken into account
 by decomposing each correction factor $\gamma$ and $\beta$
 (Eq.~\ref{eq:gamma} and~\ref{eq:beta}) as a product of two factors:
@@ -704,7 +699,7 @@ Fig.~\ref{fig:ES48mix-all} shows the E-S histograms of a mixture
 of two dsDNA constructs with donor-acceptor separation of 12 and
 22~bp (see section~\ref{sec:analysis}),
 resulting in mean $E_{PR}$ of $\sim0.6$ and $0.15$ respectively.
-A significant D-only population is visible as peak close to $E_{PR}=0.05$,
+A significant D-only population is visible as a peak close to $E_{PR}=0.05$,
 $S_u=1$. Due to the relatively low PDE
 of the acceptor channel (see section~\ref{sec:detectors}), the separation
 of D-only and FRET populations could in principle be problematic.
@@ -716,35 +711,40 @@ removes the large D-only peak, isolating the FRET populations
 without a significant loss of FRET bursts.
 
 In order to showcase the high-throughput capability of the multispot
-system we compared short acquisitions of the same sample in both the
-multispot and a standard single-spot {\usalex} setup.
-In Fig.~\ref{fig:alex_mspot_5}, we report the E-S histogram
-built from a 5~s acquisition of a doubly-labeled dsDNA measured
-on the 48-spot PAX setup.
-For comparison, Fig.~\ref{fig:alex_sspot_5} shows a measurement of the
-same sample obtained accumulating bursts for 5~s on the single-spot
-{\usalex} setup.
+system, in Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5}
+we show an example of a short 5~s acquisitions of the same doubly-labeled
+dsDNA sample in the multispot and a standard single-spot {\usalex} setup
+respectively.
+The sample has a D-A separation of 12 bp, and was described
+in section~\ref{sec:analysis}.
 To minimize differences in concentration,
 the same gasket-enclosed sample was first measured
-on the {\usalex} setup and subsequently measured in the multispot setup.
+on the {\usalex} setup and subsequently in the multispot setup.
 In both cases we performed the same burst search with a constant
-rate-threshold of 50~kcps.
-For burst selection, we used a minimum threshold of 40 photons
-for the $gamma$-corrected burst size.
-In principle, we expect a 46X "gain" in burst accumulation rate
-in the multispot setup (48 minus two non-functional spots). However,
-many factors contribute reducing this theoretical limit.
+rate-threshold of 50~kcps and similar burst-size selection.
+At first glance, we would expect a theoretical 46X "gain" in burst
+accumulation rate in the multispot setup (48 minus two non-functional spots).
+However, many factors may affect the burst rate.
 First, the decreasing power in the lateral spots (see
 Fig.~\ref{fig:patternfit}) causes smaller bursts and
 results in less bursts surviving the size-selection with a given threshold.
 In addition, the detection efficiency of the SPAD array in the red region
 of the spectrum is at least 2-fold lower than that of the corresponding
 SPAD in the single-spot setup (see section~\ref{sec:detectors}).
-This more than halves the signal in the A-SPAD, resulting in smaller bursts
-and, as before, less bursts above a given threshold.
-Both issues can be in principle solved in future iterations of the setup.
+This reduces the signal in the A-SPAD, resulting in smaller bursts
+and, less bursts above a given threshold.
+Moreover, The two setups use different set of emission path filters which
+can further affect the detected photon rate, burst size and $\gamma$ factor.
+Finally, analysis of the burst duration histogram show that the spots are
+generally larger in the multi-spot setup, due to the specific modulation
+which does not generate diffraction-limited PSFs. Larger PSF volumes
+cause an higher number of bursts in the multi-spot compared to the
+single-spot setup.
+
+The issues of uniformity and low A-channel PDE can be solved
+in future iterations of the setup.
 The excitation uniformity can be increased
-using flat-top optics before the LCSO-SLM modulation,
+using flat-top optics before the LCOS-SLM modulation,
 while the lower PDE can be overcome using new red-enhanced SPAD
 arrays~\cite{gulinatti_new_2012}.
 
