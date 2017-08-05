@@ -710,58 +710,68 @@ Fig.~\ref{fig:ES48mix-fret} shows that the selection effectively
 removes the large D-only peak, isolating the FRET populations
 without a significant loss of FRET bursts.
 
-In order to illustrate the high-throughput capability of the multispot
-system, in Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5}
-we show an example of a short 5~s acquisitions of the same doubly-labeled
-dsDNA sample in the multispot and a standard single-spot {\usalex} setup
-respectively.
-The sample has a D-A separation of 12 bp, and was described
-in section~\ref{sec:analysis}.
+As an illustration of high-throughput capabilities,
+Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5}
+show an example of short 5~s acquisitions of the same doubly-labeled
+dsDNA sample in the multispot and single-spot {\usalex}
+setup respectively.
+The sample, described in section~\ref{sec:analysis},
+has a D-A separation of 12 bp.
 To minimize differences in concentration,
-the same gasket-enclosed sample was first measured
+the same sample was first measured
 on the {\usalex} setup and subsequently in the multispot setup.
-In both cases we performed the same burst search with a constant
-rate-threshold of 30~kcps and similar burst-size selection.
-At first glance, we would expect a theoretical 46X "gain" in burst
+In both cases, we performed a constant rate-threshold burst search
+and burst selection based on $D_{ex}$ counts.
+In principle, we would expect a theoretical 46X ``gain'' in burst
 accumulation rate in the multispot setup (48 minus two non-functional spots).
-However, many factors may affect the burst rate.
+However, estimations of burst rates are affected by large variance and
+many factors affect the ratio of burst rates between multispot and
+single spot measurements.
 First, the decreasing power in the lateral spots (see
 Fig.~\ref{fig:patternfit}) causes smaller bursts and
-results in less bursts surviving the size-selection with a given threshold.
-In addition, the detection efficiency of the SPAD array in the red region
-of the spectrum is at least 2-fold lower than that of the corresponding
-SPAD in the single-spot setup (see section~\ref{sec:detectors}).
-This reduces the signal in the A-SPAD, resulting in smaller bursts
-and, less bursts above a given threshold.
-Moreover, The two setups use different set of emission path filters which
-can further affect the detected photon rate, burst size and $\gamma$ factor.
-The burst duration histograms show that burst durations are on average
-larger in the multi-spot setup, meaning that a larger sample volume is
-probed by each spot. Larger PSF volumes
-cause an higher number of bursts in the multi-spot compared to the
-single-spot setup.
+results in less bursts surviving the selection.
+Second, the lower detection efficiency of the SPAD array in
+the red region of the spectrum (see section~\ref{sec:detectors}),
+reduces the signal in the A-SPAD, resulting, again, in smaller bursts
+and less burst above a set threshold.
+Third, the two setups use different set of emission path filters which
+can further affect the detected photon rate, $\gamma$ factor and burst size.
+Finally, experimentally, burst durations are on average larger in
+the multi-spot setup, indicating larger PSF volumes.
+At a given concentration, a larger PSF
+will contain an higher number of molecules, increasing the
+bursts per unit time. With all these caveat, we experimentally found
+a burst rate gain between 20-50.
+% TODO add experimental value and range
 
-The issues of uniformity and low A-channel PDE can be solved
-in future iterations of the setup.
+In the future, issues of uniformity and low A-channel PDE can be addressed,
+further increasing the throughput.
 The excitation uniformity can be increased
 using flat-top optics before the LCOS-SLM modulation,
 while the lower PDE can be overcome using new red-enhanced SPAD
 arrays~\cite{gulinatti_new_2012}.
 
-Overall we note that a significant number of bursts can be obtained
-in just a few seconds of acquisition. In realtime kinetic experiments
-a single multipsot acquisition is analyzed in time slices, following
-the evolution of the system over time. The time-resolution
-in these experiments depends on the information that needs to be extracted
-from each time slice.
+Overall, Fig.~\ref{fig:alex_mspot_5} shows that a significant number
+of bursts can be obtained in just a few seconds of acquisition.
+Such a throughput is advantageous for realtime kinetic experiments,
+where a reaction is triggered at a specific time point and the sample
+is continuously measured during the kinetic phase.
+Realtime kinetic measurements are analyzed in time slices,
+following the evolution of the system over time.
+The time-resolution such measurements depends on the burst rate and on
+what information should to be extracted from each time slice.
 For example, when initial and final states are known,
 only the number of burst in each subpopulation needs to be fitted
 from the FRET histograms.
-In this case, 500 bursts per slice maybe sufficient,
-resulting in a time resolution < 5~s with the current setup.
-To avoid dead time during mixing, however, the multispot setup needs to be
-equipped with a microfluidic mixer than can mix and flow a sample
-in $\ll$~1~s.
+In this case, 500-1000 bursts per slice may be sufficient,
+resulting in a time resolution  $\le5$~s with the current setup.
+However, triggering the reaction at a specific time
+typically involves mixing the sample with a reagent.
+While this mixing can be performed manually (with 15-20~s of dead time),
+only an automated microfluidic sytem allows to fully exploit
+the throughput capabilities of the multispot setup (mixing in $\ll$~1~s).
+Such a system could also performs series of kinetic experiments
+under identical conditions, or under varying concentration of analytes.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/2017-07-16_02_12d_1000pM_alex_jointplot_5s_Dex}
@@ -815,7 +825,8 @@ interest for other applications.
 We also illustrated the smFRET measurement capabilities of the new setup
 using doubly-labeled dsDNA molecules as a proof of principle
 demonstration of sub-population separations and high-throughput measurements.
-Finally, we provided a comparison of its performance with  a standard single-spot (confocal) {\usalex} setup.
+Finally, we provided a comparison of its performance with  a standard
+single-spot (confocal) {\usalex} setup.
 Applications of this new instrument to the study of the initial
 stages of bacterial transcription and high-throughput diagnostics
 will be explored in future work.
