@@ -431,6 +431,14 @@ in order to account for possible background variations during the measurement.
 Burst searches were performed independently for each spot
 using the sliding-window algorithm~\cite{fries_quantitative_1998}
 and a constant-rate threshold for all spots~\cite{ingargiola_fretbursts:_2016}.
+Burst selection is performed taking bursts with size larger than a threshold,
+where burst size is either defined according to eq.~\ref{eq:burstsize}
+or~\ref{eq:burstsize_paxe}. To isolate the FRET populations, we
+additionally filter bursts with $A_{ex}A_{em}$ counts larger
+than a threshold. Full numerical details can be found on the relevant notebook
+on GitHub at
+\href{https://github.com/tritemio/48-spot-smFRET-PAX-analysis}{48-spot-smFRET-PAX-analysis}.
+
 
 The main result of {\usalex} (and PAX) analysis is a so-called E-S histogram,
 a two-dimensional histogram where each burst is represented by a
@@ -775,7 +783,7 @@ Such a system could also performs series of kinetic experiments
 under identical conditions, or under varying concentration of analytes.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/2017-07-16_02_12d_1000pM_alex_jointplot_5s_Dex}
+\includegraphics[width=\columnwidth]{figures/2017-08-03_03_12d_1nM_alex_jointplot_5s_Dex}
 \caption{\label{fig:alex_mspot_5}
 48-spot E-S histogram obtained from 5~s of acquisition by pooling bursts
 from all the 46 active spots.
@@ -785,7 +793,7 @@ For more details see the
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/2017-07-16_003_12d_alex_jointplot_5s}
+\includegraphics[width=\columnwidth]{figures/2017-08-03_007_12d_alex_jointplot_5s_Dex}
 \caption{\label{fig:alex_sspot_5}
 Single-spot E-S histogram obtained from 5~s of acquisition for the same
 sample as in Fig.~\ref{fig:alex_mspot_5}.
