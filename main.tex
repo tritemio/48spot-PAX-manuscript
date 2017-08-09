@@ -729,10 +729,14 @@ the same sample was first measured
 on the {\usalex} setup and subsequently in the multispot setup.
 In both cases, we performed a constant rate-threshold burst search
 and burst selection based on $D_{ex}$ counts.
+The multispot acquisition exhibit a burst rate increase of
+$38\times$, with an error range of $(20, 51)$
+(the error range is computed as $\pm$ one standard deviation of 5~s
+acquisition windows over 5 minutes).
 In principle, we would expect a theoretical 46X ``gain'' in burst
 accumulation rate in the multispot setup (48 minus two non-functional spots).
 However, estimations of burst rates are affected by large variance and
-many factors affect the ratio of burst rates between multispot and
+many factors skew the measured ratio of burst rates between multispot and
 single spot measurements.
 First, the decreasing power in the lateral spots (see
 Fig.~\ref{fig:patternfit}) causes smaller bursts and
@@ -743,13 +747,11 @@ reduces the signal in the A-SPAD, resulting, again, in smaller bursts
 and less burst above a set threshold.
 Third, the two setups use different set of emission path filters which
 can further affect the detected photon rate, $\gamma$ factor and burst size.
-Finally, experimentally, burst durations are on average larger in
+Finally, experimentally, burst durations are on average slightly larger in
 the multi-spot setup, indicating larger PSF volumes.
 At a given concentration, a larger PSF
 will contain an higher number of molecules, increasing the
-bursts per unit time. With all these caveat, we experimentally found
-a burst rate gain between 20-50.
-% TODO add experimental value and range
+bursts per unit time.
 
 In the future, issues of uniformity and low A-channel PDE can be addressed,
 further increasing the throughput.
