@@ -382,7 +382,7 @@ Overlap of the two wavelengths and centering with respect to
 the optical axis is assessed by 2D Gaussian fitting of each individual spot as reported in Panel C.
 Full details on the alignment procedure and pattern assessment
 can be found in appendix~\ref{sec:lcos}.
-
+{floatfix}
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/2017-04-28_conf9_G_conf14_R_green_red_pattern_and_fit}
     \caption{{\label{fig:patternfit}
@@ -420,14 +420,14 @@ D-A separation of 12~bp and 22~bp were used in these experiments,
 as they cover the typical range of distances that can be accurately measured
 with smFRET using this dye pair.
 Samples were diluted to single-molecule concentration ($\sim50$~pM) in TE50
-(10~mM Tris pH 8.0, 1 mM EDTA, and 50~mM NaCl) or in ``transcription'' buffer (described in ref.\cite{lerner_PNAS_2016}).
+(10~mM Tris pH 8.0, 1 mM EDTA, and 50~mM NaCl) or in ``transcription'' buffer~\cite{lerner_PNAS_2016}.
 Full details regarding the DNA samples are provided in
-ref.~\onlinecite{ingargiola_multispot_2017}.
+ref.~\cite{ingargiola_multispot_2017}.
 
 We analyzed data using standard {\usalex} methods~\cite{lee_accurate_2005}
 with modifications required for PAX\cite{doose_periodic_2007}.
-The three steps of analysis include:
-(a) background estimation, (b) burst search, and (c) burst selection.
+The three analysis steps include:
+(a) background estimation, (b) burst search and (c) burst selection.
 Background estimation, which is needed to correct the burst counts
 in the different photon streams, was performed over 10~s time windows
 in order to account for possible background variations during the measurement. 
@@ -443,27 +443,26 @@ on GitHub at
 \href{https://github.com/tritemio/48-spot-smFRET-PAX-analysis}{48-spot-smFRET-PAX-analysis}.
 
 
-The main result of the {\usalex} and PAX analysis methods is a so-called E-S histogram,
-a two-dimensional histogram where each burst is represented by a
+The main result of the {\usalex} and PAX analysis methods is a so-called E-S two-dimensional histogram, where each burst is represented by a
 pair of values $(E, S)$ computed from the distinct photon stream
 intensities (see section~\ref{sec:EShist}).
-``$E$'' can either be the FRET efficiency or, more commonly
+$E$ in that histogram can represent either the FRET efficiency or, more commonly
 the uncorrected FRET efficiency, known as proximity ratio, $E_{PR}$.
 $E_{PR}$ is easier to compute than $E$
 and provides a suitable approximation for identifying sub-populations.
 However, while it is not the objective of this study, 
 when the purpose is to extract D-A distances $E$ must be computed, 
-requiring accurate estimation of all the correction coefficients.
-$S$, or "stoichiometry ratio", is a quantity ideally centered about 0.5 for
-doubly-labeled species, 0 for A-only, and 1 for D-only species.
-D and A-only species also include doubly-labeled molecules with one inactive
+requiring accurate estimation of all correction coefficients.
+$S$, or ``stoichiometry ratio'', is a quantity computed with all photon stream intensities, which typically has a value $\sim0.5$ for
+doubly-labeled, $\sim0$ for A-only, and $\sim1$ for D-only species.
+D and A-only species regions in that histogram also include doubly-labeled molecules with one inactive
 dye due to photo-blinking or bleaching. Unlike the corrected stoichiometry
-ratio $S_{\gamma\beta}$ (eq.~\ref{eq:Sgb}), the uncorrected $S$
+ratio $S_{\gamma\beta}$ (eq.~\ref{eq:Sgb}), the uncorrected ratio $S$
 (eq.~\ref{eq:S}) can exhibit a dependence on $E$ and for doubly-labeled
 molecules is not necessarily centered about 0.5.
 The use of the $(E, S)$ pair (corrected or uncorrected)
 allows separation of singly and doubly-labeled species and
-distinguishing FRET sub-populations in the doubly-labeled population.
+distinguishing FRET sub-populations within the doubly-labeled population.
 Full definitions of $E$ and $S$ as well as comparisons between ALEX and PAX
 variants are reported in appendix~\ref{sec:alex_pax}.
 
@@ -515,11 +514,11 @@ spots in the second row are missing because of an active quenching circuit
 
 The peak photon rate reached in each burst reports on the peak PSF
 intensity~\cite{ingargiola_multispot_2017}.
-Fig.~\ref{fig:phrates48_comp} Panel A shows the background-corrected
+Fig.~\ref{fig:phrates48_comp}A shows the background-corrected
 peak photon rate distributions with their characteristic exponential tails.
-Fig.~\ref{fig:phrates48_comp} Panels B-E show, for different
-photon streams, heatmaps of the peak photon-rate mean values,
-i.e. the decay constant of the exponential tail.
+Fig.~\ref{fig:phrates48_comp}B-E show, for different
+photon streams, heatmaps of the peak photon rate mean values,
+\textit{i.e.} the decay constant of the exponential tail.
 Due to the Gaussian profile of the excitation beam and to geometric
 aberrations, the lateral pixels receive a lower signal intensity than
 the central pixels. As a result, the peak photon rate decreases and fewer
@@ -527,23 +526,23 @@ single-molecule bursts are detected in the lateral spots.
 Despite this decrease in excitation intensity, the positions of the
 $E_{PR}$ and $S$ peaks remains quite uniform across the spots
 (see Fig.~\ref{fig:alexhist48fret12d} and~\ref{fig:fretfit48vsmean}).
-An exception can be seen in Fig.~\ref{fig:phrates48_comp} (Panels C, E),
+An exception can be seen in Fig.~\ref{fig:phrates48_comp}C,E,
 where the pixel at position (1, 7) in the A-SPAD array
-detects fewer photons than its neighbors, an effect ascribed to a lower PDE
-of that pixel that is possibly due to a lower applied overvoltage.
+detects fewer photons than its neighbors, an effect tentatively ascribed to a lower PDE
+of that pixel possibly due to a lower applied overvoltage.
 For this spot (19), we observe a noticeable bias in $E_{PR}$ and $S$
 quantities
 (see Fig.~\ref{fig:alexhist48fret12d} and~\ref{fig:fretfit48vsmean}).
 
 By comparison, Fig.~\ref{fig:phrates_usalex} shows the distribution
 of peak photon rates obtained with the {\usalex} setup.
-The absolute power delivered by each spot in the multi-spot setup is
+The absolute power delivered in each spot in the multi-spot setup is
 difficult to measure.
-Therefore, we determined an optimal D-laser power (200mW at laser
+Therefore, we determined an optimal D-laser power (200~mW at laser
 output) so that the peak photon rate distribution in the central spots
 was comparable to the single-spot peak photon rate (190~\textgreek{μ}W
 measured before the objective).
-The A-laser power was set to 400mW (laser output before the AOM),
+The A-laser power was set to 400~mW (laser output before the AOM),
 as a trade-off between the need to compensate for the lower PDE in the
 A-channel while limiting sample photo-bleaching and
 thermal instabilities.
@@ -553,7 +552,7 @@ thermal instabilities.
 %, causing the position of the $S$
 %peak for FRET populations to be higher than the theoretical 0.5 value.
 
-Comparing Figs.~\ref{fig:phrates48_comp} Panel~A and~\ref{fig:phrates_usalex}
+Comparing Figs.~\ref{fig:phrates48_comp}A and~\ref{fig:phrates_usalex}
 it is clear that reduced sensitivity in the A-SPAD array results in lower peak
 photon rates in the $D_{ex}A_{em}$ (red) and $DA_{ex}A_{em}$ (purple) streams
 in the 48-spot setup. The sensitivity of the A-channel causes a shift in
@@ -631,13 +630,13 @@ obtained after the burst search and size selection
 described in section~\ref{sec:analysis}.
 
 The D-only and FRET populations, top left corner
-and center respectively in the 2D histogram, are clearly distinguishable in all spots.
+and center respectively in the E-S histogram, are clearly distinguishable in all spots.
 Moreover, as shown in Fig.~\ref{fig:alexhist48fret12d}, 
 the FRET population(s) are easily isolated by applying a second burst
-selection which sets a threshold on the $DA_{ex}A_{em}$ counts.
-A second example of such selection is shown in Fig.~\ref{fig:ES48mix-fret}.
+selection using a minimum threshold on the $DA_{ex}A_{em}$ counts.
+A second example of such a selection is shown in Fig.~\ref{fig:ES48mix-fret}.
 Separation of FRET species from singly-labeled species is the primary advantage
-of dual laser excitation.
+of dual laser excitation~\cite{klenerman_AC_2003,kapanidis_fluorescence-aided_2004}.
 
 Without any calibration, the spread across different spots
 is limited and does not affect the ability to distinguish subpopulations.
