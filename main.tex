@@ -147,10 +147,10 @@ smFRET allows determination of each conformational state that may exist in
 an ensemble of macromolecular complexes as well as the distance between
 specific residues for each
 state~\cite{chakraborty_opening_2012,kapanidis_initial_2006,kapanidis_retention_2005,ha_single-molecule_1999,deniz_single-pair_1999}.
-Recently, several groups used smFRET to
+Recently, several groups have implemented smFRET to
 measure distances between multiple different pairs of residues to
 construct 3D macromolecular structures of distinct conformations by
-triangulation and comparison to existing X-ray crystal
+triangulation and comparison with existing X-ray crystal
 structures~\cite{dimura_quantitative_2016,hellenkamp_multidomain_2017,hoefling_structural_2011,kalinin_toolkit_2012,muschielok_nano-positioning_2008,muschielok_application_2011}.
 Moreover, smFRET can measure the time-evolution of various
 distances between multiple FRET pairs, and hence report upon the dynamic
@@ -174,15 +174,15 @@ We illustrated an application of this enhanced throughput
 by measuring the bubble closing kinetics during promoter escape in bacterial
 transcription~\cite{ingargiola_multispot_2017}.
 While encouraging, these results were partially unsatisfactory because they
-were obtained with only 8 spots, and also because
-the setup only incorporated a single laser, used for excitation of the
+were obtained with only 8 spots and also because
+the setup only incorporated a single laser, used for continuous excitation of the
 donor dye of the FRET pair~\cite{ingargiola_multispot_2017}.
-Single-laser smFRET is unable to distinguish between low FRET molecules
+Single-laser smFRET is unable to distinguish low FRET molecules
 (molecules with active donor (D) and acceptor (A) dyes in which the D-A distance is
 large compared to the Förster radius) from D-only molecules
 (i.e. molecules with a single donor, or dually-labeled molecules
 with an inactive or bleached acceptor).
-Since the latter categories are present in most samples,
+As the latter categories are present in most samples,
 it is important to identify and separate them from low FRET molecules
 of interest.
 
@@ -192,23 +192,23 @@ introduced several years ago~\cite{kapanidis_fluorescence-aided_2004,kapanidis_a
 and later extended to pulsed laser excitation schemes
 (nsALEX~\cite{laurence_probing_2005} or PIE~\cite{muller_pulsed_2005}).
 Briefly, in {\usalex},
-two excitation lasers are alternatively turned on and off every few tens of
-{\microsec} allowing the separation of species with only a single active
-dye (D-only and A-only populations) from doubly-labeled species with both dyes
-active (FRET populations). Indeed, only FRET populations
+two excitation lasers are alternated on and off every few tens of
+{\microsec} allowing separation of species with only a single active
+dye, i.e. D-only and A-only populations, from doubly-labeled species with both dyes
+active, the FRET populations. Indeed, only FRET populations
 emit a fluorescence signal during both D-excitation laser  (due to
 excitation of the donor) and  A-excitation laser  (due to excitation
 of the acceptor).
 This, in turn, extends the number of FRET sub-populations that can be reliably
-identified within a sample in the regime of low mean FRET efficiencies (``low FRET'').
-This scheme has since been extended to 3 or 4 laser excitations, allowing
+identified within a sample in the regime of low mean FRET efficiencies, 
+referred to throughout as ``low FRET''.
+This scheme has since been extended to up to 4 laser excitations, allowing
 powerful molecular sorting applications~\cite{lee_three-color_2007,yim_four-color_2012}.
 A simplified version of this laser alternation principle was presented in
 ref.~\onlinecite{doose_periodic_2007}, where the D-excitation laser
 is left on at all times while the A-excitation laser is alternated.
 This Periodic Acceptor eXcitation single-molecule FRET
-technique~\cite{doose_periodic_2007} (referred to as PAX for brevity) allows
-simplifying
+technique~\cite{doose_periodic_2007}, referred to as PAX for brevity, simplifies
 the optical setup while maintaining the advantages of {\usalex}, namely
 the ability to determine the number of D and A dyes in each detected molecule
 or to simplify the extraction of accurate FRET efficiency values~\cite{lee_accurate_2005}.
@@ -243,11 +243,11 @@ Finally, we compare single-spot {\usalex} and 48-spot PAX measurements
 %
 % ^.
 Software used to operate the multispot setup (including
-LCOS-SLM pattern generation, LabVIEW-FPGA timestamping code,
+LCOS-SLM pattern generation, LabVIEW-FPGA time-stamping code,
 piezo-motor control, etc.) is provided in different repositories
  available on GitHub at
 \href{https://github.com/multispot-software}{https://github.com/multispot-software}.
-Software used for data analysis  can be found in the
+Software used for data analysis can be found in the
 \href{https://github.com/tritemio/48-spot-smFRET-PAX-analysis}{48-spot-smFRET-PAX-analysis}
 repository. Links to specific analysis notebooks are added in the caption of each
 figure. Data files are publicly available on
@@ -256,7 +256,7 @@ Figshare~\cite{ingargiola_datasets_2017}.
 
 \begin{figure*}
     \includegraphics[width=0.7\textwidth]{figures/design_multispot_LCOS_camera_SPAD}
-    \caption{{\label{fig:setup} Schematic of the 48-spot PAX setup. The lasers and detectors are on the main optical table, while the microscope (enclosed in the dashed box) and beam expanders and LCOS SLMs are located on a raised breadboard. See
+    \caption{{\label{fig:setup} Schematic of the 48-spot PAX setup. The lasers and detectors are on the main optical table, while the microscope (enclosed in the dashed box), beam expanders, and LCOS-SLMs are located on a raised breadboard. See
     main text and appendix~\ref{sec:setup} for a detailed description.}}
 \end{figure*}
 
@@ -269,9 +269,9 @@ appendix~\ref{sec:setup}, while details of laser and SPAD array
 alignment can be found in appendix~\ref{sec:laseralign}
 and~\ref{sec:spadalign}.
 
-A schematic of the setup is reported in Fig.~\ref{fig:setup}.
-The setup includes two 1W CW excitation lasers (green: 532~nm, red: 628~nm)
-with the red laser being the only one modulated via an acoustic-optic modulator (AOM).
+A schematic of the setup is shown in Fig.~\ref{fig:setup}.
+The setup includes two 1 W CW excitation lasers (green: 532~nm, red: 628~nm)
+where only the red laser is modulated via an acoustic-optic modulator (AOM).
 After polarization adjustment and beam expansion, the two lasers
 are phase modulated by their respective LCOS-SLM, generating two
 48-spot patterns on an image plane in front of each LCOS-SLM (\emph{LCOS image plane}).
@@ -282,17 +282,17 @@ Emitted fluorescence is collected by the  objective lens,
 separated from the excitation wavelengths by a dual-band polychroic mirror ($DM_{EX}$),
 and focused by a tube lens ($L_2$) into the microscope's bottom image plane.
 Next, emitted fluorescence light is recollimated ($L_4$), separated into donor
-and acceptor spectral bands  by a dichroic mirror ($DM_{EM}$), and focused into two different
+and acceptor spectral bands by a dichroic mirror ($DM_{EM}$), and focused into two different
 48-pixel SPAD arrays mounted on motorized micro-positioning stages (xyz vectors).
-The system is aligned so that each SPAD is optically
+The system is aligned such that each SPAD is optically
 conjugated to one excitation spot in the sample.
 
-Output from the detectors (one TTL pulse train per SPAD)  is processed by an FPGA-equipped board (PXI-7813R, National Instruments, Austin, TX), which performs
-photon time stamping with 12.5~ns resolution and transfers data asynchronously to the
-host PC.
-The  PC runs an acquisition software that displays the  signal recorded from all 96-channel as 96 color-coded binned count strips (time traces)
-in real-time, implements alignment routines, and saves the data to
-disk. Further file format conversion and analysis is performed on a second PC to allow continuous acquisition.
+Output from the detectors (one TTL pulse train per SPAD) is processed by a
+field-programmable gate array (FPGA) equipped board (PXI-7813R, National Instruments, Austin, TX) 
+that performs photon time-stamping with 12.5~ns resolution and transfers data 
+asynchronously to the host PC.
+The host PC runs a LabVIEW acquisition software, which displays the binned signal recorded from all 96-channels in real-time as 96 color-coded time traces, implements alignment routines, and saves the data to
+disk. After data acquisition, file conversion to the photon-HDF5 format~\cite{ingargiola_photon-hdf5:_2016-1} and analysis is performed on a second PC, therefore allowing non-stop acquisition of sequential files.
 
 \subsection{Detectors}
 \label{sec:detectors}
@@ -300,31 +300,32 @@ disk. Further file format conversion and analysis is performed on a second PC to
 The current 48-spot setup employs two identical 12x4-pixel SPAD arrays whose
 architecture and performance has been previously presented~\cite{gulinatti_48-pixel_2013}.
 Here we describe only their most relevant features.
-Each SPAD's active area has a 50~{\micron}
-diameter, the array being comprised of 4 rows of 12 pixels (4x12) separated by
+Each SPAD has a 50~{\micron}
+diameter active area, the array being comprised of 4 rows of 12 pixels (4x12) separated by
 500~{\micron} in both directions.
 
-To easily integrate the detector into a setup,
+To easily integrate the detectors into the setup,
 we developed a photon-counting module that integrates a 48-pixel SPAD
 array and the electronics required for device operation, data acquisition,
 and transfer.
 The SPAD array is housed into a hermetically
-sealed chamber separated from the rest of the module by O-rings and using a
-thin glass plate as entrance window.
+sealed chamber separated from the rest of the module by O-rings and uses a
+thin glass plate as an entrance window.
 The chamber is regularly flushed and filled with dry nitrogen gas to prevent
 condensation, making it possible to mount the array on a double-stage Peltier
-element to cool the detector down to a temperatures of approximately
+element to cool the detector down to temperatures of approximately
 $-15^{\circ}$C. At this temperature,
-the DCR is significantly reduced, thus increasing the signal-to-noise ratio of the
-instrument. Photon-counting pulses are transferred through a standard
+the dark count rate (DCR) is significantly reduced, 
+thus increasing the signal-to-background ratio of the instrument. 
+Photon-counting pulses are transferred through a standard
 SCSI connector. This allows for easy connection of the module to
-general-purpose data acquisition boards or breakout adapter boards when
+general-purpose data acquisition, or breakout adapter boards when
 different connectors or pulse shapes are required.
-Alternatively, an onboard FPGA (Spartan 6 SLX150, Xilinx, San Jose, CA)
+Alternatively, an on-board FPGA (Spartan 6 SLX150, Xilinx, San Jose, CA)
 can be used to time-stamp counts detected in each of the 48-channels
 with a time resolution of 10~ns. This information is then sent
-to the host PC via a high-speed USB link (one USB link per detector).
-A C-mount around the entrance window of the photon-counting module
+to the host PC via a high-speed USB link.
+A C-mount thread around the entrance window of the photon-counting module
 allows for easy and reliable connections to the optical setup.
 
 The two SPAD arrays used in the current 48-spot PAX setup are operated
@@ -334,26 +335,25 @@ at 550-580~nm (donor dye, ATTO550 emission peak) and drops to $\sim$30\%
 at 670~nm (acceptor dye, ATTO647N emission peak)~\cite{gulinatti_48-pixel_2013,michalet_silicon_2014}.
 The PDE is highly
 uniform over the array, with a peak-to-peak spread of only a few percent~\cite{gulinatti_48-pixel_2013}.
-Fig.~\ref{fig:dcr} shows dark count rates for the two
-12x4 SPAD arrays. About 80\% of the pixels have a DCR lower than 1,000 counts
-per second (cps), whereas the worst performing pixel has
-a fairly high DCR of close to 6~kcps.
+Fig.~\ref{fig:dcr} shows DCRs for the two
+12x4 SPAD arrays. Approximately 80\% of the pixels have a DCR lower than 1,000 counts
+per second (cps), and the worst performing pixel has a fairly high DCR of nearly 6~kcps.
 
-The 48-spot PAX results were compared to those of a state-of-the-art single-spot
+The 48-spot PAX results were compared to those of the state-of-the-art single-spot
 {\usalex} setup previously described in~\onlinecite{ingargiola_multispot_2017}.
 The
 single-pixel SPADs (SPCM-AQRH, Excelitas Technology Corp., Waltham, MA)
 used in the \usalex setup are characterized by a PDE of $\sim$60\%
-at 550~nm and $\sim$70\% at 670~nm, i.e. a noticeably better sensitivity
-in the donor emission band and a more than twice higher PDE in the acceptor emission band.
-For this reason, the {\usalex} setup is expected to be
+at 550~nm and $\sim$70\% at 670~nm, with notably better sensitivity
+in the donor emission band and a PDE that is more than twice a high for the 
+acceptor emission band. For this reason, the {\usalex} setup is expected to be
 at least twice as sensitive in the A-channel than the 48-spot setup.
 A detailed comparison of the different SPAD technologies for single-molecule
 measurements is reported in~\onlinecite{michalet_silicon_2014}.
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{figures/DCR-comp}
-    \caption{\label{fig:dcr} Heatmaps of dark count rates (DCR) for the 12x4
+    \caption{\label{fig:dcr} Heatmaps of DCRs for the 12x4
     D- and A-SPAD arrays used in the  48-spot PAX setup.
     DCR values in counts per second (cps) are indicated in each pixel.
     More details and data can be found in the
@@ -365,16 +365,19 @@ measurements is reported in~\onlinecite{michalet_silicon_2014}.
 \label{sec:48spot-pattern}
 
 The 48 excitation spots are generated independently for each wavelength by
-phase modulation of an incoming plane wave, as previously described
+phase modulation of the incoming laser wavefront, as previously described
 in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}. The
 phase modulation operates in direct space rather than Fourier space and
 implements the phase profile of a Fresnel lenslet array.
 Similar direct-space modulation using a different
-spatial arrangement of the phase pattern on the LCOS-SLM have also been demonstrated for multi-confocal fluorescence correlation  spectroscopy
+spatial arrangement of the phase pattern on the LCOS-SLM have also been demonstrated 
+for multi-confocal fluorescence correlation spectroscopy
 (FCS)~\cite{kloster-landsberg_cellular_2012}.
 
 Fig.~\ref{fig:patternfit} shows the emission pattern from a high-concentration dye sample
-upon green (Panel A) and red (Panel B) laser excitation, as seen by a camera mounted on the microscope side-port. The two patterns are aligned to maximize overlap of each of the 48 spots.
+upon green (Panel A) and red (Panel B) laser excitation, as 
+seen by a camera mounted on the microscope side-port. 
+The two patterns are aligned to maximize overlap of each of the 48 spots.
 Overlap of the two wavelengths and centering with respect to
 the optical axis is assessed by 2D Gaussian fitting of each individual spot as reported in Panel C.
 Full details on the alignment procedure and pattern assessment
@@ -394,7 +397,7 @@ can be found in appendix~\ref{sec:lcos}.
     each spot in the two images is fitted with a 2D Gaussian function. Panel
     (C) reports an overlay of the fitted peak positions and a
     contour of the Gaussian waist for 532~nm (\emph{green}) and 628~nm
-    (\emph{red}) images. A zoom-in for 3 representative spots is reported on
+    (\emph{red}) images. A closer look of 3 representative spots is reported on
     the right. The elliptical shape and tilt of the Gaussian is
     due to geometrical aberrations.
     More details can be found in the
@@ -409,55 +412,55 @@ can be found in appendix~\ref{sec:lcos}.
 \label{sec:analysis}
 
 Single-molecule measurements were performed with 40 base-pair (bp)
-double-stranded DNA (dsDNA) samples labeled with ATTO550 (D) and
+double-stranded DNA (dsDNA) molecules labeled with ATTO550 (D) and
 ATTO647N (A) dyes (ATTOTEC GmbH, Heidelberg, Germany)
 attached to different DNA bases, yielding different inter-dye distances.
 
-D-A separation of 12 and 22 base pairs (bp) were used in these experiments,
+D-A separation of 12~bp and 22~bp were used in these experiments,
 as they cover the typical range of distances that can be accurately measured
 with smFRET using this dye pair.
 Samples were diluted to single-molecule concentration ($\sim50$~pM) in TE50
-buffer (10~mM Tris pH 8.0, 1 mM EDTA, and 50~mM NaCl).
-Full details regarding these samples are provided in
+(10~mM Tris pH 8.0, 1 mM EDTA, and 50~mM NaCl) or in ``transcription'' buffer (described in ref.\cite{lerner_PNAS_2016}).
+Full details regarding the DNA samples are provided in
 ref.~\onlinecite{ingargiola_multispot_2017}.
 
-We analyzed data using standard {\usalex} methods\cite{lee_accurate_2005}
+We analyzed data using standard {\usalex} methods~\cite{lee_accurate_2005}
 with modifications required for PAX\cite{doose_periodic_2007}.
-The three steps of the analysis are:
+The three steps of analysis include:
 (a) background estimation, (b) burst search, and (c) burst selection.
 Background estimation, which is needed to correct the burst counts
 in the different photon streams, was performed over 10~s time windows
-in order to account for possible background variations during the measurement.
+in order to account for possible background variations during the measurement. 
 Burst searches were performed independently for each spot
 using the sliding-window algorithm~\cite{fries_quantitative_1998}
 and a constant-rate threshold for all spots~\cite{ingargiola_fretbursts:_2016}.
-Burst selection is performed taking bursts with size larger than a threshold,
+Burst selection is performed taking bursts with size larger than a specified threshold,
 where burst size is either defined according to eq.~\ref{eq:burstsize}
 or~\ref{eq:burstsize_paxe}. To isolate the FRET populations, we
 additionally filter bursts with $A_{ex}A_{em}$ counts larger
-than a threshold. Full numerical details can be found on the relevant notebook
+than a second specified threshold. Full numerical details can be found in the relevant notebook
 on GitHub at
 \href{https://github.com/tritemio/48-spot-smFRET-PAX-analysis}{48-spot-smFRET-PAX-analysis}.
 
 
-The main result of {\usalex} (and PAX) analysis is a so-called E-S histogram,
+The main result of the {\usalex} and PAX analysis methods is a so-called E-S histogram,
 a two-dimensional histogram where each burst is represented by a
-pair of values $(E, S)$ computed from the 3 distinct photon stream
+pair of values $(E, S)$ computed from the distinct photon stream
 intensities (see section~\ref{sec:EShist}).
 ``$E$'' can either be the FRET efficiency or, more commonly
 the uncorrected FRET efficiency, known as proximity ratio, $E_{PR}$.
 $E_{PR}$ is easier to compute than $E$
 and provides a suitable approximation for identifying sub-populations.
-However, when the purpose is to extract D-A distances (which is not the
-objective of this study), $E$ must be computed, requiring accurate
-estimation of all the correction coefficients.
-$S$, or "stoichiometry ratio", is a quantity ideally centered around 0.5 for
+However, while it is not the objective of this study, 
+when the purpose is to extract D-A distances $E$ must be computed, 
+requiring accurate estimation of all the correction coefficients.
+$S$, or "stoichiometry ratio", is a quantity ideally centered about 0.5 for
 doubly-labeled species, 0 for A-only, and 1 for D-only species.
 D and A-only species also include doubly-labeled molecules with one inactive
 dye due to photo-blinking or bleaching. Unlike the corrected stoichiometry
 ratio $S_{\gamma\beta}$ (eq.~\ref{eq:Sgb}), the uncorrected $S$
-(eq.~\ref{eq:S}), can exhibit a dependence on $E$ and, for doubly-labeled
-molecules is not necessarily centered around 0.5.
+(eq.~\ref{eq:S}) can exhibit a dependence on $E$ and for doubly-labeled
+molecules is not necessarily centered about 0.5.
 The use of the $(E, S)$ pair (corrected or uncorrected)
 allows separation of singly and doubly-labeled species and
 distinguishing FRET sub-populations in the doubly-labeled population.
@@ -517,7 +520,7 @@ peak photon rate distributions with their characteristic exponential tails.
 Fig.~\ref{fig:phrates48_comp} Panels B-E show, for different
 photon streams, heatmaps of the peak photon-rate mean values,
 i.e. the decay constant of the exponential tail.
-Due to the Gaussian profile of the excitation beam and to geometrical
+Due to the Gaussian profile of the excitation beam and to geometric
 aberrations, the lateral pixels receive a lower signal intensity than
 the central pixels. As a result, the peak photon rate decreases and fewer
 single-molecule bursts are detected in the lateral spots.
@@ -527,7 +530,7 @@ $E_{PR}$ and $S$ peaks remains quite uniform across the spots
 An exception can be seen in Fig.~\ref{fig:phrates48_comp} (Panels C, E),
 where the pixel at position (1, 7) in the A-SPAD array
 detects fewer photons than its neighbors, an effect ascribed to a lower PDE
-of that pixel (possibly due to a lower applied overvoltage).
+of that pixel that is possibly due to a lower applied overvoltage.
 For this spot (19), we observe a noticeable bias in $E_{PR}$ and $S$
 quantities
 (see Fig.~\ref{fig:alexhist48fret12d} and~\ref{fig:fretfit48vsmean}).
@@ -539,7 +542,7 @@ difficult to measure.
 Therefore, we determined an optimal D-laser power (200mW at laser
 output) so that the peak photon rate distribution in the central spots
 was comparable to the single-spot peak photon rate (190~\textgreek{μ}W
-measured close before the objective).
+measured before the objective).
 The A-laser power was set to 400mW (laser output before the AOM),
 as a trade-off between the need to compensate for the lower PDE in the
 A-channel while limiting sample photo-bleaching and
@@ -563,10 +566,10 @@ the $E_{PR}$ and $S$ peak positions as discussed in the next section.
 \begin{figure*}
 \includegraphics[width=\textwidth]{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}
 \caption{{\label{fig:alexhist48all12d} $E_{PR}$ versus $S_u$
-histograms in the different spots for the dsDNA sample with a 12 bp D-A separation.
-Two subpopulations are visible: D-only (around $E_{PR}=0$,
-$S_u=1$) and FRET population (around $E_{PR}=0.6$,
-$S_u=0.6$). Burst search was performed using all photons with
+histograms in the different spots for the dsDNA sample with a 12~bp D-A separation.
+Two subpopulations are visible: D-only (approximately $E_{PR}=0$,
+$S_u=1$) and FRET population (approximately $E_{PR}=0.6$,
+$S_u=0.6$). Burst search was performed using all photons with a 
 constant threshold (50~kcps). Burst selection was performed
 on the total burst size after background correction, using a threshold of
 40 photons. The legend in each subplot reports the spot number in brackets and number of bursts (\#B).%
@@ -578,10 +581,10 @@ For more details see the
 \begin{figure*}
 \includegraphics[width=\textwidth]{figures/2017-05-23_08_12d_48spot_alex_hist_Su_naa_AND_size_selection}
 \caption{{\label{fig:alexhist48fret12d} $E_{PR}$ versus $S_u$
-histograms in the different spots for the dsDNA sample with a 12 bp D-A separation.
-Data  analysis and
+histograms in the different spots for the dsDNA sample with a 12~bp D-A separation.
+Data analysis and
 burst search are identical to figure~\ref{fig:alexhist48all12d}, while
-burst selection was tailored to select only the FRET population: a burst is
+burst selection is tailored to select only the FRET population: a burst is
 selected if the number of counts in the $D_{ex}A_{em}$ and $DA_{ex}A_{em}$
 % * <michalet@chem.ucla.edu> 2017-07-29T00:10:17.075Z:
 %
@@ -614,7 +617,7 @@ For more details see the
 \emph{blue dots}) and $\pm 1 \sigma $ of the fitted Gaussian
 (\emph{blue error bars}) for the 48 spots. As a reference, the mean
 $E_{PR}, S_u$ across the 48 spots (\emph{orange dot}) is reported
-in each subplot.  The spot number is indicated in the top right corner of
+in each subplot. The spot number is indicated in the top right corner of
 each subplot.%
 For more details see the
 \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{smFRET-PAX\_single\_pop-2017-05-23\_08\_12d} notebook.
@@ -623,17 +626,17 @@ For more details see the
 
 
 Fig.~\ref{fig:alexhist48all12d} shows E-S histograms for the
-dsDNA sample with a 12 bp separation between D and A,
-obtained after burst search and size-selection
+dsDNA sample with a 12~bp D-A separation,
+obtained after the burst search and size selection
 described in section~\ref{sec:analysis}.
 
-The D-only and FRET populations (respectively top left corner
-and center in the 2D histogram) are clearly distinguishable in all spots.
-Moreover, as shown in Fig.~\ref{fig:alexhist48fret12d}, it is easy to isolate
-the FRET population(s) by applying a second burst
-selection which sets a threshold on $DA_{ex}A_{em}$ counts
-(a second example of such selection is shown in Fig.~\ref{fig:ES48mix-fret}).
-The separation of FRET from singly-labeled species is the primary advantage
+The D-only and FRET populations, top left corner
+and center respectively in the 2D histogram, are clearly distinguishable in all spots.
+Moreover, as shown in Fig.~\ref{fig:alexhist48fret12d}, 
+the FRET population(s) are easily isolated by applying a second burst
+selection which sets a threshold on the $DA_{ex}A_{em}$ counts.
+A second example of such selection is shown in Fig.~\ref{fig:ES48mix-fret}.
+Separation of FRET species from singly-labeled species is the primary advantage
 of dual laser excitation.
 
 Without any calibration, the spread across different spots
@@ -648,16 +651,16 @@ The orange dot is the mean center peak position of the FRET population
 across all spots. For most spots, the
 deviation of the peak position is well below the $\pm1\,\sigma$
 range, with the exception of spot 19, where
-a lower A-pixel PDE causes a larger deviation.
-Note that since Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
-present results without calibration, they showcase the minimum
+the lower A-pixel PDE causes a larger deviation.
+Note that Fig.~\ref{fig:fittedFRETscatter} and~\ref{fig:fretfit48vsmean}
+present results without calibration, thus showcasing the minimum
 performance of the system.
 It is possible to virtually eliminate spot-to-spot variations
 of the E-S peak position during post-processing by applying
 a per-spot calibration, as briefly
 described in the next section (details in appendix~\ref{sec:perchcorr}).
 As an additional example, the E-S histogram for a low-FRET dsDNA
-(22 bp D-A separation) is reported in Fig.~\ref{fig:alexhist48all22d},
+(22~bp D-A separation) is reported in Fig.~\ref{fig:alexhist48all22d},
 appendix~\ref{sec:moredata}.
 
 \subsection{Pooling data from all spots}
@@ -668,11 +671,11 @@ appendix~\ref{sec:moredata}.
 \caption{\label{fig:ES48mix-all}
 48-spot PAX measurement of a mixture of two dsDNA constructs with 12 and
 22~bp D-A separation (sample details in~\ref{sec:analysis}).
-Burst search has been performed on all channels
+Burst search was performed on all channels
 using a constant-rate threshold of 50~kcps.
-Burst selected by total size with the criterion $\Lambda_{\gamma,PAX} > 80$,
+Burst were selected by total size with the criterion $\Lambda_{\gamma,PAX} > 80$,
 using $\gamma = 0.5$ (see eq.~\ref{eq:burstsize_paxe}).
-The E-S histogram is built by pooling data from all the spots without any
+The E-S histogram was built by pooling data from all the spots without 
 spot-specific adjustments.
 For more details see the notebook
 \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture}.
@@ -684,9 +687,9 @@ For more details see the notebook
 \caption{\label{fig:ES48mix-fret}
 48-spot PAX E-S histograms of the same measurement of
 Fig.~\ref{fig:ES48mix-all}. Additional filtering of the D-only population
-is performed using the criterion $F_{D_{ex}DA_{em}} > 25$
+was performed using the criterion $F_{D_{ex}DA_{em}} > 25$
 (see appendix~\ref{sec:alex_pax}).
-The E-S histogram is built by pooling data from all the spots without any
+The E-S histogram was built by pooling data from all the spots without 
 spot-specific adjustments.
 For more details see the notebook
 \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture}.
@@ -703,21 +706,21 @@ which is a per-spot relative correction.
 The per-spot correction of $\gamma$ and $\beta$ can be easily computed
 from a measurement of a static FRET sample
 (details in appendix~\ref{sec:perchcorr}).
-In the following, for simplicity and due to the good uniformity,
-we do not apply any spot-specific adjustment.
+In this work, for simplicity and due to the good uniformity,
+we do not apply any spot-specific adjustments.
 
 Fig.~\ref{fig:ES48mix-all} shows the E-S histograms of a mixture
-of two dsDNA constructs with donor-acceptor separation of 12 and
+of two dsDNA constructs with D-A separation of 12 and
 22~bp (see section~\ref{sec:analysis}),
 resulting in mean $E_{PR}$ of $\sim0.6$ and $0.15$ respectively.
 A significant D-only population is visible as a peak close to $E_{PR}=0.05$,
 $S_u=1$. Due to the relatively low PDE
 of the acceptor channel (see section~\ref{sec:detectors}), the separation
-of D-only and FRET populations could in principle be problematic.
+of D-only and FRET populations could be problematic in principle.
 As previously shown (Fig.~\ref{fig:alexhist48fret12d}),
-we can select the FRET populations by setting a threshold on the
+FRET populations can be selected by setting a threshold on 
 background-corrected $DA_{ex}A_{em}$ counts.
-Fig.~\ref{fig:ES48mix-fret} shows that the selection effectively
+Fig.~\ref{fig:ES48mix-fret} shows that this selection effectively
 removes the large D-only peak, isolating the FRET populations
 without a significant loss of FRET bursts.
 
@@ -725,18 +728,18 @@ As an illustration of high-throughput capabilities,
 Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5}
 show an example of short 5~s acquisitions of the same doubly-labeled
 dsDNA sample in the multispot and single-spot {\usalex}
-setup respectively.
+setups respectively.
 The sample, described in section~\ref{sec:analysis},
-has a D-A separation of 12 bp.
+has a D-A separation of 12~bp.
 To minimize differences in concentration,
 the same sample was first measured
-on the {\usalex} setup and subsequently in the multispot setup.
+on the {\usalex} setup and subsequently 0n the multispot setup.
 In both cases, we performed a constant rate-threshold burst search
 and burst selection based on $D_{ex}$ counts.
-The multispot acquisition exhibit a burst rate increase of
+The multispot acquisition exhibits a burst rate increase of
 $37\times$, with an error range of $(29, 51)$
 (the error range is computed as $\pm$ one standard deviation of burst numbers
-in 5~s time windows over 5 min. acquisitions).
+in 5~s time windows over a 5 min. acquisition).
 In principle, we would expect a theoretical 46X ``gain'' in burst
 accumulation rate in the multispot setup (48 minus two non-functional spots).
 However, estimations of burst rates are affected by large variance and
@@ -747,49 +750,49 @@ Fig.~\ref{fig:patternfit}) causes smaller bursts and
 results in less bursts surviving the selection.
 Second, the lower detection efficiency of the SPAD array in
 the red region of the spectrum (see section~\ref{sec:detectors}),
-reduces the signal in the A-SPAD, resulting, again, in smaller bursts
-and less burst above a set threshold.
-Third, the two setups use different set of emission path filters which
-can further affect the detected photon rate, $\gamma$ factor and burst size.
-In the analysis we used a $\gamma$-corrected burst size
-(eq.~\ref{eq:burstsize}) to counteract this effect.
-Finally, experimentally, burst durations are on average slightly larger in
-the multi-spot setup, indicating larger PSF volumes.
+reduces the signal in the A-SPAD, again resulting in smaller and 
+fewer bursts above the set threshold.
+Third, the two setups use a different set of emission path filters which
+can further affect the detected photon rate, $\gamma$ factor, and burst size.
+In the analysis, a $\gamma$-corrected burst size
+(eq.~\ref{eq:burstsize}) was used to counteract this effect.
+Finally, we observe experimentally that burst durations are slightly larger on average in
+the multispot setup, indicating larger PSF volumes.
 At a given concentration, a larger PSF
-will contain an higher number of molecules, increasing the
+will contain an greater number of molecules, increasing the
 detected bursts per unit time.
 
 In the future, issues of uniformity and low A-channel PDE can be addressed,
-further increasing the throughput.
+further increasing throughput.
 The excitation uniformity can be increased
 using flat-top optics before the LCOS-SLM modulation,
-while the lower PDE can be overcome using new red-enhanced SPAD
+and the lower PDE can be overcome by implementing new red-enhanced SPAD
 arrays~\cite{gulinatti_new_2012}.
 
-Overall, Fig.~\ref{fig:alex_mspot_5} shows that a significant number
-of bursts can be obtained in just a few seconds of acquisition.
-Such a throughput is advantageous for realtime kinetic experiments,
+Fig.~\ref{fig:alex_mspot_5} shows that a significant number
+of bursts can be obtained in only a few seconds of acquisition.
+Such throughput is advantageous for real-time kinetic experiments,
 where a reaction is triggered at a specific time point while the sample
 is continuously measured.
 In order to follow the evolution of the system over time,
 these measurements are analyzed by dividing the acquisition in small time slices.
-The time resolution (i.e. the smallest usable time slice)
+The time resolution, i.e. the smallest usable time slice,
 depends on the burst rate and on what information one aims to extract
 from each slice.
 For example, when initial and final states are known,
 only the number of burst in each subpopulation needs to be fitted
 from the FRET histograms.
 In this case, 500-1000 bursts per slice may be sufficient,
-resulting in a time resolution  $\le5$~s with the current setup.
+resulting in a time resolution $\le5$~s with the current setup.
 However, triggering the reaction at a specific time
 typically involves mixing the sample with a reagent.
-While this mixing can be performed manually (with 15-20~s of dead
-time)~\cite{ingargiola_multispot_2017},
-only an automated microfluidic system allows to fully exploit
+While mixing can be performed manually with 15-20~s of dead
+time~\cite{ingargiola_multispot_2017},
+only an automated microfluidic system will allow full exploitation of 
 the throughput capabilities of the multispot setup (mixing
 dead time $\ll$~1~s).
-Such a system could also performs series of kinetic experiments
-under identical conditions, or under varying concentration of analytes.
+Such a system could also perform series of kinetic experiments
+under identical conditions or under varying concentration of analytes.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/2017-08-03_03_12d_alex_jointplot_5s_Dex}
@@ -814,7 +817,7 @@ For more details see the notebook
 \section{Conclusion}
 \label{sec:conclusion}
 We have described a 48-spot 2-laser excitation setup
-designed for high-throughput single-molecule FRET assays.
+designed for high-throughput smFRET assays.
 Compared to our previous multispot setup~\cite{ingargiola_multispot_2017},
 the number of spots was increased six-fold with a corresponding increase
 in throughput.
@@ -843,7 +846,7 @@ interest for other applications.
 We also illustrated the smFRET measurement capabilities of the new setup
 using doubly-labeled dsDNA molecules as a proof of principle
 demonstration of sub-population separations and high-throughput measurements.
-Finally, we provided a comparison of its performance with  a standard
+Finally, we provided a comparison of its performance with a standard
 single-spot (confocal) {\usalex} setup.
 Applications of this new instrument to the study of the initial
 stages of bacterial transcription and high-throughput diagnostics
@@ -853,7 +856,7 @@ will be explored in future work.
 The authors thank Luca Miari for help in the initial stage of this project,
 Mr. Yazan Alhadid and Dr. Eitan Lerner for help with single-molecule
 sample preparation and Dr. Eitan Lerner for critical reading of the manuscript.
-We thank Dr. Bentolila for the generous loan of a LCOS SLM from the
+We thank Dr. Bentolila for the generous loan of a LCOS-SLM from the
 Advanced Light Microscopy/Spectroscopy Shared Resource Facility at
 the California NanoSystems Institute at UCLA.
 Research reported in this publication was supported by the National Institute
@@ -881,7 +884,7 @@ The setup (Fig.~\ref{fig:setup}) comprises two excitation CW lasers emitting at
 For each laser, a half-wave plate and polarizing beam splitter are used
 for polarization and intensity control, as the polarization orientation
 must be aligned along the direction required by the LCOS-SLM. The
-628 nm laser beam passes through an acousto-optical modulator  (AOM) (P/N 48058
+628 nm laser beam passes through an AOM (P/N 48058
 PCAOM, electronics: P/N 64048-80-.1-4CH-5M, Neos Technology, Melbourne,
 FL) used for {\microsec} time-scale modulation. The 532~nm
 laser is not modulated.
@@ -889,14 +892,14 @@ Each laser beam goes through a first beam expander (Keplerian
 telescope, doublet lenses: 50~mm and 250~mm focal lengths). Two periscopes
 bring the beams to a raised optical breadboard where an inverted microscope body
 (X71, Olympus Corp., Waltham, MA) stands, its bottom port sitting
-over a circular aperture in the breadboard. Past the periscope, each beam goes through a
+over a circular aperture in the breadboard. Beyond the periscope, each beam goes through a
 second adjustable beam expander (3X, P/N 59-131, Edmund Optics Inc.).
 The red laser beam is reflected off mirrors $M1_R$ and
 $M2_R$ and phase-modulated by the ``red'' LCOS-SLM (P/N
 X10468-07, Hamamatsu, Japan), before passing through the dichroic mirror
-$D_{MIX}$. The green laser beam is reflected off $M3$,
-phase-modulated by the ``green'' LCOS-SLM (P/N X10468-01, Hamamatsu),
-and combines with the red excitation via the dichroic mirror
+$D_{MIX}$. The green laser beam is reflected off $M3$, is
+phase-modulated by the ``green'' LCOS-SLM (P/N X10468-01, Hamamatsu)
+and combined with the red excitation via the dichroic mirror
 $D_{MIX}$ (T550LPXR, Chroma Technology Corp, VT). Both
 beams are recollimated by the $L_3$ lens (f = 250~mm,
 AC508-250-A, Thorlabs) and focused into the sample by a high-NA
@@ -919,7 +922,7 @@ filter (Brightline FF01-582/75, Semrock) which removes residual 628~nm
 laser leakage and helps suppress Raman scattering from the 532~nm
 laser. Both D and A signals are refocused by lenses $L5_D$ /
 $L5_A$ (f=150~mm, AC254-150-A, Thorlabs) on two 48-pixel
-SPAD arrays\cite{gulinatti_48-pixel_2013} (denoted as D- and A-SPAD in
+SPAD arrays\cite{gulinatti_48-pixel_2013} (denoted as D and A-SPAD in
 the text).
 
 Both SPAD arrays are mounted on 3-axis micro-positioners. Motion along the
@@ -950,8 +953,8 @@ The FPGA board transfers data asynchronously to a host PC via an MXI-4 link
 to a custom acquisition program written in LabVIEW 2011 (PXI rack board: PXI-8331;
 PC board:PCI-8331, National Instruments). The
 acquisition program also controls the red laser alternation using a
-pulse generation board (PXI-6602, National Instruments), whose clock is
-synchronized with the time-stamping FPGA board through the PXI rack.
+pulse generation board (PXI-6602, National Instruments) with a clock
+synchronized to the time-stamping FPGA board through the PXI rack.
 
 In addition to the aforementioned acquisition program, the host computer
 runs a second LabVIEW 2011 program controlling the phase pattern on the
@@ -1017,7 +1020,7 @@ Additionally, the expanded laser beam is clipped by two rectangular apertures
 (slits) approximately 1~mm larger than the multispot pattern, further
 reducing sources of background.
 This approach achieves low background without the need of an additional
-spatial filter as used in our previous 8-spot setup~\cite{ingargiola_multispot_2017}.
+spatial filter as was used in our previous 8-spot setup~\cite{ingargiola_multispot_2017}.
 
 A similar approach for multispot generation was used for multi-confocal
 FCS by Kloster \emph{et al.}~\cite{kloster-landsberg_cellular_2012}.
@@ -1065,7 +1068,7 @@ To this end, after removing the recollimating lens $L3$, an iris
 $I2$ is placed before the beam enters the microscope side
 port. Using an aperture of 1-2 mm, only a narrow beamlet goes through
 the objective and generates a spot from the cover-glass reflection. Only
-when the input beam is parallel to the optical axis, the spot will begin
+when the input beam is parallel to the optical axis, the spot will be
 located in the center of the cross-hair in the microscope's eyepiece.
 In order to make the input beams parallel to the
 optical axis, the last mirrors before the microscope are adjusted
@@ -1098,7 +1101,7 @@ number of spots per side (e.g. ~9x9) ensures that one spot is always at
 the center of the pattern.
 The camera on the side-port detects an image of the pattern. The centering
 of the pattern with respect to the optical axis can be assessed from the
-amount of geometrical aberrations in the lateral spots. We center the
+degree of geometrical aberrations in the lateral spots. We center the
 excitation pattern by rigidly translating the pattern on the LCOS-SLM so
 that geometrical aberrations are roughly equivalent on all four sides.
 Next, we perform a 2D Gaussian fitting of each spot, and from the
@@ -1131,9 +1134,9 @@ Fig.~\ref{fig:setup}). The slits are aligned to illuminate only the
 \label{sec:spadalign}
 
 Both detectors must be aligned so that each pixel is optically
-conjugated to the corresponding excitation volume (excitation PSF). The
+conjugated to the corresponding excitation volume, i.e. the excitation PSF. The
 goal is to have pairs of corresponding pixels on the two arrays
-detecting photons from the same sample volume (detection PSF). At
+detecting photons from the same sample volume, i.e. the detection PSF. At
 the same time, in order to maximize signal, the detection PSF must be
 concentric with the excitation PSF. Achieving this with a 2D
 arrangement of spots and pixels requires not only aligning the X \& Y
@@ -1173,7 +1176,7 @@ the detectors.
 
 Next, we perform a more automated procedure for fine alignment referred to as
 ``multispot scan''. A multispot scan involves rigidly
-translating the multispot pattern on an LCOS-SLM (typically 4x4 spots) in
+translating the multispot pattern on an LCOS-SLM (typically a 4x4 spot pattern) in
 discrete steps along two orthogonal paths, forming a cross.
 At the same time, counts from a SPAD
 array are integrated for each pattern position over 300~ms after each step.
@@ -1234,7 +1237,7 @@ angle.
 To adjust the pitch, information from the scan fits is used to
 finely tune the X and Y pitch of the LCOS-SLM pattern in order to optimally
 match both SPAD arrays. Residual X and Y pitch difference of 1-2\% are
-observed due to non-idealities (stigmatism) in the optical path.
+observed due to non-idealities, i.e. stigmatisms, in the optical path.
 
 \begin{figure}
 \includegraphics[width=0.9\columnwidth]{figures/2017-05-02_scan_fit_scatter}
