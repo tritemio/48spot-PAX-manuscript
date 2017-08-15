@@ -764,27 +764,26 @@ than the  single-spot setup.
 Comparison of Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5} shows 
 that a significant number of bursts (~1,000) can be obtained in only a few seconds 
 of acquisition.
-Such a throughput is advantageous for real-time kinetic experiments,
-where a reaction is triggered at a specific time point while the sample
-is continuously measured.
-In order to follow the evolution of the system over time,
-these measurements are analyzed by dividing the acquisition in short consecutive time windows.
-The time resolution, i.e. the smallest usable time window,
-depends on the burst rate and the type of information .
-For example, when initial and final states are known,
-only the number of burst in each subpopulation needs to be fitted
-from the FRET histograms.
-In this case, 500-1000 bursts per slice may be sufficient,
-resulting in a time resolution $\le5$~s with the current setup.
-However, triggering the reaction at a specific time
-typically involves mixing the sample with a reagent.
-While mixing can be performed manually with 15-20~s of dead
-time~\cite{ingargiola_multispot_2017},
-only an automated microfluidic system will allow full exploitation of 
-the throughput capabilities of the multispot setup (mixing
-dead time $\ll$~1~s).
-Such a system could also perform series of kinetic experiments
-under identical conditions or under varying concentration of analytes.
+Such a high throughput is advantageous for stop-flow or equivalent, real-time kinetic 
+measurements, where a reaction is triggered at time zero and the sample's evolution
+monitored continuously afterward.
+The measurement's temporal resolution, \textit{i.e.} the smallest usable time window 
+(or time bin), depends inversely on the burst rate (as well as on the type of 
+information to be extracted from  the data), based on number statistics.
+In the simple case where the initial and final FRET states of a reaction are known, 
+and the respective amount of each population is an appropriate reaction parameter, 
+the number of burst in each subpopulation can be extracted from the FRET histogram 
+with a relatively small number of bursts per time bin. The number of bursts collected 
+in the experiment reported in Fig.~\ref{fig:alex_mspot_5} would definitely be 
+compatible with an effective time resolution $\le5$~s.
+To fully take advantage of such a temporal resolution, the experimental dead-time 
+(duration  of the initial mixing step in the reaction) would need to be shorter, 
+and may require an automated microfluidic system ($\ll$~1~s, by contrast with the 
+manual mixing reported in the kinetic measurement of ref.~\cite{ingargiola_multispot_2017}, where a deadtime of at least 15-20~s was 
+obtained).
+Such a multispot system could also advantageously be used to perform rapid series of
+measurements of the same sample in different conditions, or of different samples, for
+high-throughput screening applications, among other possibilities.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/2017-08-03_03_12d_alex_jointplot_5s_Dex}
@@ -808,12 +807,12 @@ For more details see the
 
 \section{Conclusion}
 \label{sec:conclusion}
-We have described a 48-spot 2-laser excitation setup
+We have described a 48-spot, 2-laser excitation setup
 designed for high-throughput smFRET assays.
 Compared to our previous multispot setup~\cite{ingargiola_multispot_2017},
 the number of spots was increased six-fold with a corresponding increase
 in throughput.
-While larger SPAD arrays have been demonstrated,
+While larger SPAD arrays have been demonstrated by other groups,
 they are fabricated using standard high-voltage CMOS processes
 resulting in poorer photon-counting performance than the custom technology
 process employed here. Convincing applications for cell FCS and FLIM,
@@ -859,10 +858,9 @@ The content is solely the responsibility of the authors and does not
 necessarily represent the official views of the National Institutes of
 Health or the National Science Foundation.
 Conflict of interest statements: S. Weiss discloses intellectual
-property used in the research reported here.
+property used in the research reported here. M. Ghioni discloses equity in Micro Photon Devices S.r.l. (MPD). No resources or personnel from MPD were involved in this work.
 The work at UCLA was conducted in Dr. Weiss's Laboratory.
-M. Ghioni discloses equity in Micro Photon Devices S.r.l. (MPD).
-No resources or personnel from MPD were involved in this work.
+
 \end{acknowledgments}
 
 
@@ -1409,7 +1407,7 @@ therefore its shot-noise is amplified.
 \label{sec:Su}
 
 By replacing $\tilde{F}_{A_{ex}A_{em}}$ with $F_{DA_{ex}A_{em}}$ in
-eq.~\ref{eq:Spax}, a modified or "uncorrected stoichiometry" $S_u$ can
+eq.~\ref{eq:Spax}, a modified or ``uncorrected stoichiometry'' $S_u$ can
 be defined:
 
 \begin{equation}
