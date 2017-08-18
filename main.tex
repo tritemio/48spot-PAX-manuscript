@@ -19,13 +19,13 @@
 %
 % Use this file as a source of example code for your aip document.
 % Use the file aiptemplate.tex as a template for your document.
-\documentclass[%
- aip,
+\documentclass[
+aip,
 %jmp,%
 %bmf,%
 %sd,%
 rsi,%
- amsmath,amssymb,
+amsmath,amssymb,
 %preprint,%
 reprint,%
 %author-year,%
@@ -51,52 +51,39 @@ reprint,%
 
 \begin{document}
 
-\preprint{AIP/123-QED}
+\preprint{}
 
 \title[48-spot smFRET-PAX setup]{48-spot single-molecule FRET setup with periodic acceptor excitation}
 
-\author{Antonino Ingargiola}%
+\author{Antonino Ingargiola}
 \email{ingargiola.antonino@gmail.com}
 \author{Maya Segal}
 \affiliation{
-Dept. Chemistry and Biochemistry, University of California Los Angeles, USA}
+Department of Chemistry and Biochemistry, University of California Los Angeles, USA}
 \author{Angelo Gulinatti}
 \author{Ivan Rech}
 \author{Ivan Labanca}
-\affiliation{%
-DEIB, Politecnico di Milano, Milan, Italy
-% * <michalet@chem.ucla.edu> 2017-07-13T00:59:44.118Z:
-%
-% > DEIB
-% spell out
-%
-% ^ <michalet@chem.ucla.edu> 2017-07-13T01:00:18.337Z.
-}%
+\affiliation{
+Dipartimento di Elettronica, Informazione e Bioingegneria , Politecnico di Milano, Milan, Italy
+}
 \author{Piera Maccagnani}
 \affiliation{Istituto per la Microelettronica e Microsistemi, IMM-CNR, Bologna, Italy.}
 \author{Massimo Ghioni}
-\affiliation{%
-DEIB, Politecnico di Milano, Italy
-}%
-\author{Shimon Weiss}%
-\author{Xavier Michalet}%
+\affiliation{
+Dipartimento di Elettronica, Informazione e Bioingegneria , Politecnico di Milano, Milan, Italy
+}
+\author{Shimon Weiss}
+\author{Xavier Michalet}
  \email{michalet@chem.ucla.edu}
 \affiliation{
-Dept. Chemistry and Biochemistry, University of California Los Angeles, USA}
+Department of Chemistry and Biochemistry, University of California Los Angeles, USA}
 
 
 \date{\today}% It is always \today, today,
-% * <michalet@chem.ucla.edu> 2017-07-13T01:01:04.806Z:
-%
-% > \today
-% This seems to be using a non-US time
-%
-% ^.
-             %  but any date may be explicitly specified
 
 \begin{abstract}
-Single-molecule FRET (smFRET) allows measuring distances between donor (D) and
-acceptor (A) fluorophores on the 3-10~nm range.
+Single-molecule FRET (smFRET) allows measuring distances between donor and
+acceptor fluorophores on the 3-10~nm range.
 Solution-based smFRET allows measurement of binding-unbinding events
 or conformational changes of dye-labeled biomolecules without ensemble averaging
 and free from surface perturbations. When employing dual (or multi)
@@ -114,7 +101,7 @@ multiplexes acquisition by using 48 excitation spots and two
 allowing separation of species with one or two active fluorophores.
 The performance of the system is demonstrated on a set of doubly-labeled
 double-stranded DNA oligonucleotides
-with different distances between D and A dyes along the DNA duplex.
+with different distances between donor and acceptor dyes along the DNA duplex.
 We show that the acquisition time for accurate subpopulation identification
 is reduced from several minutes to seconds, opening the way
 to high-throughput screening applications and
@@ -223,12 +210,6 @@ the detectors (Section~\ref{sec:detectors}) and the modulation scheme
 report single-molecule measurements, starting with a brief
 description of the data analysis (Section~\ref{sec:analysis}).
 To demonstrate the uniformity across spots, we study
-% * <michalet@chem.ucla.edu> 2017-07-13T19:43:54.777Z:
-%
-% > spots
-% To remain consistent throughout, spot is for... spot and channel is for... data channel.
-%
-% ^.
 the burst peak photon rate (Section~\ref{sec:peak-phrate})
 and E-S histograms (Section~\ref{sec:EShist}).
 Finally, we compare single-spot {\usalex} and 48-spot PAX measurements
@@ -236,12 +217,6 @@ Finally, we compare single-spot {\usalex} and 48-spot PAX measurements
 ~\ref{sec:conclusion}.
 
 \subsection{Software and data availability}
-% * <michalet@chem.ucla.edu> 2017-07-12T18:07:44.733Z:
-%
-% > \subsection{Software and data availability}
-% Is it possible to not have a section number (or letter) for this sub-heading? It looks odd to have only one.
-%
-% ^.
 Software used to operate the multispot setup (including
 LCOS-SLM pattern generation, LabVIEW-FPGA time-stamping code,
 piezo-motor control, etc.) is provided in different repositories
@@ -546,11 +521,6 @@ The A-laser power was set to 400~mW (laser output before the AOM),
 as a trade-off between the need to compensate for the lower PDE in the
 A-channel while limiting sample photo-bleaching and
 thermal instabilities.
-%Nonetheless, the peak photon rate in the A-channel
-%(stream $DA_{ex}A_{em}$ in Fig.~\ref{fig:phrates48_comp})
-%remains lower than in the D-channel (stream $D_{EX}D_{EM}$).
-%, causing the position of the $S$
-%peak for FRET populations to be higher than the theoretical 0.5 value.
 
 Comparing Figs.~\ref{fig:phrates48_comp}A and~\ref{fig:phrates_usalex}
 it is clear that reduced sensitivity in the A-SPAD array results in lower peak
@@ -585,11 +555,6 @@ Data analysis and
 burst search are identical to figure~\ref{fig:alexhist48all12d}, while
 burst selection is tailored to select only the FRET population: a burst is
 selected if the number of counts in the $D_{ex}A_{em}$ and $DA_{ex}A_{em}$
-% * <michalet@chem.ucla.edu> 2017-07-29T00:10:17.075Z:
-%
-% check the stream definitions.
-%
-% ^.
 streams are both larger than 20. The legend in each subplot
 reports spot number in brackets and number of bursts (\#B).%
 For more details see the
@@ -753,14 +718,6 @@ volumes), will also translate in different detected burst rates. Despite these
 caveats, it is obvious that the multispot setup detects a much larger number of bursts 
 than the  single-spot setup.
 
-%Both illumination uniformity and low PDE in the red region of the spectrum 
-%can be addressed, further increasing throughput.
-%The excitation uniformity can be increased
-%using flat-top optics before the LCOS-SLM modulation,
-%and the lower PDE can be overcome by implementing new red-enhanced SPAD
-%arrays~\cite{gulinatti_new_2012}.
-
-
 Comparison of Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5} shows 
 that a significant number of bursts (~1,000) can be obtained in only a few seconds 
 of acquisition.
@@ -852,7 +809,7 @@ Advanced Light Microscopy/Spectroscopy Shared Resource Facility at
 the California NanoSystems Institute at UCLA.
 Research reported in this publication was supported by the National Institute
 of General Medical Sciences of the National Institutes of Health under
-Award Number R01GM095904 \& R01 GM069709, and by the National Science
+Award Number R01 GM095904 \& R01 GM069709, and by the National Science
 Foundation under Award Number MCB 1244175.
 The content is solely the responsibility of the authors and does not
 necessarily represent the official views of the National Institutes of
@@ -1147,18 +1104,7 @@ for aligning the SPAD arrays.
 Tyndall et al.~\cite{tyndall_automatic_2011} have presented an automatic
 procedure to align a LCOS-SLM multispot pattern to the detector.
 Here we align the SPADs to the LCOS-SLM pattern.
-% * <michalet@chem.ucla.edu> 2017-06-26T19:50:51.897Z:
-%
-% > Tyndall et al.~\cite{tyndall_automatic_2011} have presented an automatic
-% > procedure to align a LCOS-SLM multispot pattern to the detector.
-% > Here we align the SPADs to the LCOS-SLM pattern.I
-% I don't understand the transition. They are not using the same approach as we do to generate the pattern, which seems the main difference
-%
-% ^ <tritemio@gmail.com> 2017-06-27T17:32:02.060Z:
-%
-% Conceptually is very similar because is a direct-space modulation, the practical implementation is different. But they align the LCOS to the SPAD and we align the SPAD to the LCOS.
-%
-% ^.
+
 Starting with the green laser only, both SPADs are manually positioned
 in X and Y to match the center of the excitation pattern. This is achieved
 by finding the location of the maximum recorded SPAD counts while moving
