@@ -220,12 +220,13 @@ Finally, we compare single-spot {\usalex} and 48-spot PAX measurements
 \subsection{Software and data availability}
 Software used to operate the multispot setup (including
 LCOS-SLM pattern generation, LabVIEW-FPGA time-stamping code,
-piezo-motor control, etc.) is provided in different repositories
- available on GitHub at
-\href{https://github.com/multispot-software}{https://github.com/multispot-software}.
+piezo-motor control, etc.) is provided in various repositories
+available  \href{https://github.com/multispot-software}{on GitHub}
+\cite{multispot_software}.
 Software used for data analysis can be found in the
 \href{https://github.com/tritemio/48-spot-smFRET-PAX-analysis}{48-spot-smFRET-PAX-analysis}
-repository. Links to specific analysis notebooks are added in the caption of each
+repository\cite{multispot_analysis}.
+Links to specific analysis notebooks are added in the caption of each
 figure. Data files are publicly available on
 Figshare~\cite{ingargiola_datasets_2017}.
 
@@ -268,7 +269,7 @@ field-programmable gate array (FPGA) equipped board (PXI-7813R, National Instrum
 that performs photon time-stamping with 12.5~ns resolution and transfers data 
 asynchronously to the host PC.
 The host PC runs a LabVIEW acquisition software, which displays the binned signal recorded from all 96-channels in real-time as 96 color-coded time traces, implements alignment routines, and saves the data to
-disk. After data acquisition, file conversion to the photon-HDF5 format~\cite{ingargiola_photon-hdf5:_2016-1} and analysis is performed on a second PC, therefore allowing non-stop acquisition of sequential files.
+disk. After data acquisition, file conversion to the Photon-HDF5 format~\cite{ingargiola_photon-hdf5:_2016-1} and analysis is performed on a second PC, therefore allowing non-stop acquisition of sequential files.
 
 \subsection{Detectors}
 \label{sec:detectors}
@@ -333,7 +334,8 @@ measurements is reported in~\onlinecite{michalet_silicon_2014}.
     D- and A-SPAD arrays used in the  48-spot PAX setup.
     DCR values in counts per second (cps) are indicated in each pixel.
     More details and data can be found in the
-    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/DCR\%20plots.ipynb}{DCR plots} analysis notebook.
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/DCR\%20plots.ipynb}{accompanying notebook}
+    \cite{multispot_analysis}.
 }
 \end{figure}
 
@@ -377,7 +379,8 @@ can be found in Appendix~\ref{sec:lcos}.
     the right. The elliptical shape and tilt of the Gaussian is
     due to geometrical aberrations.
     More details can be found in the
-    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{LCOS pattern fitting-conf9\_G\_conf14\_R\_4x12\_slits} notebook.
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{accompanying notebook} 
+    \cite{multispot_analysis}.
     }}
 \end{figure}
 
@@ -400,7 +403,7 @@ Samples were diluted to single-molecule concentration ($\sim50$~pM) in TE50
 (40 mM HEPES-NaOH pH 7, 50 mM KCl, 10 mM MgCl$_{2}$, 1 mM DTT, 1 mM MEA, 
 BSA: 100~\textgreek{μ}g/ml)~\cite{lerner_backtracked_2016}.
 Full details regarding the DNA samples are provided in
-ref.~\cite{ingargiola_multispot_2017}.
+ref.~\onlinecite{ingargiola_multispot_2017}.
 
 We analyzed data using standard {\usalex} methods~\cite{lee_accurate_2005}
 with modifications required for PAX\cite{doose_periodic_2007}.
@@ -416,10 +419,8 @@ Burst selection is performed taking bursts with size larger than a specified thr
 where burst size is either defined according to eq.~\ref{eq:burstsize}
 or~\ref{eq:burstsize_paxe}. To isolate the FRET populations, we
 additionally filter bursts with $A_{ex}A_{em}$ counts larger
-than a second specified threshold. Full numerical details can be found in the relevant notebook
-on GitHub at
-\href{https://github.com/tritemio/48-spot-smFRET-PAX-analysis}{48-spot-smFRET-PAX-analysis}.
-
+than a second specified threshold. Full numerical details can be found in 
+the relevant notebook\cite{multispot_analysis}.
 
 The main result of the {\usalex} and PAX analysis methods is a so-called 
 E-S two-dimensional histogram, where each burst is represented by a
@@ -475,7 +476,8 @@ spots in the second row are missing because of an active quenching circuit
     Colors correspond to different photon streams.
     Green: $D_{ex}D_{em}$, red: $D_{ex}A_{em}$, light blue: $DA_{ex}D_{em}$,
     purple: $DA_{ex}A_{em}$. For more details see the
-    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{smFRET-PAX\_single\_pop-2017-05-23\_08\_12d} notebook.
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
+    \cite{multispot_analysis}.
     }}
 \end{figure*}
 
@@ -490,8 +492,9 @@ spots in the second row are missing because of an active quenching circuit
     Colors correspond to different photon streams.
     Green: $D_{ex}D_{em}$, red: $D_{ex}A_{em}$, light blue: $DA_{ex}D_{em}$,
     purple: $DA_{ex}A_{em}$.
-    For more details see the notebook
-    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/us-ALEX\_analysis-2017-06-11\_000\_12d.ipynb}{us-ALEX\_analysis-2017-06-11\_000\_12d}.
+    For more details see the
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/us-ALEX\_analysis-2017-06-11\_002\_12d.ipynb}{accompanying notebook}
+    \cite{multispot_analysis}.
     }}
 \end{figure}
 
@@ -551,7 +554,8 @@ constant threshold (50~kcps). Burst selection was performed
 on the total burst size after background correction, using a threshold of
 40 photons. The legend in each subplot reports the spot number in brackets and number of bursts (\#B).%
 For more details see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{smFRET-PAX\_single\_pop-2017-05-23\_08\_12d} notebook.
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
+\cite{multispot_analysis}.
 }}
 \end{figure*}
 
@@ -566,7 +570,8 @@ selected if the number of counts in the $D_{ex}A_{em}$ and $DA_{ex}A_{em}$
 streams are both larger than 20. The legend in each subplot
 reports spot number in brackets and number of bursts (\#B).%
 For more details see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{smFRET-PAX\_single\_pop-2017-05-23\_08\_12d} notebook.
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
+\cite{multispot_analysis}.
 }}
 \end{figure*}
 
@@ -579,7 +584,8 @@ and FRET populations (\emph{blue plus}). Values were obtained by Gaussian
 fit of the 1-D histogram of $E_{PR}$ and $S_u$ after a bursts selection
 that isolated D-only and FRET populations, respectively.
 For more details see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{smFRET-PAX\_single\_pop-2017-05-23\_08\_12d} notebook.
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
+\cite{multispot_analysis}.
 }
 \end{figure}
 
@@ -592,7 +598,8 @@ $E_{PR}, S_u$ across all 46 spots (\emph{orange dot}) is reported
 in each subplot. The spot number is indicated in the top right corner of
 each subplot.%
 For more details see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{smFRET-PAX\_single\_pop-2017-05-23\_08\_12d} notebook.
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
+\cite{multispot_analysis}.
 }}
 \end{figure*}
 
@@ -650,7 +657,8 @@ using $\gamma = 0.5$ (see eq.~\ref{eq:burstsize_paxe}).
 The E-S histogram was built by pooling data from all spots, without 
 spot-specific correction.
 For more details, see the 
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture} notebook.
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{accompanying notebook}
+\cite{multispot_analysis}.
 }
 \end{figure}
 
@@ -664,7 +672,8 @@ was performed using the criterion $F_{D_{ex}DA_{em}} > 25$
 The E-S histogram was built by pooling data from all spots without 
 spot-specific correction.
 For more details, see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture} notebook.
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{accompanying notebook}
+\cite{multispot_analysis}.
 }
 \end{figure}
 
@@ -758,7 +767,8 @@ among other possibilities.
 Multispot E-S histogram obtained from 5~s of acquisition by pooling bursts
 from the 46 active spots.
 For more details see the 
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d} notebook.
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{accompanying notebook}
+\cite{multispot_analysis}.
 }
 \end{figure}
 
@@ -768,7 +778,8 @@ For more details see the
 Single-spot E-S histogram obtained from 5~s of acquisition for the same
 sample as in Fig.~\ref{fig:alex_mspot_5}.
 For more details see the 
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d} notebook.
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{accompanying notebook}
+\cite{multispot_analysis}.
 }
 \end{figure}
 
@@ -892,7 +903,8 @@ for the X \& Y directions. The D-SPAD array is mounted on an additional rotation
 about the optical axis, which is used to match the relative orientation
 of the SPAD arrays. Software for controlling the micro-positioners is
 available in the
-\href{https://github.com/multispot-software/picomotor}{picomotor} repository.
+\href{https://github.com/multispot-software/picomotor}{picomotor repository}
+in~\onlinecite{multispot_software}.
 
 Each SPAD array module is equipped with an internal FPGA
 (Xilinx Spartan 6, model SLX150), a humidity sensor, and a USB 2.0 connection.
@@ -905,7 +917,9 @@ through a custom adapter to an FPGA-based acquisition board (FPGA board:
 PXI-7813R, PXI rack: PXI-1000B, National Instruments, Austin, TX) which
 performs photon time-stamping with 12.5~ns resolution in parallel on the 96
 channels (task implemented in LabVIEW using the LabVIEW FPGA Module,
-code available \href{https://github.com/multispot-software/MultichannelTimestamper}{here}).
+code available in the
+\href{https://github.com/multispot-software/MultichannelTimestamper}{MultichannelTimestamper repository})
+in ref.~\onlinecite{multispot_software}.
 The FPGA board transfers data asynchronously to a host PC via an MXI-4 link
 to a custom acquisition program written in LabVIEW (PXI rack board: PXI-8331;
 PC board:PCI-8331, National Instruments). The
@@ -931,8 +945,8 @@ and data analysis, leaving the host PC available for acquiring the next
 set of data.
 The scripts for data transfer, conversion and automated analysis are
 available in the
-\href{https://github.com/multispot-software/transfer\_convert}{transfer\_convert}
-repository.
+\href{https://github.com/multispot-software/transfer\_convert}{transfer\_convert repository}
+in ref.~\onlinecite{multispot_software}.
 
 \subsection{LCOS-SLM Modulation}
 \label{sec:lcos}
@@ -991,8 +1005,8 @@ currently lacking.
 
 Software to generate the multispot phase pattern used in this work is
 available in the
-\href{https://github.com/multispot-software/lcos\_multispot\_pattern}{lcos\_multispot\_pattern}
-repository.
+\href{https://github.com/multispot-software/lcos\_multispot\_pattern}{lcos\_multispot\_pattern repository}
+in ref.~\onlinecite{multispot_software}.
 
 
 \section{Laser alignment}
@@ -1063,8 +1077,9 @@ excitation pattern by rigidly translating the pattern on the LCOS-SLM so
 that geometrical aberrations are roughly equivalent on all four sides.
 Next, we perform a 2D Gaussian fitting of each spot, and from the
 distribution of waist size and tilt angle for each Gaussian, we estimate
-a more accurate position of the optical axis (for the analysis see the notebook
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{LCOS pattern fitting-conf9\_G\_conf14\_R\_4x12\_slits}).
+a more accurate position of the optical axis (for the analysis see the 
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{LCOS pattern fitting notebook}
+\cite{nb_align_folder}).
 This step may be repeated multiple times until convergence.
 From this point on, the X \& Y positions of the green LCOS-SLM is not
 changed anymore, and its center becomes a reference for the optical axis
@@ -1076,9 +1091,10 @@ the green one used as a reference. An initial coarse adjustment of the red
 LCOS-SLM pattern is performed manually by observing the emission
 pattern on the live camera display. Then, the center position of the red
 LCOS-SLM pattern is finely adjusted by fitting the spot positions in the
-green and red images (Fig.~\ref{fig:patternfit}), taken separately (the
-analysis notebook can be found in
-\href{https://github.com/multispot-software}{multispot-software}).
+green and red images (Fig.~\ref{fig:patternfit}), taken separately 
+(for implementation details see the
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{LCOS pattern fitting notebook}
+\cite{nb_align_folder}).
 
 Finally, in order to reduce the background due to unmodulated light, two
 custom-made rectangular slits (aluminum with black finish)
@@ -1193,8 +1209,9 @@ and A-SPAD arrays obtained with scans of the green LCOS-SLM.
 D-SPADs center positions are denoted by 'X'
 and A-SPADs center positions are denoted by '+'.
 The mean distance between D- and A-SPAD pixels is 2.3~{\micron}.
-For details see the notebook
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-05-02/48spot alignment-Two\_Mantas-scan\_scatterplot.ipynb}{48spot alignment-Two\_Mantas-scan\_scatterplot}.
+For details see the
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-05-02/48spot alignment-Two\_Mantas-scan\_scatterplot.ipynb}{accompanying notebook}
+\cite{nb_align_folder}.
 }
 \end{figure}
 
@@ -1527,8 +1544,9 @@ constant threshold (50~kcps). Burst selection was performed
 on the total burst size after background correction, using a threshold of
 40 photons. The legend in each subplot
 reports spot number in brackets and number of bursts (\#B).
-For more details see the notebook
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_04\_22d.ipynb}{smFRET-PAX\_single\_pop-2017-05-23\_04\_22d}.
+For more details see the 
+\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_04\_22d.ipynb}{accompanying notebook}
+\cite{multispot_analysis}.
 }}
 \end{figure*}
 
