@@ -335,7 +335,7 @@ measurements is reported in~\onlinecite{michalet_silicon_2014}.
     DCR values in counts per second (cps) are indicated in each pixel.
     More details and data can be found in the
     \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/DCR\%20plots.ipynb}{accompanying notebook}
-    \cite{multispot_analysis}.
+    \cite{nb_dcr}.
 }
 \end{figure}
 
@@ -465,7 +465,7 @@ spots in the second row are missing because of an active quenching circuit
 
 \begin{figure*}
     \includegraphics[width=\textwidth]{{figures/phrates_composite}}
-    \caption{{\label{fig:phrates48_comp}
+    \caption{\label{fig:phrates48_comp}
     Peak burst photon rates in each of the 48 spots for a dsDNA sample with a
     12~bp D-A separation. The output laser powers measured before any optics
     were set to 200~mW and 400~mW for the D- and A-laser respectively.
@@ -477,13 +477,13 @@ spots in the second row are missing because of an active quenching circuit
     Green: $D_{ex}D_{em}$, red: $D_{ex}A_{em}$, light blue: $DA_{ex}D_{em}$,
     purple: $DA_{ex}A_{em}$. For more details see the
     \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
-    \cite{multispot_analysis}.
-    }}
+    \cite{nb_12d}.
+    }
 \end{figure*}
 
 \begin{figure}
     \includegraphics[width=0.7\columnwidth]{figures/2017-06-11_002_12d_usALEX_peak_phrate}
-    \caption{{\label{fig:phrates_usalex}
+    \caption{\label{fig:phrates_usalex}
     Distribution of peak photon rates in a single-spot {\usalex} measurement
     of the same dsDNA with a 12~bp D-A separation used in 48-spot
     measurements (Fig.~\ref{fig:phrates48_comp}). Average laser powers
@@ -494,8 +494,8 @@ spots in the second row are missing because of an active quenching circuit
     purple: $DA_{ex}A_{em}$.
     For more details see the
     \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/us-ALEX\_analysis-2017-06-11\_002\_12d.ipynb}{accompanying notebook}
-    \cite{multispot_analysis}.
-    }}
+    \cite{nb_12d_alex}.
+    }
 \end{figure}
 
 The peak photon rate reached in each burst reports on the peak PSF
@@ -544,63 +544,63 @@ the $E_{PR}$ and $S$ peak positions as discussed in the next Section.
 \label{sec:EShist}
 
 \begin{figure*}
-\includegraphics[width=\textwidth]{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}
-\caption{{\label{fig:alexhist48all12d} $E_{PR}$ versus $S_u$
-histograms in the different spots for the dsDNA sample with a 12~bp D-A separation.
-Two subpopulations are visible: D-only (approximately $E_{PR}=0$,
-$S_u=1$) and FRET population (approximately $E_{PR}=0.6$,
-$S_u=0.6$). Burst search was performed using all photons with a 
-constant threshold (50~kcps). Burst selection was performed
-on the total burst size after background correction, using a threshold of
-40 photons. The legend in each subplot reports the spot number in brackets and number of bursts (\#B).%
-For more details see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
-\cite{multispot_analysis}.
-}}
+    \includegraphics[width=\textwidth]{figures/2017-05-23_08_12d_48spot_alex_hist_Su_all-bursts}
+    \caption{\label{fig:alexhist48all12d} $E_{PR}$ versus $S_u$
+    histograms in the different spots for the dsDNA sample with a 12~bp D-A separation.
+    Two subpopulations are visible: D-only (approximately $E_{PR}=0$,
+    $S_u=1$) and FRET population (approximately $E_{PR}=0.6$,
+    $S_u=0.6$). Burst search was performed using all photons with a 
+    constant threshold (50~kcps). Burst selection was performed
+    on the total burst size after background correction, using a threshold of
+    40 photons. The legend in each subplot reports the spot number in brackets and number of bursts (\#B).%
+    For more details see the
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
+    \cite{nb_12d}.
+    }
 \end{figure*}
 
 \begin{figure*}
-\includegraphics[width=\textwidth]{figures/2017-05-23_08_12d_48spot_alex_hist_Su_naa_AND_size_selection}
-\caption{{\label{fig:alexhist48fret12d} $E_{PR}$ versus $S_u$
-histograms in the different spots for the dsDNA sample with a 12~bp D-A separation.
-Data analysis and
-burst search are identical to figure~\ref{fig:alexhist48all12d}, while
-burst selection is tailored to select only the FRET population: a burst is
-selected if the number of counts in the $D_{ex}A_{em}$ and $DA_{ex}A_{em}$
-streams are both larger than 20. The legend in each subplot
-reports spot number in brackets and number of bursts (\#B).%
-For more details see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
-\cite{multispot_analysis}.
-}}
+    \includegraphics[width=\textwidth]{figures/2017-05-23_08_12d_48spot_alex_hist_Su_naa_AND_size_selection}
+    \caption{\label{fig:alexhist48fret12d} $E_{PR}$ versus $S_u$
+    histograms in the different spots for the dsDNA sample with a 12~bp D-A separation.
+    Data analysis and
+    burst search are identical to figure~\ref{fig:alexhist48all12d}, while
+    burst selection is tailored to select only the FRET population: a burst is
+    selected if the number of counts in the $D_{ex}A_{em}$ and $DA_{ex}A_{em}$
+    streams are both larger than 20. The legend in each subplot
+    reports spot number in brackets and number of bursts (\#B).%
+    For more details see the
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
+    \cite{nb_12d}.
+    }
 \end{figure*}
 
 \begin{figure}
-\includegraphics[width=0.9\columnwidth]{figures/2017-05-23_08_12d_FRET_vs_DO_fitted_Epr-Su_peak_position}
-\caption{\label{fig:fittedFRETscatter}
-Scatter plot of the fitted $E_{PR}$, $S_u$ peak
-position in the different spots for the D-only (\emph{orange cross})
-and FRET populations (\emph{blue plus}). Values were obtained by Gaussian
-fit of the 1-D histogram of $E_{PR}$ and $S_u$ after a bursts selection
-that isolated D-only and FRET populations, respectively.
-For more details see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
-\cite{multispot_analysis}.
-}
+    \includegraphics[width=0.9\columnwidth]{figures/2017-05-23_08_12d_FRET_vs_DO_fitted_Epr-Su_peak_position}
+    \caption{\label{fig:fittedFRETscatter}
+    Scatter plot of the fitted $E_{PR}$, $S_u$ peak
+    position in the different spots for the D-only (\emph{orange cross})
+    and FRET populations (\emph{blue plus}). Values were obtained by Gaussian
+    fit of the 1-D histogram of $E_{PR}$ and $S_u$ after a bursts selection
+    that isolated D-only and FRET populations, respectively.
+    For more details see the
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
+    \cite{nb_12d}.
+    }
 \end{figure}
 
 \begin{figure*}
-\includegraphics[width=\textwidth]{figures/2017-05-23_08_12d_48-spot_Epr-Su_peak_position_deviation_from_mean}
-\caption{{\label{fig:fretfit48vsmean} Fitted FRET peak position ($E_{PR}, S_u$,
-\emph{blue dots}) and $\pm 1 \sigma $ of the fitted Gaussian
-(\emph{blue error bars}) for the 46 active spots. As a reference, the mean
-$E_{PR}, S_u$ across all 46 spots (\emph{orange dot}) is reported
-in each subplot. The spot number is indicated in the top right corner of
-each subplot.%
-For more details see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
-\cite{multispot_analysis}.
-}}
+    \includegraphics[width=\textwidth]{figures/2017-05-23_08_12d_48-spot_Epr-Su_peak_position_deviation_from_mean}
+    \caption{\label{fig:fretfit48vsmean} Fitted FRET peak position ($E_{PR}, S_u$,
+    \emph{blue dots}) and $\pm 1 \sigma $ of the fitted Gaussian
+    (\emph{blue error bars}) for the 46 active spots. As a reference, the mean
+    $E_{PR}, S_u$ across all 46 spots (\emph{orange dot}) is reported
+    in each subplot. The spot number is indicated in the top right corner of
+    each subplot.%
+    For more details see the
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_08\_12d.ipynb}{accompanying notebook}
+    \cite{nb_12d}.
+    }
 \end{figure*}
 
 
@@ -646,35 +646,35 @@ Appendix~\ref{sec:moredata}.
 \label{sec:alexpax-comp}
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/2017-07-11_06_12d_22d_ES-hist-collapsed-all-pops}
-\caption{\label{fig:ES48mix-all}
-48-spot PAX measurement of a mixture of two dsDNA constructs with 12 and
-22~bp D-A separation (sample details in~\ref{sec:analysis}).
-Burst search was performed on all channels
-using a constant-rate threshold of 50~kcps.
-Burst were selected based on their total size with the criterion $\Lambda_{\gamma,PAX} > 80$,
-using $\gamma = 0.5$ (see eq.~\ref{eq:burstsize_paxe}).
-The E-S histogram was built by pooling data from all spots, without 
-spot-specific correction.
-For more details, see the 
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{accompanying notebook}
-\cite{multispot_analysis}.
+    \includegraphics[width=\columnwidth]{figures/2017-07-11_06_12d_22d_ES-hist-collapsed-all-pops}
+    \caption{\label{fig:ES48mix-all}
+    48-spot PAX measurement of a mixture of two dsDNA constructs with 12 and
+    22~bp D-A separation (sample details in~\ref{sec:analysis}).
+    Burst search was performed on all channels
+    using a constant-rate threshold of 50~kcps.
+    Burst were selected based on their total size with the criterion $\Lambda_{\gamma,PAX} > 80$,
+    using $\gamma = 0.5$ (see eq.~\ref{eq:burstsize_paxe}).
+    The E-S histogram was built by pooling data from all spots, without 
+    spot-specific correction.
+    For more details, see the 
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{accompanying notebook}
+    \cite{nb_12d_22d}.
 }
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/2017-07-11_06_12d_22d_ES-hist-collapsed-FRET-pops}
-\caption{\label{fig:ES48mix-fret}
-48-spot PAX E-S histograms of the same measurement of
-Fig.~\ref{fig:ES48mix-all}. Additional filtering of the D-only population
-was performed using the criterion $F_{D_{ex}DA_{em}} > 25$
-(see Appendix~\ref{sec:alex_pax}).
-The E-S histogram was built by pooling data from all spots without 
-spot-specific correction.
-For more details, see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{accompanying notebook}
-\cite{multispot_analysis}.
-}
+    \includegraphics[width=\columnwidth]{figures/2017-07-11_06_12d_22d_ES-hist-collapsed-FRET-pops}
+    \caption{\label{fig:ES48mix-fret}
+    48-spot PAX E-S histograms of the same measurement of
+    Fig.~\ref{fig:ES48mix-all}. Additional filtering of the D-only population
+    was performed using the criterion $F_{D_{ex}DA_{em}} > 25$
+    (see Appendix~\ref{sec:alex_pax}).
+    The E-S histogram was built by pooling data from all spots without 
+    spot-specific correction.
+    For more details, see the
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{accompanying notebook}
+    \cite{nb_12d_22d}.
+    }
 \end{figure}
 
 The final step of multispot analysis consists in merging data from all
@@ -764,25 +764,25 @@ of different samples, for high-throughput screening applications,
 among other possibilities.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/2017-08-03_03_12d_alex_jointplot_5s_Dex}
-\caption{\label{fig:alex_mspot_5}
-Multispot E-S histogram obtained from 5~s of acquisition by pooling bursts
-from the 46 active spots.
-For more details see the 
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{accompanying notebook}
-\cite{multispot_analysis}.
-}
+    \includegraphics[width=\columnwidth]{figures/2017-08-03_03_12d_alex_jointplot_5s_Dex}
+    \caption{\label{fig:alex_mspot_5}
+    Multispot E-S histogram obtained from 5~s of acquisition by pooling bursts
+    from the 46 active spots.
+    For more details see the 
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{accompanying notebook}
+    \cite{nb_mspot_sspot_comp}.
+    }
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{figures/2017-08-03_007_12d_alex_jointplot_5s_Dex}
-\caption{\label{fig:alex_sspot_5}
-Single-spot E-S histogram obtained from 5~s of acquisition for the same
-sample as in Fig.~\ref{fig:alex_mspot_5}.
-For more details see the 
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{accompanying notebook}
-\cite{multispot_analysis}.
-}
+    \includegraphics[width=\columnwidth]{figures/2017-08-03_007_12d_alex_jointplot_5s_Dex}
+    \caption{\label{fig:alex_sspot_5}
+    Single-spot E-S histogram obtained from 5~s of acquisition for the same
+    sample as in Fig.~\ref{fig:alex_mspot_5}.
+    For more details see the 
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{accompanying notebook}
+    \cite{nb_mspot_sspot_comp}.
+    }
 \end{figure}
 
 \section{Conclusion}
@@ -1537,19 +1537,19 @@ an unbiased estimation of $E_{PR}$, as opposed to what would have happened
 in the absence of acceptor excitation~\cite{ingargiola_multispot_2017}.
 
 \begin{figure*}
-\includegraphics[width=\textwidth]{figures/2017-05-23_04_22d_48spot_alex_hist_Su_all-bursts}
-\caption{{\label{fig:alexhist48all22d} $E_{PR}$ versus $S_u$
-histograms of all spots for the 22d dsDNA sample. Data analysis and
-burst search are identical as in figure~\ref{fig:alexhist48all12d}.
-Burst search was performed using all photons with
-constant threshold (50~kcps). Burst selection was performed
-on the total burst size after background correction, using a threshold of
-40 photons. The legend in each subplot
-reports spot number in brackets and number of bursts (\#B).
-For more details see the 
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_04\_22d.ipynb}{accompanying notebook}
-\cite{multispot_analysis}.
-}}
+    \includegraphics[width=\textwidth]{figures/2017-05-23_04_22d_48spot_alex_hist_Su_all-bursts}
+    \caption{\label{fig:alexhist48all22d} $E_{PR}$ versus $S_u$
+    histograms of all spots for the 22d dsDNA sample. Data analysis and
+    burst search are identical as in figure~\ref{fig:alexhist48all12d}.
+    Burst search was performed using all photons with
+    constant threshold (50~kcps). Burst selection was performed
+    on the total burst size after background correction, using a threshold of
+    40 photons. The legend in each subplot
+    reports spot number in brackets and number of bursts (\#B).
+    For more details see the 
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_04\_22d.ipynb}{accompanying notebook}
+    \cite{nb_22d}.
+    }
 \end{figure*}
 
 %\nocite{*}
