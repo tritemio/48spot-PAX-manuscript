@@ -188,7 +188,7 @@ emit a fluorescence signal during both D-excitation laser  (due to
 excitation of the donor) and  A-excitation laser  (due to excitation
 of the acceptor).
 This, in turn, extends the number of FRET sub-populations that can be reliably
-identified within a sample in the regime of low mean FRET efficiencies, 
+identified within a sample in the regime of low mean FRET efficiencies,
 referred to throughout as ``low FRET''.
 This scheme has since been extended to up to 4 laser excitations, allowing
 powerful molecular sorting applications~\cite{lee_three-color_2007,yim_four-color_2012}.
@@ -265,8 +265,8 @@ The system is aligned such that each SPAD is optically
 conjugated to one excitation spot in the sample.
 
 Output from the detectors (one TTL pulse train per SPAD) is processed by a
-field-programmable gate array (FPGA) equipped board (PXI-7813R, National Instruments, Austin, TX) 
-that performs photon time-stamping with 12.5~ns resolution and transfers data 
+field-programmable gate array (FPGA) equipped board (PXI-7813R, National Instruments, Austin, TX)
+that performs photon time-stamping with 12.5~ns resolution and transfers data
 asynchronously to the host PC.
 The host PC runs a LabVIEW acquisition software, which displays the binned signal recorded from all 96-channels in real-time as 96 color-coded time traces, implements alignment routines, and saves the data to
 disk. After data acquisition, file conversion to the Photon-HDF5 format~\cite{ingargiola_photon-hdf5:_2016-1} and analysis is performed on a second PC, therefore allowing non-stop acquisition of sequential files.
@@ -292,8 +292,8 @@ The chamber is regularly flushed and filled with dry nitrogen gas to prevent
 condensation, making it possible to mount the array on a double-stage Peltier
 element to cool the detector down to temperatures of approximately
 $-15^{\circ}$C. At this temperature,
-the dark count rate (DCR) is significantly reduced, 
-thus increasing the signal-to-background ratio of the instrument. 
+the dark count rate (DCR) is significantly reduced,
+thus increasing the signal-to-background ratio of the instrument.
 Photon-counting pulses are transferred through a standard
 SCSI connector. This allows for easy connection of the module to
 general-purpose data acquisition, or breakout adapter boards when
@@ -322,7 +322,7 @@ The
 single-pixel SPADs (SPCM-AQRH, Excelitas Technology Corp., Waltham, MA)
 used in the {\usalex} setup are characterized by a PDE of $\sim$60\%
 at 550~nm and $\sim$70\% at 670~nm, with notably better sensitivity
-in the donor emission band and a PDE that is more than twice a high for the 
+in the donor emission band and a PDE that is more than twice a high for the
 acceptor emission band. For this reason, the {\usalex} setup is expected to be
 at least twice as sensitive in the A-channel than the 48-spot setup.
 A detailed comparison of the different SPAD technologies for single-molecule
@@ -348,13 +348,13 @@ in~\onlinecite{colyer_high-throughput_2010,ingargiola_multispot_2017}. The
 phase modulation operates in direct space rather than Fourier space and
 implements the phase profile of a Fresnel lenslet array.
 Similar direct-space modulation using a different
-spatial arrangement of the phase pattern on the LCOS-SLM have also been demonstrated 
+spatial arrangement of the phase pattern on the LCOS-SLM have also been demonstrated
 for multi-confocal fluorescence correlation spectroscopy
 (FCS)~\cite{kloster-landsberg_cellular_2012}.
 
 Fig.~\ref{fig:patternfit} shows the emission pattern from a high-concentration dye sample
-upon green (Panel A) and red (Panel B) laser excitation, as 
-seen by a camera mounted on the microscope side-port. 
+upon green (Panel A) and red (Panel B) laser excitation, as
+seen by a camera mounted on the microscope side-port.
 The two patterns are aligned to maximize overlap of each of the 48 spots.
 Overlap of the two wavelengths and centering with respect to
 the optical axis is assessed by 2D Gaussian fitting of each individual spot as reported in Panel C.
@@ -379,7 +379,7 @@ can be found in Appendix~\ref{sec:lcos}.
     the right. The elliptical shape and tilt of the Gaussian is
     due to geometrical aberrations.
     More details can be found in the
-    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{accompanying notebook} 
+    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{accompanying notebook}
     \cite{multispot_analysis}.
     }}
 \end{figure}
@@ -392,15 +392,15 @@ can be found in Appendix~\ref{sec:lcos}.
 
 Single-molecule measurements were performed with 40 base-pair (bp)
 double-stranded DNA (dsDNA) molecules labeled with ATTO550 (D) and
-ATTO647N (A) dyes (ATTOTEC GmbH, Heidelberg, Germany)
+ATTO647N (A) dyes (ATTO-TEC GmbH, Siegen, Germany)
 attached to different DNA bases, yielding different inter-dye distances.
 
 D-A separation of 12~bp and 22~bp were used in these experiments,
 as they cover the typical range of distances that can be accurately measured
 with smFRET using this dye pair.
 Samples were diluted to single-molecule concentration ($\sim50$~pM) in TE50
-(10~mM Tris pH 8.0, 1 mM EDTA, and 50~mM NaCl) or in ``transcription buffer'' 
-(40 mM HEPES-NaOH pH 7, 50 mM KCl, 10 mM MgCl$_{2}$, 1 mM DTT, 1 mM MEA, 
+(10~mM Tris pH 8.0, 1 mM EDTA, and 50~mM NaCl) or in ``transcription buffer''
+(40 mM HEPES-NaOH pH 7, 50 mM KCl, 10 mM MgCl$_{2}$, 1 mM DTT, 1 mM MEA,
 BSA: 100~\textgreek{μ}g/ml)~\cite{lerner_backtracked_2016}.
 Full details regarding the DNA samples are provided in
 ref.~\onlinecite{ingargiola_multispot_2017}.
@@ -411,7 +411,7 @@ The three analysis steps include:
 (a) background estimation, (b) burst search and (c) burst selection.
 Background estimation, which is needed to correct the burst counts
 in the different photon streams, was performed over 10~s time windows
-in order to account for possible background variations during the measurement. 
+in order to account for possible background variations during the measurement.
 Burst searches were performed independently for each spot
 using the sliding-window algorithm~\cite{fries_quantitative_1998}
 and a constant-rate threshold for all spots~\cite{ingargiola_fretbursts:_2016}.
@@ -419,24 +419,24 @@ Burst selection is performed taking bursts with size larger than a specified thr
 where burst size is either defined according to eq.~\ref{eq:burstsize}
 or~\ref{eq:burstsize_paxe}. To isolate the FRET populations, we
 additionally filter bursts with $A_{ex}A_{em}$ counts larger
-than a second specified threshold. Full numerical details can be found in 
+than a second specified threshold. Full numerical details can be found in
 the relevant notebook\cite{multispot_analysis}.
 
-The main result of the {\usalex} and PAX analysis methods is a so-called 
+The main result of the {\usalex} and PAX analysis methods is a so-called
 E-S two-dimensional histogram, where each burst is represented by a
 pair of values $(E, S)$ computed from the distinct photon stream
 intensities (see Section~\ref{sec:EShist}).
-The E-axis in that histogram can represent either the FRET efficiency or, 
-more commonly, the uncorrected FRET efficiency $E_{PR}$, known as proximity 
+The E-axis in that histogram can represent either the FRET efficiency or,
+more commonly, the uncorrected FRET efficiency $E_{PR}$, known as proximity
 ratio.
 $E_{PR}$ is easier to compute than $E$
 and provides a suitable approximation for identifying sub-populations.
-However, while it is not the objective of this study, 
-when the purpose is extracting D-A distances, 
-all the correction coefficients need to be accurately estimated 
+However, while it is not the objective of this study,
+when the purpose is extracting D-A distances,
+all the correction coefficients need to be accurately estimated
 in order to compute $E$.
-$S$, or ``stoichiometry ratio'', is a quantity which typically has 
-a value $\sim0.5$ for doubly-labeled, $\sim0$ for A-only, and $\sim1$ for 
+$S$, or ``stoichiometry ratio'', is a quantity which typically has
+a value $\sim0.5$ for doubly-labeled, $\sim0$ for A-only, and $\sim1$ for
 D-only species.
 D and A-only species regions in the E-S histogram also include doubly-labeled
 molecules with one inactive
@@ -549,7 +549,7 @@ the $E_{PR}$ and $S$ peak positions as discussed in the next Section.
     histograms in the different spots for the dsDNA sample with a 12~bp D-A separation.
     Two subpopulations are visible: D-only (approximately $E_{PR}=0$,
     $S_u=1$) and FRET population (approximately $E_{PR}=0.6$,
-    $S_u=0.6$). Burst search was performed using all photons with a 
+    $S_u=0.6$). Burst search was performed using all photons with a
     constant threshold (50~kcps). Burst selection was performed
     on the total burst size after background correction, using a threshold of
     40 photons. The legend in each subplot reports the spot number in brackets and number of bursts (\#B).%
@@ -611,7 +611,7 @@ described in Section~\ref{sec:analysis}.
 
 The D-only and FRET populations, top left corner
 and center respectively in the E-S histogram, are clearly distinguishable in all spots.
-Moreover, as shown in Fig.~\ref{fig:alexhist48fret12d}, 
+Moreover, as shown in Fig.~\ref{fig:alexhist48fret12d},
 the FRET population(s) are easily isolated by applying a second burst
 selection using a minimum threshold on the $DA_{ex}A_{em}$ counts.
 A second example of such a selection is shown in Fig.~\ref{fig:ES48mix-fret}.
@@ -654,9 +654,9 @@ Appendix~\ref{sec:moredata}.
     using a constant-rate threshold of 50~kcps.
     Burst were selected based on their total size with the criterion $\Lambda_{\gamma,PAX} > 80$,
     using $\gamma = 0.5$ (see eq.~\ref{eq:burstsize_paxe}).
-    The E-S histogram was built by pooling data from all spots, without 
+    The E-S histogram was built by pooling data from all spots, without
     spot-specific correction.
-    For more details, see the 
+    For more details, see the
     \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{accompanying notebook}
     \cite{nb_12d_22d}.
 }
@@ -669,7 +669,7 @@ Appendix~\ref{sec:moredata}.
     Fig.~\ref{fig:ES48mix-all}. Additional filtering of the D-only population
     was performed using the criterion $F_{D_{ex}DA_{em}} > 25$
     (see Appendix~\ref{sec:alex_pax}).
-    The E-S histogram was built by pooling data from all spots without 
+    The E-S histogram was built by pooling data from all spots without
     spot-specific correction.
     For more details, see the
     \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-07-11\_12d-22d-mixture.ipynb}{accompanying notebook}
@@ -679,15 +679,15 @@ Appendix~\ref{sec:moredata}.
 
 The final step of multispot analysis consists in merging data from all
 spots in order to increase the effective data accumulation rate.
-Non-uniformities between different spots can be accounted for by applying a two-step 
+Non-uniformities between different spots can be accounted for by applying a two-step
 correction, in which each correction factor $\gamma$ and $\beta$
-(Eq.~\ref{eq:gamma} and~\ref{eq:beta}) is decomposed into a product of two factors 
-applied successively: an average correction factor computed over all spots and a 
+(Eq.~\ref{eq:gamma} and~\ref{eq:beta}) is decomposed into a product of two factors
+applied successively: an average correction factor computed over all spots and a
 spot-specific relative correction.
 The spot-specific correction of $\gamma$ and $\beta$ can be easily computed
 from a measurement of a static FRET sample
 (details in Appendix~\ref{sec:perchcorr}).
-For simplicity and due to the good uniformity among spots, we do not apply any 
+For simplicity and due to the good uniformity among spots, we do not apply any
 spot-specific corrections in this work.
 
 Fig.~\ref{fig:ES48mix-all} shows the cumulated E-S histograms of a mixture
@@ -699,7 +699,7 @@ $S_u=1$. Due to the relatively low PDE
 of the acceptor channel (see Section~\ref{sec:detectors}), the separation
 of D-only and FRET populations could be problematic in principle.
 As previously shown (Fig.~\ref{fig:alexhist48fret12d}),
-FRET populations can be selected by setting a threshold on 
+FRET populations can be selected by setting a threshold on
 background-corrected $DA_{ex}A_{em}$ counts.
 Fig.~\ref{fig:ES48mix-fret} shows that this selection effectively
 removes the large D-only peak, isolating the FRET populations
@@ -709,58 +709,58 @@ As an illustration of the high-throughput capabilities of our setup,
 Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5}
 show an example from 5~s-long acquisition windows obtained with the same doubly-labeled
 dsDNA sample droplet, successively using the single-spot {\usalex} and multispot
-setups (the sample is the 12~bp D-A separation dsDNA described in 
+setups (the sample is the 12~bp D-A separation dsDNA described in
 Section~\ref{sec:analysis}).
-In both cases, a constant rate-threshold (20 kcps) burst search was used, followed by 
-burst selection based on $D_{ex}$ counts ($\Lambda_\gamma > 20$, 
+In both cases, a constant rate-threshold (20 kcps) burst search was used, followed by
+burst selection based on $D_{ex}$ counts ($\Lambda_\gamma > 20$,
 see eq.~\ref{eq:burstsize}).
-The particular time windows illustrated in Fig.~\ref{fig:alex_mspot_5} 
-and~\ref{fig:alex_sspot_5} shows a 37-fold difference in burst numbers between the two 
-measurements ($40 \pm 11$-fold computed over all consecutive 5~s windows within the two 
-5~min acquisitions), reasonably consistent with the 46-fold difference 
-expected between the two setups, assuming that all experimental conditions are 
-identical. The large standard deviation of the measured ratio reflects the naturally 
-large variance of the burst rate (number of bursts per unit time) within any given 
-measurement. Moreover, since the burst rate depends on a number of measurement and 
+The particular time windows illustrated in Fig.~\ref{fig:alex_mspot_5}
+and~\ref{fig:alex_sspot_5} shows a 37-fold difference in burst numbers between the two
+measurements ($40 \pm 11$-fold computed over all consecutive 5~s windows within the two
+5~min acquisitions), reasonably consistent with the 46-fold difference
+expected between the two setups, assuming that all experimental conditions are
+identical. The large standard deviation of the measured ratio reflects the naturally
+large variance of the burst rate (number of bursts per unit time) within any given
+measurement. Moreover, since the burst rate depends on a number of measurement and
 analysis parameters, the burst rate ratio should not be given excessive significance.
 For instance, the lower power in the lateral spots of the multispot setup (see
 Fig.~\ref{fig:patternfit}) will result in smaller bursts and
-therefore less bursts surviving the selection. While the lower detection efficiency of 
-the SPAD array in the red region of the spectrum (compared to the single-spot setup, 
-see Section~\ref{sec:detectors}) reduces the acceptor signal in the multispot 
-measurement, also resulting in smaller and fewer bursts above the size selection 
-threshold, this potential source of differences was compensated by the use if 
+therefore less bursts surviving the selection. While the lower detection efficiency of
+the SPAD array in the red region of the spectrum (compared to the single-spot setup,
+see Section~\ref{sec:detectors}) reduces the acceptor signal in the multispot
+measurement, also resulting in smaller and fewer bursts above the size selection
+threshold, this potential source of differences was compensated by the use if
 $\gamma$-corrected burst sizes (eq.~\ref{eq:burstsize}).
-Finally, differences in observation volumes between setups, as indicated by the 
-slightly larger burst durations in the multispot measurement (suggesting larger 
-volumes), will also translate in different detected burst rates. Despite these 
-caveats, it is obvious that the multispot setup detects a much larger number of bursts 
+Finally, differences in observation volumes between setups, as indicated by the
+slightly larger burst durations in the multispot measurement (suggesting larger
+volumes), will also translate in different detected burst rates. Despite these
+caveats, it is obvious that the multispot setup detects a much larger number of bursts
 than the  single-spot setup.
 
-Comparison of Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5} shows 
-that a significant number of bursts (~1,000) can be obtained in only a few seconds 
+Comparison of Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5} shows
+that a significant number of bursts (~1,000) can be obtained in only a few seconds
 of acquisition.
-Such a high throughput is advantageous for stop-flow or equivalent, real-time kinetic 
+Such a high throughput is advantageous for stop-flow or equivalent, real-time kinetic
 measurements, where a reaction is triggered at time zero and the sample's evolution
 monitored continuously afterward.
-The measurement's temporal resolution, \textit{i.e.} the smallest usable time window 
-(or time bin), depends inversely on the burst rate (as well as on the type of 
+The measurement's temporal resolution, \textit{i.e.} the smallest usable time window
+(or time bin), depends inversely on the burst rate (as well as on the type of
 information to be extracted from  the data), based on number statistics.
-In the simple case where the initial and final FRET states of a reaction are known, 
-and the respective amount of each population is an appropriate reaction parameter, 
-the number of burst in each subpopulation can be extracted from the FRET histogram 
-with a relatively small number of bursts per time bin. The number of bursts collected 
-in the experiment reported in Fig.~\ref{fig:alex_mspot_5} would definitely be 
+In the simple case where the initial and final FRET states of a reaction are known,
+and the respective amount of each population is an appropriate reaction parameter,
+the number of burst in each subpopulation can be extracted from the FRET histogram
+with a relatively small number of bursts per time bin. The number of bursts collected
+in the experiment reported in Fig.~\ref{fig:alex_mspot_5} would definitely be
 compatible with an effective time resolution $\le5$~s.
-To fully take advantage of such a temporal resolution, the experimental dead-time 
-(duration  of the initial mixing step in the reaction) would need to be shorter, 
-and may require an automated microfluidic system ($\ll$~1~s, by contrast with the 
-manual mixing reported in the kinetic measurement of 
-ref.~\onlinecite{ingargiola_multispot_2017}, where a deadtime of at least 
+To fully take advantage of such a temporal resolution, the experimental dead-time
+(duration  of the initial mixing step in the reaction) would need to be shorter,
+and may require an automated microfluidic system ($\ll$~1~s, by contrast with the
+manual mixing reported in the kinetic measurement of
+ref.~\onlinecite{ingargiola_multispot_2017}, where a deadtime of at least
 15-20~s was obtained).
-Such a multispot system could also advantageously be used to perform rapid 
-series of measurements of the same sample in different conditions, or 
-of different samples, for high-throughput screening applications, 
+Such a multispot system could also advantageously be used to perform rapid
+series of measurements of the same sample in different conditions, or
+of different samples, for high-throughput screening applications,
 among other possibilities.
 
 \begin{figure}
@@ -768,7 +768,7 @@ among other possibilities.
     \caption{\label{fig:alex_mspot_5}
     Multispot E-S histogram obtained from 5~s of acquisition by pooling bursts
     from the 46 active spots.
-    For more details see the 
+    For more details see the
     \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{accompanying notebook}
     \cite{nb_mspot_sspot_comp}.
     }
@@ -779,7 +779,7 @@ among other possibilities.
     \caption{\label{fig:alex_sspot_5}
     Single-spot E-S histogram obtained from 5~s of acquisition for the same
     sample as in Fig.~\ref{fig:alex_mspot_5}.
-    For more details see the 
+    For more details see the
     \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_ALEX-PAX\_comparison\_2017-08-03\_03\_12d.ipynb}{accompanying notebook}
     \cite{nb_mspot_sspot_comp}.
     }
@@ -861,7 +861,7 @@ laser is not modulated.
 Each laser beam goes through a first beam expander (Keplerian
 telescope, doublet lenses: 50~mm and 250~mm focal lengths). Two periscopes
 bring the beams to a raised optical breadboard where an inverted microscope body
-(X71, Olympus Corp., Waltham, MA) stands, its bottom port sitting
+(IX-71, Olympus Corp., Waltham, MA) stands, its bottom port sitting
 over a circular aperture in the breadboard. Beyond the periscope, each beam goes through a
 second adjustable beam expander (3X, P/N 59-131, Edmund Optics Inc.).
 The red laser beam is reflected off mirrors $M1_R$ and
@@ -1079,7 +1079,7 @@ excitation pattern by rigidly translating the pattern on the LCOS-SLM so
 that geometrical aberrations are roughly equivalent on all four sides.
 Next, we perform a 2D Gaussian fitting of each spot, and from the
 distribution of waist size and tilt angle for each Gaussian, we estimate
-a more accurate position of the optical axis (for the analysis see the 
+a more accurate position of the optical axis (for the analysis see the
 \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{LCOS pattern fitting notebook}
 \cite{nb_align_folder}).
 This step may be repeated multiple times until convergence.
@@ -1093,7 +1093,7 @@ the green one used as a reference. An initial coarse adjustment of the red
 LCOS-SLM pattern is performed manually by observing the emission
 pattern on the live camera display. Then, the center position of the red
 LCOS-SLM pattern is finely adjusted by fitting the spot positions in the
-green and red images (Fig.~\ref{fig:patternfit}), taken separately 
+green and red images (Fig.~\ref{fig:patternfit}), taken separately
 (for implementation details see the
 \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{LCOS pattern fitting notebook}
 \cite{nb_align_folder}).
@@ -1546,7 +1546,7 @@ in the absence of acceptor excitation~\cite{ingargiola_multispot_2017}.
     on the total burst size after background correction, using a threshold of
     40 photons. The legend in each subplot
     reports spot number in brackets and number of bursts (\#B).
-    For more details see the 
+    For more details see the
     \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_04\_22d.ipynb}{accompanying notebook}
     \cite{nb_22d}.
     }
