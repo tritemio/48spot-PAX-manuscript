@@ -221,11 +221,9 @@ Finally, we compare single-spot {\usalex} and 48-spot PAX measurements
 Software used to operate the multispot setup (including
 LCOS-SLM pattern generation, LabVIEW-FPGA time-stamping code,
 piezo-motor control, etc.) is provided in various repositories
-available  \href{https://github.com/multispot-software}{on GitHub}
-\cite{multispot_software}.
-Software used for data analysis can be found in the
-\href{https://github.com/tritemio/48-spot-smFRET-PAX-analysis}{48-spot-smFRET-PAX-analysis}
-repository\cite{multispot_analysis}.
+available on GitHub~\cite{multispot_software}.
+Software used for data analysis can be found in the 48-spot-smFRET-PAX-analysis
+repository~\cite{multispot_analysis}.
 Links to specific analysis notebooks are added in the caption of each
 figure. Data files are publicly available on
 Figshare~\cite{ingargiola_datasets_2017}.
@@ -376,7 +374,7 @@ can be found in Appendix~\ref{sec:lcos}.
     (\emph{red}) images. A closer look of 3 representative spots is reported on
     the right. The elliptical shape and tilt of the Gaussian is
     due to geometrical aberrations.
-    More details can be found in the accompanying alignment notebook~\cite{multispot_analysis}.
+    More details can be found in the accompanying alignment notebook~\cite{nb_align_folder}.
     }}
 \end{figure}
 
@@ -887,9 +885,7 @@ as requirements on the Z direction are much less stringent than
 for the X \& Y directions. The D-SPAD array is mounted on an additional rotation stage
 about the optical axis, which is used to match the relative orientation
 of the SPAD arrays. Software for controlling the micro-positioners is
-available in the
-\href{https://github.com/multispot-software/picomotor}{picomotor repository}
-in~\onlinecite{multispot_software}.
+available in the picomotor repository in~\onlinecite{multispot_software}.
 
 Each SPAD array module is equipped with an internal FPGA
 (Xilinx Spartan 6, model SLX150), a humidity sensor, and a USB 2.0 connection.
@@ -902,8 +898,7 @@ through a custom adapter to an FPGA-based acquisition board (FPGA board:
 PXI-7813R, PXI rack: PXI-1000B, National Instruments, Austin, TX) which
 performs photon time-stamping with 12.5~ns resolution in parallel on the 96
 channels (task implemented in LabVIEW using the LabVIEW FPGA Module,
-code available in the
-\href{https://github.com/multispot-software/MultichannelTimestamper}{MultichannelTimestamper repository})
+code available in the MultichannelTimestamper repository)
 in ref.~\onlinecite{multispot_software}.
 The FPGA board transfers data asynchronously to a host PC via an MXI-4 link
 to a custom acquisition program written in LabVIEW (PXI rack board: PXI-8331;
@@ -929,9 +924,7 @@ The second workstation automatically performs conversion to Photon-HDF5
 and data analysis, leaving the host PC available for acquiring the next
 set of data.
 The scripts for data transfer, conversion and automated analysis are
-available in the
-\href{https://github.com/multispot-software/transfer\_convert}{transfer\_convert repository}
-in ref.~\onlinecite{multispot_software}.
+available in the transfer\_convert repository in ref.~\onlinecite{multispot_software}.
 
 \subsection{LCOS-SLM Modulation}
 \label{sec:lcos}
@@ -989,9 +982,7 @@ comparison highlighting the relative strengths of these two approaches is
 currently lacking.
 
 Software to generate the multispot phase pattern used in this work is
-available in the
-\href{https://github.com/multispot-software/lcos\_multispot\_pattern}{lcos\_multispot\_pattern repository}
-in ref.~\onlinecite{multispot_software}.
+available in the lcos\_multispot\_pattern repository in ref.~\onlinecite{multispot_software}.
 
 
 \section{Laser alignment}
@@ -1063,8 +1054,7 @@ that geometrical aberrations are roughly equivalent on all four sides.
 Next, we perform a 2D Gaussian fitting of each spot, and from the
 distribution of waist size and tilt angle for each Gaussian, we estimate
 a more accurate position of the optical axis (for the analysis see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{LCOS pattern fitting notebook}
-\cite{nb_align_folder}).
+LCOS pattern fitting notebook~\cite{nb_align_folder}).
 This step may be repeated multiple times until convergence.
 From this point on, the X \& Y positions of the green LCOS-SLM is not
 changed anymore, and its center becomes a reference for the optical axis
@@ -1077,9 +1067,7 @@ LCOS-SLM pattern is performed manually by observing the emission
 pattern on the live camera display. Then, the center position of the red
 LCOS-SLM pattern is finely adjusted by fitting the spot positions in the
 green and red images (Fig.~\ref{fig:patternfit}), taken separately
-(for implementation details see the
-\href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/alignment/2017-04-28/pattern_profiling/LCOS\%20pattern\%20fitting-conf9\_G\_conf14\_R\_4x12\_slits.ipynb}{LCOS pattern fitting notebook}
-\cite{nb_align_folder}).
+(for implementation details see the LCOS pattern fitting notebook~\cite{nb_align_folder}).
 
 Finally, in order to reduce the background due to unmodulated light, two
 custom-made rectangular slits (aluminum with black finish)
@@ -1527,9 +1515,7 @@ in the absence of acceptor excitation~\cite{ingargiola_multispot_2017}.
     on the total burst size after background correction, using a threshold of
     40 photons. The legend in each subplot
     reports spot number in brackets and number of bursts (\#B).
-    For more details see the
-    \href{http://nbviewer.jupyter.org/github/tritemio/48-spot-smFRET-PAX-analysis/blob/master/smFRET-PAX\_single\_pop-2017-05-23\_04\_22d.ipynb}{accompanying notebook}
-    \cite{nb_22d}.
+    For more details see the accompanying 48-spot PAX analysis notebook~\cite{nb_22d}.
     }
 \end{figure*}
 
