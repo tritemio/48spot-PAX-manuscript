@@ -209,7 +209,7 @@ In Section~\ref{sec:setup_brief} we briefly introduce the optical setup,
 the detectors (Section~\ref{sec:detectors}) and the modulation scheme
 (Section~\ref{sec:48spot-pattern}). In Section~\ref{sec:smfret-meas} we
 report single-molecule measurements, starting with a brief
-description of the data analysis (Section~\ref{sec:analysis}).
+description of samples (Section~\ref{sec:samples}) and data analysis (Section~\ref{sec:analysis}).
 To demonstrate the uniformity across spots, we study
 the burst peak photon rate (Section~\ref{sec:peak-phrate})
 and E-S histograms (Section~\ref{sec:EShist}).
@@ -381,8 +381,8 @@ can be found in Appendix~\ref{sec:lcos}.
 \section{smFRET measurements}
 \label{sec:smfret-meas}
 
-\subsection{Analysis}
-\label{sec:analysis}
+\subsection{Samples}
+\label{sec:samples}
 
 Single-molecule measurements were performed with 40 base-pair (bp)
 double-stranded DNA (dsDNA) molecules labeled with ATTO550 (D) and
@@ -403,6 +403,9 @@ so that a single sample could be measured consecutively on both setups
 without significant loss of fluorescence.
 Full details regarding the DNA samples are provided in
 ref.~\onlinecite{ingargiola_multispot_2017}.
+
+\subsection{Analysis}
+\label{sec:analysis}
 
 We analyzed data using standard {\usalex} methods~\cite{lee_accurate_2005}
 with modifications required for PAX\cite{doose_periodic_2007}.
@@ -638,7 +641,7 @@ Appendix~\ref{sec:moredata}.
     \includegraphics[width=\columnwidth]{figures/2017-07-11_06_12d_22d_ES-hist-collapsed-all-pops}
     \caption{\label{fig:ES48mix-all}
     48-spot PAX measurement of a mixture of two dsDNA constructs with 12 and
-    22~bp D-A separation (sample details in~\ref{sec:analysis}).
+    22~bp D-A separation (sample details in Section~\ref{sec:samples}).
     Burst search was performed on all channels
     using a constant-rate threshold of 50~kcps.
     Burst were selected based on their total size with the criterion $\Lambda_{\gamma,PAX} > 80$,
@@ -677,7 +680,7 @@ spot-specific corrections in this work.
 
 Fig.~\ref{fig:ES48mix-all} shows the cumulated E-S histograms of a mixture
 of two dsDNA constructs with D-A separation of 12 and
-22~bp (see Section~\ref{sec:analysis}),
+22~bp (see Section~\ref{sec:samples}),
 resulting in mean $E_{PR}$ of $\sim0.6$ and $\sim0.15$ respectively.
 A significant D-only population is visible as a peak close to $E_{PR}=0.05$,
 $S_u=1$. Due to the relatively low PDE
@@ -695,7 +698,7 @@ Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5}
 show an example from 5~s-long acquisition windows obtained with the same doubly-labeled
 dsDNA sample droplet, successively using the single-spot {\usalex} and multispot
 setups (the sample is the 12~bp D-A separation dsDNA described in
-Section~\ref{sec:analysis}).
+Section~\ref{sec:samples}).
 In both cases, a constant rate-threshold (20 kcps) burst search was used, followed by
 burst selection based on $D_{ex}$ counts ($\Lambda_\gamma > 20$,
 see eq.~\ref{eq:burstsize}).
