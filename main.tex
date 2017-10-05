@@ -693,14 +693,28 @@ Fig.~\ref{fig:ES48mix-fret} shows that this selection effectively
 removes the large D-only peak, isolating the FRET populations
 without significant loss of FRET bursts.
 
-In multispot measurements, it is in principle possible
-that a molecule detected in one spot is later detected by a different spot.
-However, given size and separation of the PSFs, the probability 
-of such an event is quite rate even for nearby spots. In addition,
-these events, even if present, will not affect burst analysis, but
-they can be potentially detected with cross-correlation 
-of photon stream of two spots. However, for the measurement here reported,
-no correlation between spot was observed.
+In multispot measurements, it is in principle possible that a molecule 
+detected in one spot could be  detected in a different spot, potentially 
+affecting the conclusions drawn from the cumulative data from all spots. Two 
+possible scenarios need to be considered: (i) a single-molecule signal detected 
+in one spot is detected in another due to crosstalk effects, and (ii) a 
+single-molecule detected in one spot diffuses away and is later detected in 
+another spot.
+The first scenario can be excluded due to the geometry of the setup which ensures 
+that there is no overlap between nearby detection volumes and due to the low 
+optical crosstalk coefficients of the type of SPAD array detectors used in this 
+work~\cite{ingargiola_multispot_2017}.
+The second scenario would not affect burst analysis as these events would only
+result in a correlation between bursts in different spots over a timescale 
+determined by diffusion from one spot to the other
+($\Delta t \gg d^2/4D$, with $d \approx 5$~\microsec, 
+$D \approx 100\;$\microsec$^2 s^{-1}$, yields $\Delta t \gg 60$ ms for 
+two nearest-neighbor spots). 
+In practice, we were unable to detect any such cross-correlation in the
+measurements reported here, suggesting that, due to the size of and the 
+separation between excitation spots, the probability of occurrence of 
+such events is very low.
+
 
 As an illustration of the high-throughput capabilities of our setup,
 Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5}
