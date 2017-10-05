@@ -420,7 +420,7 @@ and a constant-rate threshold for all spots~\cite{ingargiola_fretbursts:_2016}.
 Burst selection is performed taking bursts with size larger than a specified threshold,
 where burst size is either defined according to eq.~\ref{eq:burstsize}
 or~\ref{eq:burstsize_paxe}. To isolate the FRET populations, we
-additionally filter bursts with $A_{ex}A_{em}$ counts larger
+additionally filter bursts with $DA_{ex}A_{em}$ counts larger
 than a second specified threshold. Full numerical details can be found in
 the relevant notebook\cite{multispot_analysis}.
 
@@ -693,6 +693,15 @@ Fig.~\ref{fig:ES48mix-fret} shows that this selection effectively
 removes the large D-only peak, isolating the FRET populations
 without significant loss of FRET bursts.
 
+In multispot measurements, it is in principle possible
+that a molecule detected in one spot is later detected by a different spot.
+However, given size and separation of the PSFs, the probability 
+of such an event is quite rate even for nearby spots. In addition,
+these events, even if present, will not affect burst analysis, but
+they can be potentially detected with cross-correlation 
+of photon stream of two spots. However, for the measurement here reported,
+no correlation between spot was observed.
+
 As an illustration of the high-throughput capabilities of our setup,
 Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5}
 show an example from 5~s-long acquisition windows obtained with the same doubly-labeled
@@ -726,7 +735,7 @@ caveats, it is obvious that the multispot setup detects a much larger number of 
 than the  single-spot setup.
 
 Comparison of Fig.~\ref{fig:alex_mspot_5} and~\ref{fig:alex_sspot_5} shows
-that a significant number of bursts (~1,000) can be obtained in only a few seconds
+that a significant number of bursts ($\sim$1,000) can be obtained in only a few seconds
 of acquisition.
 Such a high throughput is advantageous for stop-flow or equivalent, real-time kinetic
 measurements, where a reaction is triggered at time zero and the sample's evolution
